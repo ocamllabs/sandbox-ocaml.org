@@ -1,0 +1,14 @@
+<div class="ocaml_toplevel_module"><pre><span class="VALto_bigsubstring"><span class="keyword">val</span> to_bigsubstring</span> : <code class="type"><a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a> -&gt; Core.Std.Bigsubstring.t</code></pre>
+<pre><span class="VALof_bigsubstring"><span class="keyword">val</span> of_bigsubstring</span> : <code class="type">Core.Std.Bigsubstring.t -&gt; <a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a></code></pre>
+<pre><span class="VALread"><span class="keyword">val</span> read</span> : <code class="type">Async.Std.Reader.t -&gt;
+<a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a> -&gt; int Async.Std.Reader.Read_result.t Async.Std.Deferred.t</code></pre>
+<pre><span class="VALschedule_write"><span class="keyword">val</span> schedule_write</span> : <code class="type">Async.Std.Writer.t -&gt; <a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a> -&gt; unit</code></pre>
+<div class="ocaml_module sig" name="Pipe"><pre><span class="keyword">module</span> <a href="?package=cstruct&amp;module=Async_cstruct.Pipe">Pipe</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALmap_string"><span class="keyword">val</span> map_string</span> : <code class="type"><a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a> Async.Std.Pipe.Reader.t -&gt;
+<a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a> Async.Std.Pipe.Writer.t -&gt;
+string Async.Std.Pipe.Reader.t * string Async.Std.Pipe.Writer.t</code></pre>
+<pre><span class="VALmap_bigsubstring"><span class="keyword">val</span> map_bigsubstring</span> : <code class="type"><a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a> Async.Std.Pipe.Reader.t -&gt;
+<a href="?package=cstruct&amp;module=Cstruct&amp;type=t">Cstruct.t</a> Async.Std.Pipe.Writer.t -&gt;
+Core.Std.Bigsubstring.t Async.Std.Pipe.Reader.t *
+Core.Std.Bigsubstring.t Async.Std.Pipe.Writer.t</code></pre></div></div>
+</div>

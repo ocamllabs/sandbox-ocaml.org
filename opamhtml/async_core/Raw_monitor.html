@@ -1,0 +1,455 @@
+<div class="ocaml_toplevel_module"><pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">unit</code></pre>
+<pre><span class="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">bool</code></pre>
+<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.name">name</span> : <code class="type">Core.Std.Info.t</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.here">here</span> : <code class="type">Core.Std.Source_code_position.t option</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.id">id</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.parent">parent</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.error_handlers">error_handlers</span> : <code class="type">(exn -&gt; unit) list</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.has_seen_error">has_seen_error</span> : <code class="type">bool</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.someone_is_listening">someone_is_listening</span> : <code class="type">bool</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.kill_index">kill_index</span> : <code class="type"><a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a></code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; unit</code></pre>
+<pre><span class="VALkill_index"><span class="keyword">val</span> kill_index</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a></code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a></code></pre>
+<pre><span class="VALset_kill_index"><span class="keyword">val</span> set_kill_index</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; unit</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; unit</code></pre>
+<pre><span class="VALsomeone_is_listening"><span class="keyword">val</span> someone_is_listening</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool</code></pre>
+<pre><span class="VALset_someone_is_listening"><span class="keyword">val</span> set_someone_is_listening</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span class="VALhas_seen_error"><span class="keyword">val</span> has_seen_error</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool</code></pre>
+<pre><span class="VALset_has_seen_error"><span class="keyword">val</span> set_has_seen_error</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span class="VALerror_handlers"><span class="keyword">val</span> error_handlers</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list</code></pre>
+<pre><span class="VALset_error_handlers"><span class="keyword">val</span> set_error_handlers</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list -&gt; unit</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list -&gt; unit</code></pre>
+<pre><span class="VALparent"><span class="keyword">val</span> parent</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option</code></pre>
+<pre><span class="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; int</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; int</code></pre>
+<pre><span class="VALhere"><span class="keyword">val</span> here</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Source_code_position.t option</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Source_code_position.t option</code></pre>
+<pre><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Info.t</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Info.t</code></pre>
+<div class="ocaml_module sig" name="Fields"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Raw_monitor.Fields">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALnames"><span class="keyword">val</span> names</span> : <code class="type">string list</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">string list</code></pre>
+<pre><span class="VALkill_index"><span class="keyword">val</span> kill_index</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALsomeone_is_listening"><span class="keyword">val</span> someone_is_listening</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALhas_seen_error"><span class="keyword">val</span> has_seen_error</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALerror_handlers"><span class="keyword">val</span> error_handlers</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALid"><span class="keyword">val</span> id</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALhere"><span class="keyword">val</span> here</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Source_code_position.t option)
+Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Source_code_position.t option)
+Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+Fieldslib.Field.t_with_perm</code></pre>
+<pre><span class="VALmake_creator"><span class="keyword">val</span> make_creator</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'a -&gt; ('b -&gt; Core.Std.Info.t) * 'c) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt;
+      'c -&gt; ('b -&gt; Core.Std.Source_code_position.t option) * 'd) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    'd -&gt; ('b -&gt; int) * 'e) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'e -&gt; ('b -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option) * 'f) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt;
+                'f -&gt; ('b -&gt; (exn -&gt; unit) list) * 'g) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'g -&gt; ('b -&gt; bool) * 'h) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'h -&gt; ('b -&gt; bool) * 'i) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'i -&gt; ('b -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>) * 'j) -&gt;
+'a -&gt; ('b -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>) * 'j</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'a -&gt; ('b -&gt; Core.Std.Info.t) * 'c) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt;
+      'c -&gt; ('b -&gt; Core.Std.Source_code_position.t option) * 'd) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    'd -&gt; ('b -&gt; int) * 'e) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'e -&gt; ('b -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option) * 'f) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt;
+                'f -&gt; ('b -&gt; (exn -&gt; unit) list) * 'g) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'g -&gt; ('b -&gt; bool) * 'h) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'h -&gt; ('b -&gt; bool) * 'i) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'i -&gt; ('b -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>) * 'j) -&gt;
+'a -&gt; ('b -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>) * 'j</code></pre>
+<pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">name:Core.Std.Info.t -&gt;
+here:Core.Std.Source_code_position.t option -&gt;
+id:int -&gt;
+parent:<a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option -&gt;
+error_handlers:(exn -&gt; unit) list -&gt;
+has_seen_error:bool -&gt;
+someone_is_listening:bool -&gt; kill_index:<a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a></code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">name:Core.Std.Info.t -&gt;
+here:Core.Std.Source_code_position.t option -&gt;
+id:int -&gt;
+parent:<a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option -&gt;
+error_handlers:(exn -&gt; unit) list -&gt;
+has_seen_error:bool -&gt;
+someone_is_listening:bool -&gt; kill_index:<a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a></code></pre>
+<pre><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; Core.Std.Info.t) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; Core.Std.Source_code_position.t option) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; int) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; (exn -&gt; unit) list) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>) -&gt;
+<a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a></code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; Core.Std.Info.t) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; Core.Std.Source_code_position.t option) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; int) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; (exn -&gt; unit) list) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>) -&gt;
+<a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a></code></pre>
+<pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; 'b) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; 'c) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'd) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; 'e) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'f) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'g) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'h) -&gt;
+'h</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; 'b) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; 'c) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'd) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; 'e) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'f) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'g) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'h) -&gt;
+'h</code></pre>
+<pre><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">init:'a -&gt;
+name:('a -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'b) -&gt;
+here:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; 'c) -&gt;
+id:('c -&gt;
+    ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; 'd) -&gt;
+parent:('d -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'e) -&gt;
+error_handlers:('e -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; 'f) -&gt;
+has_seen_error:('f -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'g) -&gt;
+someone_is_listening:('g -&gt;
+                      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'h) -&gt;
+kill_index:('h -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'i) -&gt;
+'i</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">init:'a -&gt;
+name:('a -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'b) -&gt;
+here:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; 'c) -&gt;
+id:('c -&gt;
+    ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; 'd) -&gt;
+parent:('d -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'e) -&gt;
+error_handlers:('e -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; 'f) -&gt;
+has_seen_error:('f -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'g) -&gt;
+someone_is_listening:('g -&gt;
+                      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'h) -&gt;
+kill_index:('h -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'i) -&gt;
+'i</code></pre>
+<pre><span class="VALmap_poly"><span class="keyword">val</span> map_poly</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, 'a) Fieldslib.Field.user -&gt; 'a list</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, 'a) Fieldslib.Field.user -&gt; 'a list</code></pre>
+<pre><span class="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    bool) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+bool</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    bool) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+bool</code></pre>
+<pre><span class="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    bool) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+bool</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    bool) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; bool) -&gt;
+bool</code></pre>
+<pre><span class="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+'a list</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; 'a) -&gt;
+'a list</code></pre>
+<div class="ocaml_module sig" name="Direct"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Raw_monitor.Fields.Direct">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt;
+name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Info.t -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt;
+      <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Source_code_position.t option -&gt; 'b) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; int -&gt; 'c) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option -&gt; 'd) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list -&gt; 'e) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'f) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'g) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; 'h) -&gt;
+'h</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt;
+name:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Info.t -&gt; 'a) -&gt;
+here:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt;
+      <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Source_code_position.t option -&gt; 'b) -&gt;
+id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; int -&gt; 'c) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option -&gt; 'd) -&gt;
+error_handlers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list -&gt; 'e) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'f) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'g) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; 'h) -&gt;
+'h</code></pre>
+<pre><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt;
+init:'a -&gt;
+name:('a -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Info.t -&gt; 'b) -&gt;
+here:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt;
+      <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Source_code_position.t option -&gt; 'c) -&gt;
+id:('c -&gt;
+    ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; int -&gt; 'd) -&gt;
+parent:('d -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option -&gt; 'e) -&gt;
+error_handlers:('e -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list -&gt; 'f) -&gt;
+has_seen_error:('f -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'g) -&gt;
+someone_is_listening:('g -&gt;
+                      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'h) -&gt;
+kill_index:('h -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; 'i) -&gt;
+'i</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt;
+init:'a -&gt;
+name:('a -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, Core.Std.Info.t)
+      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Info.t -&gt; 'b) -&gt;
+here:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>,
+       Core.Std.Source_code_position.t option)
+      Fieldslib.Field.t_with_perm -&gt;
+      <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Core.Std.Source_code_position.t option -&gt; 'c) -&gt;
+id:('c -&gt;
+    ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, int) Fieldslib.Field.t_with_perm -&gt;
+    <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; int -&gt; 'd) -&gt;
+parent:('d -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option)
+        Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option -&gt; 'e) -&gt;
+error_handlers:('e -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, (exn -&gt; unit) list)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; (exn -&gt; unit) list -&gt; 'f) -&gt;
+has_seen_error:('f -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'g) -&gt;
+someone_is_listening:('g -&gt;
+                      ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, bool)
+                      Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; bool -&gt; 'h) -&gt;
+kill_index:('h -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a>, <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a>)
+            Fieldslib.Field.t_with_perm -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; 'i) -&gt;
+'i</code></pre></div></div></div></div>
+<div class="ocaml_module sig" name="Pretty"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Raw_monitor.Pretty">Pretty</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><code><span class="TYPEone"><span class="keyword">type</span> one</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.name">name</span> : <code class="type">Core.Std.Info.t</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.here">here</span> : <code class="type">Core.Std.Source_code_position.t option</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.id">id</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.has_seen_error">has_seen_error</span> : <code class="type">bool</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.someone_is_listening">someone_is_listening</span> : <code class="type">bool</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTone.kill_index">kill_index</span> : <code class="type"><a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a></code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=one">one</a> -&gt; unit</code></pre>
+<pre><span class="VALsexp_of_one"><span class="keyword">val</span> sexp_of_one</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=one">one</a> -&gt; Sexplib.Sexp.t</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=one">one</a> -&gt; Sexplib.Sexp.t</code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=one">one</a> list</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=t">t</a> -&gt; unit</code></pre>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=one">one</a> list -&gt; Sexplib.Sexp.t</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=one">one</a> list -&gt; Sexplib.Sexp.t</code></pre></div></div>
+<pre><span class="VALto_pretty"><span class="keyword">val</span> to_pretty</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Raw_monitor.Pretty&amp;type=one">Pretty.one</a> Core.Std.List.t</code></pre>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; Sexplib.Sexp.t</code></pre>
+<pre><span class="VALnext_id"><span class="keyword">val</span> next_id</span> : <code class="type">unit -&gt; int</code></pre>
+<pre><span class="VALcreate_with_parent"><span class="keyword">val</span> create_with_parent</span> : <code class="type">?here:Core.Std.Source_code_position.t -&gt;
+?info:Core.Std.Info.t -&gt; ?name:string -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> option -&gt; <a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a></code></pre>
+<pre><span class="VALmain"><span class="keyword">val</span> main</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a></code></pre>
+<pre><span class="EXCEPTIONShutdown"><span class="keyword">exception</span> Shutdown</span></pre>
+<pre><span class="VALupdate_kill_index"><span class="keyword">val</span> update_kill_index</span> : <code class="type"><a href="?package=async_core&amp;module=Raw_monitor&amp;type=t">t</a> -&gt; global_kill_index:<a href="?package=async_core&amp;module=Kill_index&amp;type=t">Kill_index.t</a> -&gt; unit</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">unit</code></pre>
+</div>

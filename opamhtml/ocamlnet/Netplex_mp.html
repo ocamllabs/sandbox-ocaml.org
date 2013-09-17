@@ -1,0 +1,14 @@
+<div class="ocaml_toplevel_module"><div class="info">Multi-processing provider</div>
+<div class="ocaml_class ident" name="mp"><pre><span class="TYPEmp"><span class="keyword">class</span> <a href="?package=ocamlnet&amp;module=Netplex_mp&amp;class=mp">mp</a></span> : <code class="type">bool option -&gt; int option -&gt; unit -&gt; </code>Netplex_types.parallelizer</pre><div class="info"><div class="info">Uses <code class="code">Unix.fork</code> to create new threads.<br/>      After forking the child process is initialized by 
+      calling <code class="code">Netsys_posix.run_post_fork_handlers</code>.<br/>      By default, all file descriptors are closed that are not explicitly
+      shared with the parent process. This can be wrong for some kind
+      of applications. By setting <code class="code">keep_fd_open</code> another behavior can
+      be demanded: The descriptors are kept open except those that need
+      to be closed.<br/>      When the controller wants to shut down the process, it notifies
+      the process, and waits <code class="code">terminate_tmo</code> seconds until the process
+      terminates. If this timeout expires, the process is killed. Defaults
+      to 60. A negative value disables this function.</div></div></div>
+<pre><span class="VALmp"><span class="keyword">val</span> mp</span> : <code class="type">?keep_fd_open:bool -&gt;
+?terminate_tmo:int -&gt; unit -&gt; Netplex_types.parallelizer</code></pre><div class="info"><div class="info">Uses <code class="code">Unix.fork</code> to create new threads. See TODO reference : Netplex_mp.mp
+      for details.</div></div>
+</div>

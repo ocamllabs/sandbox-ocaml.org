@@ -1,0 +1,66 @@
+<div class="ocaml_toplevel_module"><pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {<code class="type">'a Pervasives.ref</code>}</pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.contents">contents</span> : <code class="type">'a</code></code></td></tr><tr><td>}</td></tr></table>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;module=Container.S1" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Container.S1">Container.S1</a></code> with type t := 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a></code></pre></div>
+<pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a></code></pre>
+<pre><span class="VAL!"><span class="keyword">val</span> !</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> -&gt; 'a</code></pre>
+<pre><span class="VAL:="><span class="keyword">val</span> :=</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+<pre><span class="VALswap"><span class="keyword">val</span> swap</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">swap t1 t2</code> swaps the values in <code class="code">t1</code> and <code class="code">t2</code>.</div></div>
+<pre><span class="VALreplace"><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> -&gt; ('a -&gt; 'a) -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">replace t f</code> is <code class="code">t := f !t</code></div></div>
+<div class="ocaml_module sig" name="Permissioned"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Ref.Permissioned">Permissioned</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, +'perm) </code>t</span> </pre>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;module=Container.S1_phantom" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Container.S1_phantom">Container.S1_phantom</a></code> with type t := ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a></code></pre></div>
+<pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a></code></pre>
+<pre><span class="VALread_only"><span class="keyword">val</span> read_only</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; ('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_only">Common.read_only</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a></code></pre>
+<pre><span class="VAL!"><span class="keyword">val</span> !</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">get</code> and <code class="code">(!)</code> are two names for the same function.</div></div>
+<pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; 'a</code></pre>
+<pre><span class="VALset"><span class="keyword">val</span> set</span> : <code class="type">('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">Common.read_write</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">set</code> and <code class="code">(:=)</code> are two names for the same function.</div></div>
+<pre><span class="VAL:="><span class="keyword">val</span> :=</span> : <code class="type">('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">Common.read_write</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+<pre><span class="VALof_ref"><span class="keyword">val</span> of_ref</span> : <code class="type">'a Pervasives.ref -&gt; ('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">Common.read_write</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a></code></pre>
+<pre><span class="VALto_ref"><span class="keyword">val</span> to_ref</span> : <code class="type">('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">Common.read_write</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; 'a Pervasives.ref</code></pre>
+<pre><span class="VALswap"><span class="keyword">val</span> swap</span> : <code class="type">('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">Common.read_write</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; ('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">Common.read_write</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; unit</code></pre>
+<pre><span class="VALreplace"><span class="keyword">val</span> replace</span> : <code class="type">('a, <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">Common.read_write</a>) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; ('a -&gt; 'a) -&gt; unit</code></pre>
+<pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -&gt; 'a) -&gt;
+(Sexplib.Sexp.t -&gt; 'perm) -&gt; Sexplib.Sexp.t -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a></code></pre>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; Sexplib.Sexp.t) -&gt;
+('perm -&gt; Sexplib.Sexp.t) -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> -&gt; Sexplib.Sexp.t</code></pre>
+<pre><span class="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a Bin_prot.Type_class.t -&gt;
+'perm Bin_prot.Type_class.t -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Type_class.t</code></pre>
+<pre><span class="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt;
+'perm Bin_prot.Unsafe_read_c.reader -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Read_ml.reader</code></pre>
+<pre><span class="VALbin_read_t_"><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt;
+'perm Bin_prot.Unsafe_read_c.reader -&gt;
+('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Unsafe_read_c.reader</code></pre>
+<pre><span class="VALbin_read_t__"><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt;
+'perm Bin_prot.Unsafe_read_c.reader -&gt;
+(int -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a>) Bin_prot.Unsafe_read_c.reader</code></pre>
+<pre><span class="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a Bin_prot.Type_class.reader -&gt;
+'perm Bin_prot.Type_class.reader -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span class="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a Bin_prot.Size.sizer -&gt;
+'perm Bin_prot.Size.sizer -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Size.sizer</code></pre>
+<pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a Bin_prot.Unsafe_write_c.writer -&gt;
+'perm Bin_prot.Unsafe_write_c.writer -&gt;
+('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Write_ml.writer</code></pre>
+<pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a Bin_prot.Unsafe_write_c.writer -&gt;
+'perm Bin_prot.Unsafe_write_c.writer -&gt;
+('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Unsafe_write_c.writer</code></pre>
+<pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a Bin_prot.Type_class.writer -&gt;
+'perm Bin_prot.Type_class.writer -&gt; ('a, 'perm) <a href="?package=core_kernel&amp;module=Ref.Permissioned&amp;type=t">t</a> Bin_prot.Type_class.writer</code></pre>
+<div class="info"><div class="info"><code class="code">get</code> and <code class="code">(!)</code> are two names for the same function.</div></div>
+<div class="info"><div class="info"><code class="code">set</code> and <code class="code">(:=)</code> are two names for the same function.</div></div></div></div>
+<pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -&gt; 'a) -&gt; Sexplib.Sexp.t -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a></code></pre>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; Sexplib.Sexp.t) -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> -&gt; Sexplib.Sexp.t</code></pre>
+<pre><span class="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a Bin_prot.Type_class.t -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Type_class.t</code></pre>
+<pre><span class="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Read_ml.reader</code></pre>
+<pre><span class="VALbin_read_t_"><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Unsafe_read_c.reader</code></pre>
+<pre><span class="VALbin_read_t__"><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a>) Bin_prot.Unsafe_read_c.reader</code></pre>
+<pre><span class="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a Bin_prot.Type_class.reader -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span class="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a Bin_prot.Size.sizer -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Size.sizer</code></pre>
+<pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a Bin_prot.Unsafe_write_c.writer -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Write_ml.writer</code></pre>
+<pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a Bin_prot.Unsafe_write_c.writer -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Unsafe_write_c.writer</code></pre>
+<pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a Bin_prot.Type_class.writer -&gt; 'a <a href="?package=core_kernel&amp;module=Ref&amp;type=t">t</a> Bin_prot.Type_class.writer</code></pre>
+<div class="info"><div class="info"><code class="code">swap t1 t2</code> swaps the values in <code class="code">t1</code> and <code class="code">t2</code>.</div></div>
+<div class="info"><div class="info"><code class="code">replace t f</code> is <code class="code">t := f !t</code></div></div>
+<div class="info"><div class="info"><code class="code">get</code> and <code class="code">(!)</code> are two names for the same function.</div></div>
+<div class="info"><div class="info"><code class="code">set</code> and <code class="code">(:=)</code> are two names for the same function.</div></div>
+</div>

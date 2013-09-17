@@ -1,0 +1,23 @@
+<div class="ocaml_toplevel_module"><div class="info">This module implements an option ref that starts out as None, and
+    may be set only once. If one tries to set it twice a run time
+    error is generated.</div>
+<pre><span class="EXCEPTIONAlready_set"><span class="keyword">exception</span> Already_set</span></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+<pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a></code></pre>
+<pre><span class="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> -&gt; 'a -&gt; (unit, string) <a href="?package=core_kernel&amp;module=Result&amp;type=t">Result.t</a></code></pre>
+<pre><span class="VALset_exn"><span class="keyword">val</span> set_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+<pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> -&gt; 'a option</code></pre>
+<pre><span class="VALget_exn"><span class="keyword">val</span> get_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> -&gt; 'a</code></pre>
+<pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -&gt; 'a) -&gt; Sexplib.Sexp.t -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a></code></pre>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; Sexplib.Sexp.t) -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> -&gt; Sexplib.Sexp.t</code></pre>
+<pre><span class="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a Bin_prot.Type_class.t -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Type_class.t</code></pre>
+<pre><span class="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Read_ml.reader</code></pre>
+<pre><span class="VALbin_read_t_"><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Unsafe_read_c.reader</code></pre>
+<pre><span class="VALbin_read_t__"><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a Bin_prot.Unsafe_read_c.reader -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a>) Bin_prot.Unsafe_read_c.reader</code></pre>
+<pre><span class="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a Bin_prot.Type_class.reader -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span class="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a Bin_prot.Size.sizer -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Size.sizer</code></pre>
+<pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a Bin_prot.Unsafe_write_c.writer -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Write_ml.writer</code></pre>
+<pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a Bin_prot.Unsafe_write_c.writer -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Unsafe_write_c.writer</code></pre>
+<pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a Bin_prot.Type_class.writer -&gt; 'a <a href="?package=core_kernel&amp;module=Set_once&amp;type=t">t</a> Bin_prot.Type_class.writer</code></pre>
+</div>
