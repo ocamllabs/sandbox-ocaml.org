@@ -8,7 +8,7 @@
         </div>
         <section id="learn-leader" class="span7">
             <h1>What is OCaml?</h1>
-            <p>OCaml is a general purpose industrial-strength programming language with an emphasis on expressiveness and safety. Used in environments where <a href="/learn/companies">a single mistake can cost millions</a> and speed matters, it is supported by an <a href="/community">active community</a> that has developed a <a href="/packages">rich set of libraries</a>. <small><em><a href="/learn/description">Read more</a></em></small>.</p>
+            <p>OCaml is a general purpose industrial-strength programming language with an emphasis on expressiveness and safety. <a href="/learn/companies">Used</a> in environments where a single mistake can cost millions and speed matters, it is supported by an <a href="/community">active community</a> that has developed a <a href="/packages">rich set of libraries</a>. <small><em><a href="/learn/description">Read more</a></em></small>.</p>
         </section>
         <div id="platform-download" class="span3">
             <p><a href="#" class="btn">Install on Mac OSX</a></p>
@@ -65,8 +65,6 @@
                 <p><a href="https://www.facebook.com"><img style="float: left; margin-right: 10px; margin-bottom: 10px" src="https://www.facebookbrand.com/img/assets/asset.f.logo.lg.png"></a>To handle their huge PHP codebase, Facebook developed <a href="https://github.com/facebook/pfff/wiki/Main">pfff</a>, a set of tools and APIs to perform static analysis, dynamic analysis, code visualizations, code navigations, and style-preserving source-to-source transformations such as refactorings on source code.</p>
             </section>
             <section class="span4 condensed">
-                <p><a href=""><img style="float: left; margin-right: 10px; margin-bottom: 10px" src="/img/jane-street.jpg"></a></p>.
-
                 <p><a href="http://caml.inria.fr/about/successes-images/unison.jpg"><img style="float: left; margin-right: 10px; margin-bottom: 10px" src="http://caml.inria.fr/about/successes-images/unison-thumb.jpg" alt="Screenshot" title="Screenshot of Unison's main window"></a></p>
             </section>
             </div>
