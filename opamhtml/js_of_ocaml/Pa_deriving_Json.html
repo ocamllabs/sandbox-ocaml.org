@@ -1,0 +1,26 @@
+<div class="ocaml_toplevel_module"><div class="ocaml_module sig" name="Description"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Description">Description</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALclassname"><span class="keyword">val</span> classname</span> : <code class="type">string</code></pre>
+<pre><span class="VALruntimename"><span class="keyword">val</span> runtimename</span> : <code class="type">string</code></pre>
+<pre><span class="VALdefault_module"><span class="keyword">val</span> default_module</span> : <code class="type">string option</code></pre>
+<pre><span class="VALalpha"><span class="keyword">val</span> alpha</span> : <code class="type">'a option</code></pre>
+<pre><span class="VALallow_private"><span class="keyword">val</span> allow_private</span> : <code class="type">bool</code></pre>
+<pre><span class="VALpredefs"><span class="keyword">val</span> predefs</span> : <code class="type">(string list * string list) list</code></pre>
+<pre><span class="VALdepends"><span class="keyword">val</span> depends</span> : <code class="type">'a list</code></pre></div></div>
+<div class="ocaml_module sig" name="Builder"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Builder">Builder</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Loc</code><code class="code"> : </code><code class="code">Pa_deriving_common.Defs.Loc</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module ident" name="Helpers"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Builder.Helpers">Helpers</a> : <code class="type"><code class="code">Pa_deriving_common.Base.AstHelpers</code>(<code class="code">Loc</code>)</code></pre></div>
+<div class="ocaml_module ident" name="Generator"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Builder.Generator">Generator</a> : <code class="type"><code class="code">Pa_deriving_common.Base.Generator</code>(<code class="code">Loc</code>)(<code class="code"><a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Description">Description</a></code>)</code></pre></div>
+<pre><span class="VALwrap"><span class="keyword">val</span> wrap</span> : <code class="type">?read_variant:Camlp4.PreCast.Ast.match_case list -&gt;
+?hashes:Camlp4.PreCast.Ast.expr -&gt;
+write:Camlp4.PreCast.Ast.match_case list -&gt;
+read:Camlp4.PreCast.Ast.expr -&gt; unit -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+<pre><span class="VALgenerator"><span class="keyword">val</span> generator</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Builder.Generator&amp;type=generator">Generator.generator</a></code></pre>
+<pre><span class="VALclassname"><span class="keyword">val</span> classname</span> : <code class="type">string</code></pre>
+<pre><span class="VALruntimename"><span class="keyword">val</span> runtimename</span> : <code class="type">string</code></pre>
+<pre><span class="VALgenerate"><span class="keyword">val</span> generate</span> : <code class="type">Pa_deriving_common.Type.decl list -&gt; Camlp4.PreCast.Ast.str_item</code></pre>
+<pre><span class="VALgenerate_sigs"><span class="keyword">val</span> generate_sigs</span> : <code class="type">Pa_deriving_common.Type.decl list -&gt; Camlp4.PreCast.Ast.sig_item</code></pre>
+<pre><span class="VALgenerate_expr"><span class="keyword">val</span> generate_expr</span> : <code class="type">Camlp4.PreCast.Ast.module_expr Pa_deriving_common.Type.EMap.t -&gt;
+Pa_deriving_common.Type.qname Pa_deriving_common.Type.NameMap.t -&gt;
+Pa_deriving_common.Type.expr -&gt; Camlp4.PreCast.Ast.module_expr</code></pre></div></div>
+<div class="ocaml_module ident" name="Json"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Json">Json</a> : <code class="type"><code class="code">Pa_deriving_common.Base.Register</code>(<code class="code"><a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Description">Description</a></code>)(<code class="code"><a href="?package=js_of_ocaml&amp;module=Pa_deriving_Json.Builder">Builder</a></code>)</code></pre></div>
+<pre><span class="VALdepends"><span class="keyword">val</span> depends</span> : <code class="type">(module Pa_deriving_common.Defs.FullClassBuilder)</code></pre>
+</div>

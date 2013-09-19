@@ -1,0 +1,324 @@
+<div class="ocaml_toplevel_module"><div class="ocaml_class sig" name="blob"><pre><span class="TYPEblob"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODsize"><span class="keyword">method</span> size</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHOD_type"><span class="keyword">method</span> _type</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODslice"><span class="keyword">method</span> slice</span> : <code class="code">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=File&amp;type=blob">blob</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+
+<pre><span class="METHODslice_withContentType"><span class="keyword">method</span> slice_withContentType</span> : <code class="code">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=File&amp;type=blob">blob</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+</div></div>
+<div class="ocaml_class sig" name="file"><pre><span class="TYPEfile"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=File&amp;class=file">file</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<div class="ocaml_class ident" name="_inherit_field" path="?package=js_of_ocaml&amp;module=File&amp;class=blob"> <pre><span class="keyword">inherit</span> <code class="type"/><a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a></pre></div>
+
+<pre><span class="METHODname"><span class="keyword">method</span> name</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODlastModifiedDate"><span class="keyword">method</span> lastModifiedDate</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+</div></div>
+<pre><span class="TYPEfile_any"><span class="keyword">type</span> file_any</span> </pre>
+<div class="ocaml_module sig" name="CoerceTo"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=File.CoerceTo">CoerceTo</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALstring"><span class="keyword">val</span> string</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js.Opt&amp;type=t">Js.Opt.t</a></code></pre>
+<pre><span class="VALarrayBuffer"><span class="keyword">val</span> arrayBuffer</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Typed_array&amp;type=arrayBuffer">Typed_array.arrayBuffer</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js.Opt&amp;type=t">Js.Opt.t</a></code></pre></div></div>
+<div class="ocaml_class sig" name="fileList"><pre><span class="TYPEfileList"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=File&amp;class=fileList">fileList</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<div class="ocaml_class ident" name="_inherit_field" path="?package=js_of_ocaml&amp;module=Dom&amp;class=nodeList"> <pre><span class="keyword">inherit</span> <code class="type"/><code class="type">[<a href="?package=js_of_ocaml&amp;module=File&amp;type=file">file</a>] </code><a href="?package=js_of_ocaml&amp;module=Dom&amp;class=nodeList">Dom.nodeList</a></pre></div>
+</div></div>
+<div class="ocaml_class sig" name="fileError"><pre><span class="TYPEfileError"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=File&amp;class=fileError">fileError</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODcode"><span class="keyword">method</span> code</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+</div></div>
+<div class="ocaml_class sig" name="progressEvent"><pre><span class="TYPEprogressEvent"><span class="keyword">class type</span> <code class="type">['a] </code><a href="?package=js_of_ocaml&amp;module=File&amp;class=progressEvent">progressEvent</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<div class="ocaml_class ident" name="_inherit_field" path="?package=js_of_ocaml&amp;module=Dom&amp;class=event"> <pre><span class="keyword">inherit</span> <code class="type"/><code class="type">['a] </code><a href="?package=js_of_ocaml&amp;module=Dom&amp;class=event">Dom.event</a></pre></div>
+
+<pre><span class="METHODlengthComputable"><span class="keyword">method</span> lengthComputable</span> : <code class="code">bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODloaded"><span class="keyword">method</span> loaded</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODtotal"><span class="keyword">method</span> total</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+</div></div>
+<div class="ocaml_class sig" name="progressEventTarget"><pre><span class="TYPEprogressEventTarget"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=File&amp;class=progressEventTarget">progressEventTarget</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODonloadstart"><span class="keyword">method</span> onloadstart</span> : <code class="code">((&lt; onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : 'a;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonprogress"><span class="keyword">method</span> onprogress</span> : <code class="code">((&lt; onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : 'a; .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonload"><span class="keyword">method</span> onload</span> : <code class="code">((&lt; onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : 'a;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonabort"><span class="keyword">method</span> onabort</span> : <code class="code">((&lt; onabort : 'a;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonerror"><span class="keyword">method</span> onerror</span> : <code class="code">((&lt; onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : 'a;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonloadend"><span class="keyword">method</span> onloadend</span> : <code class="code">((&lt; onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : 'a;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+</div></div>
+<pre><code><span class="TYPEreadyState"><span class="keyword">type</span> readyState</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code/></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code/></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code/></td></tr></table>
+<div class="ocaml_class sig" name="fileReader"><pre><span class="TYPEfileReader"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=File&amp;class=fileReader">fileReader</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODreadAsArrayBuffer"><span class="keyword">method</span> readAsArrayBuffer</span> : <code class="code">'a. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+
+<pre><span class="METHODreadAsBinaryString"><span class="keyword">method</span> readAsBinaryString</span> : <code class="code">'a. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+
+<pre><span class="METHODreadAsText"><span class="keyword">method</span> readAsText</span> : <code class="code">'a. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+
+<pre><span class="METHODreadAsText_withEncoding"><span class="keyword">method</span> readAsText_withEncoding</span> : <code class="code">'a. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+
+<pre><span class="METHODreadAsDataURL"><span class="keyword">method</span> readAsDataURL</span> : <code class="code">'a. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+
+<pre><span class="METHODabort"><span class="keyword">method</span> abort</span> : <code class="code">unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a></code></pre>
+
+<pre><span class="METHODreadyState"><span class="keyword">method</span> readyState</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=File&amp;type=readyState">readyState</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODresult"><span class="keyword">method</span> result</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODerror"><span class="keyword">method</span> error</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=File&amp;type=fileError">fileError</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODonloadstart"><span class="keyword">method</span> onloadstart</span> : <code class="code">((&lt; abort : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; error : <a href="?package=js_of_ocaml&amp;module=File&amp;type=fileError">fileError</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : 'a;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    readAsArrayBuffer : 'c. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'c) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsBinaryString : 'd. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'd) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsDataURL : 'e. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'e) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText : 'f. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'f) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText_withEncoding : 'g.
+                                (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'g) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readyState : <a href="?package=js_of_ocaml&amp;module=File&amp;type=readyState">readyState</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    result : <a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>; .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonprogress"><span class="keyword">method</span> onprogress</span> : <code class="code">((&lt; abort : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; error : <a href="?package=js_of_ocaml&amp;module=File&amp;type=fileError">fileError</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : 'a;
+    readAsArrayBuffer : 'c. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'c) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsBinaryString : 'd. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'd) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsDataURL : 'e. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'e) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText : 'f. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'f) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText_withEncoding : 'g.
+                                (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'g) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readyState : <a href="?package=js_of_ocaml&amp;module=File&amp;type=readyState">readyState</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    result : <a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>; .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonload"><span class="keyword">method</span> onload</span> : <code class="code">((&lt; abort : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; error : <a href="?package=js_of_ocaml&amp;module=File&amp;type=fileError">fileError</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : 'a;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    readAsArrayBuffer : 'c. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'c) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsBinaryString : 'd. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'd) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsDataURL : 'e. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'e) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText : 'f. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'f) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText_withEncoding : 'g.
+                                (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'g) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readyState : <a href="?package=js_of_ocaml&amp;module=File&amp;type=readyState">readyState</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    result : <a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>; .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonabort"><span class="keyword">method</span> onabort</span> : <code class="code">((&lt; abort : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; error : <a href="?package=js_of_ocaml&amp;module=File&amp;type=fileError">fileError</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    onabort : 'a;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    readAsArrayBuffer : 'c. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'c) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsBinaryString : 'd. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'd) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsDataURL : 'e. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'e) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText : 'f. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'f) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText_withEncoding : 'g.
+                                (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'g) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readyState : <a href="?package=js_of_ocaml&amp;module=File&amp;type=readyState">readyState</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    result : <a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>; .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonerror"><span class="keyword">method</span> onerror</span> : <code class="code">((&lt; abort : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; error : <a href="?package=js_of_ocaml&amp;module=File&amp;type=fileError">fileError</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : 'a;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    readAsArrayBuffer : 'c. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'c) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsBinaryString : 'd. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'd) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsDataURL : 'e. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'e) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText : 'f. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'f) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText_withEncoding : 'g.
+                                (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'g) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readyState : <a href="?package=js_of_ocaml&amp;module=File&amp;type=readyState">readyState</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    result : <a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>; .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<pre><span class="METHODonloadend"><span class="keyword">method</span> onloadend</span> : <code class="code">((&lt; abort : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; error : <a href="?package=js_of_ocaml&amp;module=File&amp;type=fileError">fileError</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    onabort : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onerror : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onload : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onloadend : 'a;
+    onloadstart : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    onprogress : ('b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+    readAsArrayBuffer : 'c. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'c) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsBinaryString : 'd. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'd) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsDataURL : 'e. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'e) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText : 'f. (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'f) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readAsText_withEncoding : 'g.
+                                (#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> as 'g) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+    readyState : <a href="?package=js_of_ocaml&amp;module=File&amp;type=readyState">readyState</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+    result : <a href="?package=js_of_ocaml&amp;module=File&amp;type=file_any">file_any</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>; .. &gt;
+  as 'b)
+ <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+<a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a> as 'a</code></pre>
+
+<div class="ocaml_class ident" name="_inherit_field" path="?package=js_of_ocaml&amp;module=File&amp;class=progressEventTarget"> <pre><span class="keyword">inherit</span> <code class="type"/><a href="?package=js_of_ocaml&amp;module=File&amp;class=progressEventTarget">progressEventTarget</a></pre></div>
+</div></div>
+<div class="ocaml_module sig" name="ReaderEvent"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=File.ReaderEvent">ReaderEvent</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="TYPEtyp"><span class="keyword">type</span> typ</span> = <code class="type"><a href="?package=js_of_ocaml&amp;module=File&amp;type=fileReader">fileReader</a> <a href="?package=js_of_ocaml&amp;module=File&amp;type=progressEvent">progressEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Dom.Event&amp;type=typ">Dom.Event.typ</a></code></pre>
+<pre><span class="VALloadstart"><span class="keyword">val</span> loadstart</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File.ReaderEvent&amp;type=typ">typ</a></code></pre>
+<pre><span class="VALprogress"><span class="keyword">val</span> progress</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File.ReaderEvent&amp;type=typ">typ</a></code></pre>
+<pre><span class="VALabort"><span class="keyword">val</span> abort</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File.ReaderEvent&amp;type=typ">typ</a></code></pre>
+<pre><span class="VALerror"><span class="keyword">val</span> error</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File.ReaderEvent&amp;type=typ">typ</a></code></pre>
+<pre><span class="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File.ReaderEvent&amp;type=typ">typ</a></code></pre>
+<pre><span class="VALloadend"><span class="keyword">val</span> loadend</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File.ReaderEvent&amp;type=typ">typ</a></code></pre></div></div>
+<pre><span class="VALfilename"><span class="keyword">val</span> filename</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File&amp;type=file">file</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre><div class="info"><div class="info"><code class="code">filename</code> handles old firefox without name property</div></div>
+<pre><span class="VALfileReader"><span class="keyword">val</span> fileReader</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=File&amp;type=fileReader">fileReader</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">Js.constr</a></code></pre>
+<pre><span class="VALreadAsBinaryString"><span class="keyword">val</span> readAsBinaryString</span> : <code class="type">#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALreadAsText"><span class="keyword">val</span> readAsText</span> : <code class="type">#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALreadAsText_withEncoding"><span class="keyword">val</span> readAsText_withEncoding</span> : <code class="type">#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALreadAsDataURL"><span class="keyword">val</span> readAsDataURL</span> : <code class="type">#<a href="?package=js_of_ocaml&amp;module=File&amp;class=blob">blob</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALaddEventListener"><span class="keyword">val</span> addEventListener</span> : <code class="type">(#<a href="?package=js_of_ocaml&amp;module=File&amp;class=progressEventTarget">progressEventTarget</a> as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+'b <a href="?package=js_of_ocaml&amp;module=Dom.Event&amp;type=typ">Dom.Event.typ</a> -&gt;
+('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'b) <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener">Dom.event_listener</a> -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom&amp;type=event_listener_id">Dom.event_listener_id</a></code></pre><div class="info"><div class="info">Add an event listener.  This function matches the
+      <code class="code">addEventListener</code> DOM method, except that it returns
+      an id for removing the listener.</div></div>
+</div>

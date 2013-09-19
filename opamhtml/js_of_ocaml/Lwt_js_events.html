@@ -1,0 +1,185 @@
+<div class="ocaml_toplevel_module"><div class="info">Programming mouse or keyboard events handlers using Lwt</div>
+<div class="info"><div class="info">Reminder:
+   Event capturing starts with the outer most element in the DOM and
+   works inwards to the HTML element the event took place on (capture phase)
+   and then out again (bubbling phase).</div></div>
+<pre><span class="VALpreventDefault"><span class="keyword">val</span> preventDefault</span> : <code class="type">#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=event">Dom_html.event</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit</code></pre><div class="info"><div class="info">Call this to prevent the default handler for the event. 
+    To stop propagation of the event, call TODO reference : Dom_html.stopPropagation.</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Create Lwt threads for events</h2><br/></div></div>
+<pre><span class="VALmake_event"><span class="keyword">val</span> make_event</span> : <code class="type">(#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=event">Dom_html.event</a> as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Dom_html.Event&amp;type=typ">Dom_html.Event.typ</a> -&gt;
+?use_capture:bool -&gt; #<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">make_event ev target</code> creates a Lwt thread that waits
+    for the event <code class="code">ev</code> to happen on <code class="code">target</code> (once).
+    This thread is cancellable using
+    TODO target.
+    If you set the optional parameter <code class="code">~use_capture:true</code>,
+    the event will be caught during the capture phase,
+    otherwise it is caught during the bubbling phase
+    (default).</div></div>
+<pre><span class="VALseq_loop"><span class="keyword">val</span> seq_loop</span> : <code class="type">?cancel_handler:bool -&gt;
+(?use_capture:bool -&gt; 'target -&gt; 'event <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt;
+?use_capture:bool -&gt;
+'target -&gt; ('event -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">seq_loop (make_event ev) target handler</code> creates a looping Lwt
+    thread that waits for the event <code class="code">ev</code> to happen on <code class="code">target</code>, then
+    execute handler, and start again waiting for the event. Events
+    happening during the execution of the handler are ignored. See
+    <code class="code">async_loop</code> and <code class="code">buffered_loop</code> for alternative semantics.<br/>    For example, the <code class="code">clicks</code> function below is defined by:<br/>    <code class="code">let clicks ?use_capture t = seq_loop click ?use_capture t</code><br/>    The thread returned is cancellable using
+    TODO target.
+    In order for the loop thread to be canceled from within the handler,
+    the later receives the former as its second parameter.<br/>    By default, cancelling the loop will not cancel the potential
+    currently running handler. This behaviour can be changed by
+    setting the <code class="code">cancel_handler</code> parameter to true.</div></div>
+<pre><span class="VALasync_loop"><span class="keyword">val</span> async_loop</span> : <code class="type">(?use_capture:bool -&gt; 'target -&gt; 'event <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt;
+?use_capture:bool -&gt;
+'target -&gt; ('event -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">async_loop</code> is similar to <code class="code">seq_loop</code>, but each handler runs
+    independently. No event is thus missed, but since several
+    instances of the handler can be run concurrently, it is up to the
+    programmer to ensure that they interact correctly.<br/>    Cancelling the loop will not cancel the potential currently running
+    handlers.</div></div>
+<pre><span class="VALbuffered_loop"><span class="keyword">val</span> buffered_loop</span> : <code class="type">?cancel_handler:bool -&gt;
+?cancel_queue:bool -&gt;
+(?use_capture:bool -&gt; 'target -&gt; 'event <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt;
+?use_capture:bool -&gt;
+'target -&gt; ('event -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">buffered_loop</code> is similar to <code class="code">seq_loop</code>, but any event that
+    occurs during an execution of the handler is queued instead of
+    being ingnored.<br/>    No event is thus missed, but there can be a non predictible delay
+    between its trigger and its treatment. It is thus a good idea to
+    use this loop with handlers whose running time is short, so the
+    memorized event still makes sense when the handler is eventually
+    executed. It is also up to the programmer to ensure that event
+    handlers terminate so the queue will eventually be emptied.<br/>    By default, cancelling the loop will not cancel the potential
+    currently running handler, but any other queued event will be
+    dropped. This behaviour can be customized using the two optional
+    parameters <code class="code">cancel_handler</code> and <code class="code">cancel_queue</code>.</div></div>
+<pre><span class="VALasync"><span class="keyword">val</span> async</span> : <code class="type">(unit -&gt; 'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">async t</code> records a thread to be executed later.
+    It is implemented by calling yield, then Lwt.async.
+    This is useful if you want to create a new event listener
+    when you are inside an event handler.
+    This avoids the current event to be catched by the new event handler
+    (if it propagates).</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Predefined functions for some types of events</h2><br/></div></div>
+<pre><span class="VALclick"><span class="keyword">val</span> click</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdblclick"><span class="keyword">val</span> dblclick</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmousedown"><span class="keyword">val</span> mousedown</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmouseup"><span class="keyword">val</span> mouseup</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmouseover"><span class="keyword">val</span> mouseover</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmousemove"><span class="keyword">val</span> mousemove</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmouseout"><span class="keyword">val</span> mouseout</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALkeypress"><span class="keyword">val</span> keypress</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALkeydown"><span class="keyword">val</span> keydown</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALkeyup"><span class="keyword">val</span> keyup</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALinput"><span class="keyword">val</span> input</span> : <code class="type">?use_capture:bool -&gt; #<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=event">Dom_html.event</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALchange"><span class="keyword">val</span> change</span> : <code class="type">?use_capture:bool -&gt; #<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=event">Dom_html.event</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragstart"><span class="keyword">val</span> dragstart</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragend"><span class="keyword">val</span> dragend</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragenter"><span class="keyword">val</span> dragenter</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragover"><span class="keyword">val</span> dragover</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragleave"><span class="keyword">val</span> dragleave</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdrag"><span class="keyword">val</span> drag</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdrop"><span class="keyword">val</span> drop</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmousewheel"><span class="keyword">val</span> mousewheel</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * (int * int)) <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info">This function returns the event,
+    together with the numbers of ticks the mouse wheel moved.
+    Positive means down or right.
+    This interface is compatible with all (recent) browsers.</div></div>
+<pre><span class="VALtouchstart"><span class="keyword">val</span> touchstart</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtouchmove"><span class="keyword">val</span> touchmove</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtouchend"><span class="keyword">val</span> touchend</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtouchcancel"><span class="keyword">val</span> touchcancel</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtransitionend"><span class="keyword">val</span> transitionend</span> : <code class="type">#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info">Returns when a CSS transition terminates on the element.</div></div>
+<pre><span class="VALclicks"><span class="keyword">val</span> clicks</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdblclicks"><span class="keyword">val</span> dblclicks</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmousedowns"><span class="keyword">val</span> mousedowns</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmouseups"><span class="keyword">val</span> mouseups</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmouseovers"><span class="keyword">val</span> mouseovers</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmousemoves"><span class="keyword">val</span> mousemoves</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmouseouts"><span class="keyword">val</span> mouseouts</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALkeypresses"><span class="keyword">val</span> keypresses</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALkeydowns"><span class="keyword">val</span> keydowns</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALkeyups"><span class="keyword">val</span> keyups</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALinputs"><span class="keyword">val</span> inputs</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=event">Dom_html.event</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALchanges"><span class="keyword">val</span> changes</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=event">Dom_html.event</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragstarts"><span class="keyword">val</span> dragstarts</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragends"><span class="keyword">val</span> dragends</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragenters"><span class="keyword">val</span> dragenters</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragovers"><span class="keyword">val</span> dragovers</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdragleaves"><span class="keyword">val</span> dragleaves</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdrags"><span class="keyword">val</span> drags</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALdrops"><span class="keyword">val</span> drops</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=dragEvent">Dom_html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALmousewheels"><span class="keyword">val</span> mousewheels</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * (int * int) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt;
+unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtouchstarts"><span class="keyword">val</span> touchstarts</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtouchmoves"><span class="keyword">val</span> touchmoves</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtouchends"><span class="keyword">val</span> touchends</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtouchcancels"><span class="keyword">val</span> touchcancels</span> : <code class="type">?use_capture:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=touchEvent">Dom_html.touchEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALrequest_animation_frame"><span class="keyword">val</span> request_animation_frame</span> : <code class="type">unit -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info">Returns when a repaint of the window by the browser starts.
+    (see JS method <code class="code">window.requestAnimationFrame</code>)</div></div>
+</div>

@@ -1,0 +1,34 @@
+<div class="ocaml_toplevel_module"><div class="ocaml_module ident" name="Description"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Functor_class.Description">Description</a> : <code class="type"><code class="code">Pa_deriving_common.Defs.ClassDescription</code></code></pre></div>
+<div class="ocaml_module sig" name="Builder"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder">Builder</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Generator</code><code class="code"> : </code><code class="code">Pa_deriving_common.Defs.Generator</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module ident" name="Helpers"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder.Helpers">Helpers</a> : <code class="type"><code class="code">Generator.AstHelpers</code></code></pre></div>
+<pre><code><span class="TYPEcontext"><span class="keyword">type</span> context</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTcontext.argmap">argmap</span> : <code class="type">Pa_deriving_common.Type.qname Pa_deriving_common.Type.NameMap.t</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTcontext.params">params</span> : <code class="type">Pa_deriving_common.Type.param list</code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type">Pa_deriving_common.Type.name Pa_deriving_common.Type.NameMap.t -&gt;
+Pa_deriving_common.Type.expr -&gt; Pa_deriving_common.Type.expr</code></pre>
+<pre><span class="VALsetup_context"><span class="keyword">val</span> setup_context</span> : <code class="type">Pa_deriving_common.Type.decl -&gt; <a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a></code></pre>
+<pre><span class="VALparam_map"><span class="keyword">val</span> param_map</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a> -&gt; string Pa_deriving_common.Type.NameMap.t</code></pre>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">(<a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a> -&gt; Pa_deriving_common.Type.name -&gt; Camlp4.PreCast.Ast.ctyp) *
+(<a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a> -&gt; Pa_deriving_common.Type.name -&gt; Camlp4.PreCast.Ast.ctyp list)</code></pre>
+<pre><span class="VALwrapper"><span class="keyword">val</span> wrapper</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a> -&gt;
+Pa_deriving_common.Type.name -&gt;
+Camlp4.PreCast.Ast.expr -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a> -&gt; Pa_deriving_common.Type.rhs -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALmaptype"><span class="keyword">val</span> maptype</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a> -&gt; Pa_deriving_common.Type.name -&gt; Camlp4.PreCast.Ast.ctyp</code></pre>
+<pre><span class="VALsignature"><span class="keyword">val</span> signature</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder&amp;type=context">context</a> -&gt; Pa_deriving_common.Type.name -&gt; Camlp4.PreCast.Ast.sig_item list</code></pre>
+<pre><span class="VALdecl"><span class="keyword">val</span> decl</span> : <code class="type">Pa_deriving_common.Type.name * Pa_deriving_common.Type.param list *
+Pa_deriving_common.Type.rhs * Pa_deriving_common.Type.constraint_ list * 
+bool -&gt; Camlp4.PreCast.Ast.module_binding</code></pre>
+<pre><span class="VALgen_sig"><span class="keyword">val</span> gen_sig</span> : <code class="type">Pa_deriving_common.Type.name * Pa_deriving_common.Type.param list *
+Pa_deriving_common.Type.rhs * Pa_deriving_common.Type.constraint_ list * 
+bool -&gt; Camlp4.PreCast.Ast.sig_item</code></pre>
+<pre><span class="VALgenerate"><span class="keyword">val</span> generate</span> : <code class="type">(Pa_deriving_common.Type.name * Pa_deriving_common.Type.param list *
+ Pa_deriving_common.Type.rhs * Pa_deriving_common.Type.constraint_ list *
+ bool)
+list -&gt; Camlp4.PreCast.Ast.str_item</code></pre>
+<pre><span class="VALgenerate_sigs"><span class="keyword">val</span> generate_sigs</span> : <code class="type">(Pa_deriving_common.Type.name * Pa_deriving_common.Type.param list *
+ Pa_deriving_common.Type.rhs * Pa_deriving_common.Type.constraint_ list *
+ bool)
+list -&gt; Camlp4.PreCast.Ast.sig_item</code></pre></div></div>
+<div class="ocaml_include ident" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code">Pa_deriving_common.Base.RegisterClass</code>(<code class="code"><a href="?package=deriving-ocsigen&amp;module=Functor_class.Description">Description</a></code>)(<code class="code"><a href="?package=deriving-ocsigen&amp;module=Functor_class.Builder">Builder</a></code>)</code></pre></div>
+</div>

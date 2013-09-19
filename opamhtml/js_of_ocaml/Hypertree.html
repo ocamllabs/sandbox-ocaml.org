@@ -1,0 +1,352 @@
+<div class="ocaml_toplevel_module"><pre><span class="VALicons"><span class="keyword">val</span> icons</span> : <code class="type">string list</code></pre>
+<pre><span class="VALicon"><span class="keyword">val</span> icon</span> : <code class="type">string -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALtree_color"><span class="keyword">val</span> tree_color</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALoption"><span class="keyword">val</span> option</span> : <code class="type">(&lt; .. &gt; as 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js.Optdef&amp;type=t">Js.Optdef.t</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<div class="ocaml_class sig" name="style"><pre><span class="TYPEstyle"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;class=style">style</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODborder"><span class="keyword">method</span> border</span> : <code class="code">float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODpadding"><span class="keyword">method</span> padding</span> : <code class="code">float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODbackgroundColor"><span class="keyword">method</span> backgroundColor</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODboundaryColor"><span class="keyword">method</span> boundaryColor</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODtreeColor"><span class="keyword">method</span> treeColor</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODnodeColor"><span class="keyword">method</span> nodeColor</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODnodeBackgroundColor"><span class="keyword">method</span> nodeBackgroundColor</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODnodeFont"><span class="keyword">method</span> nodeFont</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODbuttonColor"><span class="keyword">method</span> buttonColor</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+</div></div>
+<pre><span class="VALstyle"><span class="keyword">val</span> style</span> : <code class="type">style <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<div class="ocaml_class sig" name="messages"><pre><span class="TYPEmessages"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;class=messages">messages</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODinfo"><span class="keyword">method</span> info</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODrecenter"><span class="keyword">method</span> recenter</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODnoRef"><span class="keyword">method</span> noRef</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODclose"><span class="keyword">method</span> close</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODwikimediaCommons"><span class="keyword">method</span> wikimediaCommons</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODlanguage"><span class="keyword">method</span> language</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODnoRef"><span class="keyword">method</span> noRef</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODlanguages"><span class="keyword">method</span> languages</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODok"><span class="keyword">method</span> ok</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+</div></div>
+<pre><span class="VALopt_style"><span class="keyword">val</span> opt_style</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.Optdef&amp;type=t">Js.Optdef.t</a> -&gt; 'a -&gt; 'a</code></pre>
+<pre><code><span class="TYPEc"><span class="keyword">type</span> c</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTc.x">x</span> : <code class="type">float</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTc.y">y</span> : <code class="type">float</code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALone"><span class="keyword">val</span> one</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALzero"><span class="keyword">val</span> zero</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALsdiv"><span class="keyword">val</span> sdiv</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; float -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALsmul"><span class="keyword">val</span> smul</span> : <code class="type">float -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALsq_norm"><span class="keyword">val</span> sq_norm</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; float</code></pre>
+<pre><span class="VALnorm"><span class="keyword">val</span> norm</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; float</code></pre>
+<pre><span class="VALnormalize"><span class="keyword">val</span> normalize</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALconj"><span class="keyword">val</span> conj</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALneg"><span class="keyword">val</span> neg</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALsq_norm_sub"><span class="keyword">val</span> sq_norm_sub</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; float</code></pre>
+<pre><span class="VALmul"><span class="keyword">val</span> mul</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALadd_mul"><span class="keyword">val</span> add_mul</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALdiv"><span class="keyword">val</span> div</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALdiv"><span class="keyword">val</span> div</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALtransf"><span class="keyword">val</span> transf</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALhyp_transf"><span class="keyword">val</span> hyp_transf</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALhyp_transf_vect"><span class="keyword">val</span> hyp_transf_vect</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> array -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> array -&gt; unit</code></pre>
+<pre><span class="VALtransl"><span class="keyword">val</span> transl</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALcompose"><span class="keyword">val</span> compose</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALcompute_translation"><span class="keyword">val</span> compute_translation</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VAL&gt;&gt;="><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; ('a -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALlwt_wrap"><span class="keyword">val</span> lwt_wrap</span> : <code class="type">(('a -&gt; unit) -&gt; 'b) -&gt; 'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<div class="ocaml_module ident" name="Html" path="?package=js_of_ocaml&amp;module=Dom_html"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Hypertree.Html">Html</a> : <code class="type"><code class="code"><a href="?package=js_of_ocaml&amp;module=Dom_html">Dom_html</a></code></code></pre></div>
+<pre><span class="VALjson"><span class="keyword">val</span> json</span> : <code class="type">&lt; parse : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALhttp_get"><span class="keyword">val</span> http_get</span> : <code class="type">string -&gt; string <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALload_image"><span class="keyword">val</span> load_image</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALcreate_canvas"><span class="keyword">val</span> create_canvas</span> : <code class="type">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALdebug_widget"><span class="keyword">val</span> debug_widget</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=divElement">Html.divElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALdebug_msg"><span class="keyword">val</span> debug_msg</span> : <code class="type">'a -&gt; unit</code></pre>
+<pre><span class="VALhandle_drag"><span class="keyword">val</span> handle_drag</span> : <code class="type">&lt; onmousedown : &lt; set : ('a,
+                         &lt; _type : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           clientX : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                           clientY : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                           currentTarget : <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=element">Html.element</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a>
+                                           <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           srcElement : <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=element">Html.element</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a>
+                                        <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           target : <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=element">Html.element</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a>
+                                    <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           .. &gt;
+                         <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+                        <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a> -&gt; unit;
+                  .. &gt;
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  style : &lt; get : &lt; cursor : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt;
+                             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                    .. &gt;
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>;
+            .. &gt;
+          <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(int -&gt; int -&gt; int -&gt; int -&gt; unit) -&gt;
+(int -&gt; int -&gt; 'b) -&gt; (int -&gt; int -&gt; 'b) -&gt; unit</code></pre>
+<pre><span class="VALhandle_touch_events"><span class="keyword">val</span> handle_touch_events</span> : <code class="type">(&lt; onclick : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=mouseEvent">Html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondblclick : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=mouseEvent">Html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondrag : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=dragEvent">Html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+            <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondragend : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=dragEvent">Html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondragenter : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=dragEvent">Html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondragleave : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=dragEvent">Html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondragover : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=dragEvent">Html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondragstart : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=dragEvent">Html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   ondrop : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=dragEvent">Html.dragEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+            <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onkeydown : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=keyboardEvent">Html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onkeypress : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=keyboardEvent">Html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onkeyup : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=keyboardEvent">Html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onmousedown : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=mouseEvent">Html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onmousemove : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=mouseEvent">Html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onmouseout : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=mouseEvent">Html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onmouseover : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=mouseEvent">Html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   onmouseup : ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=mouseEvent">Html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a>
+               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=writeonly_prop">Js.writeonly_prop</a>;
+   style : &lt; get : &lt; cursor : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt;
+                              <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                     .. &gt;
+                   <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>;
+             .. &gt;
+           <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+   .. &gt;
+ as 'a)
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(int -&gt; int -&gt; int -&gt; int -&gt; unit) -&gt;
+(int -&gt; int -&gt; unit) -&gt; (int -&gt; int -&gt; unit) -&gt; (int -&gt; int -&gt; unit) -&gt; unit</code></pre>
+<pre><span class="VALroundRectPath"><span class="keyword">val</span> roundRectPath</span> : <code class="type">&lt; arcTo : float -&gt; float -&gt; float -&gt; float -&gt; float -&gt; 'a12278ac2 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  beginPath : 'a0eccadb3 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'a8c9dec6b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; float -&gt; float -&gt; float -&gt; float -&gt; float -&gt; 'a12278ac2</code></pre>
+<pre><span class="VALtext_size_div"><span class="keyword">val</span> text_size_div</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=divElement">Html.divElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> lazy_t</code></pre>
+<pre><span class="VALtext_size"><span class="keyword">val</span> text_size</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; string -&gt; int * int</code></pre>
+<div class="ocaml_class sig" name="navigator"><pre><span class="TYPEnavigator"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;class=navigator">navigator</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODlanguage"><span class="keyword">method</span> language</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+
+<pre><span class="METHODuserLanguage"><span class="keyword">method</span> userLanguage</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a></code></pre>
+</div></div>
+<pre><span class="VALnavigator"><span class="keyword">val</span> navigator</span> : <code class="type">navigator <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALdefault_language"><span class="keyword">val</span> default_language</span> : <code class="type">unit -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALlanguage"><span class="keyword">val</span> language</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> Pervasives.ref</code></pre>
+
+<pre><span class="VALset_language"><span class="keyword">val</span> set_language</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit</code></pre>
+<pre><span class="VALload_messages"><span class="keyword">val</span> load_messages</span> : <code class="type">unit -&gt; 'aad417642 <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALlocal_messages"><span class="keyword">val</span> local_messages</span> : <code class="type">'a -&gt; messages <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALscreen_transform"><span class="keyword">val</span> screen_transform</span> : <code class="type">&lt; height : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  width : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; float * float * float * float</code></pre>
+<pre><span class="VALeps"><span class="keyword">val</span> eps</span> : <code class="type">float</code></pre>
+<pre><span class="VALfrom_screen"><span class="keyword">val</span> from_screen</span> : <code class="type">&lt; height : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  width : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a></code></pre>
+<pre><span class="VALpi"><span class="keyword">val</span> pi</span> : <code class="type">float</code></pre>
+<pre><span class="VALellipse_arc"><span class="keyword">val</span> ellipse_arc</span> : <code class="type">&lt; arc : float -&gt;
+        float -&gt;
+        float -&gt; 'a08ae6b96 -&gt; 'aae0dce1f -&gt; 'a945c6ef8 -&gt; 'a70024421 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  restore : 'aca9309a7 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; save : 'a62f82c75 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  scale : 'a33827173 -&gt; 'a52a80513 -&gt; 'a4a6e1eb5 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  translate : 'a70b39124 -&gt; 'a08f27679 -&gt; 'a1808d6ea <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+'a70b39124 -&gt;
+'a08f27679 -&gt;
+'a33827173 -&gt;
+'a52a80513 -&gt; 'a08ae6b96 -&gt; 'aae0dce1f -&gt; 'a945c6ef8 -&gt; 'aca9309a7</code></pre>
+<pre><span class="VALarc"><span class="keyword">val</span> arc</span> : <code class="type">&lt; arc : float -&gt;
+        float -&gt; float -&gt; float -&gt; float -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a031888e0 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  beginPath : 'aef5e2c6b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; restore : 'a031888e0 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  save : 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; scale : float -&gt; float -&gt; 'b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  stroke : 'a0fa0e813 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; translate : float -&gt; float -&gt; 'c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; float * float * float * float -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; 'a0fa0e813</code></pre>
+<pre><span class="VALline"><span class="keyword">val</span> line</span> : <code class="type">&lt; beginPath : 'aacfb9063 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  lineTo : float -&gt; float -&gt; 'a88278902 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'a43316eea <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; stroke : 'a76a0ee36 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; float * float * float * float -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; 'a76a0ee36</code></pre>
+<pre><span class="VALsegment"><span class="keyword">val</span> segment</span> : <code class="type">&lt; arc : float -&gt; float -&gt; float -&gt; float -&gt; float -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  beginPath : 'b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; lineTo : float -&gt; float -&gt; 'c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'd <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; restore : 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  save : 'e <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; scale : float -&gt; float -&gt; 'f <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  stroke : 'g <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; translate : float -&gt; float -&gt; 'h <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; float * float * float * float -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> -&gt; 'g</code></pre>
+<pre><code><span class="TYPEboxes"><span class="keyword">type</span> boxes</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTboxes.bx">bx</span> : <code class="type">float array</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTboxes.by">by</span> : <code class="type">float array</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTboxes.bw">bw</span> : <code class="type">float array</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTboxes.bh">bh</span> : <code class="type">float array</code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALshadow"><span class="keyword">val</span> shadow</span> : <code class="type">bool</code></pre>
+<pre><span class="VALdraw"><span class="keyword">val</span> draw</span> : <code class="type">&lt; getContext : <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=context">Html.context</a> -&gt;
+               &lt; arc : float -&gt;
+                       float -&gt;
+                       float -&gt; float -&gt; float -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 beginPath : 'a92cb60be <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 clearRect : float -&gt;
+                             float -&gt; float -&gt; float -&gt; 'a19f4ef87 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 drawImage_fromCanvasWithSize : (&lt; height : &lt; get : int; .. &gt;
+                                                            <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                                   width : &lt; get : int; .. &gt;
+                                                           <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                                   .. &gt;
+                                                 as 'a)
+                                                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                                float -&gt;
+                                                float -&gt;
+                                                float -&gt;
+                                                float -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 drawImage_withSize : (&lt; height : &lt; get : int; .. &gt;
+                                                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                         width : &lt; get : int; .. &gt;
+                                                 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                         .. &gt;
+                                       as 'b)
+                                      <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+                                      float -&gt;
+                                      float -&gt;
+                                      float -&gt; float -&gt; 'a068aa74d <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 fill : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 fillStyle : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt;
+                             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 lineCap : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt;
+                           <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 lineTo : float -&gt; float -&gt; 'c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 lineWidth : &lt; set : float -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 moveTo : float -&gt; float -&gt; 'd <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 restore : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; save : 'a60c4a352 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 scale : float -&gt; float -&gt; 'e <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 shadowBlur : &lt; set : float -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 shadowColor : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt;
+                               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 shadowOffsetX : &lt; set : float -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 shadowOffsetY : &lt; set : float -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 stroke : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                 strokeStyle : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt;
+                               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                 translate : float -&gt; float -&gt; 'f <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  height : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  width : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+<a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> array -&gt;
+(int * int * float) array -&gt;
+((int * bool) array *
+ [&lt; `Img of 'b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> Lazy.t * 'g
+  | `None
+  | `Txt of bool * 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> option * 'h ])
+array -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=boxes">boxes</a> -&gt; unit</code></pre>
+<pre><span class="VALdefault_img"><span class="keyword">val</span> default_img</span> : <code class="type">string</code></pre>
+<pre><span class="VALtree_url"><span class="keyword">val</span> tree_url</span> : <code class="type">string</code></pre>
+<pre><span class="VAL&gt;&gt;"><span class="keyword">val</span> &gt;&gt;</span> : <code class="type">'a -&gt; ('a -&gt; 'b) -&gt; 'b</code></pre>
+<pre><code><span class="TYPEtree"><span class="keyword">type</span> <code class="type">'a </code>tree</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTtree.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type">'a * 'a <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> array</code></code></td></tr></table>
+<pre><span class="VALtree_vertice_count"><span class="keyword">val</span> tree_vertice_count</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> -&gt; int</code></pre>
+<pre><span class="VALtree_edge_count"><span class="keyword">val</span> tree_edge_count</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> -&gt; int</code></pre>
+<pre><span class="VALrandomize_tree"><span class="keyword">val</span> randomize_tree</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> -&gt; unit</code></pre>
+<pre><span class="VALneed_redraw"><span class="keyword">val</span> need_redraw</span> : <code class="type">bool Pervasives.ref</code></pre>
+<pre><span class="VALredraw_funct"><span class="keyword">val</span> redraw_funct</span> : <code class="type">(unit -&gt; unit) Pervasives.ref</code></pre>
+<pre><span class="VALperform_redraw"><span class="keyword">val</span> perform_redraw</span> : <code class="type">unit -&gt; unit</code></pre>
+<pre><span class="VALschedule_redraw"><span class="keyword">val</span> schedule_redraw</span> : <code class="type">bool -&gt; unit</code></pre>
+<pre><span class="VALschedule_redraw"><span class="keyword">val</span> schedule_redraw</span> : <code class="type">'a -&gt; unit</code></pre>
+<pre><span class="VALimage_node"><span class="keyword">val</span> image_node</span> : <code class="type">string -&gt; [&gt; `Img of <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> lazy_t * string ]</code></pre>
+<pre><span class="VALnl_re"><span class="keyword">val</span> nl_re</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Regexp&amp;type=regexp">Regexp.regexp</a></code></pre>
+<pre><span class="VALnot_space_re"><span class="keyword">val</span> not_space_re</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Regexp&amp;type=regexp">Regexp.regexp</a></code></pre>
+<pre><span class="VALpipe_re"><span class="keyword">val</span> pipe_re</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Regexp&amp;type=regexp">Regexp.regexp</a></code></pre>
+<pre><span class="VALcompute_text_node"><span class="keyword">val</span> compute_text_node</span> : <code class="type">string -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALcompute_text_nodes"><span class="keyword">val</span> compute_text_nodes</span> : <code class="type">(<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * ((string, string) Hashtbl.t * 'a)) list -&gt;
+('b * [&gt; `Txt of 'c * <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> option * string ]) array -&gt;
+unit</code></pre>
+<pre><span class="VALmake_node"><span class="keyword">val</span> make_node</span> : <code class="type">string -&gt;
+'a -&gt;
+'b -&gt;
+[&gt; `Img of <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> lazy_t * string
+ | `None
+ | `Txt of 'a * 'c option * string ]</code></pre>
+<pre><span class="VALcompute_nodes"><span class="keyword">val</span> compute_nodes</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> -&gt;
+[&gt; `Img of <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> lazy_t * string
+ | `None
+ | `Txt of bool * 'a option * string ]
+<a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a></code></pre>
+<pre><span class="VALlist_tl"><span class="keyword">val</span> list_tl</span> : <code class="type">'a list -&gt; 'a</code></pre>
+<pre><span class="VALcompute_neighbors"><span class="keyword">val</span> compute_neighbors</span> : <code class="type">((int * bool) array * [&gt; `None ]) array -&gt; int <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> -&gt; unit</code></pre>
+<pre><span class="VALweight_sum"><span class="keyword">val</span> weight_sum</span> : <code class="type">float <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> array -&gt; float</code></pre>
+<pre><span class="VALcompute_weights"><span class="keyword">val</span> compute_weights</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> -&gt; float <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a></code></pre>
+<pre><span class="VALarray_map2"><span class="keyword">val</span> array_map2</span> : <code class="type">('a -&gt; 'b -&gt; 'c) -&gt; 'a array -&gt; 'b array -&gt; 'c array</code></pre>
+<pre><span class="VALtree_layout"><span class="keyword">val</span> tree_layout</span> : <code class="type">(<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * ((string, string) Hashtbl.t * 'a)) list -&gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=tree">tree</a> -&gt;
+<a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> array * (int * int * float) array *
+((int * bool) array *
+ [&gt; `Img of <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> lazy_t * string
+  | `None
+  | `Txt of bool * <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> option * string ])
+array * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=boxes">boxes</a></code></pre>
+<pre><span class="VALload_tree"><span class="keyword">val</span> load_tree</span> : <code class="type">unit -&gt;
+((<a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> array * (int * int * float) array *
+  ((int * bool) array *
+   [&gt; `Img of <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> lazy_t * string
+    | `None
+    | `Txt of bool * <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> option * string ])
+  array * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=boxes">boxes</a>) *
+ (<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * ((string, string) Hashtbl.t * <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)) list)
+<a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALradius_of_length"><span class="keyword">val</span> radius_of_length</span> : <code class="type">float -&gt; float</code></pre>
+<pre><span class="VALlength_of_radius"><span class="keyword">val</span> length_of_radius</span> : <code class="type">float -&gt; float</code></pre>
+<pre><code><span class="TYPEinfo"><span class="keyword">type</span> info</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTinfo.name">name</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTinfo.url">url</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTinfo.attribution">attribution</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTinfo.width">width</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTinfo.height">height</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTinfo.links">links</span> : <code class="type">(<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) array</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTinfo.img_url">img_url</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> option</code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALload_image_info"><span class="keyword">val</span> load_image_info</span> : <code class="type">unit -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=info">info</a> array <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALclose_button"><span class="keyword">val</span> close_button</span> : <code class="type">bool -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALimg_button"><span class="keyword">val</span> img_button</span> : <code class="type">?href:<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; int -&gt; string -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=divElement">Html.divElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALtooltip"><span class="keyword">val</span> tooltip</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=divElement">Html.divElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALshow_on_click"><span class="keyword">val</span> show_on_click</span> : <code class="type">&lt; onclick : &lt; set : ('a, #<a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;class=event">Html.event</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=event_listener">Html.event_listener</a> -&gt; unit; .. &gt;
+            <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+&lt; className : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+unit</code></pre>
+<pre><span class="VALshow_image"><span class="keyword">val</span> show_image</span> : <code class="type">'a -&gt;
+<a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=info">info</a> array <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt;
+string -&gt; <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> Lazy.t -&gt; int <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALinformation_en"><span class="keyword">val</span> information_en</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALshow_information_page"><span class="keyword">val</span> show_information_page</span> : <code class="type">&lt; ok : &lt; get : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js.Optdef&amp;type=t">Js.Optdef.t</a>; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * ('a * <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)) list -&gt; unit</code></pre>
+<pre><span class="VALunsupported_messages"><span class="keyword">val</span> unsupported_messages</span> : <code class="type">unit -&gt; unit</code></pre>
+
+<pre><span class="VALall_messages"><span class="keyword">val</span> all_messages</span> : <code class="type">'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALtree_info"><span class="keyword">val</span> tree_info</span> : <code class="type">((<a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=c">c</a> array * (int * int * float) array *
+  ((int * bool) array *
+   [ `Img of <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> Lazy.t * string
+   | `None
+   | `Txt of bool * <a href="?package=js_of_ocaml&amp;module=Hypertree.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> option * string ])
+  array * <a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=boxes">boxes</a>) *
+ (<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * ((string, string) Hashtbl.t * <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)) list)
+<a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALimage_info"><span class="keyword">val</span> image_info</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Hypertree&amp;type=info">info</a> array <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALstart"><span class="keyword">val</span> start</span> : <code class="type">'a -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALstart"><span class="keyword">val</span> start</span> : <code class="type">'a -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+
+</div>

@@ -1,0 +1,478 @@
+<div class="ocaml_toplevel_module"><div class="info">Javascript binding<br/>    This module provides types and functions to interoperate with
+    Javascript values, and gives access to Javascript standard
+    objects.</div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Dealing with <code class="code">null</code> and <code class="code">undefined</code> values.</h2><br/></div></div>
+<pre><span class="TYPEopt"><span class="keyword">type</span> <code class="type">+'a </code>opt</span> </pre><div class="info"><div class="info">Type of possibly null values.</div></div>
+<pre><span class="TYPEoptdef"><span class="keyword">type</span> <code class="type">+'a </code>optdef</span> </pre><div class="info"><div class="info">Type of possibly undefined values.</div></div>
+<pre><span class="VALnull"><span class="keyword">val</span> null</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=opt">opt</a></code></pre><div class="info"><div class="info">The <code class="code">null</code> value.</div></div>
+<pre><span class="VALsome"><span class="keyword">val</span> some</span> : <code class="type">'a -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=opt">opt</a></code></pre><div class="info"><div class="info">Consider a value into a possibly null value.</div></div>
+<pre><span class="VALundefined"><span class="keyword">val</span> undefined</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">optdef</a></code></pre><div class="info"><div class="info">The <code class="code">undefined</code> value</div></div>
+<pre><span class="VALdef"><span class="keyword">val</span> def</span> : <code class="type">'a -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">optdef</a></code></pre><div class="info"><div class="info">Consider a value into a possibly undefined value.</div></div>
+<div class="ocaml_module sig" name="OPT"><pre><span class="keyword">module type</span> <a href="?package=js_of_ocaml&amp;module=Js.OPT">OPT</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code><div class="info"><div class="info">Signatures of a set of standard functions for manipulating
+    optional values.</div></div></pre><div class="ocaml_module_content">
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+<pre><span class="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a></code></pre><div class="info"><div class="info">No value.</div></div>
+<pre><span class="VALreturn"><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a></code></pre><div class="info"><div class="info">Consider a value as an optional value.</div></div>
+<pre><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> -&gt; ('a -&gt; 'b) -&gt; 'b <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a></code></pre><div class="info"><div class="info">Apply a function to an optional value if it is available.
+        Returns the result of the application.</div></div>
+<pre><span class="VALbind"><span class="keyword">val</span> bind</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> -&gt; ('a -&gt; 'b <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a>) -&gt; 'b <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a></code></pre><div class="info"><div class="info">Apply a function returning an optional value to an optional value</div></div>
+<pre><span class="VALtest"><span class="keyword">val</span> test</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> -&gt; bool</code></pre><div class="info"><div class="info">Returns <code class="code">true</code> if a value is available, <code class="code">false</code> otherwise.</div></div>
+<pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> -&gt; ('a -&gt; unit) -&gt; unit</code></pre><div class="info"><div class="info">Apply a function to an optional value if it is available.</div></div>
+<pre><span class="VALcase"><span class="keyword">val</span> case</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> -&gt; (unit -&gt; 'b) -&gt; ('a -&gt; 'b) -&gt; 'b</code></pre><div class="info"><div class="info">Pattern matching on optional values.</div></div>
+<pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a</code></pre><div class="info"><div class="info">Get the value.  If no value available, an alternative function
+        is called to get a default value.</div></div>
+<pre><span class="VALoption"><span class="keyword">val</span> option</span> : <code class="type">'a option -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a></code></pre><div class="info"><div class="info">Convert option type.</div></div>
+<pre><span class="VALto_option"><span class="keyword">val</span> to_option</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> -&gt; 'a option</code></pre><div class="info"><div class="info">Convert to option type.</div></div></div></div>
+<div class="ocaml_module ident" name="Opt" path="?package=js_of_ocaml&amp;module=Js.OPT"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Js.Opt">Opt</a> : <code class="type"><code class="code"><a href="?package=js_of_ocaml&amp;module=Js.OPT">OPT</a></code> with type <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> = 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=opt">opt</a></code><div class="info"><div class="info">Standard functions for manipulating possibly null values.</div></div></pre></div>
+<div class="ocaml_module ident" name="Optdef" path="?package=js_of_ocaml&amp;module=Js.OPT"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Js.Optdef">Optdef</a> : <code class="type"><code class="code"><a href="?package=js_of_ocaml&amp;module=Js.OPT">OPT</a></code> with type <a href="?package=js_of_ocaml&amp;module=Js.OPT&amp;type=t">t</a> = 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">optdef</a></code><div class="info"><div class="info">Standard functions for manipulating possibly undefined values.</div></div></pre></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Types for specifying method and properties of Javascript objects</h2><br/></div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">+'a </code>t</span> </pre><div class="info"><div class="info">Type of Javascript objects.  The type parameter is used to
+      specify more precisely an object.</div></div>
+<pre><span class="TYPEmeth"><span class="keyword">type</span> <code class="type">+'a </code>meth</span> </pre><div class="info"><div class="info">Type used to specify method types:
+      a Javascript object
+        <code class="code">&lt;m : t1 -&gt; t2 -&gt; ... -&gt; tn -&gt; t Js.meth&gt; Js.t</code>
+      has a Javascript method <code class="code">m</code> expecting <i>n</i> arguments
+      of types <code class="code">t1</code> to <code class="code">tn</code> and returns a value of type <code class="code">t</code>.</div></div>
+<pre><span class="TYPEgen_prop"><span class="keyword">type</span> <code class="type">+'a </code>gen_prop</span> </pre><div class="info"><div class="info">Type used to specify the properties of Javascript
+      objects.  In practice you should rarely need this type directly,
+      but should rather use the type abbreviations below instead.</div></div>
+<pre><span class="TYPEreadonly_prop"><span class="keyword">type</span> <code class="type">'a </code>readonly_prop</span> = <code class="type">&lt; get : 'a &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">gen_prop</a></code></pre><div class="info"><div class="info">Type of read-only properties:
+      a Javascript object
+        <code class="code">&lt;p : t Js.readonly_prop&gt; Js.t</code>
+      has a read-only property <code class="code">p</code> of type <code class="code">t</code>.</div></div>
+<pre><span class="TYPEwriteonly_prop"><span class="keyword">type</span> <code class="type">'a </code>writeonly_prop</span> = <code class="type">&lt; set : 'a -&gt; unit &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">gen_prop</a></code></pre><div class="info"><div class="info">Type of write-only properties:
+      a Javascript object
+        <code class="code">&lt;p : t Js.writeonly_prop&gt; Js.t</code>
+      has a write-only property <code class="code">p</code> of type <code class="code">t</code>.</div></div>
+<pre><span class="TYPEprop"><span class="keyword">type</span> <code class="type">'a </code>prop</span> = <code class="type">&lt; get : 'a; set : 'a -&gt; unit &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">gen_prop</a></code></pre><div class="info"><div class="info">Type of read/write properties:
+      a Javascript object
+        <code class="code">&lt;p : t Js.writeonly_prop&gt; Js.t</code>
+      has a read/write property <code class="code">p</code> of type <code class="code">t</code>.</div></div>
+<pre><span class="TYPEoptdef_prop"><span class="keyword">type</span> <code class="type">'a </code>optdef_prop</span> = <code class="type">&lt; get : 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">optdef</a>; set : 'a -&gt; unit &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">gen_prop</a></code></pre><div class="info"><div class="info">Type of read/write properties that may be undefined:
+      you can set them to a value of some type <code class="code">t</code>, but if you read
+      them, you will get a value of type <code class="code">t optdef</code> (that may be
+      <code class="code">undefined</code>).</div></div>
+<pre><span class="TYPEfloat_prop"><span class="keyword">type</span> float_prop</span> = <code class="type">&lt; get : float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>; set : float -&gt; unit &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">gen_prop</a></code></pre><div class="info"><div class="info">Type of float properties:
+      you can set them to an OCaml <code class="code">float</code>, but you will get back a
+      native Javascript number of type <code class="code">float t</code>.</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Object constructors</h2><br/></div></div>
+<pre><span class="TYPEconstr"><span class="keyword">type</span> <code class="type">+'a </code>constr</span> </pre><div class="info"><div class="info">A value of type <code class="code">(t1 -&gt; ... -&gt; tn -&gt; t Js.t) Js.constr</code> is a
+      Javascript constructor expecting <i>n</i> arguments of types <code class="code">t1</code>
+      to <code class="code">tn</code> and returning a Javascript object of type <code class="code">t Js.t</code>.  Use
+      the syntax extension <code class="code">jsnew c (e1, ..., en)</code> to build an object
+      using constructor <code class="code">c</code> and arguments <code class="code">e1</code> to <code class="code">en</code>.</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Callbacks to OCaml</h2><br/></div></div>
+<pre><span class="TYPEmeth_callback"><span class="keyword">type</span> <code class="type">(-$param, +'b) </code>meth_callback</span> </pre><div class="info"><div class="info">Type of callback functions.  A function of type
+       <code class="code">(u, t1 -&gt; ... -&gt; tn -&gt; t) meth_callback</code> can be called
+       from Javascript with <code class="code">this</code> bound to a value of type <code class="code">u</code>
+       and up to <i>n</i> arguments of types <code class="code">t1</code> to <code class="code">tn</code>.  The system
+       takes care of currification, so less than <i>n</i> arguments can
+       be provided.  As a special case, a callback of type
+       <code class="code">(t, unit -&gt; t) meth_callback</code> can be called from Javascript
+       with no argument.  It will behave as if it was called with a
+       single argument of type <code class="code">unit</code>.</div></div>
+<pre><span class="TYPEcallback"><span class="keyword">type</span> <code class="type">'a </code>callback</span> = <code class="type">(unit, 'a) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth_callback">meth_callback</a></code></pre><div class="info"><div class="info">Type of callback functions intended to be called without a
+      meaningful <code class="code">this</code> implicit parameter.</div></div>
+<pre><span class="VALwrap_callback"><span class="keyword">val</span> wrap_callback</span> : <code class="type">('a -&gt; 'b) -&gt; ('c, 'a -&gt; 'b) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth_callback">meth_callback</a></code></pre><div class="info"><div class="info">Wrap an OCaml function so that it can be invoked from
+      Javascript.</div></div>
+<pre><span class="VALwrap_meth_callback"><span class="keyword">val</span> wrap_meth_callback</span> : <code class="type">('c -&gt; 'a -&gt; 'b) -&gt; ('c, 'a -&gt; 'b) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth_callback">meth_callback</a></code></pre><div class="info"><div class="info">Wrap an OCaml function so that it can be invoked from
+      Javascript.  The first parameter of the function will be bound
+      to the value of the <code class="code">this</code> implicit parameter.</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Javascript standard objects</h2><br/></div></div>
+<pre><span class="VAL_true"><span class="keyword">val</span> _true</span> : <code class="type">bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Javascript <code class="code">true</code> boolean.</div></div>
+<pre><span class="VAL_false"><span class="keyword">val</span> _false</span> : <code class="type">bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Javascript <code class="code">false</code> boolean.</div></div>
+<pre><span class="TYPEmatch_result_handle"><span class="keyword">type</span> match_result_handle</span> </pre><div class="info"><div class="info">A handle to a match result.  Use function <code class="code">Js.match_result</code>
+      to get the corresponding <code class="code">MatchResult</code> object.
+      (This type is used to resolved the mutual dependency between
+       string and array type definitions.)</div></div>
+<pre><span class="TYPEstring_array"><span class="keyword">type</span> string_array</span> </pre><div class="info"><div class="info">Opaque type for string arrays.  You can get the actual <code class="code">Array</code>
+      object using function <code class="code">Js.str_array</code>.
+      (This type is used to resolved the mutual dependency between
+       string and array type definitions.)</div></div>
+<div class="ocaml_class sig" name="js_string"><pre><span class="TYPEjs_string"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=js_string">js_string</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of Javascript string objects.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODtoString"><span class="keyword">method</span> toString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODvalueOf"><span class="keyword">method</span> valueOf</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODcharAt"><span class="keyword">method</span> charAt</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODcharCodeAt"><span class="keyword">method</span> charCodeAt</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODconcat"><span class="keyword">method</span> concat</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODconcat_2"><span class="keyword">method</span> concat_2</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODconcat_3"><span class="keyword">method</span> concat_3</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODconcat_4"><span class="keyword">method</span> concat_4</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODindexOf"><span class="keyword">method</span> indexOf</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODindexOf_from"><span class="keyword">method</span> indexOf_from</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODlastIndexOf"><span class="keyword">method</span> lastIndexOf</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODlastIndexOf_from"><span class="keyword">method</span> lastIndexOf_from</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODlocaleCompare"><span class="keyword">method</span> localeCompare</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHOD_match"><span class="keyword">method</span> _match</span> : <code class="code">regExp <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=match_result_handle">match_result_handle</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=opt">opt</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODreplace"><span class="keyword">method</span> replace</span> : <code class="code">regExp <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODreplace_string"><span class="keyword">method</span> replace_string</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsearch"><span class="keyword">method</span> search</span> : <code class="code">regExp <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODslice"><span class="keyword">method</span> slice</span> : <code class="code">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODslice_end"><span class="keyword">method</span> slice_end</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplit"><span class="keyword">method</span> split</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=string_array">string_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplit_limited"><span class="keyword">method</span> split_limited</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=string_array">string_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplit_regExp"><span class="keyword">method</span> split_regExp</span> : <code class="code">regExp <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=string_array">string_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplit_regExpLimited"><span class="keyword">method</span> split_regExpLimited</span> : <code class="code">regExp <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=string_array">string_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsubstring"><span class="keyword">method</span> substring</span> : <code class="code">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsubstring_toEnd"><span class="keyword">method</span> substring_toEnd</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLowerCase"><span class="keyword">method</span> toLowerCase</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLocaleLowerCase"><span class="keyword">method</span> toLocaleLowerCase</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoUpperCase"><span class="keyword">method</span> toUpperCase</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLocaleUpperCase"><span class="keyword">method</span> toLocaleUpperCase</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODlength"><span class="keyword">method</span> length</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">readonly_prop</a></code></pre>
+</div></div>
+<div class="ocaml_class sig" name="regExp"><pre><span class="TYPEregExp"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=regExp">regExp</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of Javascript regular expression objects.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODexec"><span class="keyword">method</span> exec</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=match_result_handle">match_result_handle</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=opt">opt</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtest"><span class="keyword">method</span> test</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoString"><span class="keyword">method</span> toString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsource"><span class="keyword">method</span> source</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">readonly_prop</a></code></pre>
+
+<pre><span class="METHODglobal"><span class="keyword">method</span> global</span> : <code class="code">bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">readonly_prop</a></code></pre>
+
+<pre><span class="METHODignoreCase"><span class="keyword">method</span> ignoreCase</span> : <code class="code">bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">readonly_prop</a></code></pre>
+
+<pre><span class="METHODmultiline"><span class="keyword">method</span> multiline</span> : <code class="code">bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">readonly_prop</a></code></pre>
+
+<pre><span class="METHODlastIndex"><span class="keyword">method</span> lastIndex</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=prop">prop</a></code></pre>
+</div></div>
+<div class="ocaml_class sig" name="string_constr"><pre><span class="TYPEstring_constr"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=string_constr">string_constr</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of the string constructor, considered as an object.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODfromCharCode"><span class="keyword">method</span> fromCharCode</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre>
+</div></div>
+<pre><span class="VALstring"><span class="keyword">val</span> string</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=string_constr">string_constr</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">The string constructor, as an object.</div></div>
+<pre><span class="VALregExp"><span class="keyword">val</span> regExp</span> : <code class="type">(<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=regExp">regExp</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">RegExp</code> objects.  The expression <code class="code">jsnew regExp (s)</code>
+      builds the regular expression specified by string <code class="code">s</code>.</div></div>
+<pre><span class="VALregExp_withFlags"><span class="keyword">val</span> regExp_withFlags</span> : <code class="type">(<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=regExp">regExp</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">RegExp</code> objects.  The expression
+      <code class="code">jsnew regExp (s, f)</code> builds the regular expression specified by
+      string <code class="code">s</code> using flags <code class="code">f</code>.</div></div>
+<pre><span class="VALregExp_copy"><span class="keyword">val</span> regExp_copy</span> : <code class="type">(<a href="?package=js_of_ocaml&amp;module=Js&amp;type=regExp">regExp</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=regExp">regExp</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">RegExp</code> objects.  The expression
+      <code class="code">jsnew regExp (r)</code> builds a copy of regular expression <code class="code">r</code>.</div></div>
+<div class="ocaml_class sig" name="js_array"><pre><span class="TYPEjs_array"><span class="keyword">class type</span> <code class="type">['a] </code><a href="?package=js_of_ocaml&amp;module=Js&amp;class=js_array">js_array</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of Javascript regular arrays.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODtoString"><span class="keyword">method</span> toString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLocaleString"><span class="keyword">method</span> toLocaleString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODconcat"><span class="keyword">method</span> concat</span> : <code class="code">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODjoin"><span class="keyword">method</span> join</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODpop"><span class="keyword">method</span> pop</span> : <code class="code">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODpush"><span class="keyword">method</span> push</span> : <code class="code">'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODpush_2"><span class="keyword">method</span> push_2</span> : <code class="code">'a -&gt; 'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODpush_3"><span class="keyword">method</span> push_3</span> : <code class="code">'a -&gt; 'a -&gt; 'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODpush_4"><span class="keyword">method</span> push_4</span> : <code class="code">'a -&gt; 'a -&gt; 'a -&gt; 'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODreverse"><span class="keyword">method</span> reverse</span> : <code class="code">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODshift"><span class="keyword">method</span> shift</span> : <code class="code">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">optdef</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODslice"><span class="keyword">method</span> slice</span> : <code class="code">int -&gt; int -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODslice_end"><span class="keyword">method</span> slice_end</span> : <code class="code">int -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsort"><span class="keyword">method</span> sort</span> : <code class="code">('a -&gt; 'a -&gt; float) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=callback">callback</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsort_asStrings"><span class="keyword">method</span> sort_asStrings</span> : <code class="code">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplice"><span class="keyword">method</span> splice</span> : <code class="code">int -&gt; int -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplice_1"><span class="keyword">method</span> splice_1</span> : <code class="code">int -&gt; int -&gt; 'a -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplice_2"><span class="keyword">method</span> splice_2</span> : <code class="code">int -&gt; int -&gt; 'a -&gt; 'a -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplice_3"><span class="keyword">method</span> splice_3</span> : <code class="code">int -&gt; int -&gt; 'a -&gt; 'a -&gt; 'a -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsplice_4"><span class="keyword">method</span> splice_4</span> : <code class="code">int -&gt; int -&gt; 'a -&gt; 'a -&gt; 'a -&gt; 'a -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODunshift"><span class="keyword">method</span> unshift</span> : <code class="code">'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODunshift_2"><span class="keyword">method</span> unshift_2</span> : <code class="code">'a -&gt; 'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODunshift_3"><span class="keyword">method</span> unshift_3</span> : <code class="code">'a -&gt; 'a -&gt; 'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODunshift_4"><span class="keyword">method</span> unshift_4</span> : <code class="code">'a -&gt; 'a -&gt; 'a -&gt; 'a -&gt; int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODlength"><span class="keyword">method</span> length</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=prop">prop</a></code></pre>
+</div></div>
+<pre><span class="VALarray_empty"><span class="keyword">val</span> array_empty</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Array</code> objects.  The expression
+      <code class="code">jsnew array_empty ()</code> returns an empty array.</div></div>
+<pre><span class="VALarray_length"><span class="keyword">val</span> array_length</span> : <code class="type">(int -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Array</code> objects.  The expression
+      <code class="code">jsnew array_empty (l)</code> returns an array of length <code class="code">l</code>.</div></div>
+<pre><span class="VALarray_get"><span class="keyword">val</span> array_get</span> : <code class="type">'a #<a href="?package=js_of_ocaml&amp;module=Js&amp;class=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">optdef</a></code></pre><div class="info"><div class="info">Array access: <code class="code">array_get a i</code> returns the element at index <code class="code">i</code>
+      of array <code class="code">a</code>.  Returns <code class="code">undefined</code> if there is no element at
+      this index.</div></div>
+<pre><span class="VALarray_set"><span class="keyword">val</span> array_set</span> : <code class="type">'a #<a href="?package=js_of_ocaml&amp;module=Js&amp;class=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; int -&gt; 'a -&gt; unit</code></pre><div class="info"><div class="info">Array update: <code class="code">array_set a i v</code> puts <code class="code">v</code> at index <code class="code">i</code> in
+      array <code class="code">a</code>.</div></div>
+<div class="ocaml_class sig" name="match_result"><pre><span class="TYPEmatch_result"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=match_result">match_result</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of match result objects</div></div><div class="ocaml_class_content">
+<div class="ocaml_class ident" name="_inherit_field" path="?package=js_of_ocaml&amp;module=Js&amp;class=js_array"> <pre><span class="keyword">inherit</span> <code class="type"/><code class="type">[<a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>] </code><a href="?package=js_of_ocaml&amp;module=Js&amp;class=js_array">js_array</a></pre></div>
+
+<pre><span class="METHODindex"><span class="keyword">method</span> index</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">readonly_prop</a></code></pre>
+
+<pre><span class="METHODinput"><span class="keyword">method</span> input</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">readonly_prop</a></code></pre>
+</div></div>
+<pre><span class="VALstr_array"><span class="keyword">val</span> str_array</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=string_array">string_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Convert an opaque <code class="code">string_array t</code> object into an array of
+      string.  (Used to resolved the mutual dependency between string
+      and array type definitions.)</div></div>
+<pre><span class="VALmatch_result"><span class="keyword">val</span> match_result</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=match_result_handle">match_result_handle</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=match_result">match_result</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Convert a match result handle into a <code class="code">MatchResult</code> object.
+      (Used to resolved the mutual dependency between string
+      and array type definitions.)</div></div>
+<div class="ocaml_class sig" name="number"><pre><span class="TYPEnumber"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=number">number</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of Javascript number objects.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODtoString"><span class="keyword">method</span> toString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoString_radix"><span class="keyword">method</span> toString_radix</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLocaleString"><span class="keyword">method</span> toLocaleString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoFixed"><span class="keyword">method</span> toFixed</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoExponential"><span class="keyword">method</span> toExponential</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoExponential_digits"><span class="keyword">method</span> toExponential_digits</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoPrecision"><span class="keyword">method</span> toPrecision</span> : <code class="code">int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre>
+</div></div>
+<pre><span class="VALnumber_of_float"><span class="keyword">val</span> number_of_float</span> : <code class="type">float -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=number">number</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Conversion of OCaml floats to Javascript number objects.</div></div>
+<pre><span class="VALfloat_of_number"><span class="keyword">val</span> float_of_number</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=number">number</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; float</code></pre><div class="info"><div class="info">Conversion of Javascript number objects to OCaml floats.</div></div>
+<div class="ocaml_class sig" name="date"><pre><span class="TYPEdate"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=date">date</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of Javascript date objects.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODtoString"><span class="keyword">method</span> toString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoDateString"><span class="keyword">method</span> toDateString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoTimeString"><span class="keyword">method</span> toTimeString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLocaleString"><span class="keyword">method</span> toLocaleString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLocaleDateString"><span class="keyword">method</span> toLocaleDateString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoLocaleTimeString"><span class="keyword">method</span> toLocaleTimeString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODvalueOf"><span class="keyword">method</span> valueOf</span> : <code class="code">float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetTime"><span class="keyword">method</span> getTime</span> : <code class="code">float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetFullYear"><span class="keyword">method</span> getFullYear</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCFullYear"><span class="keyword">method</span> getUTCFullYear</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetMonth"><span class="keyword">method</span> getMonth</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCMonth"><span class="keyword">method</span> getUTCMonth</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetDate"><span class="keyword">method</span> getDate</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCDate"><span class="keyword">method</span> getUTCDate</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetDay"><span class="keyword">method</span> getDay</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCDay"><span class="keyword">method</span> getUTCDay</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetHours"><span class="keyword">method</span> getHours</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCHours"><span class="keyword">method</span> getUTCHours</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetMinutes"><span class="keyword">method</span> getMinutes</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCMinutes"><span class="keyword">method</span> getUTCMinutes</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetSeconds"><span class="keyword">method</span> getSeconds</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCSeconds"><span class="keyword">method</span> getUTCSeconds</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetMilliseconds"><span class="keyword">method</span> getMilliseconds</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetUTCMilliseconds"><span class="keyword">method</span> getUTCMilliseconds</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODgetTimezoneOffset"><span class="keyword">method</span> getTimezoneOffset</span> : <code class="code">int <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetTime"><span class="keyword">method</span> setTime</span> : <code class="code">float -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetFullYear"><span class="keyword">method</span> setFullYear</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCFullYear"><span class="keyword">method</span> setUTCFullYear</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetMonth"><span class="keyword">method</span> setMonth</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCMonth"><span class="keyword">method</span> setUTCMonth</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetDate"><span class="keyword">method</span> setDate</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCDate"><span class="keyword">method</span> setUTCDate</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetDay"><span class="keyword">method</span> setDay</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCDay"><span class="keyword">method</span> setUTCDay</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetHours"><span class="keyword">method</span> setHours</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCHours"><span class="keyword">method</span> setUTCHours</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetMinutes"><span class="keyword">method</span> setMinutes</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCMinutes"><span class="keyword">method</span> setUTCMinutes</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetSeconds"><span class="keyword">method</span> setSeconds</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCSeconds"><span class="keyword">method</span> setUTCSeconds</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetMilliseconds"><span class="keyword">method</span> setMilliseconds</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODsetUTCMilliseconds"><span class="keyword">method</span> setUTCMilliseconds</span> : <code class="code">int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoUTCString"><span class="keyword">method</span> toUTCString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoISOString"><span class="keyword">method</span> toISOString</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHODtoJSON"><span class="keyword">method</span> toJSON</span> : <code class="code">'a. 'a -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+</div></div>
+<pre><span class="VALdate_now"><span class="keyword">val</span> date_now</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects: <code class="code">new date_now ()</code> returns a
+      <code class="code">Date</code> object initialized with the current date.</div></div>
+<pre><span class="VALdate_fromTimeValue"><span class="keyword">val</span> date_fromTimeValue</span> : <code class="type">(float -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects: <code class="code">new date_fromTimeValue (t)</code> returns a
+      <code class="code">Date</code> object initialized with the time value <code class="code">t</code>.</div></div>
+<pre><span class="VALdate_month"><span class="keyword">val</span> date_month</span> : <code class="type">(int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects: <code class="code">new date_fromTimeValue (y, m)</code>
+      returns a <code class="code">Date</code> object corresponding to year <code class="code">y</code> and month <code class="code">m</code>.</div></div>
+<pre><span class="VALdate_day"><span class="keyword">val</span> date_day</span> : <code class="type">(int -&gt; int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects: <code class="code">new date_fromTimeValue (y, m, d)</code>
+      returns a <code class="code">Date</code> object corresponding to year <code class="code">y</code>, month <code class="code">m</code> and
+      day <code class="code">d</code>.</div></div>
+<pre><span class="VALdate_hour"><span class="keyword">val</span> date_hour</span> : <code class="type">(int -&gt; int -&gt; int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects: <code class="code">new date_fromTimeValue (y, m, d, h)</code>
+      returns a <code class="code">Date</code> object corresponding to year <code class="code">y</code> to hour <code class="code">h</code>.</div></div>
+<pre><span class="VALdate_min"><span class="keyword">val</span> date_min</span> : <code class="type">(int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects: <code class="code">new date_fromTimeValue (y, m, d, h, m')</code>
+      returns a <code class="code">Date</code> object corresponding to year <code class="code">y</code> to minute <code class="code">m'</code>.</div></div>
+<pre><span class="VALdate_sec"><span class="keyword">val</span> date_sec</span> : <code class="type">(int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects:
+      <code class="code">new date_fromTimeValue (y, m, d, h, m', s)</code>
+      returns a <code class="code">Date</code> object corresponding to year <code class="code">y</code> to second <code class="code">s</code>.</div></div>
+<pre><span class="VALdate_ms"><span class="keyword">val</span> date_ms</span> : <code class="type">(int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=date">date</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a>) <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a></code></pre><div class="info"><div class="info">Constructor of <code class="code">Date</code> objects:
+      <code class="code">new date_fromTimeValue (y, m, d, h, m', s, ms)</code>
+      returns a <code class="code">Date</code> object corresponding to year <code class="code">y</code>
+      to millisecond <code class="code">ms</code>.</div></div>
+<div class="ocaml_class sig" name="date_constr"><pre><span class="TYPEdate_constr"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=date_constr">date_constr</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of the date constructor, considered as an object.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODparse"><span class="keyword">method</span> parse</span> : <code class="code"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHOD_UTC_month"><span class="keyword">method</span> _UTC_month</span> : <code class="code">int -&gt; int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHOD_UTC_day"><span class="keyword">method</span> _UTC_day</span> : <code class="code">int -&gt; int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHOD_UTC_hour"><span class="keyword">method</span> _UTC_hour</span> : <code class="code">int -&gt; int -&gt; int -&gt; int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHOD_UTC_min"><span class="keyword">method</span> _UTC_min</span> : <code class="code">int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHOD_UTC_sec"><span class="keyword">method</span> _UTC_sec</span> : <code class="code">int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+
+<pre><span class="METHOD_UTC_ms"><span class="keyword">method</span> _UTC_ms</span> : <code class="code">int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; int -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+</div></div>
+<pre><span class="VALdate"><span class="keyword">val</span> date</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=date_constr">date_constr</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">The date constructor, as an object.</div></div>
+<div class="ocaml_class sig" name="math"><pre><span class="TYPEmath"><span class="keyword">class type</span> <a href="?package=js_of_ocaml&amp;module=Js&amp;class=math">math</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Specification of Javascript math object.</div></div><div class="ocaml_class_content">
+<pre><span class="METHODrandom"><span class="keyword">method</span> random</span> : <code class="code">float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">meth</a></code></pre>
+</div></div>
+<pre><span class="VALmath"><span class="keyword">val</span> math</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=math">math</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">The Math object</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Standard Javascript functions</h2><br/></div></div>
+<pre><span class="VALdecodeURI"><span class="keyword">val</span> decodeURI</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Decode a URI: replace by the corresponding byte all escape
+      sequences but the ones corresponding to a URI reserved character
+      and convert the string from UTF-8 to UTF-16.</div></div>
+<pre><span class="VALdecodeURIComponent"><span class="keyword">val</span> decodeURIComponent</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Decode a URIComponent: replace all escape sequences by the
+      corresponding byte and convert the string from UTF-8 to
+      UTF-16.</div></div>
+<pre><span class="VALencodeURI"><span class="keyword">val</span> encodeURI</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Encode a URI: convert the string to UTF-8 and replace all unsafe
+      bytes by the corresponding escape sequence.</div></div>
+<pre><span class="VALencodeURIComponent"><span class="keyword">val</span> encodeURIComponent</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Same as <code class="code">encodeURI</code>, but also encode URI reserved characters.</div></div>
+<pre><span class="VALescape"><span class="keyword">val</span> escape</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Escape a string: unsafe UTF-16 code points are replaced by
+      2-digit and 4-digit escape sequences.</div></div>
+<pre><span class="VALunescape"><span class="keyword">val</span> unescape</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Unescape a string: 2-digit and 4-digit escape sequences are
+      replaced by the corresponding UTF-16 code point.</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Conversion functions between Javascript and OCaml types</h2><br/></div></div>
+<pre><span class="VALbool"><span class="keyword">val</span> bool</span> : <code class="type">bool -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Conversion of booleans from OCaml to Javascript.</div></div>
+<pre><span class="VALto_bool"><span class="keyword">val</span> to_bool</span> : <code class="type">bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; bool</code></pre><div class="info"><div class="info">Conversion of booleans from Javascript to OCaml.</div></div>
+<pre><span class="VALstring"><span class="keyword">val</span> string</span> : <code class="type">string -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Conversion of strings from OCaml to Javascript.  (The OCaml
+      string is considered to be encoded in UTF-8 and is converted to
+      UTF-16.)</div></div>
+<pre><span class="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; string</code></pre><div class="info"><div class="info">Conversion of strings from Javascript to OCaml.</div></div>
+<pre><span class="VALfloat"><span class="keyword">val</span> float</span> : <code class="type">float -&gt; float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Conversion of OCaml floats to Javascript numbers.</div></div>
+<pre><span class="VALto_float"><span class="keyword">val</span> to_float</span> : <code class="type">float <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; float</code></pre><div class="info"><div class="info">Conversion of Javascript numbers to OCaml floats.</div></div>
+<pre><span class="VALarray"><span class="keyword">val</span> array</span> : <code class="type">'a array -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Conversion of arrays from OCaml to Javascript.</div></div>
+<pre><span class="VALto_array"><span class="keyword">val</span> to_array</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_array">js_array</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; 'a array</code></pre><div class="info"><div class="info">Conversion of arrays from Javascript to OCaml.</div></div>
+<pre><span class="VALbytestring"><span class="keyword">val</span> bytestring</span> : <code class="type">string -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Conversion of strings of bytes from OCaml to Javascript.
+      (Each byte will be converted in an UTF-16 code point.)</div></div>
+<pre><span class="VALto_bytestring"><span class="keyword">val</span> to_bytestring</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; string</code></pre><div class="info"><div class="info">Conversion of strings of bytes from Javascript to OCaml.  (The
+      Javascript string should only contain UTF-16 code points below
+      255.)</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Convenience coercion functions</h2><br/></div></div>
+<pre><span class="VALcoerce"><span class="keyword">val</span> coerce</span> : <code class="type">'a -&gt; ('a -&gt; 'b <a href="?package=js_of_ocaml&amp;module=Js.Opt&amp;type=t">Opt.t</a>) -&gt; ('a -&gt; 'b) -&gt; 'b</code></pre><div class="info"><div class="info">Apply a possibly failing coercion function.
+      <code class="code">coerce v c f</code> attempts to apply coercion <code class="code">c</code> to value <code class="code">v</code>.
+      If the coercion returns <code class="code">null</code>, function <code class="code">f</code> is called.</div></div>
+<pre><span class="VALcoerce_opt"><span class="keyword">val</span> coerce_opt</span> : <code class="type">'a <a href="?package=js_of_ocaml&amp;module=Js.Opt&amp;type=t">Opt.t</a> -&gt; ('a -&gt; 'b <a href="?package=js_of_ocaml&amp;module=Js.Opt&amp;type=t">Opt.t</a>) -&gt; ('a -&gt; 'b) -&gt; 'b</code></pre><div class="info"><div class="info">Apply a possibly failing coercion function.
+      <code class="code">coerce_opt v c f</code> attempts to apply coercion <code class="code">c</code> to value <code class="code">v</code>.
+      If <code class="code">v</code> is <code class="code">null</code> or the coercion returns <code class="code">null</code>, function <code class="code">f</code> is
+      called.
+      Typical usage is the following:
+      <pre class="codepre"><code class="code">Js.coerce_opt (Dom_html.document##getElementById(id))
+      Dom_html.CoerceTo.div (fun _ -&gt; assert false)</code></pre></div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Type checking operators.</h2><br/></div></div>
+<pre><span class="VALtypeof"><span class="keyword">val</span> typeof</span> : <code class="type">&lt; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Returns the type of a Javascript object.</div></div>
+<pre><span class="VALinstanceof"><span class="keyword">val</span> instanceof</span> : <code class="type">&lt; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=constr">constr</a> -&gt; bool</code></pre><div class="info"><div class="info">Tests whether a Javascript object is an instance of a given class.</div></div>
+<div class="info"><div class="info"><br/><h2 id="2_TITLE">Unsafe operations.</h2><br/></div></div>
+<div class="ocaml_module sig" name="Unsafe"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Js.Unsafe">Unsafe</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code><div class="info"><div class="info">Unsafe Javascript operations</div></div></pre><div class="ocaml_module_content">
+<pre><span class="VALvariable"><span class="keyword">val</span> variable</span> : <code class="type">string -&gt; 'a</code></pre><div class="info"><div class="info">Access a Javascript variable.  <code class="code">variable &quot;foo&quot;</code> will
+        return the current value of variable <code class="code">foo</code>.</div></div>
+<pre><span class="TYPEany"><span class="keyword">type</span> any</span> </pre><div class="info"><div class="info">Top type.  Used for putting values of different types
+        in a same array.</div></div>
+<pre><span class="VALinject"><span class="keyword">val</span> inject</span> : <code class="type">'a -&gt; <a href="?package=js_of_ocaml&amp;module=Js.Unsafe&amp;type=any">any</a></code></pre><div class="info"><div class="info">Coercion to top type.</div></div>
+<pre><span class="VALcoerce"><span class="keyword">val</span> coerce</span> : <code class="type">&lt; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a> -&gt; &lt; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">t</a></code></pre><div class="info"><div class="info">Unsafe coercion between to Javascript objects.</div></div>
+<pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a -&gt; 'b -&gt; 'c</code></pre><div class="info"><div class="info">Get the value of an object property.  The expression <code class="code">get o s</code>
+        returns the value of property <code class="code">s</code> of object <code class="code">o</code>.</div></div>
+<pre><span class="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; unit</code></pre><div class="info"><div class="info">Set an object property.  The expression <code class="code">set o s v</code>
+        set the property <code class="code">s</code> of object <code class="code">o</code> to value <code class="code">v</code>.</div></div>
+<pre><span class="VALdelete"><span class="keyword">val</span> delete</span> : <code class="type">'a -&gt; 'b -&gt; unit</code></pre><div class="info"><div class="info">Delete an object property.  The expression <code class="code">delete o s</code>
+        deletes property <code class="code">s</code> of object <code class="code">o</code>.</div></div>
+<pre><span class="VALcall"><span class="keyword">val</span> call</span> : <code class="type">'a -&gt; 'b -&gt; <a href="?package=js_of_ocaml&amp;module=Js.Unsafe&amp;type=any">any</a> array -&gt; 'c</code></pre><div class="info"><div class="info">Performs a Javascript function call.  The expression
+        <code class="code">call f o a</code> calls the Javascript function <code class="code">f</code> with the
+        arguments given by the array <code class="code">o</code>, and binding <code class="code">this</code> to <code class="code">o</code>.</div></div>
+<pre><span class="VALfun_call"><span class="keyword">val</span> fun_call</span> : <code class="type">'a -&gt; <a href="?package=js_of_ocaml&amp;module=Js.Unsafe&amp;type=any">any</a> array -&gt; 'b</code></pre><div class="info"><div class="info">Performs a Javascript function call.  The expression
+        <code class="code">fun_call f a</code> calls the Javascript function <code class="code">f</code> with the
+        arguments given by the array <code class="code">o</code>.</div></div>
+<pre><span class="VALmeth_call"><span class="keyword">val</span> meth_call</span> : <code class="type">'a -&gt; string -&gt; <a href="?package=js_of_ocaml&amp;module=Js.Unsafe&amp;type=any">any</a> array -&gt; 'b</code></pre><div class="info"><div class="info">Performs a Javascript method call.  The expression
+        <code class="code">meth_call o m a</code> calls the Javascript method <code class="code">m</code> of object <code class="code">o</code>
+        with the arguments given by the array <code class="code">a</code>.</div></div>
+<pre><span class="VALnew_obj"><span class="keyword">val</span> new_obj</span> : <code class="type">'a -&gt; <a href="?package=js_of_ocaml&amp;module=Js.Unsafe&amp;type=any">any</a> array -&gt; 'b</code></pre><div class="info"><div class="info">Create a Javascript object.  The expression <code class="code">new_obj c a</code>
+        creates a Javascript object with constructor <code class="code">c</code> using the
+        arguments given by the array <code class="code">a</code>.</div></div>
+<pre><span class="VALobj"><span class="keyword">val</span> obj</span> : <code class="type">(string * <a href="?package=js_of_ocaml&amp;module=Js.Unsafe&amp;type=any">any</a>) array -&gt; 'a</code></pre><div class="info"><div class="info">Creates a Javascript literal object.  The expression
+        <code class="code">obj a</code> creates a Javascript object whose fields are given by
+        the array <code class="code">a</code></div></div>
+<pre><span class="VALpure_expr"><span class="keyword">val</span> pure_expr</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a</code></pre><div class="info"><div class="info">Asserts that an expression is pure, and can therefore be
+        optimized away by the compiler if unused.</div></div>
+<pre><span class="VALeval_string"><span class="keyword">val</span> eval_string</span> : <code class="type">string -&gt; 'a</code></pre><div class="info"><div class="info">Evaluate Javascript code</div></div></div></div>
+</div>

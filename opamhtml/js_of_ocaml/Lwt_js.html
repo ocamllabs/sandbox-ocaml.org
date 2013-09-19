@@ -1,0 +1,6 @@
+<div class="ocaml_toplevel_module"><div class="info">Javascript specific Lwt functions.</div>
+<pre><span class="VALsleep"><span class="keyword">val</span> sleep</span> : <code class="type">float -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">sleep d</code> is a threads which remain suspended for <code class="code">d</code> seconds
+      and then terminates.</div></div>
+<pre><span class="VALyield"><span class="keyword">val</span> yield</span> : <code class="type">unit -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">yield ()</code> is a threads which suspends itself and then resumes
+      as soon as possible and terminates.</div></div>
+</div>
