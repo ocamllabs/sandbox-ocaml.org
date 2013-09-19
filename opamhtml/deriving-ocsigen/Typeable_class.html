@@ -1,0 +1,15 @@
+<div class="ocaml_toplevel_module"><div class="ocaml_module ident" name="Description"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Typeable_class.Description">Description</a> : <code class="type"><code class="code">Pa_deriving_common.Defs.ClassDescription</code></code></pre></div>
+<div class="ocaml_module sig" name="Builder"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Typeable_class.Builder">Builder</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Generator</code><code class="code"> : </code><code class="code">Pa_deriving_common.Defs.Generator</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module ident" name="Helpers"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Typeable_class.Builder.Helpers">Helpers</a> : <code class="type"><code class="code">Generator.AstHelpers</code></code></pre></div>
+<pre><span class="VALmkName"><span class="keyword">val</span> mkName</span> : <code class="type">string -&gt; string</code></pre>
+<pre><span class="VALwrap"><span class="keyword">val</span> wrap</span> : <code class="type">Camlp4.PreCast.Ast.expr -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+<pre><span class="VALgenerator"><span class="keyword">val</span> generator</span> : <code class="type">Generator.generator</code></pre>
+<pre><span class="VALclassname"><span class="keyword">val</span> classname</span> : <code class="type">Pa_deriving_common.Type.name</code></pre>
+<pre><span class="VALruntimename"><span class="keyword">val</span> runtimename</span> : <code class="type">Pa_deriving_common.Type.name</code></pre>
+<pre><span class="VALgenerate"><span class="keyword">val</span> generate</span> : <code class="type">Pa_deriving_common.Type.decl list -&gt; Camlp4.PreCast.Ast.str_item</code></pre>
+<pre><span class="VALgenerate_sigs"><span class="keyword">val</span> generate_sigs</span> : <code class="type">Pa_deriving_common.Type.decl list -&gt; Camlp4.PreCast.Ast.sig_item</code></pre>
+<pre><span class="VALgenerate_expr"><span class="keyword">val</span> generate_expr</span> : <code class="type">Camlp4.PreCast.Ast.module_expr Pa_deriving_common.Type.EMap.t -&gt;
+Pa_deriving_common.Type.qname Pa_deriving_common.Type.NameMap.t -&gt;
+Pa_deriving_common.Type.expr -&gt; Camlp4.PreCast.Ast.module_expr</code></pre></div></div>
+<div class="ocaml_include ident" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code">Pa_deriving_common.Base.RegisterFullClass</code>(<code class="code"><a href="?package=deriving-ocsigen&amp;module=Typeable_class.Description">Description</a></code>)(<code class="code"><a href="?package=deriving-ocsigen&amp;module=Typeable_class.Builder">Builder</a></code>)</code></pre></div>
+</div>

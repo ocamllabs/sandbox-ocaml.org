@@ -1,0 +1,12 @@
+<div class="ocaml_toplevel_module"><div class="ocaml_module ident" name="Description"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Pickle_class.Description">Description</a> : <code class="type"><code class="code">Pa_deriving_common.Defs.ClassDescription</code></code></pre></div>
+<div class="ocaml_module sig" name="Builder"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Pickle_class.Builder">Builder</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Generator</code><code class="code"> : </code><code class="code">Pa_deriving_common.Defs.Generator</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module ident" name="Helpers"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Pickle_class.Builder.Helpers">Helpers</a> : <code class="type"><code class="code">Generator.AstHelpers</code></code></pre></div>
+<pre><span class="VALUnknown name -- to fix"><span class="keyword">val</span> Unknown name -- to fix</span> : <code class="type">Camlp4.PreCast.Ast.expr * Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALwrap"><span class="keyword">val</span> wrap</span> : <code class="type">'a -&gt;
+picklers:Camlp4.PreCast.Ast.match_case list -&gt;
+unpickler:Camlp4.PreCast.Ast.expr -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+<pre><span class="VALgenerator"><span class="keyword">val</span> generator</span> : <code class="type">Generator.generator</code></pre>
+<pre><span class="VALgenerate"><span class="keyword">val</span> generate</span> : <code class="type">Pa_deriving_common.Type.decl list -&gt; Camlp4.PreCast.Ast.str_item</code></pre>
+<pre><span class="VALgenerate_sigs"><span class="keyword">val</span> generate_sigs</span> : <code class="type">Pa_deriving_common.Type.decl list -&gt; Camlp4.PreCast.Ast.sig_item</code></pre></div></div>
+<div class="ocaml_include ident" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code">Pa_deriving_common.Base.RegisterClass</code>(<code class="code"><a href="?package=deriving-ocsigen&amp;module=Pickle_class.Description">Description</a></code>)(<code class="code"><a href="?package=deriving-ocsigen&amp;module=Pickle_class.Builder">Builder</a></code>)</code></pre></div>
+</div>

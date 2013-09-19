@@ -1,0 +1,52 @@
+<div class="ocaml_toplevel_module"><pre><code><span class="TYPErect"><span class="keyword">type</span> rect</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTrect.x">x</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTrect.y">y</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTrect.width">width</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTrect.height">height</span> : <code class="type">int</code></code></td></tr><tr><td>}</td></tr></table>
+<div class="ocaml_module ident" name="Html" path="?package=js_of_ocaml&amp;module=Dom_html"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Viewer_js.Html">Html</a> : <code class="type"><code class="code"><a href="?package=js_of_ocaml&amp;module=Dom_html">Dom_html</a></code></code></pre></div>
+<pre><span class="VALcreate_canvas"><span class="keyword">val</span> create_canvas</span> : <code class="type">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Viewer_js.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<div class="ocaml_module ident" name="Common" path="?package=js_of_ocaml&amp;module=Viewer_common.F"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Viewer_js.Common">Common</a> : <code class="type"><code class="code"><a href="?package=js_of_ocaml&amp;module=Viewer_common.F">Viewer_common.F</a></code>(<code class="code">sig</code> .. <code class="code">end</code>)</code></pre></div>
+<pre><span class="VALredraw"><span class="keyword">val</span> redraw</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Viewer_js.Common&amp;type=st">Common.st</a> -&gt; float -&gt; float -&gt; float -&gt; <a href="?package=js_of_ocaml&amp;module=Viewer_js.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit</code></pre>
+<pre><span class="VAL&gt;&gt;="><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; ('a -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALhttp_get"><span class="keyword">val</span> http_get</span> : <code class="type">string -&gt; string <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALjson"><span class="keyword">val</span> json</span> : <code class="type">&lt; parse : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<div class="ocaml_class sig" name="adjustment"><pre><span class="TYPEadjustment"><span class="keyword">class</span> <a href="?package=js_of_ocaml&amp;module=Viewer_js&amp;class=adjustment">adjustment</a></span> : <code class="type">unit -&gt; float option -&gt; float option -&gt; float option -&gt; float option -&gt; float option -&gt; float option -&gt; </code><code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="ATT_value"><span class="keyword">val</span> <span class="keyword">mutable</span> _value</span> : <code class="code">float</code></pre>
+<pre><span class="METHODvalue"><span class="keyword">method</span> value</span> : <code class="code">float</code></pre>
+<pre><span class="ATT_lower"><span class="keyword">val</span> <span class="keyword">mutable</span> _lower</span> : <code class="code">float</code></pre>
+<pre><span class="METHODlower"><span class="keyword">method</span> lower</span> : <code class="code">float</code></pre>
+<pre><span class="ATT_upper"><span class="keyword">val</span> <span class="keyword">mutable</span> _upper</span> : <code class="code">float</code></pre>
+<pre><span class="METHODupper"><span class="keyword">method</span> upper</span> : <code class="code">float</code></pre>
+<pre><span class="ATT_step_incr"><span class="keyword">val</span> <span class="keyword">mutable</span> _step_incr</span> : <code class="code">float</code></pre>
+<pre><span class="METHODstep_increment"><span class="keyword">method</span> step_increment</span> : <code class="code">float</code></pre>
+<pre><span class="ATT_page_incr"><span class="keyword">val</span> <span class="keyword">mutable</span> _page_incr</span> : <code class="code">float</code></pre>
+<pre><span class="METHODpage_increment"><span class="keyword">method</span> page_increment</span> : <code class="code">float</code></pre>
+<pre><span class="ATT_page_size"><span class="keyword">val</span> <span class="keyword">mutable</span> _page_size</span> : <code class="code">float</code></pre>
+<pre><span class="METHODpage_size"><span class="keyword">method</span> page_size</span> : <code class="code">float</code></pre>
+<pre><span class="METHODset_value"><span class="keyword">method</span> set_value</span> : <code class="code">float -&gt; unit</code></pre>
+<pre><span class="METHODset_bounds"><span class="keyword">method</span> set_bounds</span> : <code class="code">?lower:float -&gt;
+?upper:float -&gt;
+?step_incr:float -&gt; ?page_incr:float -&gt; ?page_size:float -&gt; unit -&gt; unit</code></pre></div></div>
+<pre><span class="VALhandle_drag"><span class="keyword">val</span> handle_drag</span> : <code class="type">&lt; onmousedown : &lt; set : ('a,
+                         &lt; _type : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           clientX : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                           clientY : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                           currentTarget : <a href="?package=js_of_ocaml&amp;module=Viewer_js.Html&amp;type=element">Html.element</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a>
+                                           <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           srcElement : <a href="?package=js_of_ocaml&amp;module=Viewer_js.Html&amp;type=element">Html.element</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a>
+                                        <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           target : <a href="?package=js_of_ocaml&amp;module=Viewer_js.Html&amp;type=element">Html.element</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=optdef">Js.optdef</a>
+                                    <a href="?package=js_of_ocaml&amp;module=Js&amp;type=readonly_prop">Js.readonly_prop</a>;
+                           .. &gt;
+                         <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>)
+                        <a href="?package=js_of_ocaml&amp;module=Viewer_js.Html&amp;type=event_listener">Html.event_listener</a> -&gt; unit;
+                  .. &gt;
+                <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  style : &lt; get : &lt; cursor : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt;
+                             <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                    .. &gt;
+                  <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>;
+            .. &gt;
+          <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (int -&gt; int -&gt; 'b) -&gt; unit</code></pre>
+<pre><span class="VALstart"><span class="keyword">val</span> start</span> : <code class="type">unit -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+
+</div>

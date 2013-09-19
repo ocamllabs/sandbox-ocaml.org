@@ -23,12 +23,11 @@ f:'a <a href="?package=omd&amp;module=Omd_utils&amp;type=split">split</a> -&gt; 
     it has issued, in order to avoid collision. This is why
     <code class="code">id_of_string</code> asks for an object rather than &quot;just a
     function&quot;.</div></div>
-<pre><span class="VALhtmlentities"><span class="keyword">val</span> htmlentities</span> : <code class="type">string -&gt; string</code></pre><div class="info"><div class="info"><code class="code">htmlentities s</code> returns a new string in which html-significant
+<pre><span class="VALhtmlentities"><span class="keyword">val</span> htmlentities</span> : <code class="type">?md:bool -&gt; string -&gt; string</code></pre><div class="info"><div class="info"><code class="code">htmlentities s</code> returns a new string in which html-significant
     characters have been converted to html entities. For instance,
     &quot;&lt;Foo&amp;Bar&gt;&quot; is converted to &quot;&amp;lt;Foo&amp;amp;Bar&amp;gt;&quot;.</div></div>
-<pre><span class="VALminimalize_blanks"><span class="keyword">val</span> minimalize_blanks</span> : <code class="type">string -&gt; string</code></pre><div class="info"><div class="info"><code class="code">minimalize_blanks s</code> returns <code class="code">s</code> where the first and last
-   characters are never blank, and two consecutive blanks never
-   happen.</div></div>
+<pre><span class="VALminimalize_blanks"><span class="keyword">val</span> minimalize_blanks</span> : <code class="type">string -&gt; string</code></pre><div class="info"><div class="info"><code class="code">minimalize_blanks s</code> returns a copy of <code class="code">s</code> in which the first and last
+   characters are never blank, and two consecutive blanks never happen.</div></div>
 <pre><span class="VALeat"><span class="keyword">val</span> eat</span> : <code class="type">('a -&gt; bool) -&gt; 'a list -&gt; 'a list</code></pre><div class="info"><div class="info"><code class="code">eat f l</code> returns <code class="code">l</code> where elements satisfying <code class="code">f</code> have been removed,
     but it stops removing as soon as one element doesn't satisfy <code class="code">f</code>.</div></div>
 </div>

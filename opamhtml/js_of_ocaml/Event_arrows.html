@@ -1,0 +1,102 @@
+<div class="ocaml_toplevel_module"><div class="info">Warning: this module is now deprecated. Use Lwt_js_events instead.</div>
+<pre><span class="TYPEcanceller"><span class="keyword">type</span> canceller</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+<pre><span class="VALlwt_arr"><span class="keyword">val</span> lwt_arr</span> : <code class="type">('a -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; ('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALarr"><span class="keyword">val</span> arr</span> : <code class="type">('a -&gt; 'b) -&gt; ('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VAL&gt;&gt;&gt;"><span class="keyword">val</span> &gt;&gt;&gt;</span> : <code class="type">('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('a, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VAL&gt;&gt;&gt;|"><span class="keyword">val</span> &gt;&gt;&gt;|</span> : <code class="type">('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b -&gt; 'c <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; ('a, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALrun"><span class="keyword">val</span> run</span> : <code class="type">('a, unit) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; 'a -&gt; <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=canceller">canceller</a></code></pre>
+<pre><span class="VALcancel"><span class="keyword">val</span> cancel</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=canceller">canceller</a> -&gt; unit</code></pre>
+<pre><span class="VALfirst"><span class="keyword">val</span> first</span> : <code class="type">('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> list -&gt; ('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre><div class="info"><div class="info">Behaves as the first element of the list to terminate</div></div>
+<pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> list -&gt; ('a, 'b) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre><div class="info"><div class="info">Behaves as one element of the list, then another one, etc.
+    If you launch several run in parallel, event handler will be parallelized,
+    that is: one will not be desactivated while another is running.
+    To sequentialize them, use iter.</div></div>
+<div class="info"><div class="info">Browsers propagate events from external boxes to internal (capture phase),
+   then from internal to external (bubble phase).<br/>   If <code class="code">use_capture</code> is set to <code class="code">true</code>, the event will be caught during the
+   capture phase (default: bubble phase).<br/>   If <code class="code">keep_default</code> is set to <code class="code">true</code>, the default event will not be removed.<br/>   If <code class="code">propagate</code> is set to <code class="code">true</code>, the event will continue to propagate
+   after the handler.</div></div>
+<pre><span class="VALclick"><span class="keyword">val</span> click</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALdblclick"><span class="keyword">val</span> dblclick</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmousedown"><span class="keyword">val</span> mousedown</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmouseup"><span class="keyword">val</span> mouseup</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmouseover"><span class="keyword">val</span> mouseover</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmousemove"><span class="keyword">val</span> mousemove</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmouseout"><span class="keyword">val</span> mouseout</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALkeypress"><span class="keyword">val</span> keypress</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALkeydown"><span class="keyword">val</span> keydown</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALkeyup"><span class="keyword">val</span> keyup</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; ('a, <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALclicks"><span class="keyword">val</span> clicks</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALdblclicks"><span class="keyword">val</span> dblclicks</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmousedowns"><span class="keyword">val</span> mousedowns</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmouseups"><span class="keyword">val</span> mouseups</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmouseovers"><span class="keyword">val</span> mouseovers</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmousemoves"><span class="keyword">val</span> mousemoves</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALmouseouts"><span class="keyword">val</span> mouseouts</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; (<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=mouseEvent">Dom_html.mouseEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALkeypresses"><span class="keyword">val</span> keypresses</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALkeydowns"><span class="keyword">val</span> keydowns</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+<pre><span class="VALkeyups"><span class="keyword">val</span> keyups</span> : <code class="type">?use_capture:bool -&gt;
+?keep_default:bool -&gt;
+?propagate:bool -&gt;
+#<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;class=eventTarget">Dom_html.eventTarget</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+(<a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=keyboardEvent">Dom_html.keyboardEvent</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a>, 'a) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=js_of_ocaml&amp;module=Event_arrows&amp;type=t">t</a></code></pre>
+</div>

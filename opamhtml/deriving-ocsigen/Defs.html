@@ -1,0 +1,125 @@
+<div class="ocaml_toplevel_module"><div class="ocaml_module sig" name="Loc"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.Loc">Loc</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VAL_loc"><span class="keyword">val</span> _loc</span> : <code class="type">Camlp4.PreCast.Loc.t</code></pre></div></div>
+<div class="ocaml_module sig" name="AstHelpers"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.AstHelpers">AstHelpers</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module ident" name="Untranslate" path="?package=deriving-ocsigen&amp;module=Type.Untranslate"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Defs.AstHelpers.Untranslate">Untranslate</a> : <code class="type"><code class="code"><a href="?package=deriving-ocsigen&amp;module=Type.Untranslate">Type.Untranslate</a></code></code></pre></div>
+<pre><span class="VALseq"><span class="keyword">val</span> seq</span> : <code class="type">Camlp4.PreCast.Ast.expr -&gt; Camlp4.PreCast.Ast.expr -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALseq_list"><span class="keyword">val</span> seq_list</span> : <code class="type">Camlp4.PreCast.Ast.expr list -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALrecord_pattern"><span class="keyword">val</span> record_pattern</span> : <code class="type">?prefix:string -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=field">Type.field</a> list -&gt; Camlp4.PreCast.Ast.patt</code></pre>
+<pre><span class="VALrecord_expr"><span class="keyword">val</span> record_expr</span> : <code class="type">(string * Camlp4.PreCast.Ast.expr) list -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALrecord_expression"><span class="keyword">val</span> record_expression</span> : <code class="type">?prefix:string -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=field">Type.field</a> list -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALexpr_list"><span class="keyword">val</span> expr_list</span> : <code class="type">Camlp4.PreCast.Ast.expr list -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALpatt_list"><span class="keyword">val</span> patt_list</span> : <code class="type">Camlp4.PreCast.Ast.patt list -&gt; Camlp4.PreCast.Ast.patt</code></pre>
+<pre><span class="VALtuple_expr"><span class="keyword">val</span> tuple_expr</span> : <code class="type">Camlp4.PreCast.Ast.expr list -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALtuple"><span class="keyword">val</span> tuple</span> : <code class="type">?param:string -&gt;
+int -&gt; string list * Camlp4.PreCast.Ast.patt * Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALcast_pattern"><span class="keyword">val</span> cast_pattern</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> <a href="?package=deriving-ocsigen&amp;module=Type.NameMap&amp;type=t">Type.NameMap.t</a> -&gt;
+?param:string -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt;
+Camlp4.PreCast.Ast.patt * Camlp4.PreCast.Ast.expr * Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALmodname_from_qname"><span class="keyword">val</span> modname_from_qname</span> : <code class="type">qname:string list -&gt; classname:string -&gt; Camlp4.PreCast.Ast.ident</code></pre></div></div>
+<div class="ocaml_module sig" name="Generator"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.Generator">Generator</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="TYPEcontext"><span class="keyword">type</span> context</span> </pre>
+<div class="ocaml_module ident" name="Loc" path="?package=deriving-ocsigen&amp;module=Defs.Loc"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Defs.Generator.Loc">Loc</a> : <code class="type"><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Loc">Loc</a></code></code></pre></div>
+<div class="ocaml_module ident" name="AstHelpers" path="?package=deriving-ocsigen&amp;module=Defs.AstHelpers"><pre><span class="keyword">module</span> <a href="?package=deriving-ocsigen&amp;module=Defs.Generator.AstHelpers">AstHelpers</a> : <code class="type"><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.AstHelpers">AstHelpers</a></code></code></pre></div>
+<pre><span class="VALcast_pattern"><span class="keyword">val</span> cast_pattern</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt;
+?param:string -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt;
+Camlp4.PreCast.Ast.patt * Camlp4.PreCast.Ast.expr * Camlp4.PreCast.Ast.expr</code></pre>
+<pre><span class="VALinstantiate_modargs_repr"><span class="keyword">val</span> instantiate_modargs_repr</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=repr">Type.repr</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=repr">Type.repr</a></code></pre>
+<div class="ocaml_class sig" name="generator"><pre><span class="TYPEgenerator"><span class="keyword">class</span> <span class="keyword">virtual </span><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;class=generator">generator</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_class_content">
+<pre><span class="METHODpack"><span class="keyword">method</span> pack</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> <a href="?package=deriving-ocsigen&amp;module=Type.NameMap&amp;type=t">Type.NameMap.t</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.module_expr -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+
+<pre><span class="METHODunpack"><span class="keyword">method</span> unpack</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> <a href="?package=deriving-ocsigen&amp;module=Type.NameMap&amp;type=t">Type.NameMap.t</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.expr -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="METHODclass_sig"><span class="keyword">method</span> class_sig</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> <a href="?package=deriving-ocsigen&amp;module=Type.NameMap&amp;type=t">Type.NameMap.t</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.module_type</code></pre>
+
+<pre><span class="METHODrhs"><span class="keyword">method</span> rhs</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=subst">Type.subst</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=decl">Type.decl</a> -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="METHODexpr"><span class="keyword">method</span> expr</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="METHODconstr"><span class="keyword">method</span> constr</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> * <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> list -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="METHODparam"><span class="keyword">method</span> param</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=param">Type.param</a> -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="METHODgparam"><span class="keyword">method</span> gparam</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=param">Type.param</a> * <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="METHODwrap"><span class="keyword">method</span> wrap</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt;
+?default:<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> option -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt;
+Camlp4.PreCast.Ast.str_item list -&gt; Camlp4.PreCast.Ast.module_expr</code></pre>
+
+<pre><span class="METHODcall_expr"><span class="keyword">method</span> call_expr</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; string -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+
+<pre><span class="METHODcall_poly_expr"><span class="keyword">method</span> call_poly_expr</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=poly_expr">Type.poly_expr</a> -&gt; string -&gt; Camlp4.PreCast.Ast.expr</code></pre>
+
+<pre><span class="METHODproxy"><span class="keyword">method</span> <span class="keyword">virtual</span> proxy</span> : <code class="code">unit -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> option * Camlp4.PreCast.Ast.ident list</code></pre>
+
+<pre><span class="METHODsum"><span class="keyword">method</span> <span class="keyword">virtual</span> sum</span> : <code class="code">?eq:<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> list -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=constraint_">Type.constraint_</a> list -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=summand">Type.summand</a> list -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODgsum"><span class="keyword">method</span> gsum</span> : <code class="code">?eq:<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> list -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=constraint_">Type.constraint_</a> list -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=gsummand">Type.gsummand</a> list -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODtuple"><span class="keyword">method</span> <span class="keyword">virtual</span> tuple</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> list -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODvariant"><span class="keyword">method</span> <span class="keyword">virtual</span> variant</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> list -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=constraint_">Type.constraint_</a> list -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=variant">Type.variant</a> -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODrecord"><span class="keyword">method</span> <span class="keyword">virtual</span> record</span> : <code class="code">?eq:<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> list -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=constraint_">Type.constraint_</a> list -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=field">Type.field</a> list -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODclass_"><span class="keyword">method</span> class_</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; [ `NYI ] -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODfunction_"><span class="keyword">method</span> function_</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> * <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODlabel"><span class="keyword">method</span> label</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt;
+[ `NonOptional | `Optional ] * <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> * <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> * <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt;
+Camlp4.PreCast.Ast.str_item list</code></pre>
+
+<pre><span class="METHODobject_"><span class="keyword">method</span> object_</span> : <code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=context">context</a> -&gt; [ `NYI ] -&gt; Camlp4.PreCast.Ast.str_item list</code></pre>
+</div></div>
+<pre><span class="VALgenerate"><span class="keyword">val</span> generate</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=generator">generator</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=decl">Type.decl</a> list -&gt; Camlp4.PreCast.Ast.str_item</code></pre>
+<pre><span class="VALgenerate_sigs"><span class="keyword">val</span> generate_sigs</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=generator">generator</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=decl">Type.decl</a> list -&gt; Camlp4.PreCast.Ast.sig_item</code></pre>
+<pre><span class="VALgenerate_expr"><span class="keyword">val</span> generate_expr</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator&amp;type=generator">generator</a> -&gt;
+Camlp4.PreCast.Ast.module_expr <a href="?package=deriving-ocsigen&amp;module=Type.EMap&amp;type=t">Type.EMap.t</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> <a href="?package=deriving-ocsigen&amp;module=Type.NameMap&amp;type=t">Type.NameMap.t</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.module_expr</code></pre></div></div>
+
+<div class="ocaml_module sig" name="Class"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.Class">Class</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALgenerate"><span class="keyword">val</span> generate</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=decl">Type.decl</a> list -&gt; Camlp4.PreCast.Ast.str_item</code></pre>
+<pre><span class="VALgenerate_sigs"><span class="keyword">val</span> generate_sigs</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=decl">Type.decl</a> list -&gt; Camlp4.PreCast.Ast.sig_item</code></pre></div></div>
+<div class="ocaml_module ident" name="ClassBuilder" path="?package=deriving-ocsigen&amp;module=Defs.Class"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.ClassBuilder">ClassBuilder</a> = <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Generator</code><code class="code"> : </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator">Generator</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Class">Class</a></code></div></code></pre></div>
+<div class="ocaml_module ident" name="InnerClassBuilder" path="?package=deriving-ocsigen&amp;module=Defs.Class"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.InnerClassBuilder">InnerClassBuilder</a> = <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Loc</code><code class="code"> : </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Loc">Loc</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Class">Class</a></code></div></code></pre></div>
+<div class="ocaml_module sig" name="FullClass"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.FullClass">FullClass</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALclassname"><span class="keyword">val</span> classname</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a></code></pre>
+<pre><span class="VALruntimename"><span class="keyword">val</span> runtimename</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a></code></pre>
+<div class="ocaml_include ident" path="?package=deriving-ocsigen&amp;module=Defs.Class" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Class">Class</a></code></code></pre></div>
+<pre><span class="VALgenerate_expr"><span class="keyword">val</span> generate_expr</span> : <code class="type">Camlp4.PreCast.Ast.module_expr <a href="?package=deriving-ocsigen&amp;module=Type.EMap&amp;type=t">Type.EMap.t</a> -&gt;
+<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> <a href="?package=deriving-ocsigen&amp;module=Type.NameMap&amp;type=t">Type.NameMap.t</a> -&gt; <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=expr">Type.expr</a> -&gt; Camlp4.PreCast.Ast.module_expr</code></pre></div></div>
+<div class="ocaml_module ident" name="FullBuilder" path="?package=deriving-ocsigen&amp;module=Defs.FullClass"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.FullBuilder">FullBuilder</a> = <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Generator</code><code class="code"> : </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Generator">Generator</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.FullClass">FullClass</a></code></div></code></pre></div>
+<div class="ocaml_module ident" name="DepClassBuilder" path="?package=deriving-ocsigen&amp;module=Defs.FullClass"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.DepClassBuilder">DepClassBuilder</a> = <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Loc</code><code class="code"> : </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Loc">Loc</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.FullClass">FullClass</a></code></div></code></pre></div>
+<div class="ocaml_module sig" name="ClassDescription"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.ClassDescription">ClassDescription</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<pre><span class="VALclassname"><span class="keyword">val</span> classname</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a></code></pre>
+<pre><span class="VALruntimename"><span class="keyword">val</span> runtimename</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a></code></pre>
+<pre><span class="VALdefault_module"><span class="keyword">val</span> default_module</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> option</code></pre>
+<pre><span class="VALalpha"><span class="keyword">val</span> alpha</span> : <code class="type"><a href="?package=deriving-ocsigen&amp;module=Type&amp;type=name">Type.name</a> option</code></pre>
+<pre><span class="VALallow_private"><span class="keyword">val</span> allow_private</span> : <code class="type">bool</code></pre>
+<pre><span class="VALpredefs"><span class="keyword">val</span> predefs</span> : <code class="type">(<a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a> * <a href="?package=deriving-ocsigen&amp;module=Type&amp;type=qname">Type.qname</a>) list</code></pre>
+<pre><span class="VALdepends"><span class="keyword">val</span> depends</span> : <code class="type">(module DepClassBuilder) list</code></pre></div></div>
+<pre><span class="TYPEgenerator"><span class="keyword">type</span> generator</span> = <code class="type">(module InnerClassBuilder)</code></pre>
+<div class="ocaml_module ident" name="FullClassBuilder" path="?package=deriving-ocsigen&amp;module=Defs.FullClass"><pre><span class="keyword">module type</span> <a href="?package=deriving-ocsigen&amp;module=Defs.FullClassBuilder">FullClassBuilder</a> = <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Loc</code><code class="code"> : </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.Loc">Loc</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=deriving-ocsigen&amp;module=Defs.FullClass">FullClass</a></code></div></code></pre></div>
+</div>

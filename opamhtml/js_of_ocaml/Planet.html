@@ -1,0 +1,87 @@
+<div class="ocaml_toplevel_module"><pre><span class="VALwidth"><span class="keyword">val</span> width</span> : <code class="type">int</code></pre>
+<pre><span class="VALheight"><span class="keyword">val</span> height</span> : <code class="type">int</code></pre>
+<pre><span class="VALpi"><span class="keyword">val</span> pi</span> : <code class="type">float</code></pre>
+<pre><span class="VALobliquity"><span class="keyword">val</span> obliquity</span> : <code class="type">float</code></pre>
+<pre><span class="VALgamma"><span class="keyword">val</span> gamma</span> : <code class="type">float</code></pre>
+<pre><span class="VALdark"><span class="keyword">val</span> dark</span> : <code class="type">float</code></pre>
+<pre><span class="VALdoc"><span class="keyword">val</span> doc</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=document">Dom_html.document</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALbutton_type"><span class="keyword">val</span> button_type</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALbutton"><span class="keyword">val</span> button</span> : <code class="type">string -&gt; (unit -&gt; 'a) -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=inputElement">Dom_html.inputElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALtoggle_button"><span class="keyword">val</span> toggle_button</span> : <code class="type">string -&gt; string -&gt; (bool -&gt; 'a) -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=inputElement">Dom_html.inputElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALcheckbox"><span class="keyword">val</span> checkbox</span> : <code class="type">string -&gt; bool -&gt; (bool -&gt; 'a) -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=labelElement">Dom_html.labelElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALradio"><span class="keyword">val</span> radio</span> : <code class="type">string -&gt; string -&gt; bool -&gt; (unit -&gt; 'a) -&gt; <a href="?package=js_of_ocaml&amp;module=Dom_html&amp;type=labelElement">Dom_html.labelElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><code><span class="TYPEvertex"><span class="keyword">type</span> vertex</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTvertex.x">x</span> : <code class="type">float</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTvertex.y">y</span> : <code class="type">float</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTvertex.z">z</span> : <code class="type">float</code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALvertex"><span class="keyword">val</span> vertex</span> : <code class="type">float -&gt; float -&gt; float -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></pre>
+<pre><code><span class="TYPEmatrix"><span class="keyword">type</span> matrix</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTmatrix.r1">r1</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTmatrix.r2">r2</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTmatrix.r3">r3</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALvect"><span class="keyword">val</span> vect</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></pre>
+<pre><span class="VALcross_product"><span class="keyword">val</span> cross_product</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></pre>
+<pre><span class="VALdot_product"><span class="keyword">val</span> dot_product</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; float</code></pre>
+<pre><span class="VALmatrix_vect_mul"><span class="keyword">val</span> matrix_vect_mul</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></pre>
+<pre><span class="VALmatrix_transp"><span class="keyword">val</span> matrix_transp</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a></code></pre>
+<pre><span class="VALmatrix_mul"><span class="keyword">val</span> matrix_mul</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a></code></pre>
+<pre><span class="VALnormalize"><span class="keyword">val</span> normalize</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></pre>
+<pre><span class="VALxz_rotation"><span class="keyword">val</span> xz_rotation</span> : <code class="type">float -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a></code></pre>
+<pre><span class="VALxy_rotation"><span class="keyword">val</span> xy_rotation</span> : <code class="type">float -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a></code></pre>
+<pre><span class="VALyz_rotation"><span class="keyword">val</span> yz_rotation</span> : <code class="type">float -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a></code></pre>
+<pre><span class="VALmatrix_identity"><span class="keyword">val</span> matrix_identity</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a></code></pre>
+<pre><span class="VALrotate_normal"><span class="keyword">val</span> rotate_normal</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></pre>
+<pre><code><span class="TYPEface"><span class="keyword">type</span> face</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTface.v1">v1</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTface.v2">v2</span> : <code class="type">int</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTface.v3">v3</span> : <code class="type">int</code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALface"><span class="keyword">val</span> face</span> : <code class="type">int -&gt; int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=face">face</a></code></pre>
+<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.vertices">vertices</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> array</code></code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.faces">faces</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=face">face</a> array</code></code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALrotate_object"><span class="keyword">val</span> rotate_object</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=matrix">matrix</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a></code></pre>
+<pre><span class="VALoctahedron"><span class="keyword">val</span> octahedron</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a></code></pre>
+<pre><span class="VALtesselate_sphere"><span class="keyword">val</span> tesselate_sphere</span> : <code class="type">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a></code></pre>
+<pre><span class="VALdivide"><span class="keyword">val</span> divide</span> : <code class="type">bool -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a></code></pre>
+<div class="ocaml_module ident" name="Html" path="?package=js_of_ocaml&amp;module=Dom_html"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Planet.Html">Html</a> : <code class="type"><code class="code"><a href="?package=js_of_ocaml&amp;module=Dom_html">Dom_html</a></code></code></pre></div>
+<pre><span class="VALcreate_canvas"><span class="keyword">val</span> create_canvas</span> : <code class="type">int -&gt; int -&gt; <a href="?package=js_of_ocaml&amp;module=Planet.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VAL&gt;&gt;="><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; ('a -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALlwt_wrap"><span class="keyword">val</span> lwt_wrap</span> : <code class="type">(('a -&gt; unit) -&gt; 'b) -&gt; 'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALload_image"><span class="keyword">val</span> load_image</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; <a href="?package=js_of_ocaml&amp;module=Planet.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALshadow"><span class="keyword">val</span> shadow</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet.Html&amp;type=imageElement">Html.imageElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+<a href="?package=js_of_ocaml&amp;module=Planet.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> * (float -&gt; unit) * (bool -&gt; float -&gt; unit)</code></pre>
+<pre><span class="VALto_uv"><span class="keyword">val</span> to_uv</span> : <code class="type">float -&gt; float -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; float * float</code></pre>
+<pre><span class="VALmin"><span class="keyword">val</span> min</span> : <code class="type">float -&gt; float -&gt; float</code></pre>
+<pre><span class="VALmax"><span class="keyword">val</span> max</span> : <code class="type">float -&gt; float -&gt; float</code></pre>
+<pre><span class="VALprecompute_mapping_info"><span class="keyword">val</span> precompute_mapping_info</span> : <code class="type">float -&gt;
+float -&gt;
+(float * float) array -&gt;
+<a href="?package=js_of_ocaml&amp;module=Planet&amp;type=face">face</a> -&gt;
+float * float * float * float * float * float * float * float * float * float</code></pre>
+<pre><span class="VALdraw"><span class="keyword">val</span> draw</span> : <code class="type">&lt; beginPath : 'a1968dda0 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; clip : 'a454b6217 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  closePath : 'a8500f925 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  drawImage_fullFromCanvas : 'a83c9b355 -&gt;
+                             'aba33fb27 -&gt;
+                             'aaa052ac6 -&gt;
+                             'a4396297d -&gt;
+                             'a45d00613 -&gt;
+                             'aba33fb27 -&gt;
+                             'aaa052ac6 -&gt;
+                             'a4396297d -&gt; 'a45d00613 -&gt; 'a81510938 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  lineTo : float -&gt; float -&gt; 'ae57a4e41 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'a7996505c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; restore : unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  save : 'a1b568e5b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  transform : float -&gt;
+              float -&gt; float -&gt; float -&gt; float -&gt; float -&gt; 'a8190e5df <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+'a -&gt;
+'a83c9b355 -&gt;
+<a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a> -&gt;
+'b -&gt;
+<a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> array -&gt;
+(float * float * float * float * float * float * 'aba33fb27 * 'aaa052ac6 *
+ 'a4396297d * 'a45d00613)
+array -&gt; <a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a> -&gt; unit</code></pre>
+<pre><span class="VAL&gt;&gt;"><span class="keyword">val</span> &gt;&gt;</span> : <code class="type">'a -&gt; ('a -&gt; 'b) -&gt; 'b</code></pre>
+<pre><span class="VALo"><span class="keyword">val</span> o</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=t">t</a></code></pre>
+<pre><span class="VALv"><span class="keyword">val</span> v</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Planet&amp;type=vertex">vertex</a></code></pre>
+<pre><span class="VALtexture"><span class="keyword">val</span> texture</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALtexture"><span class="keyword">val</span> texture</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALtexture"><span class="keyword">val</span> texture</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALstart"><span class="keyword">val</span> start</span> : <code class="type">'a -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+
+</div>

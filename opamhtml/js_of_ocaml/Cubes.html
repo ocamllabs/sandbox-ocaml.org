@@ -1,0 +1,142 @@
+<div class="ocaml_toplevel_module"><pre><span class="VALn"><span class="keyword">val</span> n</span> : <code class="type">int</code></pre>
+<pre><span class="VALh"><span class="keyword">val</span> h</span> : <code class="type">float</code></pre>
+<pre><span class="VALw"><span class="keyword">val</span> w</span> : <code class="type">float</code></pre>
+
+<pre><span class="VALcreate_cubes"><span class="keyword">val</span> create_cubes</span> : <code class="type">'a -&gt; 'a array array array</code></pre>
+<pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">bool array array array -&gt; int -&gt; int -&gt; int -&gt; bool</code></pre>
+<pre><span class="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">bool array array array -&gt; bool</code></pre>
+<div class="ocaml_module ident" name="Html" path="?package=js_of_ocaml&amp;module=Dom_html"><pre><span class="keyword">module</span> <a href="?package=js_of_ocaml&amp;module=Cubes.Html">Html</a> : <code class="type"><code class="code"><a href="?package=js_of_ocaml&amp;module=Dom_html">Dom_html</a></code></code></pre></div>
+<pre><span class="VALtop"><span class="keyword">val</span> top</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALleft"><span class="keyword">val</span> left</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALright"><span class="keyword">val</span> right</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALedge"><span class="keyword">val</span> edge</span> : <code class="type"><a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALon_cube"><span class="keyword">val</span> on_cube</span> : <code class="type">(&lt; restore : 'a30a5da5a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; save : 'a12112916 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+   translate : float -&gt; float -&gt; 'aa789d97d <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+ as 'a)
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; int -&gt; int -&gt; int -&gt; ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'b) -&gt; 'a30a5da5a</code></pre>
+<pre><span class="VALdraw_top"><span class="keyword">val</span> draw_top</span> : <code class="type">&lt; beginPath : 'abc9aab0e <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; fill : 'a93219240 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  fillStyle : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  lineTo : float -&gt; float -&gt; 'ac15a0388 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'ad3e1c974 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a93219240</code></pre>
+<pre><span class="VALtop_edges"><span class="keyword">val</span> top_edges</span> : <code class="type">&lt; beginPath : 'ada2d1492 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  lineTo : float -&gt; float -&gt; 'afe9c8f76 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'a624d9df3 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; stroke : 'aea52a66f <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'aea52a66f</code></pre>
+<pre><span class="VALdraw_right"><span class="keyword">val</span> draw_right</span> : <code class="type">&lt; beginPath : 'a1a9795b9 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; fill : 'a692b39a1 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  fillStyle : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  lineTo : float -&gt; float -&gt; 'aba7e9257 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'a8dccc61f <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a692b39a1</code></pre>
+<pre><span class="VALright_edges"><span class="keyword">val</span> right_edges</span> : <code class="type">&lt; beginPath : 'ab66e2d8e <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  lineTo : float -&gt; float -&gt; 'a564cb749 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'a1f6243dc <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; stroke : 'a3cfd22c3 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a3cfd22c3</code></pre>
+<pre><span class="VALdraw_left"><span class="keyword">val</span> draw_left</span> : <code class="type">&lt; beginPath : 'a0ead1d67 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; fill : 'a1968dda0 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  fillStyle : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+  lineTo : float -&gt; float -&gt; 'ad762b9ef <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'aa8a7f97a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a1968dda0</code></pre>
+<pre><span class="VALleft_edges"><span class="keyword">val</span> left_edges</span> : <code class="type">&lt; beginPath : 'a1d7f151c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  lineTo : float -&gt; float -&gt; 'a8500f925 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'ad68c4e0c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; stroke : 'a1b568e5b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a1b568e5b</code></pre>
+<pre><span class="VALremaining_edges"><span class="keyword">val</span> remaining_edges</span> : <code class="type">&lt; beginPath : 'a454b6217 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  lineTo : float -&gt; float -&gt; 'a3f7bd91a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  moveTo : float -&gt; float -&gt; 'a99c75527 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; stroke : 'a52dff975 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a52dff975</code></pre>
+<pre><span class="VALtile"><span class="keyword">val</span> tile</span> : <code class="type">(&lt; restore : 'b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; save : 'c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+   translate : float -&gt; float -&gt; 'd <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>; .. &gt;
+ as 'a)
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt;
+bool array array array -&gt;
+('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'e) * ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'f) * ('a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'g) -&gt; unit</code></pre>
+<pre><span class="VALcreate_canvas"><span class="keyword">val</span> create_canvas</span> : <code class="type">unit -&gt; <a href="?package=js_of_ocaml&amp;module=Cubes.Html&amp;type=canvasElement">Html.canvasElement</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+<pre><span class="VALredraw"><span class="keyword">val</span> redraw</span> : <code class="type">&lt; drawImage_fromCanvas : (&lt; getContext : <a href="?package=js_of_ocaml&amp;module=Cubes.Html&amp;type=context">Html.context</a> -&gt;
+                                         &lt; beginPath : 'b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           clearRect : float -&gt;
+                                                       float -&gt;
+                                                       float -&gt;
+                                                       float -&gt;
+                                                       'a43a911b1 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           fill : 'c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           fillStyle : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a>
+                                                               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 
+                                                               unit;
+                                                         .. &gt;
+                                                       <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                           globalCompositeOperation : 
+                                           &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit;
+                                             .. &gt;
+                                           <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                           lineTo : float -&gt;
+                                                    float -&gt; 'd <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           moveTo : float -&gt;
+                                                    float -&gt; 'e <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           restore : 'f <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           save : 'g <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           setTransform : float -&gt;
+                                                          float -&gt;
+                                                          float -&gt;
+                                                          float -&gt;
+                                                          float -&gt;
+                                                          float -&gt;
+                                                          'a5a96b8a0 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           stroke : 'h <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           translate : float -&gt;
+                                                       float -&gt; 'i <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           .. &gt;
+                                         <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                            height : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                            width : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>; .. &gt;
+                          as 'a)
+                         <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; float -&gt; float -&gt; 'a22f0cad2 <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; bool array array array -&gt; 'a22f0cad2</code></pre>
+<pre><span class="VAL&gt;&gt;="><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a> -&gt; ('a -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; 'b <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALloop"><span class="keyword">val</span> loop</span> : <code class="type">&lt; drawImage_fromCanvas : (&lt; getContext : <a href="?package=js_of_ocaml&amp;module=Cubes.Html&amp;type=context">Html.context</a> -&gt;
+                                         &lt; beginPath : 'b <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           clearRect : float -&gt;
+                                                       float -&gt;
+                                                       float -&gt;
+                                                       float -&gt; 'c <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           fill : 'd <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           fillStyle : &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a>
+                                                               <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 
+                                                               unit;
+                                                         .. &gt;
+                                                       <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                           globalCompositeOperation : 
+                                           &lt; set : <a href="?package=js_of_ocaml&amp;module=Js&amp;type=js_string">Js.js_string</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; unit;
+                                             .. &gt;
+                                           <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                                           lineTo : float -&gt;
+                                                    float -&gt; 'e <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           moveTo : float -&gt;
+                                                    float -&gt; 'f <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           restore : 'g <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           save : 'h <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           setTransform : float -&gt;
+                                                          float -&gt;
+                                                          float -&gt;
+                                                          float -&gt;
+                                                          float -&gt;
+                                                          float -&gt; 'i <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           stroke : 'j <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           translate : float -&gt;
+                                                       float -&gt; 'k <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                                           .. &gt;
+                                         <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+                            height : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>;
+                            width : &lt; get : int; .. &gt; <a href="?package=js_of_ocaml&amp;module=Js&amp;type=gen_prop">Js.gen_prop</a>; .. &gt;
+                          as 'a)
+                         <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; float -&gt; float -&gt; unit <a href="?package=js_of_ocaml&amp;module=Js&amp;type=meth">Js.meth</a>;
+  .. &gt;
+<a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; 'a <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a> -&gt; bool array array array -&gt; 'l <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre>
+<pre><span class="VALstart"><span class="keyword">val</span> start</span> : <code class="type">'a -&gt; bool <a href="?package=js_of_ocaml&amp;module=Js&amp;type=t">Js.t</a></code></pre>
+
+</div>
