@@ -1,17 +1,16 @@
 <!DOCTYPE HTML>
 {{!s set contents {{!i input ((! get page !)) i!}} s!}}
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>{{! tryget title !}} &ndash; OCaml</title>
+    <title>{{! tryget title !}} &#8211; OCaml</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Web Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet" />
     <!-- Only part of Bootstrap that we don't load from a CDN is our own customized CSS build. -->
-    <link href="/static/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="/static/css/opamdoc.css" rel="stylesheet" media="screen">
+    <link href="/static/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="/static/css/opamdoc.css" rel="stylesheet" media="screen" />
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <![endif]-->
@@ -41,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/"><img src="/static/img/ocaml.png" alt="OCaml"></a>
+          <a class="brand" href="/"><img src="/static/img/ocaml.png" alt="OCaml" /></a>
           <div class="nav-collapse collapse">
             ((! input navbar_tpl.mpp !))
             <form class="navbar-search pull-right">
