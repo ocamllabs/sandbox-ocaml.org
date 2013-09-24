@@ -1,4 +1,4 @@
-# Companies
+# Companies using OCaml
 [Acunu](http://www.acunu.com), United Kindgom.
 
 Acunu is writing, from the ground-up, a Storage and Analytics Platform
