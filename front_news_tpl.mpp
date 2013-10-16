@@ -2,6 +2,6 @@
 <!-- begin /front_news_tpl.mpp -->
 <ul class="news-feed">
 
-{{! cmd curl http://planet.ocamlcore.org/rss10.xml -s |grep -E '(<title|<link|<dc:date)'|(read;read;head -n 15|sed -e 's| *<..*>\(.*\)</.*>|\1|g')|while read title; read url; read date ; do if grep -qi 'announc' <<< "$title$url" ; then printf '<li class="announcement">' ; else printf '<li>'; fi ; printf '<article><h1><a href="%s">%s</a></h1><p>%s</p>' "$url" "$title" "$(date -d "$date" "+%e %B %Y")"; if grep -qi 'announc' <<< "$title$url" ; then printf "<a href='$url'><img src='/static/img/announcement.png' alt='Announcement'></a>"; else printf "<a href='$url'><img src='/static/img/news.png' alt='News'></a>"; fi ; printf '</article></li>\n' ; done !}}
+{{! cmd curl http://planet.ocamlcore.org/rss10.xml -s |grep -E '(<title|<link|<dc:date)'|(read;read;head -n 15|sed -e 's| *<..*>\(.*\)</.*>|\1|g')|while read title; read url; read date ; do printf '<li><article><h1><a href="%s">%s</a></h1><p>%s</p>' "$url" "$title" "$(date -d "$date" "+%e %B %Y")"; printf "<a href='$url'><img src='/static/img/news.png' alt='News'></a>"; printf '</article></li>\n' ; done !}}
 </ul>
 <!-- end /front_news_tpl.mpp -->
