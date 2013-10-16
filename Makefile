@@ -94,5 +94,6 @@ pkg:Makefile
 
 html-pages/learn/index.html:front_code_snippet_tpl.html
 html-pages/index.html:front_code_snippet_tpl.html front_news_tpl.mpp
+html-pages/community/index.html:front_news_tpl.mpp
 front_code_snippet_tpl.html:front_code_snippet_tpl.md
 	omd -r ocaml=./ocamltohtml -r tryocaml=./ocamlapplet.bash $< > $@
