@@ -65,7 +65,7 @@ tracker there to request or offer new tutorials. Thanks!
  introduction to the core language, objects and classes, and modules.
  Previous versions are [here](http://caml.inria.fr/pub/docs/).
 * [Tutorial on the C
- API](http://www.linux-nantes.org/~fmonnier/OCaml/ocaml-wrapping-c.php)
+ API](http://www.linux-nantes.org/~fmonnier/OCaml/ocaml-wrapping-c.html)
  (by Florent Monnier) explains how to write C stubs to call C
  functions from OCaml and back.
 * [OCaml for scientific
@@ -78,7 +78,7 @@ tracker there to request or offer new tutorials. Thanks!
  language and the standard library. It is rather old but most of what
  it says remains valid.
 * [How to wrap C functions to
- OCaml](http://www.linux-nantes.org/~fmonnier/OCaml/ocaml-wrapping-c.php)
+ OCaml](http://www.linux-nantes.org/~fmonnier/OCaml/ocaml-wrapping-c.html)
  (by Florent Monnier) explains how to write extensions for OCaml in C
  in an understandable way and features a lot of examples.
 
