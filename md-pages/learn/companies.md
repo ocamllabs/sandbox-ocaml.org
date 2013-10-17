@@ -57,7 +57,7 @@ programming and web application development.
 
 [Esterel Technologies](http://www.esterel-technologies.com/), France.
 
-[Facebook](http://www.esterel-technologies.com/), USA.
+[Facebook](http://www.facebook.com/), USA.
 
 To handle their huge PHP codebase, Facebook developed
 [pfff](https://github.com/facebook/pfff/wiki/Main), a set of tools and
