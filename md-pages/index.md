@@ -68,7 +68,7 @@
     <div class="row">
         <section class="span6 condensed">
             <h1>A taste of OCaml</h1>
-            ((! input tryocaml.html !))
+            ((! cat tryocaml.html !))
             ((! input front_code_snippet_tpl.html !))
         </section>
         <section class="span6 condensed">
