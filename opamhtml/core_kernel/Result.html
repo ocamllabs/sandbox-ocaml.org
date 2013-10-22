@@ -97,11 +97,4 @@ ok:('ok1 -&gt; 'ok2 -&gt; 'ok3) -&gt; err:('err -&gt; 'err -&gt; 'err) -&gt; ('o
 ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt;
 'err <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info">e.g. <code class="code">failf &quot;Couldn't find bloogle %s&quot; (Bloogle.to_string b)</code></div></div>
-<div class="info"><div class="info"><code class="code">ok_fst</code> is useful with <code class="code">List.partition_map</code>.  Continuing the above example:
-<pre class="code"><code>
-    let rics, errors = List.partition_map ~f:Result.ok_fst
-      (List.map ~f:ric_of_ticker [&quot;AA&quot;; &quot;F&quot;; &quot;CSCO&quot;; &quot;AAPL&quot;]) </code></pre></div></div>
-<div class="info"><div class="info"><code class="code">ok_exn t</code> returns <code class="code">x</code> if <code class="code">t = Ok x</code>, and raises <code class="code">exn</code> if <code class="code">t = Error exn</code></div></div>
-<div class="info"><div class="info"><code class="code">ok_unit = Ok ()</code>, used to avoid allocation as a performance hack</div></div>
 </div>

@@ -42,11 +42,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><code class="code">create measure value</code> creates a <code class="code">t</code> from <code class="code">value</code> units of the given measure.</div></div>
-<div class="info"><div class="info"><code class="code">to_string_hum ?measure t</code> returns a string representation of <code class="code">t</code>.  If <code class="code">measure</code> is
-    not given then the largest measure (excluding <code class="code">`Words</code>) is used that causes the
-    translated value to exceed 1.</div></div>
-<div class="info"><div class="info"><code class="code">scale t mul</code> scale the measure <code class="code">t</code> by <code class="code">mul</code></div></div>
-<div class="info"><div class="info"><code class="code">( / ) t mul</code> scales <code class="code">t</code> by <code class="code">1/mul</code></div></div>
-<div class="info"><div class="info"><code class="code">( // ) t1 t2</code> returns the ratio of t1 to t2</div></div>
 </div>

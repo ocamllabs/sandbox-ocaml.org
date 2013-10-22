@@ -61,34 +61,4 @@ init:'b -&gt; f:(int -&gt; 'b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre><div class
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ?initial_length ?never_shrink ()</code> create a new <code class="code">t</code>.  <code class="code">initial_length</code> is the
-    initial length of the dequeue; it will be able to hold <code class="code">initial_length</code> elements
-    without resizing.  It must be positive.  If <code class="code">never_shrink</code> is true, the physical array
-    will never shrink; only expand.  If <code class="code">initial_length</code> is given without <code class="code">never_shrink</code>
-    then <code class="code">never_shrink</code> is presumed to be <code class="code">true</code>, otherwise <code class="code">never_shrink</code> defaults to
-    <code class="code">false</code>.</div></div>
-<div class="info"><div class="info"><code class="code">front_index t</code> return the index of the front item in <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">front_index_exn t</code> throws an exception if <code class="code">t</code> is empty, otherwise returns the index
-    of the front item in <code class="code">t</code></div></div>
-<div class="info"><div class="info"><code class="code">back_index t</code> return the index of the back item in <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">back_index_exn t</code> throws an exception if <code class="code">t</code> is empty, otherwise returns the index
-    of the back item in <code class="code">t</code></div></div>
-<div class="info"><div class="info"><code class="code">get t i</code> return the element at index <code class="code">i</code>.  Return <code class="code">None</code> if <code class="code">i</code> is invalid.</div></div>
-<div class="info"><div class="info"><code class="code">get_exn t i</code> return the element at index <code class="code">i</code>.  Raise an exception if <code class="code">i</code> is
-    invalid.</div></div>
-<div class="info"><div class="info"><code class="code">peek t back_or_front</code> return the value at the back or front of the dequeue without
-    removing it.</div></div>
-<div class="info"><div class="info"><code class="code">set_exn t i v</code> mutate the element at <code class="code">i</code>.</div></div>
-<div class="info"><div class="info"><code class="code">iter' t ~f</code> iter over the elements of <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">iteri t ~f</code> iter over the elements of t <code class="code">`front_to_back</code> passing in the index.</div></div>
-<div class="info"><div class="info"><code class="code">iteri' t ~f</code> as <code class="code">iter</code>, but also passes in the index of the current element.</div></div>
-<div class="info"><div class="info"><code class="code">fold' t ~init ~f</code> fold over the elements of <code class="code">t</code></div></div>
-<div class="info"><div class="info"><code class="code">foldi t ~init ~f</code> as <code class="code">fold</code>, but also passes in the index of the current element.</div></div>
-<div class="info"><div class="info"><code class="code">foldi' t ~init ~f</code> as <code class="code">fold'</code>, but also passes in the index of the current element to
-    <code class="code">f</code>.</div></div>
-<div class="info"><div class="info"><code class="code">enqueue t back_or_front v</code> push <code class="code">v</code> onto the <code class="code">back_or_front</code> of <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">clear t</code> removes all elements from <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">drop ?n t back_or_front</code> drop <code class="code">n</code> elements (default 1) from the <code class="code">back_or_front</code> of
-    <code class="code">t</code>.  If <code class="code">t</code> has fewer than <code class="code">n</code> elements then it is cleared.</div></div>
-<div class="info"><div class="info"><code class="code">dequeue t back_or_front</code> remove and return the <code class="code">back_or_front</code> of <code class="code">t</code></div></div>
 </div>

@@ -46,14 +46,4 @@
 <pre><span class="VALunlock_exn"><span class="keyword">val</span> unlock_exn</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; unit</code></pre>
 <pre><span class="VALcritical_section"><span class="keyword">val</span> critical_section</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ()</code> returns a new, unlocked mutex.</div></div>
-<div class="info"><div class="info"><code class="code">equal</code> is <code class="code">phys_equal</code></div></div>
-<div class="info"><div class="info"><code class="code">current_thread_has_lock t</code> returns <code class="code">true</code> iff the current thread has <code class="code">t</code> locked.</div></div>
-<div class="info"><div class="info"><code class="code">lock t</code> locks the mutex <code class="code">t</code>, blocking until it can be locked.  <code class="code">lock</code> immediately
-    returns <code class="code">Error</code> if the current thread already holds <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">try_lock t</code> locks <code class="code">t</code> if it can immediately do so.  The result indicates whether
-    <code class="code">try_lock</code> succeeded in acquiring the lock.  <code class="code">try_lock</code> returns <code class="code">Error</code> if the current
-    thread already holds <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">unlock t</code> unlocks <code class="code">t</code>, if the current thread holds it.  <code class="code">unlock</code> returns <code class="code">Error</code> if
-    the lock is not held by the calling thread.</div></div>
 </div>

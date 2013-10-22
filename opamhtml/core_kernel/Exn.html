@@ -20,15 +20,4 @@
 <pre><span class="VALreraise_uncaught"><span class="keyword">val</span> reraise_uncaught</span> : <code class="type">string -&gt; (unit -&gt; 'a) -&gt; 'a</code></pre>
 <pre><span class="VALbacktrace"><span class="keyword">val</span> backtrace</span> : <code class="type">unit -&gt; string</code></pre><div class="info"><div class="info"><code class="code">Printexc.get_backtrace</code></div></div>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info">Raised when finalization after an exception failed, too.
-    The first exception argument is the one raised by the initial
-    function, the second exception the one raised by the finalizer.</div></div>
-<div class="info"><div class="info">Executes <code class="code">f</code> and afterwards executes <code class="code">finally</code>, whether <code class="code">f</code> throws an exception or
-    not.</div></div>
-<div class="info"><div class="info"><code class="code">handle_uncaught ~exit f</code> catches an exception escaping <code class="code">f</code> and prints an error
-    message to stderr.  Exits with return code 1 if <code class="code">exit</code> is <code class="code">true</code>.  Otherwise returns
-    unit.</div></div>
-<div class="info"><div class="info">behaves as <code class="code">handle_uncaught ~exit:true</code> and also has a more precise
-    type in this case</div></div>
-<div class="info"><div class="info"><code class="code">Printexc.get_backtrace</code></div></div>
 </div>

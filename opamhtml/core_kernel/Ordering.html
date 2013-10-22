@@ -14,11 +14,11 @@
         ...
     </code></pre></div>
 <pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Less"><span class="constructor">Less</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Equal"><span class="constructor">Equal</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Greater"><span class="constructor">Greater</span></span></code></td></tr></table><div class="info"><div class="info"><code class="code">of_int n</code> is:<p>    <span class="verbatim">      Less     if n &lt; 0
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Less"><span class="constructor">Less</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Equal"><span class="constructor">Equal</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Greater"><span class="constructor">Greater</span></span></code></td></tr></table>
+<pre><span class="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Ordering&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">of_int n</code> is:<p>    <span class="verbatim">      Less     if n &lt; 0
       Equal    if n = 0
       Greater  if n &gt; 0
     </span></p></div></div>
-<pre><span class="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Ordering&amp;type=t">t</a></code></pre>
 <div class="ocaml_module sig" name="Export"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Ordering.Export">Export</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
 <pre><span class="TYPE_ordering"><span class="keyword">type</span> _ordering</span> = <code class="type"><a href="?package=core_kernel&amp;module=Ordering&amp;type=t">t</a></code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELT_ordering.Less"><span class="constructor">Less</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELT_ordering.Equal"><span class="constructor">Equal</span></span></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELT_ordering.Greater"><span class="constructor">Greater</span></span></code></td></tr></table></div></div>
@@ -34,8 +34,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Ordering&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Ordering&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Ordering&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><code class="code">of_int n</code> is:<p>    <span class="verbatim">      Less     if n &lt; 0
-      Equal    if n = 0
-      Greater  if n &gt; 0
-    </span></p></div></div>
 </div>

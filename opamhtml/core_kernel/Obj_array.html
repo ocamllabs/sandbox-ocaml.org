@@ -31,19 +31,4 @@
 <pre><span class="VALtruncate"><span class="keyword">val</span> truncate</span> : <code class="type"><a href="?package=core_kernel&amp;module=Obj_array&amp;type=t">t</a> -&gt; len:int -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">truncate t ~len</code> shortens <code class="code">t</code>'s length to <code class="code">len</code>.  It is an error if <code class="code">len &lt;= 0</code> or
     <code class="code">len &gt; length t</code>.</div></div>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Obj_array&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ~len</code> returns an obj-array of length <code class="code">len</code>, all of whose indices have value
-    <code class="code">Obj.repr 0</code>.</div></div>
-<div class="info"><div class="info"><code class="code">copy t</code> returns a new array with the same elements as <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">get t i</code> and <code class="code">unsafe_get t i</code> return the object at index <code class="code">i</code>.  <code class="code">set t i o</code> and
-    <code class="code">unsafe_set t i o</code> set index <code class="code">i</code> to <code class="code">o</code>.  In no case is the object copied.  The
-    <code class="code">unsafe_*</code> variants omit the bounds check of <code class="code">i</code>.</div></div>
-<div class="info"><div class="info"><code class="code">unsafe_set_assuming_currently_int t i obj</code> sets index <code class="code">i</code> of <code class="code">t</code> to <code class="code">obj</code>, but only
-    works correctly if <code class="code">Obj.is_int (get t i)</code>.  This precondition saves a dynamic
-    check.<p>    <code class="code">unsafe_set_int_assuming_currently_int</code> is similar, except the value being set is an
-    int.</p></div></div>
-<div class="info"><div class="info"><code class="code">unsafe_clear_if_pointer t i</code> prevents <code class="code">t.(i)</code> from pointing to anything to prevent
-    space leaks.  It does this by setting <code class="code">t.(i)</code> to <code class="code">Obj.repr 0</code>.  As a performance hack,
-    it only does this when <code class="code">not (Obj.is_int t.(i))</code>.</div></div>
-<div class="info"><div class="info"><code class="code">truncate t ~len</code> shortens <code class="code">t</code>'s length to <code class="code">len</code>.  It is an error if <code class="code">len &lt;= 0</code> or
-    <code class="code">len &gt; length t</code>.</div></div>
 </div>

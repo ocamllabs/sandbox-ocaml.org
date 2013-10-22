@@ -1,0 +1,103 @@
+<div class="ocaml_toplevel_module"><div class="info">Unit test building blocks (v2).<div class="authors"><b>Author(s): </b><span class="author">Sylvain Le Gall</span></div></div>
+<div class="info"><div class="info"><h2 id="2_TITLE">Types</h2></div></div>
+<pre><span class="TYPEtest_ctxt"><span class="keyword">type</span> test_ctxt</span> = <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=ctxt">OUnitTest.ctxt</a></code></pre><div class="info"><div class="info">Context of a test.</div></div>
+<pre><span class="TYPEtest_fun"><span class="keyword">type</span> test_fun</span> = <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; unit</code></pre><div class="info"><div class="info">The type of test function.</div></div>
+<pre><span class="TYPEtest"><span class="keyword">type</span> test</span> = <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=test">OUnitTest.test</a></code></pre><div class="info"><div class="info">The type of test.</div></div>
+<pre><span class="TYPEtest_length"><span class="keyword">type</span> test_length</span> = <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=test_length">OUnitTest.test_length</a></code></pre><div class="info"><div class="info">The expected length of the test.</div></div>
+<div class="info"><div class="info"><h2 id="2_TITLE">Assertions</h2><p>    Assertions are the basic building blocks of unittests.</p></div></div>
+<pre><span class="VALassert_failure"><span class="keyword">val</span> assert_failure</span> : <code class="type">string -&gt; 'a</code></pre><div class="info"><div class="info">Signals a failure. This will raise an exception with the specified
+    string. <b>Raises</b> <code>Failure</code> signal a failure<br/></div></div>
+<pre><span class="VALassert_bool"><span class="keyword">val</span> assert_bool</span> : <code class="type">string -&gt; bool -&gt; unit</code></pre><div class="info"><div class="info">Signals a failure when bool is false. The string identifies the
+    failure. <b>Raises</b> <code>Failure</code> signal a failure<br/></div></div>
+<pre><span class="VALassert_string"><span class="keyword">val</span> assert_string</span> : <code class="type">string -&gt; unit</code></pre><div class="info"><div class="info">Signals a failure when the string is non-empty. The string identifies the
+    failure. <b>Raises</b> <code>Failure</code> signal a failure<br/></div></div>
+<pre><span class="VALassert_command"><span class="keyword">val</span> assert_command</span> : <code class="type">?exit_code:<a href="?package=ocaml&amp;module=Unix&amp;type=process_status">Unix.process_status</a> -&gt;
+?sinput:char <a href="?package=ocaml&amp;module=Stream&amp;type=t">Stream.t</a> -&gt;
+?foutput:(char <a href="?package=ocaml&amp;module=Stream&amp;type=t">Stream.t</a> -&gt; unit) -&gt;
+?use_stderr:bool -&gt;
+?backtrace:bool -&gt;
+?chdir:string -&gt;
+?env:string array -&gt; ctxt:<a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; string -&gt; string list -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">assert_command prg args</code> Run the command provided.<div class="parameters"><div class="param_info"><code class="code">exit_code</code> : expected exit code</div><div class="param_info"><code class="code">sinput</code> : provide this <code class="code">char Stream.t</code> as input of the process</div><div class="param_info"><code class="code">foutput</code> : run this function on output, it can contains an
+                   <code class="code">assert_equal</code> to check it</div><div class="param_info"><code class="code">use_stderr</code> : redirect <code class="code">stderr</code> to <code class="code">stdout</code></div><div class="param_info"><code class="code">backtrace</code> : Set OCAMLRUNPARAM=b</div><div class="param_info"><code class="code">chdir</code> : Chdir into a directory before running the command.</div><div class="param_info"><code class="code">env</code> : Unix environment</div><div class="param_info"><code class="code">verbose</code> : if a failed, dump stdout/stderr of the process to stderr</div></div></div></div>
+<pre><span class="VALassert_equal"><span class="keyword">val</span> assert_equal</span> : <code class="type">?ctxt:<a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt;
+?cmp:('a -&gt; 'a -&gt; bool) -&gt;
+?printer:('a -&gt; string) -&gt;
+?pp_diff:(<a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; 'a * 'a -&gt; unit) -&gt;
+?msg:string -&gt; 'a -&gt; 'a -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">assert_equal expected real</code> Compares two values, when they are not equal a
+    failure is signaled.<div class="parameters"><div class="param_info"><code class="code">cmp</code> : customize function to compare, default is <code class="code">=</code></div><div class="param_info"><code class="code">printer</code> : value printer, don't print value otherwise</div><div class="param_info"><code class="code">pp_diff</code> : if not equal, ask a custom display of the difference
+                using <code class="code">diff fmt exp real</code> where <code class="code">fmt</code> is the formatter to use</div><div class="param_info"><code class="code">msg</code> : custom message to identify the failure</div><div class="param_info"><code class="code">ctxt</code> : if provided, always print expected and real value</div></div> <b>Raises</b> <code>Failure</code> signal a failure<br/></div></div>
+<pre><span class="VALassert_raises"><span class="keyword">val</span> assert_raises</span> : <code class="type">?msg:string -&gt; exn -&gt; (unit -&gt; 'a) -&gt; unit</code></pre><div class="info"><div class="info">Asserts if the expected exception was raised.<div class="parameters"><div class="param_info"><code class="code">msg</code> : identify the failure</div></div> <b>Raises</b> <code>Failure</code> description<br/></div></div>
+<div class="info"><div class="info"><h2 id="2_TITLE">Skipping tests </h2><p>    In certain condition test can be written but there is no point running it,
+    because they are not significant (missing OS features for example). In this
+    case this is not a failure nor a success. Following functions allow you to
+    escape test, just as assertion but without the same error status.</p><p>    A test skipped is counted as success. A test todo is counted as failure.</p></div></div>
+<pre><span class="VALskip_if"><span class="keyword">val</span> skip_if</span> : <code class="type">bool -&gt; string -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">skip cond msg</code> If <code class="code">cond</code> is true, skip the test for the reason explain in
+    <code class="code">msg</code>. For example <code class="code">skip_if (Sys.os_type = &quot;Win32&quot;) &quot;Test a doesn't run on
+    windows&quot;</code>.</div></div>
+<pre><span class="VALtodo"><span class="keyword">val</span> todo</span> : <code class="type">string -&gt; unit</code></pre><div class="info"><div class="info">The associated test is still to be done, for the reason given.</div></div>
+<div class="info"><div class="info"><h2 id="2_TITLE">Compare Functions</h2></div></div>
+<pre><span class="VALcmp_float"><span class="keyword">val</span> cmp_float</span> : <code class="type">?epsilon:float -&gt; float -&gt; float -&gt; bool</code></pre><div class="info"><div class="info">Compare floats up to a given relative error.<div class="parameters"><div class="param_info"><code class="code">epsilon</code> : if the difference is smaller <code class="code">epsilon</code> values are equal</div></div></div></div>
+<div class="info"><div class="info"><h2 id="2_TITLE">Bracket</h2><p>    A bracket is a registered object with setUp and tearDown in unit tests.
+    Data generated during the setUp will be automatically tearDown when the test
+    ends.</p></div></div>
+<pre><span class="VALbracket"><span class="keyword">val</span> bracket</span> : <code class="type">(<a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; 'a) -&gt; ('a -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; unit) -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">bracket set_up tear_down test_ctxt</code> set up an object and register it to be
+    tore down in <code class="code">test_ctxt</code>.</div></div>
+<pre><span class="VALbracket_tmpfile"><span class="keyword">val</span> bracket_tmpfile</span> : <code class="type">?prefix:string -&gt;
+?suffix:string -&gt;
+?mode:<a href="?package=ocaml&amp;module=Pervasives&amp;type=open_flag">Pervasives.open_flag</a> list -&gt;
+<a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; string * <a href="?package=ocaml&amp;module=Pervasives&amp;type=out_channel">Pervasives.out_channel</a></code></pre><div class="info"><div class="info"><code class="code">bracket_tmpfile test_ctxt</code> Create a temporary filename and matching output
+    channel. The temporary file is removed after the test.<div class="parameters"><div class="param_info"><code class="code">prefix</code> : see <code class="code">Filename.open_temp_file</code></div><div class="param_info"><code class="code">suffix</code> : see <code class="code">Filename.open_temp_file</code></div><div class="param_info"><code class="code">mode</code> : see <code class="code">Filename.open_temp_file</code></div></div></div></div>
+<pre><span class="VALbracket_tmpdir"><span class="keyword">val</span> bracket_tmpdir</span> : <code class="type">?prefix:string -&gt; ?suffix:string -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; string</code></pre><div class="info"><div class="info"><code class="code">bracket_tmpdir test_ctxt</code> Create a temporary dirname. The temporary
+    directory is removed after the test.<div class="parameters"><div class="param_info"><code class="code">prefix</code> : see <code class="code">Filename.open_temp_file</code></div><div class="param_info"><code class="code">suffix</code> : see <code class="code">Filename.open_temp_file</code></div></div></div></div>
+<pre><span class="VALwith_bracket_chdir"><span class="keyword">val</span> with_bracket_chdir</span> : <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; string -&gt; (<a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; 'a) -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">with_bracket_chdir test_ctxt dn f</code> change directory to <code class="code">dn</code> during
+    execution of function <code class="code">f</code>. In order to <code class="code">Sys.chdir</code>, we need to take a lock
+    to avoid other tests trying to do change the current directory at the same
+    time. So this bracket is not directly accessible in order to use it only on
+    shorter piece of code.</div></div>
+<div class="info"><div class="info"><h2 id="2_TITLE">Constructing Tests</h2></div></div>
+<pre><span class="VAL(&gt;:)"><span class="keyword">val</span> (&gt;:)</span> : <code class="type">string -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a> -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a></code></pre><div class="info"><div class="info">Create a TestLabel for a test</div></div>
+<pre><span class="VAL(&gt;::)"><span class="keyword">val</span> (&gt;::)</span> : <code class="type">string -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_fun">test_fun</a> -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a></code></pre><div class="info"><div class="info">Create a TestLabel for a TestCase</div></div>
+<pre><span class="VAL(&gt;:::)"><span class="keyword">val</span> (&gt;:::)</span> : <code class="type">string -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a> list -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a></code></pre><div class="info"><div class="info">Create a TestLabel for a TestList</div></div>
+<pre><span class="VALtest_case"><span class="keyword">val</span> test_case</span> : <code class="type">?length:<a href="?package=ounit&amp;module=OUnit2&amp;type=test_length">test_length</a> -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_fun">test_fun</a> -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a></code></pre><div class="info"><div class="info">Generic function to create a test case.</div></div>
+<pre><span class="VALtest_list"><span class="keyword">val</span> test_list</span> : <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a> list -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a></code></pre><div class="info"><div class="info">Generic function to create a test list.</div></div>
+<div class="info"><div class="info">Some shorthands which allows easy test construction.<p>   Examples:</p><p>   - <code class="code">&quot;test1&quot; &gt;: TestCase((fun _ -&gt; ()))</code> =&gt;
+   <code class="code">TestLabel(&quot;test2&quot;, TestCase((fun _ -&gt; ())))</code></p><ul><li><code class="code">&quot;test2&quot; &gt;:: (fun _ -&gt; ())</code> =&gt;
+   <code class="code">TestLabel(&quot;test2&quot;, TestCase((fun _ -&gt; ())))</code></li><li><code class="code">&quot;test-suite&quot; &gt;::: [&quot;test2&quot; &gt;:: (fun _ -&gt; ());]</code> =&gt;
+   <code class="code">TestLabel(&quot;test-suite&quot;, TestSuite([TestLabel(&quot;test2&quot;,
+                                       TestCase((fun _ -&gt; ())))]))</code>
+</li></ul></div></div>
+<div class="info"><div class="info"><h2 id="2_TITLE">Performing Tests</h2></div></div>
+<pre><span class="TYPElog_severity"><span class="keyword">type</span> log_severity</span> = <code class="type">[ `Error | `Info | `Warning ]</code></pre><div class="info"><div class="info">Severity level for log.</div></div>
+<pre><span class="VALlogf"><span class="keyword">val</span> logf</span> : <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt;
+<a href="?package=ounit&amp;module=OUnit2&amp;type=log_severity">log_severity</a> -&gt; ('a, unit, string, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre><div class="info"><div class="info">Log into OUnit logging system.</div></div>
+<pre><span class="VALin_testdata_dir"><span class="keyword">val</span> in_testdata_dir</span> : <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; string list -&gt; string</code></pre><div class="info"><div class="info">Build a filename for a file that should be located in the test data dir.<p>    The test data dir, can be defined on the command line (preferably absolute)
+    The default option is to locate it in topsrcdir/test/data.</p></div></div>
+<pre><span class="VALnon_fatal"><span class="keyword">val</span> non_fatal</span> : <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; (<a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; unit) -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">non_fatal ctxt f</code> Run <code class="code">f</code> but if an exception is raised or an assert fails,
+    don't stop, just register the result. The global test running result will mix
+    in the non fatal result to determine the success or failure of the test.</div></div>
+<div class="ocaml_module sig" name="Conf"><pre><span class="keyword">module</span> <a href="?package=ounit&amp;module=OUnit2.Conf">Conf</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Define command line options, environment variables and file configuration.<p>    This module helps to define configuration options that are translated to
+    command line options et al.</p><p>    The name defined for the variable is:</p><ul><li>should be a valid OCaml identifier</li><li>kept as is for use in configuration file. (foo_bar = &quot;&quot;)</li><li>'_' are replaced by '-' and a leading '-' is added for command line
+      (-foo &quot;&quot;)</li><li>capitalized and prefixed by OUNIT_ for environment (OUNIT_FOO_BAR=&quot;&quot;)
+  </li></ul></div></div><div class="ocaml_module_content">
+<pre><span class="TYPEconf_t"><span class="keyword">type</span> <code class="type">'a </code>conf_t</span> = <code class="type">string -&gt; 'a -&gt; <a href="?package=ocaml&amp;module=Arg&amp;type=doc">Arg.doc</a> -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; 'a</code></pre><div class="info"><div class="info">The default type of function that create a configuration option of type
+      'a.</div></div>
+<pre><span class="VALmake_string"><span class="keyword">val</span> make_string</span> : <code class="type">string <a href="?package=ounit&amp;module=OUnit2.Conf&amp;type=conf_t">conf_t</a></code></pre><div class="info"><div class="info"><code class="code">make_string name default help</code> Create a string configuration
+      option with default value <code class="code">default</code> and a short help string.
+      The result of the partial application of the function can be used
+      inside tests to be evaluated to a value.<pre class="code"><code>
+let my_option = Conf.make_string &quot;my_option&quot; &quot;the default&quot; &quot;A default option.&quot;
+
+let tests =
+  &quot;ATest&quot; &gt;::
+  (fun test_ctxt -&gt; let option_value = my_option test_ctxt in ())
+
+</code></pre></div></div>
+<pre><span class="VALmake_string_opt"><span class="keyword">val</span> make_string_opt</span> : <code class="type">string option <a href="?package=ounit&amp;module=OUnit2.Conf&amp;type=conf_t">conf_t</a></code></pre><div class="info"><div class="info">Create a <code class="code">string option</code> configuration option. See <code class="code">!make_string</code>.</div></div>
+<pre><span class="VALmake_int"><span class="keyword">val</span> make_int</span> : <code class="type">int <a href="?package=ounit&amp;module=OUnit2.Conf&amp;type=conf_t">conf_t</a></code></pre><div class="info"><div class="info">Create an <code class="code">int</code> configuration option. See <code class="code">!make_string</code>.</div></div>
+<pre><span class="VALmake_float"><span class="keyword">val</span> make_float</span> : <code class="type">float <a href="?package=ounit&amp;module=OUnit2.Conf&amp;type=conf_t">conf_t</a></code></pre><div class="info"><div class="info">Create a <code class="code">float</code> configuration option. See <code class="code">!make_string</code>.</div></div>
+<pre><span class="VALmake_bool"><span class="keyword">val</span> make_bool</span> : <code class="type">bool <a href="?package=ounit&amp;module=OUnit2.Conf&amp;type=conf_t">conf_t</a></code></pre><div class="info"><div class="info">Create a <code class="code">bool</code> configuration option. See <code class="code">!make_string</code>.</div></div>
+<pre><span class="VALmake_exec"><span class="keyword">val</span> make_exec</span> : <code class="type">string -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; string</code></pre><div class="info"><div class="info"><code class="code">make_exec execname</code> Create a option to define an executable.</div></div></div></div>
+<pre><span class="VALrun_test_tt_main"><span class="keyword">val</span> run_test_tt_main</span> : <code class="type">?exit:(int -&gt; unit) -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test">test</a> -&gt; unit</code></pre><div class="info"><div class="info">Main version of the text based test runner. It reads the supplied command
+    line arguments to set the verbose level and limit the number of test to
+    run.<div class="parameters"><div class="param_info"><code class="code">test</code> : the test suite to run.</div></div></div></div>
+</div>

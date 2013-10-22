@@ -1,0 +1,23 @@
+<div class="ocaml_toplevel_module">
+<pre><span class="VALperform_test"><span class="keyword">val</span> perform_test</span> : <code class="type">'a -&gt;
+'b -&gt;
+('a -&gt;
+ 'b -&gt;
+ 'c -&gt;
+ (<a href="?package=ounit&amp;module=OUnitTest&amp;type=node">OUnitTest.node</a> list * <a href="?package=ounit&amp;module=OUnitTest&amp;type=test_length">OUnitTest.test_length</a> * <a href="?package=ounit&amp;module=OUnitTest&amp;type=test_fun">OUnitTest.test_fun</a>) list -&gt;
+ 'd) -&gt;
+'c -&gt; <a href="?package=ounit&amp;module=OUnitTest&amp;type=test">OUnitTest.test</a> -&gt; 'd</code></pre>
+<pre><span class="VALrun_test_tt"><span class="keyword">val</span> run_test_tt</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">OUnitConf.conf</a> -&gt;
+('a, 'b) <a href="?package=ounit&amp;module=OUnitLogger&amp;type=logger">OUnitLogger.logger</a> -&gt;
+(<a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">OUnitConf.conf</a> -&gt;
+ ('a, 'b) <a href="?package=ounit&amp;module=OUnitLogger&amp;type=logger">OUnitLogger.logger</a> -&gt;
+ 'c -&gt;
+ (<a href="?package=ounit&amp;module=OUnitTest&amp;type=node">OUnitTest.node</a> list * <a href="?package=ounit&amp;module=OUnitTest&amp;type=test_length">OUnitTest.test_length</a> * <a href="?package=ounit&amp;module=OUnitTest&amp;type=test_fun">OUnitTest.test_fun</a>) list -&gt;
+ ('a, 'b) <a href="?package=ounit&amp;module=OUnitLogger&amp;type=result_full">OUnitLogger.result_full</a> list) -&gt;
+'c -&gt; <a href="?package=ounit&amp;module=OUnitTest&amp;type=test">OUnitTest.test</a> -&gt; ('a, 'b) <a href="?package=ounit&amp;module=OUnitLogger&amp;type=result_full">OUnitLogger.result_full</a> list</code></pre>
+<pre><span class="VALrun_test_tt_main_conf"><span class="keyword">val</span> run_test_tt_main_conf</span> : <code class="type">(?preset:(string * string) list -&gt;
+ ?argv:string array -&gt; (<a href="?package=ocaml&amp;module=Arg&amp;type=key">Arg.key</a> * <a href="?package=ocaml&amp;module=Arg&amp;type=spec">Arg.spec</a> * <a href="?package=ocaml&amp;module=Arg&amp;type=doc">Arg.doc</a>) list -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">OUnitConf.conf</a>)
+<a href="?package=ocaml&amp;module=Pervasives&amp;type=ref">Pervasives.ref</a></code></pre>
+<pre><span class="VALsuite_name"><span class="keyword">val</span> suite_name</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">OUnitConf.conf</a> -&gt; string</code></pre>
+<pre><span class="VALrun_test_tt_main"><span class="keyword">val</span> run_test_tt_main</span> : <code class="type">?exit:(int -&gt; unit) -&gt; <a href="?package=ounit&amp;module=OUnitTest&amp;type=test">OUnitTest.test</a> -&gt; unit</code></pre>
+</div>

@@ -3,137 +3,137 @@
 <pre><span class="VALlibname"><span class="keyword">val</span> libname</span> : <code class="type">unit -&gt; string</code></pre>
 <pre><span class="VALsyntax_printer"><span class="keyword">val</span> syntax_printer</span> : <code class="type">&lt; andsep : (unit, <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a>, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format">Pervasives.format</a>;
   anti : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; string -&gt; unit;
-  apply_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.expr -&gt; unit;
-  binding : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.binding -&gt; unit;
+  apply_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; unit;
+  binding : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=binding">Camlp4.PreCast.Syntax.Ast.binding</a> -&gt; unit;
   class_declaration : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                      Camlp4.PreCast.Syntax.Ast.class_expr -&gt; unit;
+                      <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=class_expr">Camlp4.PreCast.Syntax.Ast.class_expr</a> -&gt; unit;
   class_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-               Camlp4.PreCast.Syntax.Ast.class_expr -&gt; unit;
-  class_params : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.ctyp -&gt; unit;
+               <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=class_expr">Camlp4.PreCast.Syntax.Ast.class_expr</a> -&gt; unit;
+  class_params : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> -&gt; unit;
   class_sig_item : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                   Camlp4.PreCast.Syntax.Ast.class_sig_item -&gt; unit;
+                   <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=class_sig_item">Camlp4.PreCast.Syntax.Ast.class_sig_item</a> -&gt; unit;
   class_str_item : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                   Camlp4.PreCast.Syntax.Ast.class_str_item -&gt; unit;
+                   <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=class_str_item">Camlp4.PreCast.Syntax.Ast.class_str_item</a> -&gt; unit;
   class_type : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-               Camlp4.PreCast.Syntax.Ast.class_type -&gt; unit;
+               <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=class_type">Camlp4.PreCast.Syntax.Ast.class_type</a> -&gt; unit;
   constrain : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-              Camlp4.PreCast.Syntax.Ast.ctyp * Camlp4.PreCast.Syntax.Ast.ctyp -&gt;
+              <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> * <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> -&gt;
               unit;
   constructor_type : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                     Camlp4.PreCast.Syntax.Ast.ctyp -&gt; unit;
-  ctyp : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.ctyp -&gt; unit;
-  ctyp1 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.ctyp -&gt; unit;
+                     <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> -&gt; unit;
+  ctyp : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> -&gt; unit;
+  ctyp1 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> -&gt; unit;
   direction_flag : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                   Camlp4.PreCast.Syntax.Ast.direction_flag -&gt; unit;
-  dot_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.expr -&gt; unit;
-  expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.expr -&gt; unit;
-  expr_list : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.expr list -&gt; unit;
+                   <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=direction_flag">Camlp4.PreCast.Syntax.Ast.direction_flag</a> -&gt; unit;
+  dot_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; unit;
+  expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; unit;
+  expr_list : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> list -&gt; unit;
   expr_list_cons : bool -&gt;
-                   <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.expr -&gt; unit;
+                   <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; unit;
   fun_binding : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
                 [ `newtype of string
-                | `patt of Camlp4.PreCast.Syntax.Ast.patt ] -&gt; unit;
+                | `patt of <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> ] -&gt; unit;
   functor_arg : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                string * Camlp4.PreCast.Syntax.Ast.module_type -&gt; unit;
+                string * <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_type">Camlp4.PreCast.Syntax.Ast.module_type</a> -&gt; unit;
   functor_args : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                 (string * Camlp4.PreCast.Syntax.Ast.module_type) list -&gt;
+                 (string * <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_type">Camlp4.PreCast.Syntax.Ast.module_type</a>) list -&gt;
                  unit;
-  ident : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.ident -&gt; unit;
-  implem : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.str_item -&gt; unit;
-  interf : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.sig_item -&gt; unit;
+  ident : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ident">Camlp4.PreCast.Syntax.Ast.ident</a> -&gt; unit;
+  implem : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=str_item">Camlp4.PreCast.Syntax.Ast.str_item</a> -&gt; unit;
+  interf : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=sig_item">Camlp4.PreCast.Syntax.Ast.sig_item</a> -&gt; unit;
   match_case : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-               Camlp4.PreCast.Syntax.Ast.match_case -&gt; unit;
+               <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=match_case">Camlp4.PreCast.Syntax.Ast.match_case</a> -&gt; unit;
   match_case_aux : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                   Camlp4.PreCast.Syntax.Ast.match_case -&gt; unit;
-  mk_expr_list : Camlp4.PreCast.Syntax.Ast.expr -&gt;
-                 Camlp4.PreCast.Syntax.Ast.expr list *
-                 Camlp4.PreCast.Syntax.Ast.expr option;
-  mk_patt_list : Camlp4.PreCast.Syntax.Ast.patt -&gt;
-                 Camlp4.PreCast.Syntax.Ast.patt list *
-                 Camlp4.PreCast.Syntax.Ast.patt option;
+                   <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=match_case">Camlp4.PreCast.Syntax.Ast.match_case</a> -&gt; unit;
+  mk_expr_list : <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt;
+                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> list *
+                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> option;
+  mk_patt_list : <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt;
+                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> list *
+                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> option;
   module_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                Camlp4.PreCast.Syntax.Ast.module_expr -&gt; unit;
+                <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_expr">Camlp4.PreCast.Syntax.Ast.module_expr</a> -&gt; unit;
   module_expr_get_functor_args : (string *
-                                  Camlp4.PreCast.Syntax.Ast.module_type)
+                                  <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_type">Camlp4.PreCast.Syntax.Ast.module_type</a>)
                                  list -&gt;
-                                 Camlp4.PreCast.Syntax.Ast.module_expr -&gt;
+                                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_expr">Camlp4.PreCast.Syntax.Ast.module_expr</a> -&gt;
                                  (string *
-                                  Camlp4.PreCast.Syntax.Ast.module_type)
+                                  <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_type">Camlp4.PreCast.Syntax.Ast.module_type</a>)
                                  list *
-                                 Camlp4.PreCast.Syntax.Ast.module_expr *
-                                 Camlp4.PreCast.Syntax.Ast.module_type option;
+                                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_expr">Camlp4.PreCast.Syntax.Ast.module_expr</a> *
+                                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_type">Camlp4.PreCast.Syntax.Ast.module_type</a> option;
   module_rec_binding : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                       Camlp4.PreCast.Syntax.Ast.module_binding -&gt; unit;
+                       <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_binding">Camlp4.PreCast.Syntax.Ast.module_binding</a> -&gt; unit;
   module_type : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                Camlp4.PreCast.Syntax.Ast.module_type -&gt; unit;
+                <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_type">Camlp4.PreCast.Syntax.Ast.module_type</a> -&gt; unit;
   mutable_flag : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                 Camlp4.PreCast.Syntax.Ast.mutable_flag -&gt; unit;
+                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=mutable_flag">Camlp4.PreCast.Syntax.Ast.mutable_flag</a> -&gt; unit;
   node : 'b.
            <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-           'b -&gt; ('b -&gt; Camlp4.PreCast.Syntax.Loc.t) -&gt; unit;
+           'b -&gt; ('b -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Loc&amp;type=t">Camlp4.PreCast.Syntax.Loc.t</a>) -&gt; unit;
   numeric : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; string -&gt; string -&gt; unit;
   override_flag : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                  Camlp4.PreCast.Syntax.Ast.override_flag -&gt; unit;
-  patt : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
-  patt1 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
-  patt2 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
-  patt3 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
-  patt4 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
-  patt5 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
+                  <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=override_flag">Camlp4.PreCast.Syntax.Ast.override_flag</a> -&gt; unit;
+  patt : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
+  patt1 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
+  patt2 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
+  patt3 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
+  patt4 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
+  patt5 : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
   patt_class_expr_fun_args : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                             Camlp4.PreCast.Syntax.Ast.patt *
-                             Camlp4.PreCast.Syntax.Ast.class_expr -&gt; 
+                             <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> *
+                             <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=class_expr">Camlp4.PreCast.Syntax.Ast.class_expr</a> -&gt; 
                              unit;
   patt_expr_fun_args : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
                        [ `newtype of string
-                       | `patt of Camlp4.PreCast.Syntax.Ast.patt ] *
-                       Camlp4.PreCast.Syntax.Ast.expr -&gt; unit;
-  patt_tycon : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
-  print_comments_before : Camlp4.PreCast.Syntax.Loc.t -&gt;
+                       | `patt of <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> ] *
+                       <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; unit;
+  patt_tycon : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
+  print_comments_before : <a href="?package=ocaml&amp;module=PreCast.Syntax.Loc&amp;type=t">Camlp4.PreCast.Syntax.Loc.t</a> -&gt;
                           <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; unit;
   private_flag : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                 Camlp4.PreCast.Syntax.Ast.private_flag -&gt; unit;
+                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=private_flag">Camlp4.PreCast.Syntax.Ast.private_flag</a> -&gt; unit;
   quoted_string : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; string -&gt; unit;
   raise_match_failure : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                        Camlp4.PreCast.Syntax.Loc.t -&gt; unit;
-  rec_flag : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.rec_flag -&gt; unit;
+                        <a href="?package=ocaml&amp;module=PreCast.Syntax.Loc&amp;type=t">Camlp4.PreCast.Syntax.Loc.t</a> -&gt; unit;
+  rec_flag : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=rec_flag">Camlp4.PreCast.Syntax.Ast.rec_flag</a> -&gt; unit;
   record_binding : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                   Camlp4.PreCast.Syntax.Ast.rec_binding -&gt; unit;
+                   <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=rec_binding">Camlp4.PreCast.Syntax.Ast.rec_binding</a> -&gt; unit;
   reset : 'a; reset_semi : 'a;
   semisep : (unit, <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a>, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format">Pervasives.format</a>;
-  seq : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.expr -&gt; unit;
+  seq : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; unit;
   set_comments : bool -&gt; 'a; set_curry_constr : bool -&gt; 'a;
   set_loc_and_comments : 'a;
   set_semisep : (unit, <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a>, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format">Pervasives.format</a> -&gt; 'a;
-  sig_item : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.sig_item -&gt; unit;
-  simple_ctyp : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.ctyp -&gt; unit;
-  simple_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.expr -&gt; unit;
+  sig_item : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=sig_item">Camlp4.PreCast.Syntax.Ast.sig_item</a> -&gt; unit;
+  simple_ctyp : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> -&gt; unit;
+  simple_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; unit;
   simple_module_expr : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                       Camlp4.PreCast.Syntax.Ast.module_expr -&gt; unit;
-  simple_patt : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.patt -&gt; unit;
-  str_item : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.str_item -&gt; unit;
+                       <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=module_expr">Camlp4.PreCast.Syntax.Ast.module_expr</a> -&gt; unit;
+  simple_patt : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=patt">Camlp4.PreCast.Syntax.Ast.patt</a> -&gt; unit;
+  str_item : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=str_item">Camlp4.PreCast.Syntax.Ast.str_item</a> -&gt; unit;
   string : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; string -&gt; unit;
-  sum_type : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; Camlp4.PreCast.Syntax.Ast.ctyp -&gt; unit;
+  sum_type : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> -&gt; unit;
   type_params : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                Camlp4.PreCast.Syntax.Ast.ctyp list -&gt; unit;
+                <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=ctyp">Camlp4.PreCast.Syntax.Ast.ctyp</a> list -&gt; unit;
   under_pipe : 'a; under_semi : 'a; value_let : string; value_val : string;
   var : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; string -&gt; unit;
   virtual_flag : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                 Camlp4.PreCast.Syntax.Ast.virtual_flag -&gt; unit;
+                 <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=virtual_flag">Camlp4.PreCast.Syntax.Ast.virtual_flag</a> -&gt; unit;
   with_constraint : <a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt;
-                    Camlp4.PreCast.Syntax.Ast.with_constr -&gt; unit &gt;
+                    <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=with_constr">Camlp4.PreCast.Syntax.Ast.with_constr</a> -&gt; unit &gt;
 as 'a</code></pre>
-<pre><span class="VALstring_of_expr"><span class="keyword">val</span> string_of_expr</span> : <code class="type">Camlp4.PreCast.Syntax.Ast.expr -&gt; string</code></pre>
-<pre><span class="VALshort_desc_of_expr"><span class="keyword">val</span> short_desc_of_expr</span> : <code class="type">max_len:int -&gt; Camlp4.PreCast.Syntax.Ast.expr -&gt; string</code></pre>
-<pre><span class="VALdescr"><span class="keyword">val</span> descr</span> : <code class="type">Camlp4.PreCast.Ast.loc -&gt;
-Camlp4.PreCast.Syntax.Ast.expr option -&gt;
+<pre><span class="VALstring_of_expr"><span class="keyword">val</span> string_of_expr</span> : <code class="type"><a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; string</code></pre>
+<pre><span class="VALshort_desc_of_expr"><span class="keyword">val</span> short_desc_of_expr</span> : <code class="type">max_len:int -&gt; <a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> -&gt; string</code></pre>
+<pre><span class="VALdescr"><span class="keyword">val</span> descr</span> : <code class="type"><a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=loc">Camlp4.PreCast.Ast.loc</a> -&gt;
+<a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> option -&gt;
 string option -&gt;
-Camlp4.PreCast.Ast.expr * Camlp4.PreCast.Ast.expr * Camlp4.PreCast.Ast.expr *
-Camlp4.PreCast.Ast.expr * Camlp4.PreCast.Ast.expr</code></pre>
+<a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=expr">Camlp4.PreCast.Ast.expr</a> * <a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=expr">Camlp4.PreCast.Ast.expr</a> * <a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=expr">Camlp4.PreCast.Ast.expr</a> *
+<a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=expr">Camlp4.PreCast.Ast.expr</a> * <a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=expr">Camlp4.PreCast.Ast.expr</a></code></pre>
 <pre><span class="VALapply_to_descr"><span class="keyword">val</span> apply_to_descr</span> : <code class="type">string -&gt;
-Camlp4.PreCast.Ast.loc -&gt;
-Camlp4.PreCast.Syntax.Ast.expr option -&gt;
-string option -&gt; Camlp4.PreCast.Ast.expr -&gt; Camlp4.PreCast.Ast.str_item</code></pre>
+<a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=loc">Camlp4.PreCast.Ast.loc</a> -&gt;
+<a href="?package=ocaml&amp;module=PreCast.Syntax.Ast&amp;type=expr">Camlp4.PreCast.Syntax.Ast.expr</a> option -&gt;
+string option -&gt; <a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=expr">Camlp4.PreCast.Ast.expr</a> -&gt; <a href="?package=ocaml&amp;module=PreCast.Ast&amp;type=str_item">Camlp4.PreCast.Ast.str_item</a></code></pre>
 
 
 </div>

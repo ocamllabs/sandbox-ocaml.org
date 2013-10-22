@@ -62,35 +62,4 @@
     detected (presumably leading to an infinite loop) .</div></div>
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Doubly_linked&amp;type=t">t</a></code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Doubly_linked&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info">creating doubly-linked lists</div></div>
-<div class="info"><div class="info"><code class="code">of_list l</code> returns a doubly-linked list <code class="code">t</code> with the same elements as <code class="code">l</code> and in the
-    same order (i.e. the first element of <code class="code">l</code> is the first element of <code class="code">t</code>).  It is always
-    the case that <code class="code">l = to_list (of_list l)</code>.</div></div>
-<div class="info"><div class="info">predicates</div></div>
-<div class="info"><div class="info">constant-time extraction of first and last elements.</div></div>
-<div class="info"><div class="info">constant-time move to next or previous element.</div></div>
-<div class="info"><div class="info">constant-time insertion of a new element.  It is an error to call <code class="code">insert_before t e
-    a</code> or <code class="code">insert_after t e a</code> if <code class="code">e</code> is not an element in <code class="code">t</code>.</div></div>
-<div class="info"><div class="info">constant-time removal of an element.  It is an error to call <code class="code">remove t e</code> when <code class="code">e</code> is
-    not in <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">fold_elt t ~init ~f</code> is the same as fold, except <code class="code">f</code> is called with the <code class="code">'a Elt.t</code>'s
-    from the list instead of the contained <code class="code">'a</code> values.<p>    Note that like other iteration functions, it is an error to mutate <code class="code">t</code> inside the
-    fold. If you'd like to call <code class="code">remove</code> on any of the <code class="code">'a Elt.t</code>'s, accumulate them here
-    and do so after <code class="code">fold_elt</code> returns.</p></div></div>
-<div class="info"><div class="info"><code class="code">find_elt t ~f</code> finds the first element in <code class="code">t</code> that satisfies <code class="code">f</code>, by testing each of
-    element of <code class="code">t</code> in turn until <code class="code">f</code> succeeds.</div></div>
-<div class="info"><div class="info"><code class="code">clear t</code> removes all elements from the list in constant time.</div></div>
-<div class="info"><div class="info"><code class="code">copy t</code> returns a copy of <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">transfer ~src ~dst</code> has the same behavior as
-    <code class="code">iter src ~f:(insert_last dst); clear src</code>
-    except that it runs in constant time.<p>    If <code class="code">s = to_list src</code> and <code class="code">d = to_list dst</code>, then after <code class="code">transfer ~src ~dst</code>:
-      <code class="code">to_list src = []</code>
-      <code class="code">to_list dst = d @ s</code></p></div></div>
-<div class="info"><div class="info"><code class="code">filter_inplace t ~f</code> removes all elements of <code class="code">t</code> that don't satisfy <code class="code">f</code>.</div></div>
-<div class="info"><div class="info"><code class="code">unchecked_iter t ~f</code> behaves like <code class="code">iter t ~f</code> except that <code class="code">f</code> is allowed to modify
-    <code class="code">t</code>.  Adding or removing elements before the element currently being visited has no
-    effect on the traversal.  Elements added after the element currently being visited
-    will be traversed.  Elements deleted after the element currently being visited will
-    not be traversed.  Deleting the element currently visited is an error that is not
-    detected (presumably leading to an infinite loop) .</div></div>
 </div>

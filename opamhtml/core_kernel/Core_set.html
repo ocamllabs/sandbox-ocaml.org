@@ -115,37 +115,4 @@ f:([ `Both of 'a * 'a | `Left of 'a | `Right of 'a ] -&gt; unit) -&gt; unit</cod
 <div class="ocaml_module ident" name="Make_binable_using_comparator" path="?package=core_kernel&amp;module=Core_set.S_binable"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Make_binable_using_comparator">Make_binable_using_comparator</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="code"><a href="?package=core_kernel&amp;module=Comparator.S_binable">Comparator.S_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Core_set.S_binable">S_binable</a></code> with type Elt.t = Elt.t with type Elt.comparator = Elt.comparator</div></code></pre></div>
 <pre><span class="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('elt -&gt; 'elt -&gt; int) -&gt;
 ('cmp -&gt; 'cmp -&gt; int) -&gt; ('elt, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('elt, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; int</code></pre>
-<div class="info"><div class="info">Test if invariants of internal AVL search tree hold.</div></div>
-<div class="info"><div class="info"><code class="code">find_index t i</code> returns the <code class="code">i</code>th smallest element of <code class="code">t</code> in O(log n) time.  The
-    smallest element has <code class="code">i = 0</code>.</div></div>
-<div class="info"><div class="info"><code class="code">subset t1 t2</code> returns true iff <code class="code">t1</code> is a subset of <code class="code">t2</code>.</div></div>
-<div class="info"><div class="info">The list or array given to <code class="code">of_list</code> and <code class="code">of_array</code> need not be sorted.</div></div>
-<div class="info"><div class="info"><code class="code">to_list</code> and <code class="code">to_array</code> produce sequences sorted in ascending order according to the
-    comparator.</div></div>
-<div class="info"><div class="info">Create set from sorted array.  The input must be sorted (either in ascending or
-    descending order as given by the comparator) and contain no duplicates, otherwise the
-    result is an error.  The complexity of this function is O(N).</div></div>
-<div class="info"><div class="info">Similar to <code class="code">of_sorted_array</code>, but without checking the input array.</div></div>
-<div class="info"><div class="info"><code class="code">stable_dedup_list</code> is here rather than in the <code class="code">List</code> module because the
-    implementation relies crucially on sets, and because doing so allows one to avoid uses
-    of polymorphic comparison by instantiating the functor at a different implementation
-    of <code class="code">Comparator</code> and using the resulting <code class="code">stable_dedup_list</code>.</div></div>
-<div class="info"><div class="info">Iterate two sets side by side.  Complexity is O(M+N) where M and N are the sizes of
-    the two input sets. As an example, with the inputs <code class="code">0; 1</code> and <code class="code">1; 2</code>, <code class="code">f</code> will be
-    called with <code class="code">`Left 0</code>; <code class="code">`Both (1, 1)</code>; and <code class="code">`Right 2</code>.</div></div>
-<div class="info"><div class="info">if <code class="code">a, b = partition_tf set ~f</code> then <code class="code">a</code> is the elements on which <code class="code">f</code> produced <code class="code">true</code>,
-    and <code class="code">b</code> is the elements on which <code class="code">f</code> produces <code class="code">false</code>.</div></div>
-<div class="info"><div class="info">Same as  <a href="#to_list">to_list</a>.</div></div>
-<div class="info"><div class="info">returns an arbitrary element, or <code class="code">None</code> if the set is empty.</div></div>
-<div class="info"><div class="info"><code class="code">split t x</code> produces a triple <code class="code">(t1, b, t2)</code> where <code class="code">t1</code> is the set of elements strictly
-    less than <code class="code">x</code>, <code class="code">b = mem set x</code>, and <code class="code">t2</code> is the set of elements strictly larger than
-    <code class="code">x</code>.</div></div>
-<div class="info"><div class="info">if <code class="code">equiv</code> is an equivalence predicate, then <code class="code">group_by set ~equiv</code> produces a list
-    of equivalence classes (i.e., a set-theoretic quotient).  E.g.,<p>    </p><pre class="code"><code>
-      let chars = Set.of_list ['A'; 'a'; 'b'; 'c'] in
-      let equiv c c' = Char.equal (Char.uppercase c) (Char.uppercase c') in
-      group_by chars ~equiv
-    </code></pre><p>    produces:</p><p>    </p><pre class="code"><code>
-      Set.of_list['A';'a']; Set.singleton 'b'; Set.singleton 'c']
-    </code></pre><p>    <code class="code">group_by</code> runs in O(n^2) time.</p></div></div>
 </div>

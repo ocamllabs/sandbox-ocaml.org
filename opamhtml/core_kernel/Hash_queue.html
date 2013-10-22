@@ -34,23 +34,4 @@
 <pre><span class="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; key:<a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; 'b) -&gt; 'b</code></pre></div></div>
 <div class="ocaml_module ident" name="Make" path="?package=core_kernel&amp;module=Hash_queue.S"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Make">Make</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Key">Key</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.S">S</a></code> with module <a href="?package=core_kernel&amp;module=Hash_queue.S.Key">Key</a> = Key</div></code></pre></div>
 
-<div class="info"><div class="info">a hash-queue, where the values are of type 'a</div></div>
-<div class="info"><div class="info"><code class="code">invariant t</code> checks the invariants of the queue.</div></div>
-<div class="info"><div class="info"><code class="code">create ()</code> returns an empty queue.</div></div>
-<div class="info"><div class="info">clear the queue</div></div>
-<div class="info"><div class="info"><code class="code">mem q k</code> returns true iff there is some (k, v) in the queue.</div></div>
-<div class="info"><div class="info"><code class="code">lookup t k</code> returns the value of the key-value pair in the queue with
-     key k, if there is one.</div></div>
-<div class="info"><div class="info"><code class="code">enqueue t k v</code> adds the key-value pair (k, v) to the end of the queue,
-       returning `Ok if the pair was added, or `Key_already_present
-       if there is already a (k, v') in the queue.</div></div>
-<div class="info"><div class="info"><code class="code">first t</code> returns the front element of the queue, without removing it.</div></div>
-<div class="info"><div class="info"><code class="code">keys t</code> returns the keys in the order of the queue.</div></div>
-<div class="info"><div class="info"><code class="code">dequeue t</code> returns the front element of the queue.</div></div>
-<div class="info"><div class="info"><code class="code">dequeue_with_key t</code> returns the front element of the queue and its key</div></div>
-<div class="info"><div class="info"><code class="code">dequeue_all t ~f</code> dequeues every element of the queue and applies f to each
-       one.</div></div>
-<div class="info"><div class="info"><code class="code">remove q k</code> removes the key-value pair with key k from the queue.</div></div>
-<div class="info"><div class="info"><code class="code">replace q k v</code> changes the value of key k in the queue to v.</div></div>
-<div class="info"><div class="info"><code class="code">iter t ~f</code> applies f to each key and element of the queue.</div></div>
 </div>

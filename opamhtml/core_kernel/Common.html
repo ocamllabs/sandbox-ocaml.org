@@ -153,48 +153,5 @@
 <pre><span class="VALbin_writer_read_write"><span class="keyword">val</span> bin_writer_read_write</span> : <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_write">read_write</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
 <pre><span class="VALread_write_of_sexp"><span class="keyword">val</span> read_write_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Common&amp;type=read_write">read_write</a></code></pre>
 <pre><span class="VALsexp_of_read_write"><span class="keyword">val</span> sexp_of_read_write</span> : <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_write">read_write</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<pre><span class="VALsexp_of_never_returns"><span class="keyword">val</span> sexp_of_never_returns</span> : <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=never_returns">never_returns</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre><div class="info"><div class="info"><code class="code">never_returns</code> should be used as the return type of functions that don't return and
-    might block forever, rather than <code class="code">'a</code> or <code class="code">_</code>.  This forces callers of such functions
-    to have a call to <code class="code">never_returns</code> at the call site, which makes it clear to readers
-    what's going on. We do not intend to use this type for functions such as <code class="code">failwithf</code>
-    that always raise an exception.</div></div>
-<div class="info"><div class="info"><h6 id="6_TITLE">Error handling</h6></div></div>
-<div class="info"><div class="info">See exn.mli</div></div>
-<div class="info"><div class="info"><h6 id="6_TITLE">Input Output</h6></div></div>
-<div class="info"><div class="info"><h6 id="6_TITLE">triple handling </h6></div></div>
-<div class="info"><div class="info"><h6 id="6_TITLE">Option handling</h6></div></div>
-<div class="info"><div class="info"><h6 id="6_TITLE">Functions from fn.ml</h6></div></div>
-<div class="info"><div class="info"><code class="code">does_raise f</code> returns <code class="code">true</code> iff <code class="code">f ()</code> raises. It is intended to be used in unit
-    tests and should probably not be used in regular code.</div></div>
-<div class="info"><div class="info"><code class="code">Or_error.ok_exn</code></div></div>
-<div class="info"><div class="info"><code class="code">Or_error.error</code></div></div>
-<div class="info"><div class="info"><code class="code">with_return f</code> allows for something like the return statement in C within <code class="code">f</code>.  There
-   are three ways <code class="code">f</code> can terminate:<p>   1. If <code class="code">f</code> calls <code class="code">r.return x</code>, then <code class="code">x</code> is returned by <code class="code">with_return</code>.
-   2. If <code class="code">f</code> evaluates to a value <code class="code">x</code>, then <code class="code">x</code> is returned by <code class="code">with_return</code>.
-   3. If <code class="code">f</code> raises an exception, it escapes <code class="code">with_return</code>.</p><p>   Here is a typical example:</p><p>   </p><pre class="code"><code>
-   let find l ~f =
-     with_return (fun r -&gt;
-        List.iter l ~f:(fun x -&gt; if f x then r.return (Some x));
-        None
-      )
-   </code></pre><p>   It is only because of a deficiency of ML types that <code class="code">with_return</code> doesn't have type:</p><p>   </p><pre class="code"><code> val with_return : 'a. (('a -&gt; ('b. 'b)) -&gt; 'a) -&gt; 'a </code></pre><p>   but we can slightly increase the scope of 'b, without changing the meaning of the type
-   and then we get</p><p>   </p><pre class="code"><code>
-   type 'a return = { return : 'b . 'a -&gt; 'b }
-   val with_return : ('a return -&gt; 'a) -&gt; 'a
-   </code></pre><p>   But the actual reason we chose to use a record type with polymorphic field is that
-   otherwise we would have to clobber the namespace of functions with <code class="code">return</code> and that is
-   undesirable because <code class="code">return</code> would get hidden as soon as we open any monad. We
-   considered names different than <code class="code">return</code> but everything seemed worse than just having
-   <code class="code">return</code> as a record field. We are clobbering the namespace of record fields but that
-   is much more acceptable.</p></div></div>
-<div class="info"><div class="info">We disable <code class="code">==</code> and <code class="code">!=</code> and replace them with the longer and more mnemonic
-    <code class="code">phys_equal</code> because they too easily lead to mistakes (for example they don't even
-    work right on Int64 or Float).  One can usually use the <code class="code">equal</code> function for a
-    specific type, or use (=) or (&lt;&gt;) for built in types like char, int, float,</div></div>
-<div class="info"><div class="info">See  <a href="#module : Staged ">module : Staged </a> for documentation</div></div>
-<div class="info"><div class="info">Raised if malloc in C bindings fail (errno * size).</div></div>
-<div class="info"><div class="info"><h6 id="6_TITLE">Deprecated operations</h6><p>  The following section contains definitions that hide operations from the standard
-  library that are considered problematic or confusing, or simply redundant.</p></div></div>
-<div class="info"><div class="info">we have our own version of these two, the INRIA version doesn't release the runtime
-    lock.</div></div>
+<pre><span class="VALsexp_of_never_returns"><span class="keyword">val</span> sexp_of_never_returns</span> : <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=never_returns">never_returns</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
 </div>

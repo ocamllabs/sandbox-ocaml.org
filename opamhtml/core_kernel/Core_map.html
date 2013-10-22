@@ -65,6 +65,9 @@
 <pre><span class="VALof_alist_fold"><span class="keyword">val</span> of_alist_fold</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
 ('a * 'b) list -&gt; init:'c -&gt; f:('c -&gt; 'b -&gt; 'c) -&gt; ('a, 'c, 'cmp) <a href="?package=core_kernel&amp;module=Core_map&amp;type=t">t</a></code></pre><div class="info"><div class="info">combines an association list into a map, folding together bound values with common
     keys</div></div>
+<pre><span class="VALof_alist_reduce"><span class="keyword">val</span> of_alist_reduce</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a * 'b) list -&gt; f:('b -&gt; 'b -&gt; 'b) -&gt; ('a, 'b, 'cmp) <a href="?package=core_kernel&amp;module=Core_map&amp;type=t">t</a></code></pre><div class="info"><div class="info">combines an association list into a map, reducing together bound values with common
+    keys</div></div>
 <pre><span class="VALto_tree"><span class="keyword">val</span> to_tree</span> : <code class="type">('k, 'v, 'cmp) <a href="?package=core_kernel&amp;module=Core_map&amp;type=t">t</a> -&gt; ('k, 'v, 'cmp) <a href="?package=core_kernel&amp;module=Core_map.Tree&amp;type=t">Tree.t</a></code></pre>
 <pre><span class="VALof_tree"><span class="keyword">val</span> of_tree</span> : <code class="type">comparator:('k, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
 ('k, 'v, 'cmp) <a href="?package=core_kernel&amp;module=Core_map.Tree&amp;type=t">Tree.t</a> -&gt; ('k, 'v, 'cmp) <a href="?package=core_kernel&amp;module=Core_map&amp;type=t">t</a></code></pre>

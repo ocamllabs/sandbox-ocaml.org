@@ -43,18 +43,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><code class="code">force x</code> forces the suspension <code class="code">x</code> and returns its result.
-   If <code class="code">x</code> has already been forced, <code class="code">Lazy.force x</code> returns the
-   same value again without recomputing it.  If it raised an exception,
-   the same exception is raised again.
-   Raise <code class="code">Undefined</code> if the forcing of <code class="code">x</code> tries to force <code class="code">x</code> itself
-   recursively.</div></div>
-<div class="info"><div class="info">Like <code class="code">force</code> except that if the computation of <code class="code">x</code> raises an exception, it is
-    unspecified whether <code class="code">force_val x</code> raises the same exception or <code class="code">Undefined</code>.</div></div>
-<div class="info"><div class="info"><code class="code">from_fun f</code> is the same as <code class="code">lazy (f ())</code> but slightly more efficient.</div></div>
-<div class="info"><div class="info"><code class="code">from_val v</code> returns an already-forced suspension of <code class="code">v</code>
-    This is for special purposes only and should not be confused with
-    <code class="code">lazy (v)</code>.</div></div>
-<div class="info"><div class="info"><code class="code">is_val x</code> returns <code class="code">true</code> if <code class="code">x</code> has already been forced and
-    did not raise an exception.</div></div>
 </div>

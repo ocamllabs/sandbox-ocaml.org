@@ -21,37 +21,7 @@
 <pre><span class="VALpop_if"><span class="keyword">val</span> pop_if</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Heap_intf.S&amp;type=t">t</a> -&gt; ('a -&gt; bool) -&gt; 'a option</code></pre><div class="info"><div class="info"><code class="code">pop_if t cond</code> returns <code class="code">Some top_element</code> of <code class="code">t</code> if it satisfies condition
       <code class="code">cond</code>, removing it, or <code class="code">None</code> in any other case.</div></div>
 <pre><span class="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Heap_intf.S&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_intf.S&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">copy t</code> returns a shallow copy</div></div>
-<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_intf.S&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ?min_size ~cmp</code> returns a new min-heap that can store <code class="code">min_size</code> elements
-      without reallocations, using ordering function <code class="code">cmp</code>.<p>      The top of the heap is the smallest element as determined by the provided comparison
-      function.  In particular, if <code class="code">cmp x y &lt; 0</code> then <code class="code">x</code> will be &quot;on top of&quot; <code class="code">y</code> in the
-      heap.</p><p>      Memory use is surprising in two ways:</p><p>      1. The underlying pool never shrinks, so current memory use will at least be
-      proportional to the largest number of elements that the heap has ever held.</p><p>      2. Not all the memory is freed upon <code class="code">remove</code>, but rather after some number of
-      subsequent <code class="code">pop</code> operations. Alternating <code class="code">add</code> and <code class="code">remove</code> operations can therefore
-      use unbounded memory.</p></div></div>
-<div class="info"><div class="info"><code class="code">min_size</code> (see <code class="code">create</code>) will be set to the size of the input array or list.</div></div>
-<div class="info"><div class="info">returns the top (i.e., smallest) element of the heap</div></div>
-<div class="info"><div class="info"><code class="code">remove_top t</code> does nothing if <code class="code">t</code> is empty</div></div>
-<div class="info"><div class="info">This removes and returns the top (i.e. least) element</div></div>
-<div class="info"><div class="info"><code class="code">pop_if t cond</code> returns <code class="code">Some top_element</code> of <code class="code">t</code> if it satisfies condition
-      <code class="code">cond</code>, removing it, or <code class="code">None</code> in any other case.</div></div>
-<div class="info"><div class="info"><code class="code">copy t</code> returns a shallow copy</div></div></div></div>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_intf.S&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 
 
-<div class="info"><div class="info">of_sexp and bin_io functions aren't supplied for heaps due to the difficulties in
-      reconstructing the correct comparison function when de-serializing.</div></div>
-<div class="info"><div class="info"><code class="code">create ?min_size ~cmp</code> returns a new min-heap that can store <code class="code">min_size</code> elements
-      without reallocations, using ordering function <code class="code">cmp</code>.<p>      The top of the heap is the smallest element as determined by the provided comparison
-      function.  In particular, if <code class="code">cmp x y &lt; 0</code> then <code class="code">x</code> will be &quot;on top of&quot; <code class="code">y</code> in the
-      heap.</p><p>      Memory use is surprising in two ways:</p><p>      1. The underlying pool never shrinks, so current memory use will at least be
-      proportional to the largest number of elements that the heap has ever held.</p><p>      2. Not all the memory is freed upon <code class="code">remove</code>, but rather after some number of
-      subsequent <code class="code">pop</code> operations. Alternating <code class="code">add</code> and <code class="code">remove</code> operations can therefore
-      use unbounded memory.</p></div></div>
-<div class="info"><div class="info"><code class="code">min_size</code> (see <code class="code">create</code>) will be set to the size of the input array or list.</div></div>
-<div class="info"><div class="info">returns the top (i.e., smallest) element of the heap</div></div>
-<div class="info"><div class="info"><code class="code">remove_top t</code> does nothing if <code class="code">t</code> is empty</div></div>
-<div class="info"><div class="info">This removes and returns the top (i.e. least) element</div></div>
-<div class="info"><div class="info"><code class="code">pop_if t cond</code> returns <code class="code">Some top_element</code> of <code class="code">t</code> if it satisfies condition
-      <code class="code">cond</code>, removing it, or <code class="code">None</code> in any other case.</div></div>
-<div class="info"><div class="info"><code class="code">copy t</code> returns a shallow copy</div></div>
 </div>

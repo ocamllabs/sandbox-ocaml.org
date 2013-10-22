@@ -119,25 +119,5 @@
       </code></pre></div></div>
 <pre><span class="VALsame_witness"><span class="keyword">val</span> same_witness</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
 <pre><span class="VALsame_witness_exn"><span class="keyword">val</span> same_witness_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a></code></pre>
-<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info">Every <code class="code">Id.t</code> contains a unique id that is distinct from the <code class="code">Uid.t</code> in any other
-      <code class="code">Id.t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">create ~name</code> defines a new type identity.  Two calls to <code class="code">create</code> will result in
-      two distinct identifiers, even for the same arguments with the same type.</div></div>
-<div class="info"><div class="info">accessors</div></div>
-<div class="info"><div class="info"><code class="code">same_witness t1 t2</code> and <code class="code">same_witness_exn t1 t2</code> return a type equality proof iff
-      the two identifiers are physically equal.  This is a useful way to achieve a sort of
-      dynamic typing.<p>      The following two idioms are semantically equivalent; however, using <code class="code">same</code> and
-      <code class="code">same_witness_exn</code> instead of matching on <code class="code">same_witness</code> has better performance
-      because <code class="code">same_witness</code> would allocate an intermediate <code class="code">Or_error.t</code>.</p><p>      </p><pre class="code"><code>
-        match same_witness ta tb with
-        | None -&gt; ...
-        | Some e -&gt; ...
-      </code></pre><p>      </p><pre class="code"><code>
-        if not (same ta tb)
-        then ...
-        else
-          let e = same_witness_exn ta tb in
-          ...
-      </code></pre></div></div></div></div>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 </div>

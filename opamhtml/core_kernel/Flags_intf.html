@@ -46,30 +46,4 @@
       flag constants as values of the flag type without having to coerce them.  It is
       typical to hide the <code class="code">t = int</code> in another signature <code class="code">S</code>.</p></div></div></div></div></div>
 
-<div class="info"><div class="info"><code class="code">module Flags</code> implements Unix-style sets of flags that are represented as
-    an <code class="code">int</code> with various bits set, one bit for each flag.  E.g. <code class="code">Linux_ext.Epoll.Flag</code>.<p>    <code class="code">Flags</code> defines a module type <code class="code">Flags.S</code>, the interface for a flags, and a functor
-    <code class="code">Flags.Make</code> for creating a flags implementation.</p></div></div>
-<div class="info"><div class="info"><code class="code">module type S</code> is the interface for a set of flags.  Values of <code class="code">type t</code> are set of
-    flags, and the various functions operate on sets of flags.  There is a finite universe
-    of flags (in particular 63 flags, one for each bit).<p>    <code class="code">sexp_of_t</code> uses the flag names supplied to <code class="code">Flags.Make</code></p></div></div>
-<div class="info"><div class="info">An entry <code class="code">flag, name</code> in <code class="code">known</code> means that the bit(s) in <code class="code">flag</code> is (are) called
-      <code class="code">name</code>; i.e. if <code class="code">bit_and flags flag = flag</code>, then the bit(s) is (are) set and <code class="code">name</code>
-      will appear in <code class="code">sexp_of_t flags</code>.  <code class="code">known</code> is only used to make <code class="code">sexp_of_t</code>'s output
-      human readable.<p>      The flags in the output of <code class="code">sexp_of_t</code> will occur in the same order as they appear
-      in <code class="code">known</code>.</p><p>      It is allowed to have a single flag with multiple bits set.</p><p>      It is an error if different flags intersect, and <code class="code">allow_intersecting = false</code>.</p></div></div>
-<div class="info"><div class="info"><code class="code">allow_intersecting</code> says whether to allow intersecting <code class="code">known</code> flags.  It is
-      common to do <code class="code">allow_intersecting = false</code>, however in some situations, e.g.
-      Unix open flags, the flags intersect.</div></div>
-<div class="info"><div class="info"><code class="code">should_print_error</code> says whether to print an error message if there is an error in
-      the known flags.  It is typical to use <code class="code">should_print_error = true</code> because
-      <code class="code">Flags.Make</code> is applied at the module level, where the exception raised isn't
-      displayed nicely.</div></div>
-<div class="info"><div class="info"><code class="code">create ~bit:n</code> creates a flag with the <code class="code">n</code>th bit set.  <code class="code">n</code> must be between 0 and
-      62.<p>      Typically a flag has one bit set; <code class="code">create</code> is useful in exactly those cases.  For
-      flags with multiple bits one can either define the Int63.t directly or create it in
-      terms of simpler flags, using <code class="code">+</code> and <code class="code">-</code>.</p></div></div>
-<div class="info"><div class="info"><code class="code">Flags.Make</code> builds a new flags module.  If there is an error in the <code class="code">known</code> flags,
-      it behaves as per <code class="code">on_error</code>.<p>      We expose <code class="code">type t = int</code> in the result of <code class="code">Flags.Make</code> so that one can easily use
-      flag constants as values of the flag type without having to coerce them.  It is
-      typical to hide the <code class="code">t = int</code> in another signature <code class="code">S</code>.</p></div></div>
 </div>

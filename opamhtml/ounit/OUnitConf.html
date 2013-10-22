@@ -1,0 +1,40 @@
+<div class="ocaml_toplevel_module"><pre><span class="EXCEPTIONParse_error"><span class="keyword">exception</span> Parse_error</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<pre><span class="TYPEconf"><span class="keyword">type</span> conf</span> = <code class="type"><a href="?package=ounit&amp;module=OUnitPropList&amp;type=t">OUnitPropList.t</a></code></pre>
+<pre><code><span class="TYPEmetadata"><span class="keyword">type</span> metadata</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTmetadata.help">help</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTmetadata.get_print">get_print</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTmetadata.parse_set">parse_set</span> : <code class="type">string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; unit</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTmetadata.cli">cli</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; (string * <a href="?package=ocaml&amp;module=Arg&amp;type=spec">Arg.spec</a> * string) list</code>;</code></td></tr><tr><td>}</td></tr></table>
+<pre><span class="VALmetaconf"><span class="keyword">val</span> metaconf</span> : <code class="type">(string, <a href="?package=ounit&amp;module=OUnitConf&amp;type=metadata">metadata</a>) <a href="?package=ocaml&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a></code></pre>
+<pre><span class="VALcheck_variable_name"><span class="keyword">val</span> check_variable_name</span> : <code class="type">string -&gt; unit</code></pre>
+<pre><span class="VALcli_name"><span class="keyword">val</span> cli_name</span> : <code class="type">string -&gt; string</code></pre>
+<pre><span class="VALsubst"><span class="keyword">val</span> subst</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; (string * string) list -&gt; string -&gt; string</code></pre>
+<pre><span class="VALmake"><span class="keyword">val</span> make</span> : <code class="type">name:string -&gt;
+parse:(string -&gt; 'a) -&gt;
+print:('a -&gt; string) -&gt;
+default:'a -&gt;
+help:string -&gt;
+fcli:('a -&gt; ('a -&gt; unit) -&gt; (string * <a href="?package=ocaml&amp;module=Arg&amp;type=spec">Arg.spec</a> * string) list) -&gt;
+unit -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; 'a</code></pre>
+<pre><span class="VALmake_string"><span class="keyword">val</span> make_string</span> : <code class="type">string -&gt; string -&gt; string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string</code></pre>
+<pre><span class="VALmake_string_subst"><span class="keyword">val</span> make_string_subst</span> : <code class="type">string -&gt;
+string -&gt; string -&gt; ?extra_subst:(string * string) list -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string</code></pre>
+<pre><span class="VALmake_string_opt"><span class="keyword">val</span> make_string_opt</span> : <code class="type">string -&gt; string option -&gt; string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string option</code></pre>
+<pre><span class="VALmake_string_subst_opt"><span class="keyword">val</span> make_string_subst_opt</span> : <code class="type">string -&gt;
+string option -&gt;
+string -&gt; ?extra_subst:(string * string) list -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string option</code></pre>
+<pre><span class="VALmake_int"><span class="keyword">val</span> make_int</span> : <code class="type">string -&gt; int -&gt; string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; int</code></pre>
+<pre><span class="VALmake_float"><span class="keyword">val</span> make_float</span> : <code class="type">string -&gt; float -&gt; string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; float</code></pre>
+<pre><span class="VALmake_bool"><span class="keyword">val</span> make_bool</span> : <code class="type">string -&gt; bool -&gt; string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; bool</code></pre>
+<pre><span class="VALmake_enum"><span class="keyword">val</span> make_enum</span> : <code class="type">string -&gt;
+(unit -&gt; (string * 'a) list) -&gt; string -&gt; string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string * 'a</code></pre>
+<pre><span class="VALmake_exec"><span class="keyword">val</span> make_exec</span> : <code class="type">string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string</code></pre>
+<pre><span class="VALset"><span class="keyword">val</span> set</span> : <code class="type">origin:string -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string -&gt; string -&gt; unit</code></pre>
+<pre><span class="VALfile_parse"><span class="keyword">val</span> file_parse</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; string -&gt; unit</code></pre>
+<pre><span class="VALenv_parse"><span class="keyword">val</span> env_parse</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; unit</code></pre>
+<pre><span class="VALcli_parse"><span class="keyword">val</span> cli_parse</span> : <code class="type">?argv:string array -&gt; (<a href="?package=ocaml&amp;module=Arg&amp;type=key">Arg.key</a> * <a href="?package=ocaml&amp;module=Arg&amp;type=spec">Arg.spec</a> * <a href="?package=ocaml&amp;module=Arg&amp;type=doc">Arg.doc</a>) list -&gt; <a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; unit</code></pre>
+<pre><span class="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">?preset:(string * string) list -&gt; unit -&gt; (int, unit -&gt; unit) <a href="?package=ocaml&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a></code></pre>
+<pre><span class="VALload"><span class="keyword">val</span> load</span> : <code class="type">?preset:(string * string) list -&gt;
+?argv:string array -&gt;
+(<a href="?package=ocaml&amp;module=Arg&amp;type=key">Arg.key</a> * <a href="?package=ocaml&amp;module=Arg&amp;type=spec">Arg.spec</a> * <a href="?package=ocaml&amp;module=Arg&amp;type=doc">Arg.doc</a>) list -&gt; (int, unit -&gt; unit) <a href="?package=ocaml&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a></code></pre><div class="info"><div class="info">Load test options from file, environment and command line (in this order).
+    Not that <code class="code">extra_specs</code> is here for historical reason, better use <code class="code">make</code> to
+    create command line options.</div></div>
+<pre><span class="VALdump"><span class="keyword">val</span> dump</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">conf</a> -&gt; (string * string) list</code></pre>
+</div>

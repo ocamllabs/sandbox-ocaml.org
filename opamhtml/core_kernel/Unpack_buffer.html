@@ -54,20 +54,4 @@
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('value -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
 ('partial_unpack -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
 ('value, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create_bin_prot reader</code> returns an unpack buffer that unpacks the &quot;size-prefixed&quot;
-    bin_prot encoding, in which a value is encoded by first writing the length of the
-    bin_prot data as a 64-bit int, and then writing the bin_prot data itself.  This
-    encoding makes it trivial to know if enough data is available in the buffer, so there
-    is no need to represent partially unpacked values, and hence <code class="code">'partial_unpack =
-    unit</code>.</div></div>
-<div class="info"><div class="info"><code class="code">is_empty t</code> returns <code class="code">true</code> if <code class="code">t</code> has no unconsumed bytes, and <code class="code">false</code> if it does.
-    <code class="code">is_empty</code> returns an error if <code class="code">t</code> has encountered an unpacking error.</div></div>
-<div class="info"><div class="info"><code class="code">feed t buf ?pos ?len</code> adds the specified substring of <code class="code">buf</code> to <code class="code">t</code>'s buffer.  It
-    returns an error if <code class="code">t</code> has encountered an unpacking error.</div></div>
-<div class="info"><div class="info"><code class="code">unpack t</code> unpacks all the values that it can from <code class="code">t</code>.  The resulting queue will be
-    empty if nothing could be unpacked.  If there is an unpacking error, <code class="code">unpack</code> returns
-    an error, and subsequent <code class="code">feed</code> and <code class="code">unpack</code> operations on <code class="code">t</code> will return that same
-    error.  I.e. no more data can be fed to or unpacked from <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">debug</code> controls whether invariants are checked at each call.  Setting this to <code class="code">true</code>
-    can make things very slow.</div></div>
 </div>

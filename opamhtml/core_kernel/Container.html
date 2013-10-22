@@ -137,16 +137,4 @@
 <div class="ocaml_module ident" name="Check_S1_phantom" path="?package=core_kernel&amp;module=Container.Check"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check_S1_phantom">Check_S1_phantom</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code"><a href="?package=core_kernel&amp;module=Container.S1_phantom">S1_phantom</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Container.Check">Check</a></code>(<code class="code">sig</code> .. <code class="code">end</code>)(<code class="code">sig</code> .. <code class="code">end</code>)(<code class="code">M</code>)</div></code></pre></div>
 <div class="ocaml_module ident" name="Check_S1_phantom_invariant" path="?package=core_kernel&amp;module=Container.Check"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check_S1_phantom_invariant">Check_S1_phantom_invariant</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code"><a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant">S1_phantom_invariant</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Container.Check">Check</a></code>(<code class="code">sig</code> .. <code class="code">end</code>)(<code class="code">sig</code> .. <code class="code">end</code>)(<code class="code">M</code>)</div></code></pre></div>
 
-<div class="info"><div class="info">The idiom for using <code class="code">Container.Make</code> is to bind the resulting module and to explicitly
-    import each of the functions that one wants:<p>    </p><pre class="code"><code>
-      module C = Container.Make (struct ... end)
-      let count    = C.count
-      let exists   = C.exists
-      let find     = C.find
-      ...
-    </code></pre><p>    This is preferable to:</p><p>    </p><pre class="code"><code>
-      include Container.Make (struct ... end)
-    </code></pre><p>    because the <code class="code">include</code> makes it to easy to shadow specialized implementations of
-    container functions (<code class="code">length</code> being a common one).</p><p>    <code class="code">Container.Make</code> implements <code class="code">iter</code> in terms of <code class="code">fold</code>, which is often slower than
-    implementing <code class="code">iter</code> directly.</p></div></div>
 </div>

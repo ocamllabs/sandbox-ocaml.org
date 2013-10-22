@@ -1,0 +1,23 @@
+<div class="ocaml_toplevel_module"><div class="info">Utilities for OUnit<div class="authors"><b>Author(s): </b><span class="author">Sylvain Le Gall</span></div></div>
+<pre><span class="VALis_blank"><span class="keyword">val</span> is_blank</span> : <code class="type">char -&gt; bool</code></pre>
+<pre><span class="VALtrim"><span class="keyword">val</span> trim</span> : <code class="type">string -&gt; string</code></pre>
+<pre><span class="VALtrim_comment"><span class="keyword">val</span> trim_comment</span> : <code class="type">string -&gt; string</code></pre>
+<pre><span class="VALsplit_lines"><span class="keyword">val</span> split_lines</span> : <code class="type">string -&gt; string list</code></pre>
+<pre><span class="VALstarts_with"><span class="keyword">val</span> starts_with</span> : <code class="type">prefix:string -&gt; string -&gt; bool</code></pre>
+<pre><span class="VALstart_substr"><span class="keyword">val</span> start_substr</span> : <code class="type">prefix:string -&gt; string -&gt; bool * string</code></pre>
+<pre><span class="VALextract_backtrace_position"><span class="keyword">val</span> extract_backtrace_position</span> : <code class="type">string -&gt; (string * int) option list</code></pre>
+<pre><span class="VALcmp_float"><span class="keyword">val</span> cmp_float</span> : <code class="type">?epsilon:float -&gt; float -&gt; float -&gt; bool</code></pre>
+<pre><span class="VALbuff_format_printf"><span class="keyword">val</span> buff_format_printf</span> : <code class="type">(<a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; 'a) -&gt; string</code></pre>
+<pre><span class="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">('a -&gt; int -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></pre>
+<pre><span class="VALfold_lefti"><span class="keyword">val</span> fold_lefti</span> : <code class="type">('a -&gt; 'b -&gt; int -&gt; 'a) -&gt; 'a -&gt; 'b list -&gt; 'a</code></pre>
+<pre><span class="VALnow"><span class="keyword">val</span> now</span> : <code class="type">unit -&gt; float</code></pre>
+<pre><span class="VALtime_fun"><span class="keyword">val</span> time_fun</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; float * 'b</code></pre>
+<pre><span class="VALdate_iso8601"><span class="keyword">val</span> date_iso8601</span> : <code class="type">?tz:bool -&gt; float -&gt; string</code></pre>
+<pre><span class="VALbuildir"><span class="keyword">val</span> buildir</span> : <code class="type">string</code></pre>
+<pre><span class="VALfailwithf"><span class="keyword">val</span> failwithf</span> : <code class="type">('a, unit, string, 'b) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre>
+<pre><span class="VALopt"><span class="keyword">val</span> opt</span> : <code class="type">('a -&gt; unit) -&gt; 'a option -&gt; unit</code></pre>
+<pre><span class="VALfqdn"><span class="keyword">val</span> fqdn</span> : <code class="type">unit -&gt; string</code></pre>
+<pre><span class="VALshardf"><span class="keyword">val</span> shardf</span> : <code class="type">int -&gt; string</code></pre>
+<pre><span class="VALstring_of_process_status"><span class="keyword">val</span> string_of_process_status</span> : <code class="type"><a href="?package=ocaml&amp;module=Unix&amp;type=process_status">Unix.process_status</a> -&gt; string</code></pre>
+<pre><span class="VALmake_counter"><span class="keyword">val</span> make_counter</span> : <code class="type">unit -&gt; (unit -&gt; ('a * int) list) * ('a -&gt; unit)</code></pre>
+</div>

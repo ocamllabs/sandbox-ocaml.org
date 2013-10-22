@@ -57,30 +57,4 @@
 <pre><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('tuple, 'b) <a href="?package=core_kernel&amp;module=Flat_queue.Slots&amp;type=t">Slots.t</a> <a href="?package=core_kernel&amp;module=Flat_queue&amp;type=t">t</a> -&gt; init:'a -&gt; f:('a -&gt; 'tuple -&gt; 'a) -&gt; 'a</code></pre>
 <pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('tuple, 'a) <a href="?package=core_kernel&amp;module=Flat_queue.Slots&amp;type=t">Slots.t</a> <a href="?package=core_kernel&amp;module=Flat_queue&amp;type=t">t</a> -&gt; f:('tuple -&gt; unit) -&gt; unit</code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('slots -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'slots <a href="?package=core_kernel&amp;module=Flat_queue&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ?capacity slots</code> creates an empty queue with capacity at least the supplied
-    <code class="code">capacity</code>.  It is an error if <code class="code">capacity &lt;= 0</code>.</div></div>
-<div class="info"><div class="info"><code class="code">capacity t</code> returns the length of the array backing <code class="code">t</code>.  Enqueueing values will not
-    cause the array to grow as long as <code class="code">length t &lt;= capacity t</code>.  A queue at capacity
-    will automatically increase capacity when enqueueing.  The capacity never decreases
-    automatically; one can only decrease capacity via <code class="code">set_capacity</code>.</div></div>
-<div class="info"><div class="info"><code class="code">set_capacity t capacity</code> sets the length of the array backing <code class="code">t</code> to as small as
-    value as possible that is not less than <code class="code">capacity</code>.  <code class="code">set_capacity</code> raises if
-    <code class="code">capacity &lt; length t</code>.  To shrink as much as possible, do <code class="code">set_capacity t (length
-    t)</code>.</div></div>
-<div class="info"><div class="info">These functions get and set individual slots of flat tuple <code class="code">i</code> in queue <code class="code">t</code>.<p>    It is required that <code class="code">0 &lt;= i &lt; length t</code>.</p></div></div>
-<div class="info"><div class="info"><code class="code">drop_front ?n t</code> drops the the first <code class="code">n</code> elements of <code class="code">t</code>.  It raises if <code class="code">n &lt; 0 || n &gt;
-    length t</code>.<p>    <code class="code">Flat_queue</code> does not have <code class="code">dequeue</code> or <code class="code">dequeue_exn</code> because the expected usage is to
-    use <code class="code">get t 0 Slot.tj</code> to access the front of the queue, and then to use <code class="code">drop_front</code>
-    to remove it.  This usage avoids ever allocating an ordinary OCaml tuple.</p></div></div>
-<div class="info"><div class="info">default is 1.</div></div>
-<div class="info"><div class="info"><code class="code">clear t</code> removes all elements from <code class="code">t</code>.</div></div>
-<div class="info"><div class="info">There is an <code class="code">enqueueN</code> function for each possible arity of a flat queue.</div></div>
-<div class="info"><div class="info">The functions below deal with Flat-array tuples as ordinary OCaml tuples.  These
-    are intended for convenience but not for performance-critical code, due to the
-    tuple allocation.</div></div>
-<div class="info"><div class="info"><code class="code">get_all_slots t i</code> allocates a new ordinary OCaml tuple whose components are equal to
-    the slots of the flat tuple at index <code class="code">i</code> of <code class="code">t</code>.  This is esentially an allocation
-    plus a blit from <code class="code">t</code> to the newly allocated tuple.<p>    <code class="code">set_all_slots t i tuple</code> sets all slots of the flat tuple at index <code class="code">i</code> of <code class="code">t</code> to
-    their corresponding components of <code class="code">tuple</code>.  This is essentially a blit from <code class="code">tuple</code> to
-    <code class="code">t</code>.</p><p>    It is required that <code class="code">0 &lt;= i &lt; length t</code>.</p></div></div>
 </div>

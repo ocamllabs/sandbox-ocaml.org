@@ -55,36 +55,4 @@
         ;;
       </code></pre></div></div></div></div>
 
-<div class="info"><div class="info">This module defines signatures that are to be included in other signatures to ensure a
-    consistent interface to invariant-style functions.  There is a signature (<code class="code">S</code>, <code class="code">S1</code>,
-    <code class="code">S2</code>, <code class="code">S3</code>) for each arity of type.  Usage looks like:<p>    </p><pre class="code"><code>
-      type t
-      include Invariant.S with type t := t
-    </code></pre><p>    or</p><p>    </p><pre class="code"><code>
-      type 'a t
-      include Invariant.S1 with type 'a t := 'a t
-    </code></pre></div></div>
-<div class="info"><div class="info"><code class="code">invariant here t sexp_of_t f</code> runs <code class="code">f ()</code>, and if <code class="code">f</code> raises, wraps the exception
-      in an <code class="code">Error.t</code> that states &quot;invariant failed&quot; and includes both the exception
-      raised by <code class="code">f</code>, as well as <code class="code">sexp_of_t t</code>.  Idiomatic usage looks like:<p>      </p><pre class="code"><code>
-        invariant _here_ t &lt;:sexp_of&lt; t &gt;&gt; (fun () -&gt;
-          ... check t's invariants ... )
-      </code></pre></div></div>
-<div class="info"><div class="info"><code class="code">check_field</code> is used when checking invariants using <code class="code">Fields.iter</code>.  It wraps an
-      exception raised when checking a field with the field's name.  Idiomatic usage looks
-      like:<p>      </p><pre class="code"><code>
-        type t =
-          { foo : Foo.t;
-            bar : Bar.t;
-          }
-        with fields
-
-        let invariant t : unit =
-          invariant &quot;Foo.invariant&quot; t &lt;:sexp_of&lt; t &gt;&gt; (fun () -&gt;
-            let check f = Invariant.check_field t f in
-            Fields.iter
-              ~foo:(check Foo.invariant)
-              ~bar:(check Bar.invariant))
-        ;;
-      </code></pre></div></div>
 </div>

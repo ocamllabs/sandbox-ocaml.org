@@ -47,21 +47,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ()</code> returns an empty queue.</div></div>
-<div class="info"><div class="info"><code class="code">enqueue t x</code> adds <code class="code">x</code> to the end of <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">dequeue t</code> returns <code class="code">None</code> if <code class="code">t</code> is empty, otherwise it removes and returns
-    the front of <code class="code">t</code></div></div>
-<div class="info"><div class="info"><code class="code">peek t</code> returns <code class="code">None</code> if <code class="code">t</code> is empty, otherwise it returns <code class="code">Some x</code> where
-    <code class="code">x</code> is the front of <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">clear t</code> discards all elements from <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">copy t</code> returns a copy of <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">filter_inplace t ~f</code> removes all elements of <code class="code">t</code> that don't satisfy <code class="code">f</code>.</div></div>
-<div class="info"><div class="info"><code class="code">transfer ~src ~dst</code> adds all of the elements of <code class="code">src</code> to the end of <code class="code">dst</code>,
-    then clears <code class="code">src</code>. It is equivalent to the sequence
-      <code class="code">iter ~src ~f:(enqueue dst); clear src</code>
-    but runs in constant time.</div></div>
-<div class="info"><div class="info"><code class="code">of_list list</code> returns a queue <code class="code">t</code> with the elements of <code class="code">list</code> in the same
-    order as the elements of <code class="code">list</code> (i.e. the first element of <code class="code">t</code> is the first
-    element of the list).</div></div>
-<div class="info"><div class="info"><code class="code">partial_iter t ~f</code> iterates through t until f returns `Stop</div></div>
 </div>

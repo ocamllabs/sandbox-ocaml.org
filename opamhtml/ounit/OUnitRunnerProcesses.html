@@ -1,0 +1,18 @@
+<div class="ocaml_toplevel_module"><div class="info">Use processes to run several tests in parallel.<p> Run processes that handle running tests. The processes read test, execute
+ it, and communicate back to the master the log.</p><p> This need to be done in another process because ocaml Threads are not truly
+ concurrent. Moreover we cannot use Unix.fork because it's not portable</p></div>
+<pre><span class="VALmake_channel"><span class="keyword">val</span> make_channel</span> : <code class="type">string -&gt;
+('a -&gt; string) -&gt;
+('b -&gt; string) -&gt;
+<a href="?package=ocaml&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> -&gt;
+<a href="?package=ocaml&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> -&gt; ('b, 'a) <a href="?package=ounit&amp;module=OUnitRunner.GenericWorker&amp;type=channel">OUnitRunner.GenericWorker.channel</a></code></pre>
+<pre><span class="VALprocesses_grace_period"><span class="keyword">val</span> processes_grace_period</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">OUnitConf.conf</a> -&gt; float</code></pre>
+<pre><span class="VALprocesses_kill_period"><span class="keyword">val</span> processes_kill_period</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">OUnitConf.conf</a> -&gt; float</code></pre>
+<pre><span class="VALcreate_worker"><span class="keyword">val</span> create_worker</span> : <code class="type"><a href="?package=ounit&amp;module=OUnitConf&amp;type=conf">OUnitConf.conf</a> -&gt;
+(<a href="?package=ounit&amp;module=OUnitTest&amp;type=path">OUnitTest.path</a> * 'a * (<a href="?package=ounit&amp;module=OUnitTest&amp;type=ctxt">OUnitTest.ctxt</a> -&gt; 'b))
+<a href="?package=ounit&amp;module=OUnitRunner.GenericWorker.MapPath&amp;type=t">OUnitRunner.GenericWorker.MapPath.t</a> -&gt;
+string -&gt; string -&gt; bool -&gt; <a href="?package=ocaml&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> <a href="?package=ounit&amp;module=OUnitRunner.GenericWorker&amp;type=worker">OUnitRunner.GenericWorker.worker</a></code></pre>
+<pre><span class="VALworkers_waiting"><span class="keyword">val</span> workers_waiting</span> : <code class="type"><a href="?package=ocaml&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> <a href="?package=ounit&amp;module=OUnitRunner.GenericWorker&amp;type=worker">OUnitRunner.GenericWorker.worker</a> list -&gt;
+float -&gt; <a href="?package=ocaml&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> <a href="?package=ounit&amp;module=OUnitRunner.GenericWorker&amp;type=worker">OUnitRunner.GenericWorker.worker</a> list</code></pre>
+<pre><span class="VALinit"><span class="keyword">val</span> init</span> : <code class="type">unit -&gt; unit</code></pre>
+</div>

@@ -33,22 +33,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info">Return the ASCII code of the argument.</div></div>
-<div class="info"><div class="info">Return the character with the given ASCII code or <code class="code">None</code> is the argument is outside
-    the range 0 to 255.</div></div>
-<div class="info"><div class="info">Return the character with the given ASCII code.  Raise <code class="code">Failure</code> if the argument is
-    outside 0 to 255.</div></div>
-<div class="info"><div class="info">Return a string representing the given character, with special characters escaped
-    following the lexical conventions of Objective Caml.</div></div>
-<div class="info"><div class="info">Convert the given character to its equivalent lowercase character.</div></div>
-<div class="info"><div class="info">Convert the given character to its equivalent uppercase character.</div></div>
-<div class="info"><div class="info">'0' - '9'</div></div>
-<div class="info"><div class="info">'a' - 'z'</div></div>
-<div class="info"><div class="info">'A' - 'Z'</div></div>
-<div class="info"><div class="info">'a' - 'z' or 'A' - 'Z'</div></div>
-<div class="info"><div class="info">'a' - 'z' or 'A' - 'Z' or '0' - '9'</div></div>
-<div class="info"><div class="info">' ' - '~'</div></div>
-<div class="info"><div class="info">' ' or '\t' or '\r' or '\n'</div></div>
-<div class="info"><div class="info">Return <code class="code">Some i</code> if <code class="code">is_digit c</code> and <code class="code">None</code> otherwise.</div></div>
-<div class="info"><div class="info">Return <code class="code">i</code> if <code class="code">is_digit c</code>.  Raises <code class="code">Failure</code> otherwise.</div></div>
 </div>

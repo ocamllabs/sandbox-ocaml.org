@@ -51,16 +51,4 @@
 <div class="ocaml_include ident" path="?package=core_kernel&amp;module=Comparable_intf.S_common" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.S_common">S_common</a></code></code></pre></div>
 <div class="ocaml_include ident" path="?package=core_kernel&amp;module=Comparable_intf.Map_and_set_binable" items="[&quot;Set&quot;,&quot;Map&quot;]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.Map_and_set_binable">Map_and_set_binable</a></code> with type <a href="?package=core_kernel&amp;module=Comparable_intf.Map_and_set_binable&amp;type=t">t</a> := <a href="?package=core_kernel&amp;module=Comparable_intf.S_binable&amp;type=t">t</a> with type comparator := <a href="?package=core_kernel&amp;module=Comparable_intf.S_binable&amp;type=comparator">comparator</a></code></pre></div></div></div>
 
-<div class="info"><div class="info">Used for specifying a bound (either upper or lower) as inclusive, exclusive, or
-    unbounded.</div></div>
-<div class="info"><div class="info"><code class="code">ascending</code> is identical to <code class="code">compare</code>. <code class="code">descending x y = ascending y x</code>.  These are
-      intended to be mnemonic when used like <code class="code">List.sort ~cmp:ascending</code> and <code class="code">List.sort
-      ~cmp:descending</code>, since they cause the list to be sorted in ascending or descending
-      order, respectively.</div></div>
-<div class="info"><div class="info">Usage example:<p>    </p><pre class="code"><code>
-      module Foo : sig
-        type t = ...
-        include Comparable.S with type t := t
-      end
-    </code></pre><p>    Then use <code class="code">Comparable.Make</code> in the struct (see comparable.mli for an example).</p></div></div>
 </div>

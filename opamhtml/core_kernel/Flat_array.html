@@ -30,19 +30,4 @@
     <code class="code">t</code>.</p><p>    It is required that <code class="code">0 &lt;= i &lt; length t</code>.</p></div></div>
 <pre><span class="VALset_all_slots"><span class="keyword">val</span> set_all_slots</span> : <code class="type">('tuple, 'a) <a href="?package=core_kernel&amp;module=Flat_array.Slots&amp;type=t">Slots.t</a> <a href="?package=core_kernel&amp;module=Flat_array&amp;type=t">t</a> -&gt; int -&gt; 'tuple -&gt; unit</code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('slots -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'slots <a href="?package=core_kernel&amp;module=Flat_array&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create slots ~len init</code> creates an array of flat tuples, whose slots are initialized
-    to the slots of <code class="code">init</code>, which is an ordinary OCaml tuple.  <code class="code">create</code> raises if <code class="code">len &lt;
-    0</code>.</div></div>
-<div class="info"><div class="info"><code class="code">copy a</code> returns a shallow copy of <code class="code">a</code>, that is, a fresh array containing the same
-    elements as <code class="code">a</code>.</div></div>
-<div class="info"><div class="info">accessors</div></div>
-<div class="info"><div class="info">These functions get and set individual slots of flat tuple <code class="code">i</code> in array <code class="code">t</code>.<p>    It is required that <code class="code">0 &lt;= i &lt; length t</code>.</p></div></div>
-<div class="info"><div class="info"><code class="code">set_to_init t i</code> sets flat tuple <code class="code">i</code> to the <code class="code">init</code> that was supplied to <code class="code">create</code>.</div></div>
-<div class="info"><div class="info"><code class="code">is_init t i</code> returns <code class="code">true</code> iff flat tuple <code class="code">i</code>'s slots are identical to those of
-    the <code class="code">init</code> supplied to <code class="code">create</code>.</div></div>
-<div class="info"><div class="info"><code class="code">get_all_slots t i</code> allocates a new ordinary OCaml tuple whose components are equal to
-    the slots of the flat tuple at index <code class="code">i</code> of <code class="code">t</code>.  This is esentially an allocation
-    plus a blit from <code class="code">t</code> to the newly allocated tuple.<p>    <code class="code">set_all_slots t i tuple</code> sets all slots of the flat tuple at index <code class="code">i</code> of <code class="code">t</code> to
-    their corresponding components of <code class="code">tuple</code>.  This is essentially a blit from <code class="code">tuple</code> to
-    <code class="code">t</code>.</p><p>    It is required that <code class="code">0 &lt;= i &lt; length t</code>.</p></div></div>
 </div>

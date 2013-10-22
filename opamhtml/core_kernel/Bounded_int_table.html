@@ -68,11 +68,4 @@ f:(key:'key -&gt; data:'data1 -&gt; 'data2 option) -&gt; ('key, 'data2) <a href=
     checking.</div></div>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('key -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
 ('data -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ~num_keys ~key_to_int</code> returns a table where the keys can map to 0
-    .. num_keys-1, according to <code class="code">key_to_int</code>.  It is an error if <code class="code">num_keys &lt; 0</code>.<p>    <code class="code">sexp_of_key</code>, if supplied, will be used to display keys in error messages.</p></div></div>
-<div class="info"><div class="info">Standard hashtbl functions.</div></div>
-<div class="info"><div class="info">Serialization of a bounded int table using <code class="code">bin_io</code> or <code class="code">sexp</code> preserves <code class="code">num_keys</code>,
-      but only takes space proportional to the <code class="code">length</code> of the table.</div></div>
-<div class="info"><div class="info">set <code class="code">debug := true</code> to turn on debugging, including potentially slow invariant
-    checking.</div></div>
 </div>

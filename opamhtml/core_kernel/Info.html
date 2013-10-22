@@ -33,10 +33,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Info&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Info&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Info&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info">might be an expensive operation</div></div>
-<div class="info"><div class="info">Be careful that the body of the lazy or thunk does not access mutable data, since it
-    will only be called at an undetermined later point.</div></div>
-<div class="info"><div class="info">For <code class="code">create msg z sexp_of_z</code>, be careful to use only immutable values for <code class="code">z</code>, or be
-    aware that <code class="code">z</code> will be lazily converted to a sexp at a later point in time, which will
-    pick up the then-current state of <code class="code">z</code>.</div></div>
 </div>

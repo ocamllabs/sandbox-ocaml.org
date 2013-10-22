@@ -36,24 +36,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><code class="code">try_with f</code> catches exceptions thrown by <code class="code">f</code> and returns them in the Result.t as an
-    Error.t.  <code class="code">try_with_join</code> is like <code class="code">try_with</code>, except that <code class="code">f</code> can throw exceptions or
-    return an Error directly, without ending up with a nested error; it is equivalent to
-    <code class="code">Result.join (try_with f)</code>.</div></div>
-<div class="info"><div class="info"><code class="code">ok_exn t</code> throws an exception if <code class="code">t</code> is an <code class="code">Error</code>, and otherwise returns the
-    contents of the <code class="code">Ok</code> constructor.</div></div>
-<div class="info"><div class="info"><code class="code">of_exn exn</code> is <code class="code">Error (Error.of_exn exn)</code>.</div></div>
-<div class="info"><div class="info"><code class="code">of_exn_result (Ok a) = Ok a</code>, <code class="code">of_exn_result (Error exn) = of_exn exn</code></div></div>
-<div class="info"><div class="info"><code class="code">error message value sexp_of_value</code> constructs an <code class="code">Error.t</code> and returns it as a
-    <code class="code">Result.Error</code>.</div></div>
-<div class="info"><div class="info"><code class="code">error_string message</code> is <code class="code">Error (Error.of_string message)</code></div></div>
-<div class="info"><div class="info"><code class="code">tag t string</code> is <code class="code">Result.map_error t ~f:(fun e -&gt; Error.tag e string)</code>.
-    <code class="code">tag_arg</code> is similar.</div></div>
-<div class="info"><div class="info"><code class="code">unimplemented name</code> returns a standard error value for an unimplemented value.</div></div>
-<div class="info"><div class="info"><code class="code">combine_errors ts</code> returns <code class="code">Ok</code> if every element in <code class="code">ts</code> is <code class="code">Ok</code>, else it returns
-    <code class="code">Error</code> with all the errors in <code class="code">ts</code>.  More precisely:<p>    | combine_errors <code class="code">Ok a1; ...; Ok an</code> = Ok <code class="code">a1; ...; an</code>
-    | combine_errors <code class="code">...; Error e1; ...; Error en; ...</code>
-    |   = Error (Error.of_list <code class="code">e1; ...; en</code>)</p></div></div>
-<div class="info"><div class="info"><code class="code">combine_errors_unit</code> returns <code class="code">Ok</code> if every element in <code class="code">ts</code> is <code class="code">Ok ()</code>, else it
-    returns <code class="code">Error</code> with all the errors in <code class="code">ts</code>, like <code class="code">combine_errors</code>.</div></div>
 </div>

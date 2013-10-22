@@ -52,23 +52,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info">Options form a monad, where <code class="code">return x =  Some x</code>,
-    <code class="code">(None &gt;&gt;= f) = None</code>, and <code class="code">(Some x &gt;&gt;= f) = f x</code>.</div></div>
-<div class="info"><div class="info"><code class="code">is_none t</code> returns true iff t = None.</div></div>
-<div class="info"><div class="info"><code class="code">is_some t</code> returns true iff t = Some x.</div></div>
-<div class="info"><div class="info"><code class="code">value_map ~default ~f</code> is the same as <code class="code">function Some x -&gt; f x | None -&gt; default</code></div></div>
-<div class="info"><div class="info"><code class="code">map2 o f</code> map 'a option and 'b option to a 'c option using ~f</div></div>
-<div class="info"><div class="info"><code class="code">call x f</code> run optional function on argument</div></div>
-<div class="info"><div class="info"><code class="code">apply x f</code> run optional function on argument and return an option</div></div>
-<div class="info"><div class="info"><code class="code">value None ~default</code> = <code class="code">default</code>
-    <code class="code">value (Some x) ~default</code> = <code class="code">x</code></div></div>
-<div class="info"><div class="info"><code class="code">value_exn (Some x)</code> = <code class="code">x</code>.  <code class="code">value_exn None</code> raises an error whose contents contain
-    the supplied <code class="code">~here</code>, <code class="code">~error</code>, and <code class="code">message</code>, or a default message if none are
-    supplied.</div></div>
-<div class="info"><div class="info"><code class="code">merge a b ~f</code> merges together the values from <code class="code">a</code> and <code class="code">b</code> using <code class="code">f</code>.  If both <code class="code">a</code> and
-    <code class="code">b</code> are <code class="code">None</code>, returns <code class="code">None</code>.  If only one is <code class="code">Some</code>, returns that one, and if both
-    are <code class="code">Some</code>, returns <code class="code">Some</code> of the result of applying <code class="code">f</code> to the contents of <code class="code">a</code> and
-    <code class="code">b</code>.</div></div>
-<div class="info"><div class="info"><code class="code">try_with f</code> returns <code class="code">Some x</code> if <code class="code">f</code> returns <code class="code">x</code> and <code class="code">None</code> if <code class="code">f</code> raises an
-    exception.  See <code class="code">Result.try_with</code> if you'd like to know which exception.</div></div>
 </div>

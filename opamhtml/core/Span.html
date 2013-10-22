@@ -79,13 +79,4 @@
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core&amp;module=Span&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Write_ml&amp;type=writer">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core&amp;module=Span&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core&amp;module=Span&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><h6 id="6_TITLE">Basic operations on spans</h6></div></div>
-<div class="info"><div class="info">absolute value</div></div>
-<div class="info"><div class="info">negation</div></div>
-<div class="info"><div class="info"><code class="code">to_short_string t</code> pretty-prints approximate time span using no more than
-    five characters if the span is positive, and six if the span is negative.
-    Examples
-    <ul><li><code class="code">&quot;10ms&quot;</code> = 10 milliseconds</li><li><code class="code">&quot;4s&quot;</code> = 4 seconds</li><li><code class="code">&quot;5m&quot;</code> = 5 minutes</li><li><code class="code">&quot;4h&quot;</code> = 4 hours</li></ul><p>    only the most significant denomination is shown.</p></div></div>
-<div class="info"><div class="info"><code class="code">randomize t ~percent</code> returns a span +/- percent * original span.  Percent must be
-    between 0 and 1, and must be positive.</div></div>
 </div>

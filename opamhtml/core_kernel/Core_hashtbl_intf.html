@@ -6,9 +6,7 @@
 <pre><span class="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> -&gt; int</code></pre><div class="info"><div class="info">Values returned by <code class="code">hash</code> must be non-negative.  An exception will be raised in the
       case that <code class="code">hash</code> returns a negative value.</div></div>
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a></code></pre>
-<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info">Values returned by <code class="code">hash</code> must be non-negative.  An exception will be raised in the
-      case that <code class="code">hash</code> returns a negative value.</div></div></div></div>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 
 <div class="ocaml_module sig" name="Key_binable"><pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable">Key_binable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
@@ -107,7 +105,10 @@ src:('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessor
 <pre><span class="VALdata"><span class="keyword">val</span> data</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'b list</code></pre><div class="info"><div class="info"><code class="code">filter_inplace t ~f</code> removes all the elements from <code class="code">t</code> that don't satisfy <code class="code">f</code>.</div></div>
 <pre><span class="VALfilter_inplace"><span class="keyword">val</span> filter_inplace</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; bool) -&gt; unit</code></pre>
 <pre><span class="VALfilteri_inplace"><span class="keyword">val</span> filteri_inplace</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; 'b -&gt; bool) -&gt; unit</code></pre>
-<pre><span class="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('b -&gt; 'b -&gt; bool) -&gt; bool</code></pre>
+<pre><span class="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('b -&gt; 'b -&gt; bool) -&gt; bool</code></pre><div class="info"><div class="info"><code class="code">equal t1 t2 f</code> and <code class="code">similar t1 t2 f</code> both return true iff <code class="code">t1</code> and <code class="code">t2</code> have the
+      same keys and for all keys <code class="code">k</code>, <code class="code">f (find_exn t1 k) (find_exn t2 k)</code>.  <code class="code">equal</code> and
+      <code class="code">similar</code> only differ in their types.</div></div>
+<pre><span class="VALsimilar"><span class="keyword">val</span> similar</span> : <code class="type">('a, 'b1) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('a, 'b2) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('b1 -&gt; 'b2 -&gt; bool) -&gt; bool</code></pre>
 <pre><span class="VALto_alist"><span class="keyword">val</span> to_alist</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> * 'b) list</code></pre><div class="info"><div class="info">Returns the list of all (key,data) pairs for given hashtable.</div></div>
 <pre><span class="VALvalidate"><span class="keyword">val</span> validate</span> : <code class="type">name:('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; string) -&gt; 'b <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a></code></pre>
 <pre><span class="VALincr"><span class="keyword">val</span> incr</span> : <code class="type">?by:int -&gt; ('a, int) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; unit</code></pre></div></div>
@@ -201,44 +202,4 @@ src:('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessor
 ('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 
 
-<div class="info"><div class="info">Values returned by <code class="code">hash</code> must be non-negative.  An exception will be raised in the
-      case that <code class="code">hash</code> returns a negative value.</div></div>
-<div class="info"><div class="info"><code class="code">change t key f</code> updates the given table by changing the value stored under <code class="code">key</code>
-      according to <code class="code">f</code>, just like <code class="code">Map.change</code> (see that for example).</div></div>
-<div class="info"><div class="info"><code class="code">add_multi t ~key ~data</code> if <code class="code">key</code> is present in the table then cons
-     <code class="code">data</code> on the list, otherwise add <code class="code">key</code> with a single element list.</div></div>
-<div class="info"><div class="info"><code class="code">remove_multi t key</code> updates the table, removing the head of the list bound to
-      <code class="code">key</code>. If the list has only one element (or is empty) then the binding is
-      removed.</div></div>
-<div class="info"><div class="info"><code class="code">map t f</code> returns new table with bound values replaced by
-      <code class="code">f</code> applied to the bound values</div></div>
-<div class="info"><div class="info">like <code class="code">map</code>, but function takes both key and data as arguments</div></div>
-<div class="info"><div class="info">returns new map with bound values filtered by f applied to the bound
-      values</div></div>
-<div class="info"><div class="info">like <code class="code">filter_map</code>, but function takes both key and data as arguments</div></div>
-<div class="info"><div class="info">returns new maps with bound values partitioned by f applied to the bound values</div></div>
-<div class="info"><div class="info">like <code class="code">partition_map</code>, but function takes both key and data as arguments</div></div>
-<div class="info"><div class="info"><code class="code">find_or_add t k ~default</code> returns the data associated with key k if it
-      is in the table t, otherwise it lets d = default() and adds it to the
-      table.</div></div>
-<div class="info"><div class="info"><code class="code">find t k</code> returns Some (the current binding) of k in t, or None if no
-      such binding exists</div></div>
-<div class="info"><div class="info"><code class="code">find_exn t k</code> returns the current binding of k in t, or raises Not_found
-      if no such binding exists.</div></div>
-<div class="info"><div class="info"><code class="code">find_and_remove t k</code> returns Some (the current binding) of k in t and removes
-      it, or None is no such binding exists</div></div>
-<div class="info"><div class="info"><code class="code">iter_vals t ~f</code> is like iter, except it only supplies the value to f,
-      not the key.</div></div>
-<div class="info"><div class="info">Merge two hashtables.<p>      The result of <code class="code">merge f h1 h2</code> has as keys the set of all <code class="code">k</code> in the
-      union of the sets of keys of <code class="code">h1</code> and <code class="code">h2</code> for which <code class="code">d(k)</code> is not
-      None, where:</p><p>      d(k) =</p><ul><li>f ~key:k (Some d1) None
-      if <code class="code">k</code> in <code class="code">h1</code> is to d1, and <code class="code">h2</code> does not map <code class="code">k</code>;</li></ul>      - f ~key:k None (Some d2)
-      if <code class="code">k</code> in <code class="code">h2</code> is to d2, and <code class="code">h1</code> does not map <code class="code">k</code>;<p>      - f ~key:k (Some d1) (Some d2)
-      otherwise, where <code class="code">k</code> in <code class="code">h1</code> is to <code class="code">d1</code> and <code class="code">k</code> in <code class="code">h2</code> is to <code class="code">d2</code>.</p><p>      Each key <code class="code">k</code> is mapped to a single piece of data x, where <code class="code">d(k)</code> = Some x.</p></div></div>
-<div class="info"><div class="info">Merge one hashtable into another.<p>      After <code class="code">merge_into f src dst</code>, for every <code class="code">key</code> in <code class="code">src</code>, <code class="code">key</code> will be
-      re-mapped in <code class="code">dst</code> to <code class="code">v</code> if <code class="code">f ~key d1 (find dst key) = Some v</code>.</p></div></div>
-<div class="info"><div class="info">Returns the list of all keys for given hashtable.</div></div>
-<div class="info"><div class="info">Returns the list of all data for given hashtable.</div></div>
-<div class="info"><div class="info"><code class="code">filter_inplace t ~f</code> removes all the elements from <code class="code">t</code> that don't satisfy <code class="code">f</code>.</div></div>
-<div class="info"><div class="info">Returns the list of all (key,data) pairs for given hashtable.</div></div>
 </div>
