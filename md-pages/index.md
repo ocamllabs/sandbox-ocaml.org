@@ -27,7 +27,7 @@
                         <img src="/static/img/documentation-large.png" alt="Documentation">
                     </a>
                     <h1><a href="/docs">Documentation</a></h1>
-                    <p>Look up <a href="#">package docs</a>, access the <a href="#">Manual</a>, get the <a href="/docs/cheat_sheets.md">cheat sheets</a> and <a href="/docs">more</a>.</p>
+                    <p>Look up <a href="#">package docs</a>, access the <a href="#">Manual</a>, get the <a href="/docs/cheat_sheets.html">cheat sheets</a> and <a href="/docs">more</a>.</p>
                 </section>
             </div>
             <div class="row">
