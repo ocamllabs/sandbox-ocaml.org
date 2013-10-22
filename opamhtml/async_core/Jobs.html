@@ -17,15 +17,4 @@ unit</code></pre><div class="info"><div class="info"><code class="code">start_cy
     soon as an unhandled exception is raised, or when no more jobs can be run at any
     priority, as per <code class="code">~max_num_jobs_per_priority</code>.</div></div>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_core&amp;module=Jobs&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">length t</code> returns the number of waiting jobs</div></div>
-<div class="info"><div class="info"><code class="code">is_empty t</code> returns true if there are no waiting jobs.</div></div>
-<div class="info"><div class="info"><code class="code">clear t</code> removes all jobs from <code class="code">t</code>.</div></div>
-<div class="info"><div class="info"><code class="code">start_cycle t ~max_num_jobs_per_priority</code> enables subsequent calls of <code class="code">run_all</code> to
-    run up to <code class="code">max_num_jobs_per_priority</code> jobs of each priority level.</div></div>
-<div class="info"><div class="info"><code class="code">force_current_cycle_to_end</code> sets the number of normal jobs allowed to run in this
-    cycle to zero.  Thus, after the currently running job completes, the scheduler will
-    switch to low priority jobs and then end the current cycle.</div></div>
-<div class="info"><div class="info"><code class="code">run_all t f</code> removes jobs from <code class="code">t</code> one at a time and applies <code class="code">f</code> to them, stopping as
-    soon as an unhandled exception is raised, or when no more jobs can be run at any
-    priority, as per <code class="code">~max_num_jobs_per_priority</code>.</div></div>
 </div>

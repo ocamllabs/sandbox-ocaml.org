@@ -60,45 +60,7 @@
     by default, not continue on error.</div></div><div class="ocaml_module_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">('a, [ `sequencer ]) <a href="?package=async_core&amp;module=Throttle.T2&amp;type=t">T2.t</a></code></pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?continue_on_error:bool -&gt; 'a -&gt; 'a <a href="?package=async_core&amp;module=Throttle.Sequencer&amp;type=t">t</a></code></pre>
-<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Throttle.Sequencer&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info">default is <code class="code">false</code></div></div></div></div>
+<pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Throttle.Sequencer&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Throttle&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">create ~continue_on_error ~max_concurrent_jobs</code> returns a throttle that will run up
-    to <code class="code">max_concurrent_jobs</code> concurrently.<p>    If some job raises an exception, then the throttle will be killed, unless
-    <code class="code">continue_on_error</code> is true.</p></div></div>
-<div class="info"><div class="info"><code class="code">create_with ~continue_on_error job_resources</code> returns a throttle that will run up to
-    <code class="code">List.length job_resources</code> concurrently, and will ensure that all running jobs are
-    supplied distinct elements of <code class="code">job_resources</code>.</div></div>
 <pre><span class="VALsexp_of_outcome"><span class="keyword">val</span> sexp_of_outcome</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Throttle&amp;type=outcome">outcome</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">enqueue t job</code> schedules <code class="code">job</code> to be run as soon as possible.  Jobs are guaranteed to
-    be started in the order they are <code class="code">enqueue</code>d.  If <code class="code">t</code> is dead, then <code class="code">job</code> will be
-    immediately aborted (for <code class="code">enqueue</code> this will send an exception to the monitor in
-    effect).</div></div>
-<div class="info"><div class="info"><code class="code">prior_jobs_done t</code> becomes determined when all of the jobs that were previously
-    enqueued in <code class="code">t</code> have completed.</div></div>
-<div class="info"><div class="info"><code class="code">max_concurrent_jobs t</code> returns the maximum number of jobs that <code class="code">t</code> will run
-    concurrently.</div></div>
-<div class="info"><div class="info"><code class="code">num_jobs_running t</code> returns the number of jobs that <code class="code">t</code> is currently running.  It
-    is guaranteed that if <code class="code">num_jobs_running t &lt; max_concurrent_jobs t</code> then
-    <code class="code">num_jobs_waiting_to_start t = 0</code>.  That is, the throttle always uses its maximum
-    concurrency if possible.</div></div>
-<div class="info"><div class="info"><code class="code">num_jobs_waiting_to_start t</code> returns the number of jobs that have been <code class="code">enqueue</code>d but
-    have not yet started.</div></div>
-<div class="info"><div class="info"><code class="code">capacity_available t</code> becomes determined the next time that <code class="code">t</code> has fewer than
-    <code class="code">max_concurrent_jobs t</code> running, and hence an <code class="code">enqueue</code>d job would start
-    immediately.</div></div>
-<div class="info"><div class="info"><code class="code">kill t</code> kills <code class="code">t</code>, which aborts all enqeued jobs that haven't started and all jobs
-    enqueued in the future.  <code class="code">kill</code> also initiates the <code class="code">at_kill</code> clean functions.<p>    If <code class="code">t</code> has already been killed, then calling <code class="code">kill t</code> has no effect.</p></div></div>
-<div class="info"><div class="info"><code class="code">is_dead t</code> returns <code class="code">true</code> if <code class="code">t</code> was killed, either by <code class="code">kill</code> or by an unhandled
-    exception in a job.</div></div>
-<div class="info"><div class="info"><code class="code">at_kill t clean</code> runs <code class="code">clean</code> on each resource when <code class="code">t</code> is killed, either by <code class="code">kill</code>
-    or an unhandled exception.  <code class="code">clean</code> is called on each resource as it becomes
-    available, i.e. immediately if the resource isn't currently in use, otherwise when the
-    job currently using the resource finishes.  If a call to <code class="code">clean</code> fails, the exception
-    is raised to the monitor in effect when <code class="code">at_kill</code> was called.</div></div>
-<div class="info"><div class="info"><code class="code">cleaned t</code> becomes determined after <code class="code">t</code> is killed and all of its <code class="code">at_kill</code> clean
-    functions have completed.</div></div>
-<div class="info"><div class="info">A sequencer is a throttle that is specialized to only allow one job at a time and to,
-    by default, not continue on error.</div></div>
-<div class="info"><div class="info">default is <code class="code">false</code></div></div>
 </div>

@@ -1589,7 +1589,7 @@ pos_ref:<a href="?package=core&amp;module=Std.Bin_prot.Common&amp;type=pos">Core
 <pre><span class="VALopen_file"><span class="keyword">val</span> open_file</span> : <code class="type">?append:bool -&gt;
 ?close_on_exec:bool -&gt;
 ?perm:<a href="?package=async_unix&amp;module=Writer0.Unix&amp;type=file_perm">Unix.file_perm</a> -&gt; string -&gt; <a href="?package=async_unix&amp;module=Writer0&amp;type=t">t</a> <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a></code></pre>
-<pre><span class="VALwith_close"><span class="keyword">val</span> with_close</span> : <code class="type"><a href="?package=async_unix&amp;module=Writer0&amp;type=t">t</a> -&gt; (unit -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a></code></pre>
+<pre><span class="VALwith_close"><span class="keyword">val</span> with_close</span> : <code class="type"><a href="?package=async_unix&amp;module=Writer0&amp;type=t">t</a> -&gt; f:(unit -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a></code></pre>
 <pre><span class="VALwith_writer_exclusive"><span class="keyword">val</span> with_writer_exclusive</span> : <code class="type"><a href="?package=async_unix&amp;module=Writer0&amp;type=t">t</a> -&gt; (unit -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a></code></pre>
 <pre><span class="VALwith_file"><span class="keyword">val</span> with_file</span> : <code class="type">?perm:<a href="?package=async_unix&amp;module=Writer0.Unix&amp;type=file_perm">Unix.file_perm</a> -&gt;
 ?append:bool -&gt;
@@ -1676,5 +1676,4 @@ f:(unit -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">As
 <a href="?package=async_unix&amp;module=Writer0&amp;type=t">t</a> -&gt; 'a <a href="?package=async_unix&amp;module=Import.Pipe.Reader&amp;type=t">Import.Pipe.Reader.t</a> -&gt; ('a -&gt; unit) -&gt; unit <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a></code></pre>
 <pre><span class="VALpipe"><span class="keyword">val</span> pipe</span> : <code class="type"><a href="?package=async_unix&amp;module=Writer0&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Substring&amp;type=base">Core.Std.Substring.base</a> <a href="?package=async_unix&amp;module=Import.Pipe.Writer&amp;type=t">Import.Pipe.Writer.t</a></code></pre>
 
-<div class="info"><div class="info">default is <code class="code">true</code></div></div>
 </div>

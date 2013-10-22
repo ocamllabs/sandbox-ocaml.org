@@ -32,20 +32,4 @@ b1:'a <a href="?package=core_extended&amp;module=Cbuffer&amp;type=t">t</a> -&gt;
     but calls drop just once</div></div>
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_extended&amp;module=Cbuffer&amp;type=t">t</a></code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_extended&amp;module=Cbuffer&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info">copies data from one array to another.  This assumes that the destination
-    array is large enough to accommodate the data</div></div>
-<div class="info"><div class="info"><code class="code">swap_array buf len</code> copies the contents of <code class="code">buf</code> to a new array of length
-    <code class="code">len</code> and places that new data into the buffer</div></div>
-<div class="info"><div class="info">double the size of the buffer</div></div>
-<div class="info"><div class="info">half the size of the buffer</div></div>
-<div class="info"><div class="info"><code class="code">iter buf ~f</code> calls func on each buffer element starting with 0
-    like this: (func pos element)</div></div>
-<div class="info"><div class="info"><code class="code">iterr buf ~f</code> calls func on each buffer element starting with end
-    like this: (func pos element)</div></div>
-<div class="info"><div class="info">initialize Cbuffer from array</div></div>
-<div class="info"><div class="info">compare two buffer fragments</div></div>
-<div class="info"><div class="info">drop stuff from the end.
-    equivalent to
-    while cutoff &gt; f (get buf (length buf - 1)) do drop_last buf; done
-    but calls drop just once</div></div>
 </div>

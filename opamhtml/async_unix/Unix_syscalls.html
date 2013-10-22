@@ -346,14 +346,7 @@ args:string list -&gt;
 <pre><span class="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls.Inet_addr&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Bin_prot.Size&amp;type=sizer">Core.Std.Bin_prot.Size.sizer</a></code></pre>
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls.Inet_addr&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Bin_prot.Write_ml&amp;type=writer">Core.Std.Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls.Inet_addr&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Core.Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
-<pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls.Inet_addr&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Core.Std.Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info">same as <code class="code">Core.Unix</code></div></div>
-<div class="info"><div class="info"><code class="code">127.0.0.1</code></div></div>
-<div class="info"><div class="info">(<code class="code">::1</code>)</div></div>
-<div class="info"><div class="info"><code class="code">of_string_or_getbyname hostname</code> does a DNS lookup of hostname and returns the
-      resulting IP address.  The implemenation sequentializes all calls so that only a
-      single call is active at a time.  The is because we've observed thread safety issues
-      with certain versions of winbind using &quot;wins&quot; name resolution.</div></div></div></div>
+<pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls.Inet_addr&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Core.Std.Bin_prot.Type_class.writer</a></code></pre></div></div>
 <div class="ocaml_module ident" name="Cidr" path="?package=core&amp;module=Std.Unix.Cidr"><pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Unix_syscalls.Cidr">Cidr</a> : <code class="type">module type of <code class="code"><a href="?package=core&amp;module=Std.Unix.Cidr">Core.Std.Unix.Cidr</a></code></code></pre></div>
 <div class="ocaml_module sig" name="Protocol_family"><pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Unix_syscalls.Protocol_family">Protocol_family</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=core&amp;module=Std.Unix.Protocol_family&amp;type=t">Core.Std.Unix.Protocol_family.t</a></code></pre></div></div>
@@ -491,9 +484,7 @@ interrupt:unit <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=
 ([&lt; `Active | `Bound | `Passive | `Unconnected ], [&lt; <a href="?package=async_unix&amp;module=Unix_syscalls.Socket.Address&amp;type=t">Address.t</a> ] as 'a) <a href="?package=async_unix&amp;module=Unix_syscalls.Socket&amp;type=t">t</a> -&gt;
 'a -&gt; unit</code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">(([&lt; `Active | `Bound | `Passive | `Unconnected ] as 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
-(([&lt; <a href="?package=async_unix&amp;module=Unix_syscalls.Socket.Address&amp;type=t">Address.t</a> ] as 'b) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=async_unix&amp;module=Unix_syscalls.Socket&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">bind socket addr</code> sets close_on_exec for the fd of <code class="code">socket</code>.</div></div>
-<div class="info"><div class="info">default: 10</div></div></div></div>
+(([&lt; <a href="?package=async_unix&amp;module=Unix_syscalls.Socket.Address&amp;type=t">Address.t</a> ] as 'b) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=async_unix&amp;module=Unix_syscalls.Socket&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <div class="ocaml_module sig" name="Host"><pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Unix_syscalls.Host">Host</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = {<code class="type"><a href="?package=core&amp;module=Std.Unix.Host&amp;type=t">Core.Std.Unix.Host.t</a></code>}</pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.name">name</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.aliases">aliases</span> : <code class="type">string array</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.family">family</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls.Protocol_family&amp;type=t">Protocol_family.t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.addresses">addresses</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls.Inet_addr&amp;type=t">Inet_addr.t</a> array</code>;</code></td></tr><tr><td>}</td></tr></table>
@@ -704,71 +695,6 @@ mem:('acc__ -&gt;
 <pre><span class="VALwait_on_of_sexp"><span class="keyword">val</span> wait_on_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=async_unix&amp;module=Unix_syscalls&amp;type=wait_on">wait_on</a></code></pre>
 <pre><span class="VAL__wait_on_of_sexp__"><span class="keyword">val</span> __wait_on_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=async_unix&amp;module=Unix_syscalls&amp;type=wait_on">wait_on</a></code></pre>
 <pre><span class="VALsexp_of_wait_on"><span class="keyword">val</span> sexp_of_wait_on</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls&amp;type=wait_on">wait_on</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">waitpid pid</code> returns a deferred that becomes determined with the child's exit
-    status, when the child process with process id <code class="code">pid</code> exits.  <code class="code">waitpid_exn</code> is like
-    <code class="code">waitpid</code>, except the result only becomes determined if the child exits with status
-    zero; it raises if the child terminates win any other way.</div></div>
-<div class="info"><div class="info">same as <code class="code">Core.Unix</code></div></div>
-<div class="info"><div class="info"><code class="code">127.0.0.1</code></div></div>
-<div class="info"><div class="info">(<code class="code">::1</code>)</div></div>
-<div class="info"><div class="info"><code class="code">of_string_or_getbyname hostname</code> does a DNS lookup of hostname and returns the
-      resulting IP address.  The implemenation sequentializes all calls so that only a
-      single call is active at a time.  The is because we've observed thread safety issues
-      with certain versions of winbind using &quot;wins&quot; name resolution.</div></div>
-<div class="info"><div class="info">Sockets have a phantom type parameter that tracks the state of the socket
-      in order to eliminate certain errors in which socket functions are called
-      in the wrong order.  Initially, a socket is `Unconnected.  As various
-      socket functions are called, they return a socket with a new phantom state.
-      Here is a chart of the allowed state transitions.<p>      <span class="verbatim">        Unconnected ---connect--&gt; Active
-        |
-        | ---bind--&gt; Bound ---listen--&gt; Passive ---accept---&gt; Active
-      </span></p></div></div>
-<div class="info"><div class="info"><code class="code">bind socket addr</code> sets close_on_exec for the fd of <code class="code">socket</code>.</div></div>
-<div class="info"><div class="info">default: 10</div></div>
 <pre><span class="VALerror_of_sexp"><span class="keyword">val</span> error_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=async_unix&amp;module=Unix_syscalls&amp;type=error">error</a></code></pre>
 <pre><span class="VALsexp_of_error"><span class="keyword">val</span> sexp_of_error</span> : <code class="type"><a href="?package=async_unix&amp;module=Unix_syscalls&amp;type=error">error</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info">Ignore the break condition.</div></div>
-<div class="info"><div class="info">Signal interrupt on break condition.</div></div>
-<div class="info"><div class="info">Ignore characters with parity errors.</div></div>
-<div class="info"><div class="info">Mark parity errors.</div></div>
-<div class="info"><div class="info">Enable parity check on input.</div></div>
-<div class="info"><div class="info">Strip 8th bit on input characters.</div></div>
-<div class="info"><div class="info">Map NL to CR on input.</div></div>
-<div class="info"><div class="info">Ignore CR on input.</div></div>
-<div class="info"><div class="info">Map CR to NL on input.</div></div>
-<div class="info"><div class="info">Recognize XON/XOFF characters on input.</div></div>
-<div class="info"><div class="info">Emit XON/XOFF chars to control input flow.</div></div>
-<div class="info"><div class="info">Enable output processing.</div></div>
-<div class="info"><div class="info">Output baud rate (0 means close connection).</div></div>
-<div class="info"><div class="info">Input baud rate.</div></div>
-<div class="info"><div class="info">Number of bits per character (5-8).</div></div>
-<div class="info"><div class="info">Number of stop bits (1-2).</div></div>
-<div class="info"><div class="info">Reception is enabled.</div></div>
-<div class="info"><div class="info">Enable parity generation and detection.</div></div>
-<div class="info"><div class="info">Specify odd parity instead of even.</div></div>
-<div class="info"><div class="info">Hang up on last close.</div></div>
-<div class="info"><div class="info">Ignore modem status lines.</div></div>
-<div class="info"><div class="info">Generate signal on INTR, QUIT, SUSP.</div></div>
-<div class="info"><div class="info">Enable canonical processing
-                                 (line buffering and editing)</div></div>
-<div class="info"><div class="info">Disable flush after INTR, QUIT, SUSP.</div></div>
-<div class="info"><div class="info">Echo input characters.</div></div>
-<div class="info"><div class="info">Echo ERASE (to erase previous character).</div></div>
-<div class="info"><div class="info">Echo KILL (to erase the current line).</div></div>
-<div class="info"><div class="info">Echo NL even if c_echo is not set.</div></div>
-<div class="info"><div class="info">Interrupt character (usually ctrl-C).</div></div>
-<div class="info"><div class="info">Quit character (usually ctrl-\).</div></div>
-<div class="info"><div class="info">Erase character (usually DEL or ctrl-H).</div></div>
-<div class="info"><div class="info">Kill line character (usually ctrl-U).</div></div>
-<div class="info"><div class="info">End-of-file character (usually ctrl-D).</div></div>
-<div class="info"><div class="info">Alternate end-of-line char. (usually none).</div></div>
-<div class="info"><div class="info">Minimum number of characters to read
-                                 before the read request is satisfied.</div></div>
-<div class="info"><div class="info">Maximum read wait (in 0.1s units).</div></div>
-<div class="info"><div class="info">Start character (usually ctrl-Q).</div></div>
-<div class="info"><div class="info">Stop character (usually ctrl-S).</div></div>
-<div class="info"><div class="info">Structure of entries in the <code class="code">passwd</code> database.</div></div>
-<div class="info"><div class="info">Structure of entries in the <code class="code">groups</code> database.</div></div>
-<div class="info"><div class="info">Return the login name of the user executing the process.<p>    This returns a deferred because the username may need to be looked up in what is
-    essentially a database elsewhere on the network (winbound user, or NIS).</p></div></div>
 </div>

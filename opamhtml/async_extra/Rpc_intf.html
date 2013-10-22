@@ -64,27 +64,4 @@ port:int -&gt;
 ('a, <a href="?package=core&amp;module=Std.Exn&amp;type=t">Core.Std.Exn.t</a>) <a href="?package=core&amp;module=Std.Result&amp;type=t">Core.Std.Result.t</a> <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre><div class="info"><div class="info"><code class="code">with_client ~host ~port f</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and runs f
       until an exception is thrown or until the returned Deferred is fulfilled.</div></div></div></div>
 
-<div class="info"><div class="info">Initiate an Rpc connection on the given reader/writer pair.  <code class="code">server</code> should be the
-      bag of implementations that the calling side implements; it defaults to
-      <code class="code">Implementations.null</code> (i.e., &quot;I implement no RPCs&quot;).</div></div>
-<div class="info"><div class="info"><code class="code">with_close</code> tries to create a <code class="code">t</code> using the given reader and writer.  If a
-      handshake error is the result, it calls <code class="code">on_handshake_error</code>, for which the default
-      behavior is to raise an exception.  If no error results, <code class="code">dispatch_queries</code> is
-      called on <code class="code">t</code>.<p>      After <code class="code">dispatch_queries</code> returns, if <code class="code">server</code> is None, the <code class="code">t</code> will be closed and
-      the deferred returned by <code class="code">dispatch_queries</code> wil be determined immediately.
-      Otherwise, we'll wait until the other side closes the connection and then close <code class="code">t</code>
-      and determine the deferred returned by <code class="code">dispatch_queries</code>.</p><p>      When the deferred returned by <code class="code">with_close</code> becomes determined, both <code class="code">Reader.close</code>
-      and <code class="code">Writer.close</code> have finished.</p></div></div>
-<div class="info"><div class="info"><code class="code">serve implementations ~port ?on_handshake_error ()</code> starts a server with the given
-      implementation on <code class="code">port</code>.  The optional auth function will be called on all incoming
-      connections with the address info of the client and will disconnect the client
-      immediately if it returns false.  This auth mechanism is generic and does nothing
-      other than disconnect the client - any logging or record of the reasons is the
-      responsibility of the auth function itself.</div></div>
-<div class="info"><div class="info">default is <code class="code">`Ignore</code></div></div>
-<div class="info"><div class="info"><code class="code">client ~host ~port ()</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and returns the
-      connection or an Error if a connection could not be made.  It is the responsibility
-      of the caller to eventually call close.</div></div>
-<div class="info"><div class="info"><code class="code">with_client ~host ~port f</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and runs f
-      until an exception is thrown or until the returned Deferred is fulfilled.</div></div>
 </div>

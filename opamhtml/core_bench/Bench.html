@@ -65,14 +65,29 @@ args:int list -&gt; (int -&gt; (unit -&gt; unit) <a href="?package=core&amp;modu
 ?display:<a href="?package=textutils&amp;module=Ascii_table.Display&amp;type=t">Textutils.Ascii_table.Display.t</a> -&gt;
 ?ascii_table:bool -&gt;
 ?ci_absolute:bool -&gt;
+?predictors:<a href="?package=core_bench&amp;module=Bench.Variable&amp;type=t">Variable.t</a> list -&gt;
 ?verbosity:[ `High | `Low ] -&gt;
 ?no_compactions:bool -&gt;
 ?save_sample_data:bool -&gt;
 ?time_quota:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt;
 ?sampling_type:[ `Geometric of float | `Linear of int ] -&gt;
 ?stabilize_gc_between_runs:bool -&gt;
-?predictors:<a href="?package=core_bench&amp;module=Bench.Variable&amp;type=t">Variable.t</a> list -&gt;
 ?fork_each_benchmark:bool -&gt; <a href="?package=core_bench&amp;module=Bench.Test&amp;type=t">Test.t</a> list -&gt; unit</code></pre><div class="info"><div class="info">The documentation for all of these arguments is in the implementation, as
     documentation for the command line flags created by <code class="code">make_command</code>.</div></div>
+<pre><span class="VALanalyze"><span class="keyword">val</span> analyze</span> : <code class="type">?limit_width_to:int -&gt;
+?columns:[ `Allocated
+         | `Confidence
+         | `Cycles
+         | `GC
+         | `If_not_empty of <a href="?package=core_bench&amp;module=Bench.Column&amp;type=t">Column.t</a>
+         | `Name
+         | `Nanos
+         | `Percentage
+         | `Samples
+         | `Speedup ] list -&gt;
+?display:<a href="?package=textutils&amp;module=Ascii_table.Display&amp;type=t">Textutils.Ascii_table.Display.t</a> -&gt;
+?ascii_table:bool -&gt;
+?ci_absolute:bool -&gt;
+?predictors:<a href="?package=core_bench&amp;module=Bench.Variable&amp;type=t">Variable.t</a> list -&gt; saved_files:string list -&gt; unit</code></pre>
 <pre><span class="VALmake_command"><span class="keyword">val</span> make_command</span> : <code class="type"><a href="?package=core_bench&amp;module=Bench.Test&amp;type=t">Test.t</a> list -&gt; <a href="?package=core&amp;module=Std.Command&amp;type=t">Core.Std.Command.t</a></code></pre>
 </div>

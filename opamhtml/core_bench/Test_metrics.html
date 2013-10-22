@@ -465,6 +465,8 @@ minor_collections:('i -&gt;
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a></code></pre>
 <pre><span class="VALmax"><span class="keyword">val</span> max</span> : <code class="type">'a <a href="?package=core&amp;module=Std.Array&amp;type=t">Core.Std.Array.t</a> -&gt;
 len:int -&gt; field:('a -&gt; <a href="?package=core&amp;module=Std.Int&amp;type=t">Core.Std.Int.t</a>) -&gt; <a href="?package=core&amp;module=Std.Int&amp;type=t">Core.Std.Int.t</a></code></pre>
+<pre><span class="VALsave"><span class="keyword">val</span> save</span> : <code class="type"><a href="?package=core_bench&amp;module=Test.Basic_test&amp;type=t">Test.Basic_test.t</a> -&gt; results:<a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Array&amp;type=t">Core.Std.Array.t</a> -&gt; int -&gt; unit</code></pre>
+<pre><span class="VALload"><span class="keyword">val</span> load</span> : <code class="type">string -&gt; <a href="?package=core_bench&amp;module=Test.Basic_test&amp;type=t">Test.Basic_test.t</a> * <a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Array&amp;type=t">Core.Std.Array.t</a> * int</code></pre>
 <div class="ocaml_module sig" name="Variable"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Test_metrics.Variable">Variable</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Compactions
 | `Cycles

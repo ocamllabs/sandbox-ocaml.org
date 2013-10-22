@@ -12,8 +12,4 @@
     any calls to <code class="code">thread_safe_interrupt</code> after <code class="code">clear t</code> returns (and prior to another
     call to <code class="code">clear t</code>) will cause <code class="code">read_fd</code> to become ready for reading.</div></div>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Interruptor&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
-<div class="info"><div class="info"><code class="code">thread_safe_interrupt t</code> causes <code class="code">read_fd t</code> to become ready for reading.</div></div>
-<div class="info"><div class="info"><code class="code">clear t</code> causes <code class="code">read_fd t</code> to become not ready for reading.  It is guaranteed that
-    any calls to <code class="code">thread_safe_interrupt</code> after <code class="code">clear t</code> returns (and prior to another
-    call to <code class="code">clear t</code>) will cause <code class="code">read_fd</code> to become ready for reading.</div></div>
 </div>

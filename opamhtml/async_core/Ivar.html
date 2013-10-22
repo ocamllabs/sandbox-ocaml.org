@@ -44,16 +44,4 @@
 'a <a href="?package=async_core&amp;module=Ivar&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Core.Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=core&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Core.Std.Bin_prot.Type_class.writer</a> -&gt;
 'a <a href="?package=async_core&amp;module=Ivar&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Core.Std.Bin_prot.Type_class.writer</a></code></pre>
-<div class="info"><div class="info"><code class="code">equal t t'</code> is physical equality of <code class="code">t</code> and <code class="code">t'</code>.</div></div>
-<div class="info"><div class="info"><code class="code">create ()</code> returns an empty ivar.</div></div>
-<div class="info"><div class="info"><code class="code">fill t v</code> fills <code class="code">t</code> with value <code class="code">v</code> if <code class="code">t</code> was empty.  If <code class="code">t</code> was full, fill raises
-    an exception.<p>    It is guaranteed that immediately after calling <code class="code">fill t</code>,
-    <code class="code">is_some (Deferred.peek (read t))</code>.</p></div></div>
-<div class="info"><div class="info"><code class="code">fill_if_empty t v</code> fills <code class="code">t</code> with <code class="code">v</code> if <code class="code">t</code> is currently empty.  If <code class="code">t</code> is full,
-    then <code class="code">fill_if_empty</code> does nothing.</div></div>
-<div class="info"><div class="info"><code class="code">is_empty t</code> returns true if <code class="code">t</code> is empty</div></div>
-<div class="info"><div class="info"><code class="code">is_full t</code> returns true if <code class="code">t</code> is full</div></div>
-<div class="info"><div class="info">The <code class="code">Deferred</code> module exposed here is for async's internal use only.</div></div>
-<div class="info"><div class="info"><code class="code">read t</code> returns a deferred that becomes enabled with value <code class="code">v</code> after the ivar is
-    filled with <code class="code">v</code>.</div></div>
 </div>
