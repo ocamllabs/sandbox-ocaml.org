@@ -48,7 +48,14 @@
     background-color:lightgray;
 }
 
-#opamdoc-contents .expander { width:1.5em; height:1.5em; border-radius:0.3em; font-weight: bold }
+#opamdoc-contents .expander { 
+  width:1.5em; 
+  height:1.5em; 
+  border-radius:0.3em; 
+  font-weight: bold; 
+  font-family:Sans; 
+  line-height:16px; 
+}
 #opamdoc-contents .expanding_sig { border-spacing: 5px 1px }
 #opamdoc-contents .expanding_sig td { vertical-align: text-top }
 #opamdoc-contents .expanding_include_0 td { vertical-align: text-top } 
