@@ -2,11 +2,11 @@
 <pre><span class="VALclock_mono_getres"><span class="keyword">val</span> clock_mono_getres</span> : <code class="type">unit -&gt; int</code></pre>
 <pre><span class="VALclock_rt_gettime"><span class="keyword">val</span> clock_rt_gettime</span> : <code class="type">unit -&gt; int</code></pre>
 <pre><span class="VALclock_mono_gettime"><span class="keyword">val</span> clock_mono_gettime</span> : <code class="type">unit -&gt; int</code></pre>
-<div class="ocaml_module sig" name="Cycles"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Time_stamp_counter.Cycles">Cycles</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Small routines for working with the timestamp counter.  The snapshot is machine
+<div class="ocaml_module" name="Cycles"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Time_stamp_counter.Cycles">Cycles</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Small routines for working with the timestamp counter.  The snapshot is machine
     specific information that is calculated once during a run and cached, though the first
     time it is requested it may take several 100 milliseconds. Cycle information captured
     on one machine can be translated to Core.Time.t on another machine only if the a
-    snapshot of the first machine is also available</div></div><div class="ocaml_module_content">
+    snapshot of the first machine is also available</div></div><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">int</code><span class="keyword">private</span></pre>
 <pre><span class="TYPEsnapshot"><span class="keyword">type</span> snapshot</span> </pre>
 <pre><span class="VALnow"><span class="keyword">val</span> now</span> : <code class="type">unit -&gt; <a href="?package=core_extended&amp;module=Time_stamp_counter.Cycles&amp;type=t">t</a></code></pre>

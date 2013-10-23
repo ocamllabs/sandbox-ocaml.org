@@ -10,13 +10,13 @@
     extension to the name of the RPC, and in fact, each RPC is uniquely identified by its
     (name, version) pair.  RPCs with the same name but different versions should implement
     similar functionality.</p></div></div>
-<div class="ocaml_module sig" name="Implementation"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Implementation">Implementation</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Implementation"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Implementation">Implementation</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'connection_state </code>t</span> </pre><div class="info"><div class="info">A <code class="code">'connection_state t</code> is something which knows how to respond to one query, given
       a <code class="code">'connection_state</code>.  That is, you can create a <code class="code">'connection_state t</code> by providing
       a function which takes a query *and* a <code class="code">'connection_state</code> and provides a response.<p>      The reason for this is that rpcs often do something like look something up in a
       master structure.  This way, <code class="code">Implementation.t</code>'s can be created without having the
       master structure in your hands.</p></div></div>
-<div class="ocaml_module sig" name="Description"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Implementation.Description">Description</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Description"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Implementation.Description">Description</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.name">name</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.version">version</span> : <code class="type">int</code>;</code></td></tr><tr><td>}</td></tr></table>
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=async_extra&amp;module=Rpc.Implementation.Description&amp;type=t">t</a></code></pre>
@@ -25,7 +25,7 @@
 <pre><span class="VALlift"><span class="keyword">val</span> lift</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Rpc.Implementation&amp;type=t">t</a> -&gt; f:('b -&gt; 'a) -&gt; 'b <a href="?package=async_extra&amp;module=Rpc.Implementation&amp;type=t">t</a></code></pre><div class="info"><div class="info">We may want to use an <code class="code">'a t</code> implementation (perhaps provided by someone else) in a
       <code class="code">'b t</code> context. We can do this as long as we can map our state into the state
       expected by the original implementer.</div></div></div></div>
-<div class="ocaml_module sig" name="Implementations"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Implementations">Implementations</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Implementations"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Implementations">Implementations</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'connection_state </code>t</span> </pre><div class="info"><div class="info">A <code class="code">'connection_state Implementations.t</code> is something which knows how to respond to
       many different queries. It is conceptually a package of <code class="code">'connection_state
       Implementation.t</code>'s.</div></div>
@@ -43,9 +43,9 @@ on_unknown_rpc:[ `Call of rpc_tag:string -&gt; version:int -&gt; unit
                | `Ignore
                | `Raise ] -&gt;
 'connection_state <a href="?package=async_extra&amp;module=Rpc.Implementations&amp;type=t">t</a></code></pre></div></div>
-<div class="ocaml_module ident" name="Connection" path="?package=async_extra&amp;module=Rpc_intf.Connection"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Rpc.Connection">Connection</a> = <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Rpc_intf.Connection">Rpc_intf.Connection</a></code> with module Implementations = <a href="?package=async_extra&amp;module=Rpc.Implementations">Implementations</a></code></pre></div>
-<div class="ocaml_module ident" name="Connection" path="?package=async_extra&amp;module=Rpc.Connection"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Connection">Connection</a> : <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Rpc.Connection">Connection</a></code></code></pre></div>
-<div class="ocaml_module sig" name="Rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Rpc">Rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_modtype" name="Connection" path="?package=async_extra&amp;module=Rpc_intf&amp;modtype=Connection"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Rpc&amp;modtype=Connection">Connection</a> = <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Rpc_intf&amp;modtype=Connection">Rpc_intf.Connection</a></code> with module Implementations = <a href="?package=async_extra&amp;module=Rpc.Implementations">Implementations</a></code></pre></div>
+<div class="ocaml_module" name="Connection" path="?package=async_extra&amp;module=Rpc&amp;modtype=Connection"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Connection">Connection</a> : <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Rpc&amp;modtype=Connection">Connection</a></code></code></pre></div>
+<div class="ocaml_module" name="Rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Rpc">Rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('query, 'response) </code>t</span> </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">name:string -&gt;
 version:int -&gt;
@@ -63,9 +63,9 @@ bin_response:'response <a href="?package=core&amp;module=Std.Bin_prot.Type_class
 <a href="?package=async_extra&amp;module=Rpc.Connection&amp;type=t">Connection.t</a> -&gt; 'query -&gt; 'response <a href="?package=core&amp;module=Std.Or_error&amp;type=t">Core.Std.Or_error.t</a> <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre>
 <pre><span class="VALdispatch_exn"><span class="keyword">val</span> dispatch_exn</span> : <code class="type">('query, 'response) <a href="?package=async_extra&amp;module=Rpc.Rpc&amp;type=t">t</a> -&gt;
 <a href="?package=async_extra&amp;module=Rpc.Connection&amp;type=t">Connection.t</a> -&gt; 'query -&gt; 'response <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre></div></div>
-<div class="ocaml_module sig" name="Pipe_rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Pipe_rpc">Pipe_rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Pipe_rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Pipe_rpc">Pipe_rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('query, 'response, 'error) </code>t</span> </pre>
-<div class="ocaml_module sig" name="Id"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Pipe_rpc.Id">Id</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Id"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.Pipe_rpc.Id">Id</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre></div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">name:string -&gt;
 version:int -&gt;
@@ -99,12 +99,12 @@ bin_error:'error <a href="?package=core&amp;module=Std.Bin_prot.Type_class&amp;t
       updates.</div></div>
 <pre><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type">('a, 'b, 'c) <a href="?package=async_extra&amp;module=Rpc.Pipe_rpc&amp;type=t">t</a> -&gt; string</code></pre>
 <pre><span class="VALversion"><span class="keyword">val</span> version</span> : <code class="type">('a, 'b, 'c) <a href="?package=async_extra&amp;module=Rpc.Pipe_rpc&amp;type=t">t</a> -&gt; int</code></pre></div></div>
-<div class="ocaml_module sig" name="State_rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.State_rpc">State_rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">A state rpc is an easy way for two processes to synchronize a data structure by
+<div class="ocaml_module" name="State_rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.State_rpc">State_rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">A state rpc is an easy way for two processes to synchronize a data structure by
     sending updates over the wire.  It's basically a pipe rpc that sends/receives an
     initial state of the data structure, and then updates, and applies the updates under
-    the covers.</div></div><div class="ocaml_module_content">
+    the covers.</div></div><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('query, 'state, 'update, 'error) </code>t</span> </pre>
-<div class="ocaml_module sig" name="Id"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.State_rpc.Id">Id</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Id"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Rpc.State_rpc.Id">Id</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre></div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">name:string -&gt;
 version:int -&gt;

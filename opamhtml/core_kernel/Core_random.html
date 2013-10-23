@@ -21,11 +21,11 @@
     <code class="code">bound</code> is 0, the result is 0.</div></div>
 <pre><span class="VALbool"><span class="keyword">val</span> bool</span> : <code class="type">unit -&gt; bool</code></pre><div class="info"><div class="info"><code class="code">Random.bool ()</code> returns <code class="code">true</code> or <code class="code">false</code> with probability 0.5 each.</div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Advanced functions</h6></div></div>
-<div class="ocaml_module sig" name="State"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_random.State">State</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">The functions from module <code class="code">State</code> manipulate the current state
+<div class="ocaml_module" name="State"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_random.State">State</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">The functions from module <code class="code">State</code> manipulate the current state
     of the random generator explicitely.
     This allows using one or several deterministic PRNGs,
     even in a multi-threaded program, without interference from
-    other parts of the program.</div></div><div class="ocaml_module_content">
+    other parts of the program.</div></div><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
 <pre><span class="VALdefault"><span class="keyword">val</span> default</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_random.State&amp;type=t">t</a></code></pre>
 <pre><span class="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int array -&gt; <a href="?package=core_kernel&amp;module=Core_random.State&amp;type=t">t</a></code></pre><div class="info"><div class="info">Create a new state and initialize it with the given seed.</div></div>

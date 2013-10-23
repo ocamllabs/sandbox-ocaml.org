@@ -2,7 +2,7 @@
 <pre><span class="VALeprints"><span class="keyword">val</span> eprints</span> : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">log message a sexp_of_a</code> prints to stderr <code class="code">message</code> and <code class="code">a</code> as a sexp, followed by
     a newline.</div></div>
 <pre><span class="VALeprint"><span class="keyword">val</span> eprint</span> : <code class="type">string -&gt; unit</code></pre><div class="info"><div class="info">synonym for <code class="code">prerr_endline</code>, meaning it prints to stderr, followed by a newline</div></div>
-<div class="ocaml_module sig" name="Make"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Debug.Make">Make</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="info"><div class="info"><code class="code">Debug.Make</code> produces a <code class="code">debug</code> function used to wrap a function to display arguments
+<div class="ocaml_module" name="Make"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Debug.Make">Make</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="info"><div class="info"><code class="code">Debug.Make</code> produces a <code class="code">debug</code> function used to wrap a function to display arguments
     before calling and display results after returning.  Intended usage is:<p>    </p><pre class="code"><code>
       module Foo = struct
         type t = ...
@@ -17,7 +17,7 @@
           debug &quot;bar&quot; [t] (t, x, y) &lt;:sexp_of&lt; t * X.t * Y.t &gt;&gt; &lt;:sexp_of&lt; Result.t &gt;&gt;
             (fun () -&gt; bar t x y)
       end
-    </code></pre></div></div><div class="ocaml_module_content">
+    </code></pre></div></div><div class="ocaml_content">
 <pre><span class="VALcheck_invariant"><span class="keyword">val</span> check_invariant</span> : <code class="type">bool <a href="?package=ocaml&amp;module=Pervasives&amp;type=ref">Pervasives.ref</a></code></pre>
 <pre><span class="VALshow_messages"><span class="keyword">val</span> show_messages</span> : <code class="type">bool <a href="?package=ocaml&amp;module=Pervasives&amp;type=ref">Pervasives.ref</a></code></pre>
 <pre><span class="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">'t <a href="?package=core_kernel&amp;module=Invariant&amp;type=t">Invariant.t</a> -&gt;

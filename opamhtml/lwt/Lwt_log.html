@@ -151,7 +151,7 @@ level:<a href="?package=lwt&amp;module=Lwt_log&amp;type=level">level</a> -&gt; (
 ?section:<a href="?package=lwt&amp;module=Lwt_log&amp;type=section">section</a> -&gt;
 ?location:string * int * int -&gt;
 ?logger:<a href="?package=lwt&amp;module=Lwt_log&amp;type=logger">logger</a> -&gt; ('a, unit, string, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre>
-<div class="ocaml_module sig" name="Section"><pre><span class="keyword">module</span> <a href="?package=lwt&amp;module=Lwt_log.Section">Section</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Sections</div></div><div class="ocaml_module_content">
+<div class="ocaml_module" name="Section"><pre><span class="keyword">module</span> <a href="?package=lwt&amp;module=Lwt_log.Section">Section</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Sections</div></div><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=lwt&amp;module=Lwt_log&amp;type=section">section</a></code></pre>
 <pre><span class="VALmake"><span class="keyword">val</span> make</span> : <code class="type">string -&gt; <a href="?package=lwt&amp;module=Lwt_log&amp;type=section">section</a></code></pre><div class="info"><div class="info"><code class="code">make name</code> creates a section with the given name. Two calls
         to  <a href="#make">make</a> with the same name will return the same section

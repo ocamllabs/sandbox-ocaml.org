@@ -4,7 +4,7 @@
     unmarshal will segfault.</p><p>    - bin_io will work, except that it will raise an overflow exception when you send too
       large of an int from a 32-bit to a 64-bit platform.  This is couterintuitive because
       the 32-bit platform has the larger int size.</p></div>
-<div class="ocaml_include ident" path="?package=core_kernel&amp;module=Int_intf.S" items="[&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Int_intf.S">Int_intf.S</a></code> with type t = int</code></pre><div class="info"><div class="info">We expose <code class="code">private int</code> so that the compiler can omit caml_modify when dealing with
+<div class="ocaml_include" path="?package=core_kernel&amp;module=Int_intf&amp;modtype=S" items="[&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Int_intf&amp;modtype=S">Int_intf.S</a></code> with type t = int</code></pre><div class="info"><div class="info">We expose <code class="code">private int</code> so that the compiler can omit caml_modify when dealing with
     record fields holding <code class="code">Int63.t</code>.  Code should not explicitly make use of the
     <code class="code">private</code>, e.g. via <code class="code">(i :&gt; int)</code>, since such code will not compile on 32-bit
     platforms.</div></div></div>

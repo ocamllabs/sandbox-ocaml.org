@@ -7,7 +7,7 @@
 <pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">(unit -&gt; <a href="?package=core&amp;module=Backtrace&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Std.Or_error&amp;type=t">Core_kernel.Std.Or_error.t</a></code></pre>
 <pre><span class="VALget_opt"><span class="keyword">val</span> get_opt</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Backtrace&amp;type=t">t</a> option</code></pre><div class="info"><div class="info"><code class="code">get_opt ()</code> returns a backtrace if <code class="code">get</code> is implemented.</div></div>
 <pre><span class="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core&amp;module=Backtrace&amp;type=t">t</a> -&gt; string</code></pre>
-<div class="ocaml_module sig" name="Exn"><pre><span class="keyword">module</span> <a href="?package=core&amp;module=Backtrace.Exn">Exn</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info"><code class="code">Backtrace.Exn</code> has functions for controlling and printing the backtrace of the most
+<div class="ocaml_module" name="Exn"><pre><span class="keyword">module</span> <a href="?package=core&amp;module=Backtrace.Exn">Exn</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info"><code class="code">Backtrace.Exn</code> has functions for controlling and printing the backtrace of the most
     recently raised exception.<p>    When an exception is raised, the runtime &quot;unwinds&quot; the stack, i.e. removes stack
     frames, until it reaches a frame with an exception handler.  It then matches the
     exception against the patterns in the handler.  If the exception matches, then the
@@ -26,7 +26,7 @@
     environment variable OCAMLRUNPARAM.  If OCAMLRUNPARAM is set, then <code class="code">am_recording ()
     = true</code> iff the character &quot;b&quot; occurs in OCAMLRUNPARAM.  If OCAMLRUNPARAM is not set,
     then <code class="code">am_recording ()</code> is initially true.</p><p>    This is the same functionality as provided by the OCaml stdlib <code class="code">Printexc</code> functions
-    <code class="code">backtrace_status</code>, <code class="code">record_backtraces</code>, <code class="code">get_backtrace</code>.</p></div></div><div class="ocaml_module_content">
+    <code class="code">backtrace_status</code>, <code class="code">record_backtraces</code>, <code class="code">get_backtrace</code>.</p></div></div><div class="ocaml_content">
 <pre><span class="VALam_recording"><span class="keyword">val</span> am_recording</span> : <code class="type">unit -&gt; bool</code></pre>
 <pre><span class="VALset_recording"><span class="keyword">val</span> set_recording</span> : <code class="type">bool -&gt; unit</code></pre>
 <pre><span class="VALmost_recent"><span class="keyword">val</span> most_recent</span> : <code class="type">unit -&gt; string</code></pre><div class="info"><div class="info"><code class="code">most_recent ()</code> returns a string containing the stack that was unwound by the

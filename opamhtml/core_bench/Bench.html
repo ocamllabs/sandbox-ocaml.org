@@ -18,12 +18,12 @@
     }</code><p>    For default values of all the optional arguments, see the module called <code class="code">Defaults</code> in
     bench_main.ml.</p><p>    For some notes on the design space of bench and TODO items, see:
     http://docs/programming/performance/benchmarking.html</p></div></div>
-<div class="ocaml_module sig" name="Test"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench.Test">Test</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Test"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench.Test">Test</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">name:string -&gt; (unit -&gt; unit) -&gt; <a href="?package=core_bench&amp;module=Bench.Test&amp;type=t">t</a></code></pre>
 <pre><span class="VALcreate_indexed"><span class="keyword">val</span> create_indexed</span> : <code class="type">name:string -&gt;
 args:int list -&gt; (int -&gt; (unit -&gt; unit) <a href="?package=core&amp;module=Std.Staged&amp;type=t">Core.Std.Staged.t</a>) -&gt; <a href="?package=core_bench&amp;module=Bench.Test&amp;type=t">t</a></code></pre></div></div>
-<div class="ocaml_module sig" name="Column"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench.Column">Column</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Column"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench.Column">Column</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Allocated
 | `Confidence
 | `Cycles
@@ -37,7 +37,7 @@ args:int list -&gt; (int -&gt; (unit -&gt; unit) <a href="?package=core&amp;modu
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_bench&amp;module=Bench.Column&amp;type=t">t</a></code></pre>
 <pre><span class="VAL__t_of_sexp__"><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_bench&amp;module=Bench.Column&amp;type=t">t</a></code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_bench&amp;module=Bench.Column&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
-<div class="ocaml_module sig" name="Variable"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench.Variable">Variable</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Variable"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench.Variable">Variable</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Compactions
 | `Cycles
 | `Major_allocated

@@ -24,7 +24,7 @@
 <pre><span class="EXCEPTIONFull"><span class="keyword">exception</span> Full</span></pre><div class="info"><div class="info">Exception raised by the push function of a bounded push-stream
       when the stream queue is full and a thread is already waiting to
       push an element.</div></div>
-<div class="ocaml_class sig" name="bounded_push"><pre><span class="TYPEbounded_push"><span class="keyword">class type</span> <code class="type">['a] </code><a href="?package=lwt&amp;module=Lwt_stream&amp;class=bounded_push">bounded_push</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Type of sources for bounded push-streams.</div></div><div class="ocaml_class_content"><pre><span class="METHODsize"><span class="keyword">method</span> size</span> : <code class="code">int</code></pre>
+<div class="ocaml_class" name="bounded_push"><pre><span class="TYPEbounded_push"><span class="keyword">class type</span> <code class="type">['a] </code><a href="?package=lwt&amp;module=Lwt_stream&amp;class=bounded_push">bounded_push</a></span> : <code class="code">object</code> .. <code class="code">end</code></pre><div class="info"><div class="info">Type of sources for bounded push-streams.</div></div><div class="ocaml_content"><pre><span class="METHODsize"><span class="keyword">method</span> size</span> : <code class="code">int</code></pre>
 <div class="info"><div class="info">Size of the stream.</div></div>
 <pre><span class="METHODresize"><span class="keyword">method</span> resize</span> : <code class="code">int -&gt; unit</code></pre>
 <div class="info"><div class="info">Change the size of the stream queue. Note that the new size

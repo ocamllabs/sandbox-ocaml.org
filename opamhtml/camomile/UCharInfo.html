@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info">Unicode character informations</div>
-<div class="ocaml_module sig" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UCharInfo.Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_modtype" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UCharInfo&amp;modtype=Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="info"><div class="info">Character Information</div></div>
 <pre><span class="TYPEgeneral_category_type"><span class="keyword">type</span> general_category_type</span> = <code class="type">[ `Cc
 | `Cf
@@ -174,5 +174,5 @@
    the canonical composition <code class="code">u'_i</code>.
    If u is a Hangul jamo, composition returns [].</div></div>
 <pre><span class="VALload_composition_exclusion_tbl"><span class="keyword">val</span> load_composition_exclusion_tbl</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UCharTbl.Bool&amp;type=t">UCharTbl.Bool.t</a></code></pre><div class="info"><div class="info">Whether the given composed character is used in NFC or NFKC</div></div></div></div>
-<div class="ocaml_module ident" name="Make" path="?package=camomile&amp;module=UCharInfo.Type"><pre><span class="keyword">module</span> <a href="?package=camomile&amp;module=UCharInfo.Make">Make</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Config</code><code class="code"> : </code><code class="code"><a href="?package=camomile&amp;module=ConfigInt.Type">ConfigInt.Type</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=camomile&amp;module=UCharInfo.Type">Type</a></code></div></code></pre></div>
+<div class="ocaml_module" name="Make" path="?package=camomile&amp;module=UCharInfo&amp;modtype=Type"><pre><span class="keyword">module</span> <a href="?package=camomile&amp;module=UCharInfo.Make">Make</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Config</code><code class="code"> : </code><code class="code"><a href="?package=camomile&amp;module=ConfigInt&amp;modtype=Type">ConfigInt.Type</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=camomile&amp;module=UCharInfo&amp;modtype=Type">Type</a></code></div></code></pre></div>
 </div>

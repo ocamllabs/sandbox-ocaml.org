@@ -38,7 +38,7 @@
 <pre><span class="VALUnknown name"><span class="keyword">val</span> Unknown name</span> : <code class="type"><a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> -&gt; int</code></pre>
 <pre><span class="VALset_runs"><span class="keyword">val</span> set_runs</span> : <code class="type"><a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> -&gt; int -&gt; unit</code></pre>
 <pre><span class="VALUnknown name"><span class="keyword">val</span> Unknown name</span> : <code class="type"><a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> -&gt; int -&gt; unit</code></pre>
-<div class="ocaml_module sig" name="Fields"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Test_metrics.Fields">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Fields"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Test_metrics.Fields">Fields</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="VALnames"><span class="keyword">val</span> names</span> : <code class="type">string list</code></pre>
 <pre><span class="VALUnknown name"><span class="keyword">val</span> Unknown name</span> : <code class="type">string list</code></pre>
 <pre><span class="VALminor_collections"><span class="keyword">val</span> minor_collections</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a>, int) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
@@ -361,7 +361,7 @@ major_collections:(([&lt; `Read | `Set_and_create ], <a href="?package=core_benc
 minor_collections:(([&lt; `Read | `Set_and_create ], <a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a>, int)
                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
 'a list</code></pre>
-<div class="ocaml_module sig" name="Direct"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Test_metrics.Fields.Direct">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Direct"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Test_metrics.Fields.Direct">Direct</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> -&gt;
 runs:(([&lt; `Read | `Set_and_create ], <a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a>, int) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
       <a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> -&gt; int -&gt; 'a) -&gt;
@@ -467,7 +467,7 @@ minor_collections:('i -&gt;
 len:int -&gt; field:('a -&gt; <a href="?package=core&amp;module=Std.Int&amp;type=t">Core.Std.Int.t</a>) -&gt; <a href="?package=core&amp;module=Std.Int&amp;type=t">Core.Std.Int.t</a></code></pre>
 <pre><span class="VALsave"><span class="keyword">val</span> save</span> : <code class="type"><a href="?package=core_bench&amp;module=Test.Basic_test&amp;type=t">Test.Basic_test.t</a> -&gt; results:<a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Array&amp;type=t">Core.Std.Array.t</a> -&gt; int -&gt; unit</code></pre>
 <pre><span class="VALload"><span class="keyword">val</span> load</span> : <code class="type">string -&gt; <a href="?package=core_bench&amp;module=Test.Basic_test&amp;type=t">Test.Basic_test.t</a> * <a href="?package=core_bench&amp;module=Test_metrics&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Array&amp;type=t">Core.Std.Array.t</a> * int</code></pre>
-<div class="ocaml_module sig" name="Variable"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Test_metrics.Variable">Variable</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_module" name="Variable"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Test_metrics.Variable">Variable</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Compactions
 | `Cycles
 | `Major_allocated

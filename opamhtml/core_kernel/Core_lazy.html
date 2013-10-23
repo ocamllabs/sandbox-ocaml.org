@@ -14,7 +14,7 @@
    Without the <code class="code">-rectypes</code> option, such ill-founded recursive definitions
    are rejected by the type-checker.</p></div>
 <pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">'a lazy_t</code></pre>
-<div class="ocaml_include ident" path="?package=core_kernel&amp;module=Monad.S" items="[&quot;Monad_infix&quot;]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Monad.S">Monad.S</a></code> with type t := 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">t</a></code></pre></div>
+<div class="ocaml_include" path="?package=core_kernel&amp;module=Monad&amp;modtype=S" items="[&quot;Monad_infix&quot;]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Monad&amp;modtype=S">Monad.S</a></code> with type t := 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">t</a></code></pre></div>
 <pre><span class="EXCEPTIONUndefined"><span class="keyword">exception</span> Undefined</span></pre>
 <pre><span class="VALforce"><span class="keyword">val</span> force</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">t</a> -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">force x</code> forces the suspension <code class="code">x</code> and returns its result.
    If <code class="code">x</code> has already been forced, <code class="code">Lazy.force x</code> returns the

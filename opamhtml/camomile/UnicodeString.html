@@ -4,7 +4,7 @@
    and satisfy the semantics described below.  If users want to supply
    their own Unicode strings, please design the module with the 
    following signature and properties.</div>
-<div class="ocaml_module sig" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UnicodeString.Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_module_content">
+<div class="ocaml_modtype" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UnicodeString&amp;modtype=Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">The type of string.</div></div>
 <pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="?package=camomile&amp;module=UnicodeString.Type&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a></code></pre><div class="info"><div class="info"><code class="code">get t i</code> : <code class="code">i</code>-th character of the storage.</div></div>
 <pre><span class="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -&gt; (int -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a>) -&gt; <a href="?package=camomile&amp;module=UnicodeString.Type&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">init len f</code> creates a new storage.
@@ -35,7 +35,7 @@
    a positive integer if <code class="code">i</code> is the location placed after <code class="code">j</code> in <code class="code">t</code>,
    0 if <code class="code">i</code> and <code class="code">j</code> point the same location, and
    a negative integer if <code class="code">i</code> is the location placed before <code class="code">j</code> in <code class="code">t</code>.</div></div>
-<div class="ocaml_module sig" name="Buf"><pre><span class="keyword">module</span> <a href="?package=camomile&amp;module=UnicodeString.Type.Buf">Buf</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Character buffers.  Similar to Buffer.</div></div><div class="ocaml_module_content">
+<div class="ocaml_module" name="Buf"><pre><span class="keyword">module</span> <a href="?package=camomile&amp;module=UnicodeString.Type.Buf">Buf</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Character buffers.  Similar to Buffer.</div></div><div class="ocaml_content">
 <pre><span class="TYPEbuf"><span class="keyword">type</span> buf</span> </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; <a href="?package=camomile&amp;module=UnicodeString.Type.Buf&amp;type=buf">buf</a></code></pre><div class="info"><div class="info"><code class="code">create n</code> creates the buffer.  <code class="code">n</code> is used to determine
    the initial size of the buffer.  The meaning of <code class="code">n</code> differs from
