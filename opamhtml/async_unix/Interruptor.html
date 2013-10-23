@@ -2,7 +2,7 @@
     file-descr-watcher to detect the file descriptor is ready for reading.  We use an
     interruptor when a thread needs the async scheduler to service a request.</div>
 <pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
-<div class="ocaml_include" path="?package=core&amp;module=Std.Invariant&amp;modtype=S" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std.Invariant&amp;modtype=S">Core.Std.Invariant.S</a></code> with type t := <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">t</a></code></pre></div>
+<div class="ocaml_include" path="?package=core&amp;module=Std.Invariant:S" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std.Invariant:S">Core.Std.Invariant.S</a></code> with type t := <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">t</a></code></pre></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">create_fd:(<a href="?package=async_unix&amp;module=Raw_fd.Kind&amp;type=t">Raw_fd.Kind.t</a> -&gt;
            <a href="?package=core&amp;module=Std.Unix.File_descr&amp;type=t">Core.Std.Unix.File_descr.t</a> -&gt; <a href="?package=core&amp;module=Std.Info&amp;type=t">Core.Std.Info.t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_fd&amp;type=t">Raw_fd.t</a>) -&gt;
 <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">t</a></code></pre>
