@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info">UCS4 encoded string. The type is the bigarray of 32-bit integers.
    Bigarray.cma or Bigarray.cmxa must be linked when this module is used.</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">(int32, <a href="?package=ocaml&amp;module=Bigarray&amp;type=int32_elt">Bigarray.int32_elt</a>, <a href="?package=ocaml&amp;module=Bigarray&amp;type=c_layout">Bigarray.c_layout</a>) <a href="?package=ocaml&amp;module=Bigarray.Array1&amp;type=t">Bigarray.Array1.t</a></code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type">(int32, <a href="?package=ocaml&amp;module=Bigarray&amp;type=int32_elt">Bigarray.int32_elt</a>, <a href="?package=ocaml&amp;module=Bigarray&amp;type=c_layout">Bigarray.c_layout</a>) <a href="?package=ocaml&amp;module=Bigarray.Array1&amp;type=t">Bigarray.Array1.t</a></code></pre>
 <pre><span class="EXCEPTIONMalformed_code"><span class="keyword">exception</span> Malformed_code</span></pre>
 <pre><span class="VALvalidate"><span class="keyword">val</span> validate</span> : <code class="type"><a href="?package=camomile&amp;module=UCS4&amp;type=t">t</a> -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">validate s</code>
    If <code class="code">s</code> is valid UCS4 then successes otherwise raises <code class="code">Malformed_code</code>.
@@ -13,7 +13,7 @@
    returns a new string which contains <code class="code">len</code> Unicode characters.
    The i-th Unicode character is initialised by <code class="code">f i</code></div></div>
 <pre><span class="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=camomile&amp;module=UCS4&amp;type=t">t</a> -&gt; int</code></pre><div class="info"><div class="info"><code class="code">length s</code> returns the number of Unicode characters contained in <code class="code">s</code></div></div>
-<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> = <code class="type">int</code></pre><div class="info"><div class="info">Positions in the string represented by the number of characters
+<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> =  <code class="type">int</code></pre><div class="info"><div class="info">Positions in the string represented by the number of characters
    from the head.
    The location of the first character is <code class="code">0</code></div></div>
 <pre><span class="VALnth"><span class="keyword">val</span> nth</span> : <code class="type"><a href="?package=camomile&amp;module=UCS4&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=camomile&amp;module=UCS4&amp;type=index">index</a></code></pre><div class="info"><div class="info"><code class="code">nth s n</code> returns the position of the <code class="code">n</code>-th Unicode character. 
@@ -52,7 +52,7 @@
    in the Unicode characters in <code class="code">s</code>.</div></div>
 <pre><span class="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=camomile&amp;module=UCS4&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=UCS4&amp;type=t">t</a> -&gt; int</code></pre><div class="info"><div class="info">Code point comparison</div></div>
 <div class="ocaml_module" name="Buf"><pre><span class="keyword">module</span> <a href="?package=camomile&amp;module=UCS4.Buf">Buf</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Buffer module for UCS4</div></div><div class="ocaml_content">
-<pre><span class="TYPEbuf"><span class="keyword">type</span> buf</span> </pre><div class="info"><div class="info"><code class="code">create n</code> creates the buffer with the initial size <code class="code">n</code>.</div></div>
+<pre><span class="TYPEbuf"><span class="keyword">type</span> buf</span> =  </pre><div class="info"><div class="info"><code class="code">create n</code> creates the buffer with the initial size <code class="code">n</code>.</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; <a href="?package=camomile&amp;module=UCS4.Buf&amp;type=buf">buf</a></code></pre>
 <div class="info"><div class="info">The rest of functions is similar to the ones of Buffer in stdlib.</div></div>
 <pre><span class="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="?package=camomile&amp;module=UCS4.Buf&amp;type=buf">buf</a> -&gt; <a href="?package=camomile&amp;module=UCS4&amp;type=t">t</a></code></pre>

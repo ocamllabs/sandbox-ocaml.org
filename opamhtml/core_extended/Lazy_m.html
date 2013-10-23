@@ -11,7 +11,7 @@
     monadic binding.</p><p>    There are two downsides to doing it this way.  One, you can't use
     lazy keyword.  And two, this implementation uses a little more memory
     per lazy value (it currently uses 5 words/lazy value).</p></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre><div class="info"><div class="info">The lazy type</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre><div class="info"><div class="info">The lazy type</div></div>
 <pre><span class="VALof_val"><span class="keyword">val</span> of_val</span> : <code class="type">'a -&gt; 'a <a href="?package=core_extended&amp;module=Lazy_m&amp;type=t">t</a></code></pre><div class="info"><div class="info">Create a lazy value of a non-lazy value.  The lazy value created will
     be already forced, for obvious reasons.</div></div>
 <pre><span class="VALof_fun"><span class="keyword">val</span> of_fun</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="?package=core_extended&amp;module=Lazy_m&amp;type=t">t</a></code></pre><div class="info"><div class="info">Create a lazy value of a function.  The function will not be executed

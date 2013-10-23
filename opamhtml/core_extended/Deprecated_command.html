@@ -2,9 +2,9 @@
 <div class="info"><div class="info">command-line parsing with hierarchical sub-commands</div></div>
 <pre><span class="EXCEPTIONInvalid_arguments"><span class="keyword">exception</span> Invalid_arguments</span> <span class="keyword">of</span> <code class="type">string list</code></pre>
 <div class="ocaml_module" name="Flag"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_command.Flag">Flag</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre><div class="info"><div class="info">type of flags to a command with accumulator type <code class="code">'a</code></div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre><div class="info"><div class="info">type of flags to a command with accumulator type <code class="code">'a</code></div></div>
 <pre><span class="VALname"><span class="keyword">val</span> name</span> : <code class="type">'a <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=t">t</a> -&gt; string</code></pre>
-<pre><span class="TYPEcreate"><span class="keyword">type</span> <code class="type">('a, 'b) </code>create</span> = <code class="type">string -&gt;
+<pre><span class="TYPEcreate"><span class="keyword">type</span> <code class="type">('a, 'b) </code>create</span> =  <code class="type">string -&gt;
 ?aliases:string list -&gt; ?full_flag_required:bool -&gt; 'b -&gt; doc:string -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=t">t</a></code></pre><div class="info"><div class="info">Template for flag-creation functions</div></div>
 <pre><span class="VALof_arg"><span class="keyword">val</span> of_arg</span> : <code class="type"><a href="?package=core&amp;module=Std.Arg&amp;type=t">Core.Std.Arg.t</a> -&gt; unit <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=t">t</a></code></pre>
 <div class="info"><div class="info"><h6 id="6_TITLE">Flag handling without an accumulator</h6></div></div>
@@ -48,7 +48,7 @@
 <pre><span class="VALrest_mut"><span class="keyword">val</span> rest_mut</span> : <code class="type">('a, 'a -&gt; string list -&gt; unit) <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=create">create</a></code></pre>
 <pre><span class="VALgen_mut"><span class="keyword">val</span> gen_mut</span> : <code class="type">(string -&gt; 'gen) -&gt; ('a, 'a -&gt; 'gen -&gt; unit) <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=create">create</a></code></pre>
 <div class="ocaml_module" name="Action"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_command.Flag.Action">Action</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info"><h2 id="2_TITLE">Deprecated </h2> This is the old deprecated interface to Flag</div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'accum </code>t</span> </pre><div class="info"><div class="info"><code class="code">'accum</code>-mutating action to perform when processing a flag</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'accum </code>t</span> =  </pre><div class="info"><div class="info"><code class="code">'accum</code>-mutating action to perform when processing a flag</div></div>
 <pre><span class="VALnoarg"><span class="keyword">val</span> noarg</span> : <code class="type">('accum -&gt; unit) -&gt; 'accum <a href="?package=core_extended&amp;module=Deprecated_command.Flag.Action&amp;type=t">t</a></code></pre><div class="info"><div class="info">an action for a flag that takes no additional argument</div></div>
 <pre><span class="VALarg"><span class="keyword">val</span> arg</span> : <code class="type">('accum -&gt; string -&gt; unit) -&gt; 'accum <a href="?package=core_extended&amp;module=Deprecated_command.Flag.Action&amp;type=t">t</a></code></pre><div class="info"><div class="info">an action for a flag that takes an additional string argument</div></div>
 <pre><span class="VALrest"><span class="keyword">val</span> rest</span> : <code class="type">('accum -&gt; string list -&gt; unit) -&gt; 'accum <a href="?package=core_extended&amp;module=Deprecated_command.Flag.Action&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">rest f</code>: an action for a flag that signals the end of flag
@@ -73,13 +73,13 @@
 <pre><span class="VALto_spec_unit"><span class="keyword">val</span> to_spec_unit</span> : <code class="type">unit <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=t">t</a> -&gt; ('c, 'c) <a href="?package=core&amp;module=Std.Command.Spec&amp;type=t">Core.Std.Command.Spec.t</a></code></pre>
 <pre><span class="VALto_spec_units"><span class="keyword">val</span> to_spec_units</span> : <code class="type">unit <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=t">t</a> list -&gt; ('c, 'c) <a href="?package=core&amp;module=Std.Command.Spec&amp;type=t">Core.Std.Command.Spec.t</a></code></pre></div></div>
 <div class="ocaml_module" name="Shared_flags"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_command.Shared_flags">Shared_flags</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><code><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {</code></pre><table class="typetable">
+<pre><code><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.flags">flags</span> : <code class="type">unit <a href="?package=core_extended&amp;module=Deprecated_command.Flag&amp;type=t">Flag.t</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.get">get</span> : <code class="type">unit -&gt; 'a</code>;</code></td></tr><tr><td>}</td></tr></table></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <div class="ocaml_module" name="Autocomplete"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_command.Autocomplete">Autocomplete</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">string list -&gt; string list</code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type">string list -&gt; string list</code></pre>
 <div class="ocaml_module" name="Bash_action"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_command.Autocomplete.Bash_action">Bash_action</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Alias
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type">[ `Alias
 | `Arrayvar
 | `Binding
 | `Builtin
@@ -145,7 +145,7 @@ usage_arg:string -&gt; flags:unit <a href="?package=core_extended&amp;module=Dep
     that dispatches to one of the named sub-commands.  A <code class="code">&quot;help&quot;</code>
     sub-command will also be generated for the group.<p>    The name cannot contain underscores, however passing <code class="code">allow_underscores=true</code> into run
     will parse underscores as dashes on the command line.</p></div></div>
-<pre><span class="TYPEwith_run_flags"><span class="keyword">type</span> <code class="type">'a </code>with_run_flags</span> = <code class="type">?version:string -&gt;
+<pre><span class="TYPEwith_run_flags"><span class="keyword">type</span> <code class="type">'a </code>with_run_flags</span> =  <code class="type">?version:string -&gt;
 ?build_info:string -&gt;
 ?argv:string list -&gt;
 ?allow_unknown_flags:bool -&gt;
@@ -192,8 +192,8 @@ usage_arg:string -&gt; flags:unit <a href="?package=core_extended&amp;module=Dep
     )
     ~main:(fun _ -&gt; assert false)</code></pre>
 end</div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
-<pre><span class="TYPEaccum"><span class="keyword">type</span> accum</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
+<pre><span class="TYPEaccum"><span class="keyword">type</span> accum</span> =  </pre>
 <pre><span class="VALrequired"><span class="keyword">val</span> required</span> : <code class="type">?name:string -&gt; <a href="?package=core_extended&amp;module=Deprecated_command.Annotated_field&amp;type=t">t</a> list -&gt; doc:string -&gt; ('a, 'b) <a href="?package=fieldslib&amp;module=Field&amp;type=t">Fieldslib.Field.t</a> -&gt; <a href="?package=core_extended&amp;module=Deprecated_command.Annotated_field&amp;type=t">t</a> list</code></pre>
 <pre><span class="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">?name:string -&gt;
 'field -&gt;
@@ -216,9 +216,9 @@ end</div></div><div class="ocaml_content">
 <pre><span class="VALget_list"><span class="keyword">val</span> get_list</span> : <code class="type"><a href="?package=core_extended&amp;module=Deprecated_command.Annotated_field&amp;type=accum">accum</a> -&gt;
 (string -&gt; 'field) -&gt; ('a, 'field list) <a href="?package=fieldslib&amp;module=Field&amp;type=t">Fieldslib.Field.t</a> -&gt; 'field list</code></pre></div></div>
 <div class="ocaml_module" name="Flags_ext"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_command.Flags_ext">Flags_ext</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><code><span class="TYPEsetter"><span class="keyword">type</span> <code class="type">'a </code>setter</span> = </code></pre><table class="typetable">
+<pre><code><span class="TYPEsetter"><span class="keyword">type</span> <code class="type">'a </code>setter</span> =  </code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTsetter.No_arg"><span class="constructor">No_arg</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTsetter.Arg"><span class="constructor">Arg</span></span> <span class="keyword">of</span> <code class="type">string -&gt; 'a</code></code></td></tr></table>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'flag) </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'flag) </code>t</span> =  </pre>
 <pre><span class="VALflag"><span class="keyword">val</span> flag</span> : <code class="type">('a, 'flag) <a href="?package=core_extended&amp;module=Deprecated_command.Flags_ext&amp;type=t">t</a> -&gt; 'flag</code></pre>
 <pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">('a, 'b) <a href="?package=core_extended&amp;module=Deprecated_command.Flags_ext&amp;type=t">t</a> -&gt; 'a</code></pre>
 <pre><span class="VALis_set"><span class="keyword">val</span> is_set</span> : <code class="type">('a, 'b) <a href="?package=core_extended&amp;module=Deprecated_command.Flags_ext&amp;type=t">t</a> -&gt; bool</code></pre>

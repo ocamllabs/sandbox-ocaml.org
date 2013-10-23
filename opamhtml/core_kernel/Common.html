@@ -7,14 +7,14 @@
     compilation, where on some platforms the function is defined normally, and on some
     platforms it is defined as unimplemented.  The supplied string should be the name of
     the function that is unimplemented.</div></div>
-<pre><span class="TYPEread_only"><span class="keyword">type</span> read_only</span> </pre><div class="info"><div class="info">Types for use as markers in phantom types.  One should not expose functions for
+<pre><span class="TYPEread_only"><span class="keyword">type</span> read_only</span> =  </pre><div class="info"><div class="info">Types for use as markers in phantom types.  One should not expose functions for
     converting between read_only/immutable/read_write because the private types expose the
     subtyping. Users would say &quot;(db :&gt; read_only Db.t)&quot; to cast.  The difference between
     read-only and immutable is that someone else can change a read-only object, while
     immutable never changes.</div></div>
-<pre><span class="TYPEimmutable"><span class="keyword">type</span> immutable</span> = <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a></code><span class="keyword">private</span></pre>
-<pre><span class="TYPEread_write"><span class="keyword">type</span> read_write</span> = <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a></code><span class="keyword">private</span></pre>
-<pre><span class="TYPEnever_returns"><span class="keyword">type</span> never_returns</span> = <code class="type"><a href="?package=core_kernel&amp;module=Never_returns&amp;type=never_returns">Never_returns.never_returns</a></code></pre><div class="info"><div class="info"><code class="code">never_returns</code> should be used as the return type of functions that don't return and
+<pre><span class="TYPEimmutable"><span class="keyword">type</span> immutable</span> = <span class="keyword">private</span> <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a></code></pre>
+<pre><span class="TYPEread_write"><span class="keyword">type</span> read_write</span> = <span class="keyword">private</span> <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a></code></pre>
+<pre><span class="TYPEnever_returns"><span class="keyword">type</span> never_returns</span> =  <code class="type"><a href="?package=core_kernel&amp;module=Never_returns&amp;type=never_returns">Never_returns.never_returns</a></code></pre><div class="info"><div class="info"><code class="code">never_returns</code> should be used as the return type of functions that don't return and
     might block forever, rather than <code class="code">'a</code> or <code class="code">_</code>.  This forces callers of such functions
     to have a call to <code class="code">never_returns</code> at the call site, which makes it clear to readers
     what's going on. We do not intend to use this type for functions such as <code class="code">failwithf</code>
@@ -43,7 +43,7 @@
     tests and should probably not be used in regular code.</div></div>
 <pre><span class="VALok_exn"><span class="keyword">val</span> ok_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a> -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">Or_error.ok_exn</code></div></div>
 <pre><span class="VALerror"><span class="keyword">val</span> error</span> : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre><div class="info"><div class="info"><code class="code">Or_error.error</code></div></div>
-<pre><code><span class="TYPEreturn"><span class="keyword">type</span> <code class="type">'a </code>return</span> = {<span class="keyword">private</span></code></pre><table class="typetable">
+<pre><code><span class="TYPEreturn"><span class="keyword">type</span> <code class="type">'a </code>return</span> = <span class="keyword">private</span> {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTreturn.return">return</span> : <code class="type">'b. 'a -&gt; 'b</code>;</code></td></tr><tr><td>}</td></tr></table><div class="info"><div class="info"><code class="code">with_return f</code> allows for something like the return statement in C within <code class="code">f</code>.  There
    are three ways <code class="code">f</code> can terminate:<p>   1. If <code class="code">f</code> calls <code class="code">r.return x</code>, then <code class="code">x</code> is returned by <code class="code">with_return</code>.
    2. If <code class="code">f</code> evaluates to a value <code class="code">x</code>, then <code class="code">x</code> is returned by <code class="code">with_return</code>.
@@ -116,7 +116,7 @@
 <pre><span class="VALneg_infinity"><span class="keyword">val</span> neg_infinity</span> : <code class="type">[ `Deprecated_use_float_module ]</code></pre>
 <pre><span class="VALnan"><span class="keyword">val</span> nan</span> : <code class="type">[ `Deprecated_use_float_module ]</code></pre>
 <pre><span class="VALint_of_float"><span class="keyword">val</span> int_of_float</span> : <code class="type">[ `Deprecated_use_float_module ] -&gt; [ `Deprecated_use_float_module ]</code></pre>
-<pre><span class="TYPEfpclass"><span class="keyword">type</span> fpclass</span> = <code class="type">[ `Deprecated_use_float_module ]</code></pre>
+<pre><span class="TYPEfpclass"><span class="keyword">type</span> fpclass</span> =  <code class="type">[ `Deprecated_use_float_module ]</code></pre>
 <pre><span class="VALcompare_read_only"><span class="keyword">val</span> compare_read_only</span> : <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a> -&gt; <a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a> -&gt; int</code></pre>
 <pre><span class="VALbin_read_only"><span class="keyword">val</span> bin_read_only</span> : <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
 <pre><span class="VALbin_read_read_only"><span class="keyword">val</span> bin_read_read_only</span> : <code class="type"><a href="?package=core_kernel&amp;module=Common&amp;type=read_only">read_only</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>

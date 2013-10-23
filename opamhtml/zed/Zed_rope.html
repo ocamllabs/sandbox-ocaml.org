@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info">Unicode ropes</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of unicode ropes.</div></div>
-<pre><span class="TYPErope"><span class="keyword">type</span> rope</span> = <code class="type"><a href="?package=zed&amp;module=Zed_rope&amp;type=t">t</a></code></pre><div class="info"><div class="info">Alias.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of unicode ropes.</div></div>
+<pre><span class="TYPErope"><span class="keyword">type</span> rope</span> =  <code class="type"><a href="?package=zed&amp;module=Zed_rope&amp;type=t">t</a></code></pre><div class="info"><div class="info">Alias.</div></div>
 <pre><span class="EXCEPTIONOut_of_bounds"><span class="keyword">exception</span> Out_of_bounds</span></pre><div class="info"><div class="info">Exception raised when trying to access a character which is
       outside the bounds of a rope.</div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Construction</h6></div></div>
@@ -75,7 +75,7 @@
       starting from the right, accumulating a value.</div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Zippers</h6></div></div>
 <div class="ocaml_module" name="Zip"><pre><span class="keyword">module</span> <a href="?package=zed&amp;module=Zed_rope.Zip">Zip</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of zippers. A zipper allow to naviguate in a rope in a
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of zippers. A zipper allow to naviguate in a rope in a
         convenient and efficient manner. Note that a zipper points to
         a position between two characters, not to a character, so in a
         rope of length <code class="code">len</code> there is <code class="code">len + 1</code> positions.</div></div>
@@ -118,7 +118,7 @@
 <div class="ocaml_module" name="Buffer"><pre><span class="keyword">module</span> <a href="?package=zed&amp;module=Zed_rope.Buffer">Buffer</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="info"><div class="info">This module is similar of the <code class="code">Buffer</code> module of the standard
       library except that it works with rope.</div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of rope buffers.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of rope buffers.</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="?package=zed&amp;module=Zed_rope.Buffer&amp;type=t">t</a></code></pre><div class="info"><div class="info">Create a new empty buffer.</div></div>
 <pre><span class="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=zed&amp;module=Zed_rope.Buffer&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=CamomileLibrary.UChar&amp;type=t">CamomileLibrary.UChar.t</a> -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">add buffer x</code> add <code class="code">x</code> at the end of <code class="code">buffer</code>.</div></div>
 <pre><span class="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="?package=zed&amp;module=Zed_rope.Buffer&amp;type=t">t</a> -&gt; <a href="?package=zed&amp;module=Zed_rope&amp;type=rope">rope</a></code></pre><div class="info"><div class="info"><code class="code">contents buffer</code> returns the contents of <code class="code">buffer</code> as a

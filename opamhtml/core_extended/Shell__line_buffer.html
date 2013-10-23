@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info">String buffers that automatically get flushed at every line return.</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?eol:char -&gt; (string -&gt; unit) -&gt; <a href="?package=core_extended&amp;module=Shell__line_buffer&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">create ~eol f</code>
     Create a new line buffer where f will be called once on every line.
     Eol is the endline character (it's possible to use a Linebuffer to

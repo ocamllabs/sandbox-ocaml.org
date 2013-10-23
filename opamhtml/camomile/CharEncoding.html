@@ -2,7 +2,7 @@
 <div class="info"><div class="info">Module for character encodings.</div></div>
 <pre><span class="EXCEPTIONMalformed_code"><span class="keyword">exception</span> Malformed_code</span></pre><div class="info"><div class="info">Failure of decoding</div></div>
 <pre><span class="EXCEPTIONOut_of_range"><span class="keyword">exception</span> Out_of_range</span></pre><div class="info"><div class="info">Failure of encoding</div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type for encodings.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type for encodings.</div></div>
 <pre><span class="VALautomatic"><span class="keyword">val</span> automatic</span> : <code class="type">string -&gt; <a href="?package=camomile&amp;module=CharEncoding:Interface&amp;type=t">t</a> list -&gt; <a href="?package=camomile&amp;module=CharEncoding:Interface&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=CharEncoding:Interface&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">automatic name [enc_1; enc_2; ... enc_n] enc</code>
    creates the new encoding <code class="code">name</code>
    doing automatic encoding detection among <code class="code">enc_1</code>, <code class="code">enc_2</code>, ..., <code class="code">enc_n</code>
@@ -65,7 +65,7 @@
 <pre><span class="VALchar_stream_of"><span class="keyword">val</span> char_stream_of</span> : <code class="type"><a href="?package=camomile&amp;module=CharEncoding:Interface&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> <a href="?package=ocaml&amp;module=Stream&amp;type=t">Stream.t</a> -&gt; char <a href="?package=ocaml&amp;module=Stream&amp;type=t">Stream.t</a></code></pre><div class="info"><div class="info"><code class="code">char_stream_of enc uchars</code> converts the Unicode character stream 
    <code class="code">uchars</code> to the byte stream by the encoding <code class="code">enc</code></div></div>
 <div class="ocaml_modtype" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=CharEncoding:Interface:Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEtext"><span class="keyword">type</span> text</span> </pre>
+<pre><span class="TYPEtext"><span class="keyword">type</span> text</span> =  </pre>
 <pre><span class="VALdecode"><span class="keyword">val</span> decode</span> : <code class="type"><a href="?package=camomile&amp;module=CharEncoding:Interface&amp;type=t">t</a> -&gt; string -&gt; <a href="?package=camomile&amp;module=CharEncoding:Interface:Type&amp;type=text">text</a></code></pre><div class="info"><div class="info"><code class="code">decode enc s</code> converts the string <code class="code">s</code> encoded 
       by the encoding <code class="code">enc</code> to the Unicode text.</div></div>
 <pre><span class="VALencode"><span class="keyword">val</span> encode</span> : <code class="type"><a href="?package=camomile&amp;module=CharEncoding:Interface&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=CharEncoding:Interface:Type&amp;type=text">text</a> -&gt; string</code></pre><div class="info"><div class="info"><code class="code">encode enc t</code> converts the Unicode text <code class="code">t</code> to the string

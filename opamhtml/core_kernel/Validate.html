@@ -34,9 +34,9 @@
                                    ~snd:Int.validate_non_negative)
         | Snoo floogle -&gt; V.name &quot;Snoo&quot; Floogle.validate
     </code></pre></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">The result of a validation.  This effectively contains the list of errors, qualified
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">The result of a validation.  This effectively contains the list of errors, qualified
     by their location path</div></div>
-<pre><span class="TYPEcheck"><span class="keyword">type</span> <code class="type">'a </code>check</span> = <code class="type">'a -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre><div class="info"><div class="info">to make function signatures easier to read</div></div>
+<pre><span class="TYPEcheck"><span class="keyword">type</span> <code class="type">'a </code>check</span> =  <code class="type">'a -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre><div class="info"><div class="info">to make function signatures easier to read</div></div>
 <pre><span class="VALpass"><span class="keyword">val</span> pass</span> : <code class="type"><a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre><div class="info"><div class="info">A result containing no errors</div></div>
 <pre><span class="VALfail"><span class="keyword">val</span> fail</span> : <code class="type">string -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre><div class="info"><div class="info">A result containing a single error</div></div>
 <pre><span class="VALfails"><span class="keyword">val</span> fails</span> : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>

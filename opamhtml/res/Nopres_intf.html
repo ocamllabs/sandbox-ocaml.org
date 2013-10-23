@@ -2,9 +2,9 @@
 <div class="ocaml_modtype" name="T"><pre><span class="keyword">module type</span> <a href="?package=res&amp;module=Nopres_intf:T">T</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Interface to unparameterized resizable arrays</div></div><div class="ocaml_content">
 <div class="info"><div class="info"><h6 id="6_TITLE">Signatures and types</h6></div></div>
 <div class="ocaml_module" name="Strategy" path="?package=res&amp;module=Strat:T"><pre><span class="keyword">module</span> <a href="?package=res&amp;module=Nopres_intf:T.Strategy">Strategy</a> : <code class="type"><code class="code"><a href="?package=res&amp;module=Strat:T">Strat.T</a></code></code></pre><div class="info"><div class="info">Module implementing the reallocation strategy</div></div></div>
-<pre><span class="TYPEstrategy"><span class="keyword">type</span> strategy</span> = <code class="type"><a href="?package=res&amp;module=Nopres_intf:T.Strategy&amp;type=t">Strategy.t</a></code></pre><div class="info"><div class="info">Type of reallocation strategy</div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of resizable arrays</div></div>
-<pre><span class="TYPEel"><span class="keyword">type</span> el</span> </pre><div class="info"><div class="info">Type of the elements in the resizable array</div></div>
+<pre><span class="TYPEstrategy"><span class="keyword">type</span> strategy</span> =  <code class="type"><a href="?package=res&amp;module=Nopres_intf:T.Strategy&amp;type=t">Strategy.t</a></code></pre><div class="info"><div class="info">Type of reallocation strategy</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of resizable arrays</div></div>
+<pre><span class="TYPEel"><span class="keyword">type</span> el</span> =  </pre><div class="info"><div class="info">Type of the elements in the resizable array</div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Index and length information</h6></div></div>
 <pre><span class="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=res&amp;module=Nopres_intf:T&amp;type=t">t</a> -&gt; int</code></pre><div class="info"><div class="info"><code class="code">length ra</code> <b>Returns</b> (virtual) length of resizable array <code class="code">ra</code>
       excluding the reserved space.</div></div>

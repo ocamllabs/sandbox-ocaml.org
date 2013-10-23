@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info">History management</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of a history.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of a history.</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?max_size:int -&gt; ?max_entries:int -&gt; <a href="?package=zed&amp;module=Zed_utf8&amp;type=t">Zed_utf8.t</a> list -&gt; <a href="?package=lambda-term&amp;module=LTerm_history&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">create ?max_size ?max_lines init</code> creates a new history.<p>      <code class="code">max_size</code> is the maximum size in bytes of the history. Oldest
       entries are dropped if this limit is reached. The default is
       <code class="code">max_int</code>.</p><p>      <code class="code">max_entries</code> is the maximum number of entries of the

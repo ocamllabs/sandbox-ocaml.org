@@ -19,19 +19,19 @@
                         ]
       </code></pre><p>      Ultimately, a <code class="code">Slots.t</code> is used as a phantom type that ensures consistent usage of
       the tuples in the data structure containing them.</p></div></div>
-<pre><span class="TYPEu"><span class="keyword">type</span> <code class="type">('tuple, 'variant) </code>u</span> </pre>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('tuple, 'variant) </code>t</span> = <code class="type">[ `Slots of ('tuple, 'variant) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=u">u</a> ]</code></pre>
+<pre><span class="TYPEu"><span class="keyword">type</span> <code class="type">('tuple, 'variant) </code>u</span> =  </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('tuple, 'variant) </code>t</span> =  <code class="type">[ `Slots of ('tuple, 'variant) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=u">u</a> ]</code></pre>
 <pre><span class="VALslots_per_tuple"><span class="keyword">val</span> slots_per_tuple</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a> -&gt; int</code></pre>
-<pre><span class="TYPEt1"><span class="keyword">type</span> <code class="type">'a0 </code>t1</span> = <code class="type">('a0, [ `S0 of 'a0 ]) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt2"><span class="keyword">type</span> <code class="type">('a0, 'a1) </code>t2</span> = <code class="type">('a0 * 'a1, [ `S0 of 'a0 | `S1 of 'a1 ]) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt3"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2) </code>t3</span> = <code class="type">('a0 * 'a1 * 'a2, [ `S0 of 'a0 | `S1 of 'a1 | `S2 of 'a2 ]) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt4"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3) </code>t4</span> = <code class="type">('a0 * 'a1 * 'a2 * 'a3,
+<pre><span class="TYPEt1"><span class="keyword">type</span> <code class="type">'a0 </code>t1</span> =  <code class="type">('a0, [ `S0 of 'a0 ]) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
+<pre><span class="TYPEt2"><span class="keyword">type</span> <code class="type">('a0, 'a1) </code>t2</span> =  <code class="type">('a0 * 'a1, [ `S0 of 'a0 | `S1 of 'a1 ]) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
+<pre><span class="TYPEt3"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2) </code>t3</span> =  <code class="type">('a0 * 'a1 * 'a2, [ `S0 of 'a0 | `S1 of 'a1 | `S2 of 'a2 ]) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
+<pre><span class="TYPEt4"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3) </code>t4</span> =  <code class="type">('a0 * 'a1 * 'a2 * 'a3,
  [ `S0 of 'a0 | `S1 of 'a1 | `S2 of 'a2 | `S3 of 'a3 ])
 <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt5"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4) </code>t5</span> = <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4,
+<pre><span class="TYPEt5"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4) </code>t5</span> =  <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4,
  [ `S0 of 'a0 | `S1 of 'a1 | `S2 of 'a2 | `S3 of 'a3 | `S4 of 'a4 ])
 <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt6"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5) </code>t6</span> = <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5,
+<pre><span class="TYPEt6"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5) </code>t6</span> =  <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5,
  [ `S0 of 'a0
  | `S1 of 'a1
  | `S2 of 'a2
@@ -39,7 +39,7 @@
  | `S4 of 'a4
  | `S5 of 'a5 ])
 <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt7"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5, 'a6) </code>t7</span> = <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5 * 'a6,
+<pre><span class="TYPEt7"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5, 'a6) </code>t7</span> =  <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5 * 'a6,
  [ `S0 of 'a0
  | `S1 of 'a1
  | `S2 of 'a2
@@ -48,7 +48,7 @@
  | `S5 of 'a5
  | `S6 of 'a6 ])
 <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt8"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5, 'a6, 'a7) </code>t8</span> = <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5 * 'a6 * 'a7,
+<pre><span class="TYPEt8"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5, 'a6, 'a7) </code>t8</span> =  <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5 * 'a6 * 'a7,
  [ `S0 of 'a0
  | `S1 of 'a1
  | `S2 of 'a2
@@ -58,7 +58,7 @@
  | `S6 of 'a6
  | `S7 of 'a7 ])
 <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEt9"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5, 'a6, 'a7, 'a8) </code>t9</span> = <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5 * 'a6 * 'a7 * 'a8,
+<pre><span class="TYPEt9"><span class="keyword">type</span> <code class="type">('a0, 'a1, 'a2, 'a3, 'a4, 'a5, 'a6, 'a7, 'a8) </code>t9</span> =  <code class="type">('a0 * 'a1 * 'a2 * 'a3 * 'a4 * 'a5 * 'a6 * 'a7 * 'a8,
  [ `S0 of 'a0
  | `S1 of 'a1
  | `S2 of 'a2
@@ -131,7 +131,7 @@
 ('a0, 'a1, 'a2, 'a3, 'a4, 'a5, 'a6, 'a7, 'a8) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slots&amp;type=t9">t9</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 
 <div class="ocaml_modtype" name="Slot"><pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slot">Slot</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('variant, 'a) </code>t</span> </pre><div class="info"><div class="info">A <code class="code">Slot.t</code> represents a slot in a tuple type.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('variant, 'a) </code>t</span> =  </pre><div class="info"><div class="info">A <code class="code">Slot.t</code> represents a slot in a tuple type.</div></div>
 <pre><span class="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('v, 'a) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slot&amp;type=t">t</a> -&gt; ('v, 'a) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slot&amp;type=t">t</a> -&gt; bool</code></pre>
 <pre><span class="VALt0"><span class="keyword">val</span> t0</span> : <code class="type">([&gt; `S0 of 'a ], 'a) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slot&amp;type=t">t</a></code></pre>
 <pre><span class="VALt1"><span class="keyword">val</span> t1</span> : <code class="type">([&gt; `S1 of 'a ], 'a) <a href="?package=core_kernel&amp;module=Tuple_type_intf:Slot&amp;type=t">t</a></code></pre>

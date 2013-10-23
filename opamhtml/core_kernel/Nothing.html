@@ -1,7 +1,7 @@
 <div class="ocaml_toplevel_module"><div class="info">An uninhabited type.<p>    This is useful when interfaces require that a type be specified, but the implementer
     knows this type will not be used in their implementation of the interface.</p><p>    For instance, <code class="code">Async.Std.Rpc.Pipe_rpc.t</code> is parameterized by an error type, but a user
     may want to define a Pipe RPC that can't fail.</p></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=core_kernel&amp;module=Nothing0&amp;type=t">Nothing0.t</a></code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type"><a href="?package=core_kernel&amp;module=Nothing0&amp;type=t">Nothing0.t</a></code></pre>
 <pre><span class="VALunreachable_code"><span class="keyword">val</span> unreachable_code</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing&amp;type=t">t</a> -&gt; 'a</code></pre><div class="info"><div class="info">Because there are no values of type <code class="code">Nothing.t</code>, a piece of code that has a value of
     type <code class="code">Nothing.t</code> must be unreachable.  In such an unreachable piece of code, one can
     use <code class="code">unreachable_code</code> to give the code whatever type one needs.  For example:<p>    </p><pre class="code"><code>
@@ -17,7 +17,7 @@
     prevented for lack of <code class="code">Identifiable.S</code> here.<p>    Obviously, <code class="code">of_string</code> and <code class="code">t_of_sexp</code> will raise an exception.</p></div></div></div>
 <div class="ocaml_module" name="Stable"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Nothing.Stable">Stable</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_module" name="V1"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Nothing.Stable.V1">V1</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=Nothing&amp;type=t">t</a></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> -&gt; int</code></pre>
 <pre><span class="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
 <pre><span class="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>

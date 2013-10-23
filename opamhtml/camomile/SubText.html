@@ -1,11 +1,11 @@
 <div class="ocaml_toplevel_module"><div class="info">Sub-texts, parts of original (ur-) texts.  
    The signature and semantics matches those of UStorage.</div>
 <div class="ocaml_modtype" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=SubText:Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a></code></pre>
 <pre><span class="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -&gt; (int -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a>) -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a></code></pre>
 <pre><span class="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; int</code></pre>
-<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> </pre>
+<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> =  </pre>
 <pre><span class="VALlook"><span class="keyword">val</span> look</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=index">index</a> -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a></code></pre>
 <pre><span class="VALnth"><span class="keyword">val</span> nth</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=index">index</a></code></pre>
 <pre><span class="VALfirst"><span class="keyword">val</span> first</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=index">index</a></code></pre>
@@ -18,7 +18,7 @@
 <pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> -&gt; unit) -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; unit</code></pre>
 <pre><span class="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; int</code></pre>
 <div class="ocaml_module" name="Buf"><pre><span class="keyword">module</span> <a href="?package=camomile&amp;module=SubText:Type.Buf">Buf</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEbuf"><span class="keyword">type</span> buf</span> </pre>
+<pre><span class="TYPEbuf"><span class="keyword">type</span> buf</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; <a href="?package=camomile&amp;module=SubText:Type.Buf&amp;type=buf">buf</a></code></pre>
 <pre><span class="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type.Buf&amp;type=buf">buf</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a></code></pre>
 <pre><span class="VALclear"><span class="keyword">val</span> clear</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type.Buf&amp;type=buf">buf</a> -&gt; unit</code></pre>
@@ -26,8 +26,8 @@
 <pre><span class="VALadd_char"><span class="keyword">val</span> add_char</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type.Buf&amp;type=buf">buf</a> -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> -&gt; unit</code></pre>
 <pre><span class="VALadd_string"><span class="keyword">val</span> add_string</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type.Buf&amp;type=buf">buf</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a> -&gt; unit</code></pre>
 <pre><span class="VALadd_buffer"><span class="keyword">val</span> add_buffer</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type.Buf&amp;type=buf">buf</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type.Buf&amp;type=buf">buf</a> -&gt; unit</code></pre></div></div>
-<pre><span class="TYPEur_text"><span class="keyword">type</span> ur_text</span> </pre><div class="info"><div class="info">The type of original texts.</div></div>
-<pre><span class="TYPEur_index"><span class="keyword">type</span> ur_index</span> </pre><div class="info"><div class="info">The type of indexes of original texts.</div></div>
+<pre><span class="TYPEur_text"><span class="keyword">type</span> ur_text</span> =  </pre><div class="info"><div class="info">The type of original texts.</div></div>
+<pre><span class="TYPEur_index"><span class="keyword">type</span> ur_index</span> =  </pre><div class="info"><div class="info">The type of indexes of original texts.</div></div>
 <pre><span class="VALrefer"><span class="keyword">val</span> refer</span> : <code class="type"><a href="?package=camomile&amp;module=SubText:Type&amp;type=ur_text">ur_text</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=ur_index">ur_index</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=ur_index">ur_index</a> -&gt; <a href="?package=camomile&amp;module=SubText:Type&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">refer t i j</code> returns the part of <code class="code">t</code> from <code class="code">i</code> until <code class="code">j</code>.
    The character pointed by <code class="code">j</code> is not included in the result.
    If <code class="code">j</code> is equal to <code class="code">i</code> or located before <code class="code">j</code>, the result is

@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info">Terminal definitions</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of terminals.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of terminals.</div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Creation</h6></div></div>
 <pre><span class="EXCEPTIONNo_such_encoding"><span class="keyword">exception</span> No_such_encoding</span> <span class="keyword">of</span> <code class="type">string</code></pre><div class="info"><div class="info">Exception raised when an encoding does not exist.</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?windows:bool -&gt;
@@ -47,7 +47,7 @@
 <pre><span class="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="?package=lambda-term&amp;module=LTerm&amp;type=t">t</a> -&gt; <a href="?package=lambda-term&amp;module=LTerm_geom&amp;type=size">LTerm_geom.size</a></code></pre><div class="info"><div class="info">Returns the curent size of the terminal.<p>      It raises  <a href="#Not_a_tty">Not_a_tty</a> if the output of the given terminal is
       not a tty.</p></div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Modes</h6></div></div>
-<pre><span class="TYPEmode"><span class="keyword">type</span> mode</span> </pre><div class="info"><div class="info">Type of terminal modes.</div></div>
+<pre><span class="TYPEmode"><span class="keyword">type</span> mode</span> =  </pre><div class="info"><div class="info">Type of terminal modes.</div></div>
 <pre><span class="VALenter_raw_mode"><span class="keyword">val</span> enter_raw_mode</span> : <code class="type"><a href="?package=lambda-term&amp;module=LTerm&amp;type=t">t</a> -&gt; <a href="?package=lambda-term&amp;module=LTerm&amp;type=mode">mode</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">enter_raw_mode term</code> puts the terminal in ``raw mode''. In this
       mode keyboard events are returned as they happen. In normal mode
       only complete line are returned. It returns the current terminal
@@ -123,7 +123,7 @@
     text that does not entirely fit in a single  <a href="#LTerm_text.t">LTerm_text.t</a>
     value.<p>    This is more efficient than calling manually  <a href="#set_style">set_style</a> since
     styles will be modified only when needed.</p></div></div>
-<pre><span class="TYPEcontext"><span class="keyword">type</span> context</span> </pre><div class="info"><div class="info">A context for styled printing.</div></div>
+<pre><span class="TYPEcontext"><span class="keyword">type</span> context</span> =  </pre><div class="info"><div class="info">A context for styled printing.</div></div>
 <pre><span class="VALwith_context"><span class="keyword">val</span> with_context</span> : <code class="type"><a href="?package=lambda-term&amp;module=LTerm&amp;type=t">t</a> -&gt; (<a href="?package=lambda-term&amp;module=LTerm&amp;type=context">context</a> -&gt; 'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a>) -&gt; 'a <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">with_context term f</code> creates a new printing context and pass it
       to <code class="code">f</code>. Note that calls to <code class="code">with_context</code> are serialized.</div></div>
 <pre><span class="VALupdate_style"><span class="keyword">val</span> update_style</span> : <code class="type"><a href="?package=lambda-term&amp;module=LTerm&amp;type=context">context</a> -&gt; <a href="?package=lambda-term&amp;module=LTerm_style&amp;type=t">LTerm_style.t</a> -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">update_style ctx style</code> updates the style of the context with

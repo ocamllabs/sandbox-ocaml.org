@@ -1,9 +1,9 @@
 <div class="ocaml_toplevel_module"><div class="info">Unit test building blocks (v2).<div class="authors"><b>Author(s): </b><span class="author">Sylvain Le Gall</span></div></div>
 <div class="info"><div class="info"><h2 id="2_TITLE">Types</h2></div></div>
-<pre><span class="TYPEtest_ctxt"><span class="keyword">type</span> test_ctxt</span> = <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=ctxt">OUnitTest.ctxt</a></code></pre><div class="info"><div class="info">Context of a test.</div></div>
-<pre><span class="TYPEtest_fun"><span class="keyword">type</span> test_fun</span> = <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; unit</code></pre><div class="info"><div class="info">The type of test function.</div></div>
-<pre><span class="TYPEtest"><span class="keyword">type</span> test</span> = <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=test">OUnitTest.test</a></code></pre><div class="info"><div class="info">The type of test.</div></div>
-<pre><span class="TYPEtest_length"><span class="keyword">type</span> test_length</span> = <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=test_length">OUnitTest.test_length</a></code></pre><div class="info"><div class="info">The expected length of the test.</div></div>
+<pre><span class="TYPEtest_ctxt"><span class="keyword">type</span> test_ctxt</span> =  <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=ctxt">OUnitTest.ctxt</a></code></pre><div class="info"><div class="info">Context of a test.</div></div>
+<pre><span class="TYPEtest_fun"><span class="keyword">type</span> test_fun</span> =  <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; unit</code></pre><div class="info"><div class="info">The type of test function.</div></div>
+<pre><span class="TYPEtest"><span class="keyword">type</span> test</span> =  <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=test">OUnitTest.test</a></code></pre><div class="info"><div class="info">The type of test.</div></div>
+<pre><span class="TYPEtest_length"><span class="keyword">type</span> test_length</span> =  <code class="type"><a href="?package=ounit&amp;module=OUnitTest&amp;type=test_length">OUnitTest.test_length</a></code></pre><div class="info"><div class="info">The expected length of the test.</div></div>
 <div class="info"><div class="info"><h2 id="2_TITLE">Assertions</h2><p>    Assertions are the basic building blocks of unittests.</p></div></div>
 <pre><span class="VALassert_failure"><span class="keyword">val</span> assert_failure</span> : <code class="type">string -&gt; 'a</code></pre><div class="info"><div class="info">Signals a failure. This will raise an exception with the specified
     string. <b>Raises</b> <code>Failure</code> signal a failure<br/></div></div>
@@ -67,7 +67,7 @@
                                        TestCase((fun _ -&gt; ())))]))</code>
 </li></ul></div></div>
 <div class="info"><div class="info"><h2 id="2_TITLE">Performing Tests</h2></div></div>
-<pre><span class="TYPElog_severity"><span class="keyword">type</span> log_severity</span> = <code class="type">[ `Error | `Info | `Warning ]</code></pre><div class="info"><div class="info">Severity level for log.</div></div>
+<pre><span class="TYPElog_severity"><span class="keyword">type</span> log_severity</span> =  <code class="type">[ `Error | `Info | `Warning ]</code></pre><div class="info"><div class="info">Severity level for log.</div></div>
 <pre><span class="VALlogf"><span class="keyword">val</span> logf</span> : <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt;
 <a href="?package=ounit&amp;module=OUnit2&amp;type=log_severity">log_severity</a> -&gt; ('a, unit, string, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre><div class="info"><div class="info">Log into OUnit logging system.</div></div>
 <pre><span class="VALin_testdata_dir"><span class="keyword">val</span> in_testdata_dir</span> : <code class="type"><a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; string list -&gt; string</code></pre><div class="info"><div class="info">Build a filename for a file that should be located in the test data dir.<p>    The test data dir, can be defined on the command line (preferably absolute)
@@ -79,7 +79,7 @@
     command line options et al.</p><p>    The name defined for the variable is:</p><ul><li>should be a valid OCaml identifier</li><li>kept as is for use in configuration file. (foo_bar = &quot;&quot;)</li><li>'_' are replaced by '-' and a leading '-' is added for command line
       (-foo &quot;&quot;)</li><li>capitalized and prefixed by OUNIT_ for environment (OUNIT_FOO_BAR=&quot;&quot;)
   </li></ul></div></div><div class="ocaml_content">
-<pre><span class="TYPEconf_t"><span class="keyword">type</span> <code class="type">'a </code>conf_t</span> = <code class="type">string -&gt; 'a -&gt; <a href="?package=ocaml&amp;module=Arg&amp;type=doc">Arg.doc</a> -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; 'a</code></pre><div class="info"><div class="info">The default type of function that create a configuration option of type
+<pre><span class="TYPEconf_t"><span class="keyword">type</span> <code class="type">'a </code>conf_t</span> =  <code class="type">string -&gt; 'a -&gt; <a href="?package=ocaml&amp;module=Arg&amp;type=doc">Arg.doc</a> -&gt; <a href="?package=ounit&amp;module=OUnit2&amp;type=test_ctxt">test_ctxt</a> -&gt; 'a</code></pre><div class="info"><div class="info">The default type of function that create a configuration option of type
       'a.</div></div>
 <pre><span class="VALmake_string"><span class="keyword">val</span> make_string</span> : <code class="type">string <a href="?package=ounit&amp;module=OUnit2.Conf&amp;type=conf_t">conf_t</a></code></pre><div class="info"><div class="info"><code class="code">make_string name default help</code> Create a string configuration
       option with default value <code class="code">default</code> and a short help string.

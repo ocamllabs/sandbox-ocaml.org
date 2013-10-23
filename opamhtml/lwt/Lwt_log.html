@@ -3,17 +3,17 @@
     It support:<p>    - logging to the syslog daemon</p><ul><li>logging to a channel (stderr, stdout, ...)</li><li>logging to a file</li><li>logging to multiple destination at the same time
 </li></ul></div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Types</h6></div></div>
-<pre><code><span class="TYPElevel"><span class="keyword">type</span> level</span> = </code></pre><table class="typetable">
+<pre><code><span class="TYPElevel"><span class="keyword">type</span> level</span> =  </code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTlevel.Debug"><span class="constructor">Debug</span></span></code></td><td class="typefieldcomment" align="left"><div class="info">Debugging message. They can be automatically removed by the
           syntax extension.</div></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTlevel.Info"><span class="constructor">Info</span></span></code></td><td class="typefieldcomment" align="left"><div class="info">Informational message. Suitable to be displayed when the
           program is in verbose mode.</div></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTlevel.Notice"><span class="constructor">Notice</span></span></code></td><td class="typefieldcomment" align="left"><div class="info">Same as  <a href="#Info">Info</a>, but is displayed by default.</div></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTlevel.Warning"><span class="constructor">Warning</span></span></code></td><td class="typefieldcomment" align="left"><div class="info">Something strange happend</div></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTlevel.Error"><span class="constructor">Error</span></span></code></td><td class="typefieldcomment" align="left"><div class="info">An error message, which should not means the end of the
           program.</div></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTlevel.Fatal"><span class="constructor">Fatal</span></span></code></td><td class="typefieldcomment" align="left"><div class="info">A fatal error happened, in most cases the program will end
           after a fatal error.</div></td></tr></table><div class="info"><div class="info">Type of log levels. A level determines the importance of a
     message</div></div>
-<pre><span class="TYPElogger"><span class="keyword">type</span> logger</span> </pre><div class="info"><div class="info">Type of a logger. A logger is responsible for dispatching messages
+<pre><span class="TYPElogger"><span class="keyword">type</span> logger</span> =  </pre><div class="info"><div class="info">Type of a logger. A logger is responsible for dispatching messages
       and storing them somewhere.<p>      Lwt provides loggers sending log messages to a file, syslog,
       ... but you can also create you own logger.</p></div></div>
-<pre><span class="TYPEsection"><span class="keyword">type</span> section</span> </pre><div class="info"><div class="info">Each logging message has a section. Sections can be used to
+<pre><span class="TYPEsection"><span class="keyword">type</span> section</span> =  </pre><div class="info"><div class="info">Each logging message has a section. Sections can be used to
       structure your logs. For example you can choose different
       loggers according to the section.<p>      Each section carries a level, and messages with a lower log
       level than than the section level will be dropped.</p><p>      Section levels are initialised using the <code class="code">LWT_LOG</code> environment
@@ -152,7 +152,7 @@ level:<a href="?package=lwt&amp;module=Lwt_log&amp;type=level">level</a> -&gt; (
 ?location:string * int * int -&gt;
 ?logger:<a href="?package=lwt&amp;module=Lwt_log&amp;type=logger">logger</a> -&gt; ('a, unit, string, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre>
 <div class="ocaml_module" name="Section"><pre><span class="keyword">module</span> <a href="?package=lwt&amp;module=Lwt_log.Section">Section</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Sections</div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=lwt&amp;module=Lwt_log&amp;type=section">section</a></code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type"><a href="?package=lwt&amp;module=Lwt_log&amp;type=section">section</a></code></pre>
 <pre><span class="VALmake"><span class="keyword">val</span> make</span> : <code class="type">string -&gt; <a href="?package=lwt&amp;module=Lwt_log&amp;type=section">section</a></code></pre><div class="info"><div class="info"><code class="code">make name</code> creates a section with the given name. Two calls
         to  <a href="#make">make</a> with the same name will return the same section
         object.</div></div>
@@ -167,7 +167,7 @@ level:<a href="?package=lwt&amp;module=Lwt_log&amp;type=level">level</a> -&gt; (
         default value, i.e. to the value obtained by applying
         rules.</div></div></div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Log templates</h6></div></div>
-<pre><span class="TYPEtemplate"><span class="keyword">type</span> template</span> = <code class="type">string</code></pre><div class="info"><div class="info">A template is for generating log messages.<p>        It is a string which may contains variables of the form
+<pre><span class="TYPEtemplate"><span class="keyword">type</span> template</span> =  <code class="type">string</code></pre><div class="info"><div class="info">A template is for generating log messages.<p>        It is a string which may contains variables of the form
         <code class="code">$(var)</code>, where <code class="code">var</code> is one of:</p><p>        - <code class="code">date</code> which will be replaced with the current date</p><ul><li><code class="code">milliseconds</code> which will be replaced by the fractionnal part
           of the current unix time</li><li><code class="code">name</code> which will be replaced by the program name</li><li><code class="code">pid</code> which will be replaced by the pid of the program</li><li><code class="code">message</code> which will be replaced by the message emited</li><li><code class="code">level</code> which will be replaced by a string representation of
           the level</li><li><code class="code">section</code> which will be replaced by the name of the
@@ -208,7 +208,7 @@ close:(unit -&gt; unit <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a
       </code></pre></div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Predefined loggers</h6></div></div>
 <pre><span class="VALnull"><span class="keyword">val</span> null</span> : <code class="type"><a href="?package=lwt&amp;module=Lwt_log&amp;type=logger">logger</a></code></pre><div class="info"><div class="info">Logger which drops everything</div></div>
-<pre><span class="TYPEsyslog_facility"><span class="keyword">type</span> syslog_facility</span> = <code class="type">[ `Auth
+<pre><span class="TYPEsyslog_facility"><span class="keyword">type</span> syslog_facility</span> =  <code class="type">[ `Auth
 | `Authpriv
 | `Console
 | `Cron

@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info">High level function for writing full-screen applications</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of a user interface.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of a user interface.</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="?package=lambda-term&amp;module=LTerm&amp;type=t">LTerm.t</a> -&gt; ?save_state:bool -&gt; (<a href="?package=lambda-term&amp;module=LTerm_ui&amp;type=t">t</a> -&gt; <a href="?package=lambda-term&amp;module=LTerm_draw&amp;type=matrix">LTerm_draw.matrix</a> -&gt; unit) -&gt; <a href="?package=lambda-term&amp;module=LTerm_ui&amp;type=t">t</a> <a href="?package=lwt&amp;module=Lwt&amp;type=t">Lwt.t</a></code></pre><div class="info"><div class="info"><code class="code">create term ?save_state draw</code> creates a new user
       interface. <code class="code">draw</code> is used to draw the user interface. If
       <code class="code">save_state</code> is <code class="code">true</code> (the default) then the state of the

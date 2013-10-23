@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info"><div class="info"><h6 id="6_TITLE">Callbacks</h6></div></div>
-<pre><span class="TYPEswitch"><span class="keyword">type</span> switch</span> </pre><div class="info"><div class="info">Switches are used to stop signals.</div></div>
+<pre><span class="TYPEswitch"><span class="keyword">type</span> switch</span> =  </pre><div class="info"><div class="info">Switches are used to stop signals.</div></div>
 <pre><span class="VALregister"><span class="keyword">val</span> register</span> : <code class="type"><a href="?package=lambda-term&amp;module=LTerm_widget&amp;type=switch">switch</a> option -&gt; 'a <a href="?package=lwt&amp;module=Lwt_sequence&amp;type=t">Lwt_sequence.t</a> -&gt; 'a -&gt; unit</code></pre>
 <pre><span class="VALstop"><span class="keyword">val</span> stop</span> : <code class="type"><a href="?package=lambda-term&amp;module=LTerm_widget&amp;type=switch">switch</a> -&gt; unit</code></pre>
 <pre><span class="VALexec_callbacks"><span class="keyword">val</span> exec_callbacks</span> : <code class="type">('a -&gt; unit) <a href="?package=lwt&amp;module=Lwt_sequence&amp;type=t">Lwt_sequence.t</a> -&gt; 'a -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">apply_callbacks callbacks x</code></div></div>

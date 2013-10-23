@@ -18,7 +18,7 @@
     will be determined with <code class="code">`Result</code>.  In other words, since there is inherent race
     between <code class="code">d</code> and the timeout, the preference is given to <code class="code">d</code>.</div></div>
 <div class="ocaml_module" name="Event"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Clock.Event">Event</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Events provide abortable versions of <code class="code">at</code> and <code class="code">after</code>.</div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <div class="ocaml_include" path="?package=core&amp;module=Std.Invariant:S" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std.Invariant:S">Core.Std.Invariant.S</a></code> with type t := <a href="?package=async_core&amp;module=Clock.Event&amp;type=t">t</a></code></pre></div>
 <pre><span class="VALstatus"><span class="keyword">val</span> status</span> : <code class="type"><a href="?package=async_core&amp;module=Clock.Event&amp;type=t">t</a> -&gt; [ `Aborted | `Happened | `Waiting ]</code></pre>
 <pre><span class="VALabort"><span class="keyword">val</span> abort</span> : <code class="type"><a href="?package=async_core&amp;module=Clock.Event&amp;type=t">t</a> -&gt; [ `Ok | `Previously_aborted | `Previously_happened ]</code></pre>

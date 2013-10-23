@@ -4,7 +4,7 @@
     Async world.  They do this by calling <code class="code">Thread_safe.run_in_async*</code>, which acquires the
     lock, does a computation (e.g. fills an ivar), and then runs a &quot;cycle&quot; of Async
     computations.</p></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">Raw_scheduler.t</a></code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">Raw_scheduler.t</a></code></pre>
 <pre><span class="VALt"><span class="keyword">val</span> t</span> : <code class="type">unit -&gt; <a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">t ()</code> returns the async scheduler.  If the scheduler hasn't been created yet, this
     will create it and acquire the async lock.</div></div>
 <pre><span class="VALgo"><span class="keyword">val</span> go</span> : <code class="type">?raise_unhandled_exn:bool -&gt; unit -&gt; <a href="?package=core&amp;module=Std&amp;type=never_returns">Core.Std.never_returns</a></code></pre><div class="info"><div class="info"><code class="code">go ?raise_unhandled_exn ()</code> passes control to Async, at which point Async starts
@@ -22,7 +22,7 @@
     initialize the async computation, and that <code class="code">go_main</code> will fail if any async has been
     used prior to <code class="code">go_main</code> being called.  Moreover it allows to configure more static
     options of the scheduler.</div></div>
-<pre><span class="TYPEwith_options"><span class="keyword">type</span> <code class="type">'a </code>with_options</span> = <code class="type">?monitor:<a href="?package=async_unix&amp;module=Import.Monitor&amp;type=t">Import.Monitor.t</a> -&gt; ?priority:<a href="?package=async_unix&amp;module=Import.Priority&amp;type=t">Import.Priority.t</a> -&gt; 'a</code></pre>
+<pre><span class="TYPEwith_options"><span class="keyword">type</span> <code class="type">'a </code>with_options</span> =  <code class="type">?monitor:<a href="?package=async_unix&amp;module=Import.Monitor&amp;type=t">Import.Monitor.t</a> -&gt; ?priority:<a href="?package=async_unix&amp;module=Import.Priority&amp;type=t">Import.Priority.t</a> -&gt; 'a</code></pre>
 <pre><span class="VALwithin_context"><span class="keyword">val</span> within_context</span> : <code class="type"><a href="?package=async_unix&amp;module=Import.Execution_context&amp;type=t">Import.Execution_context.t</a> -&gt; (unit -&gt; 'a) -&gt; ('a, unit) <a href="?package=core&amp;module=Std.Result&amp;type=t">Core.Std.Result.t</a></code></pre><div class="info"><div class="info"><code class="code">within_context context f</code> runs <code class="code">f ()</code> right now with the specified execution
     context.  If <code class="code">f</code> raises, then the exception is sent to the monitor of <code class="code">context</code>, and
     <code class="code">Error ()</code> is returned.</div></div>
@@ -75,7 +75,7 @@
     be recorded in the exception.  In particular the history will appean in an unhandled
     exception that reaches the main monitor.  This can have a substantial performance
     impact, both in running time and space usage.</div></div>
-<pre><code><span class="TYPEfolder"><span class="keyword">type</span> <code class="type">'b </code>folder</span> = {</code></pre><table class="typetable">
+<pre><code><span class="TYPEfolder"><span class="keyword">type</span> <code class="type">'b </code>folder</span> =  {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTfolder.folder">folder</span> : <code class="type">'a. 'b -&gt; <a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a> -&gt; (<a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a>, 'a) <a href="?package=core&amp;module=Std.Field&amp;type=t">Core.Std.Field.t</a> -&gt; 'b</code>;</code></td></tr><tr><td>}</td></tr></table><div class="info"><div class="info"><code class="code">fold_fields ~init folder</code> folds <code class="code">folder</code> over each field in the scheduler.  The
     fields themselves are not exposed -- <code class="code">folder</code> must be a polymorphic function that
     can work on any field.  So, it's only useful for generic operations, e.g. getting

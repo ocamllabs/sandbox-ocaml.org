@@ -5,7 +5,7 @@
         flag &quot;-n&quot; (required int) ~doc:&quot;N number of times to frobnicate&quot;
         ++ anon (args &quot;item&quot; string))
       (fun n items -&gt; ...)</p></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('main_in, 'main_out) </code>t</span> </pre><div class="info"><div class="info"><code class="code">('main_in, 'main_out) t</code> is a type of composable command-line
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('main_in, 'main_out) </code>t</span> =  </pre><div class="info"><div class="info"><code class="code">('main_in, 'main_out) t</code> is a type of composable command-line
     specifications.<p>    Every combinator for building <code class="code">t</code>-values is polymorphic in
     <code class="code">'main_out</code>.  In the final specification expected by <code class="code">cmd</code> used
     to construct a command, <code class="code">'main_out</code> is specialized to <code class="code">unit</code>).
@@ -14,7 +14,7 @@
     embellished with extra information about how to parse command line,
     including documentation about what various flags are for.</p></div></div>
 <div class="info"><div class="info">argument parsing</div></div>
-<pre><span class="TYPEparse"><span class="keyword">type</span> <code class="type">'a </code>parse</span> = <code class="type">string -&gt; 'a</code></pre>
+<pre><span class="TYPEparse"><span class="keyword">type</span> <code class="type">'a </code>parse</span> =  <code class="type">string -&gt; 'a</code></pre>
 <pre><span class="VALstring"><span class="keyword">val</span> string</span> : <code class="type">string <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a></code></pre>
 <pre><span class="VALint"><span class="keyword">val</span> int</span> : <code class="type">int <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a></code></pre>
 <pre><span class="VALfloat"><span class="keyword">val</span> float</span> : <code class="type">float <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a></code></pre>
@@ -22,7 +22,7 @@
 <pre><span class="VALsexp"><span class="keyword">val</span> sexp</span> : <code class="type"><a href="?package=core&amp;module=Std.Sexp&amp;type=t">Core.Std.Sexp.t</a> <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a></code></pre>
 <div class="info"><div class="info">flags</div></div>
 <div class="ocaml_module" name="Flag"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_fcommand.Flag">Flag</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre><div class="info"><div class="info">a flag specification</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre><div class="info"><div class="info">a flag specification</div></div>
 <pre><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_fcommand.Flag&amp;type=t">t</a> -&gt; 'b <a href="?package=core_extended&amp;module=Deprecated_fcommand.Flag&amp;type=t">t</a></code></pre></div></div>
 <pre><span class="VALrequired"><span class="keyword">val</span> required</span> : <code class="type">'a <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a> -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_fcommand.Flag&amp;type=t">Flag.t</a></code></pre>
 <pre><span class="VALoptional"><span class="keyword">val</span> optional</span> : <code class="type">'a <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a> -&gt; 'a option <a href="?package=core_extended&amp;module=Deprecated_fcommand.Flag&amp;type=t">Flag.t</a></code></pre>
@@ -34,7 +34,7 @@
 <pre><span class="VALflag"><span class="keyword">val</span> flag</span> : <code class="type">string -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_fcommand.Flag&amp;type=t">Flag.t</a> -&gt; doc:string -&gt; ('a -&gt; 'm, 'm) <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=t">t</a></code></pre>
 <div class="info"><div class="info">anonymous arguments</div></div>
 <div class="ocaml_module" name="Anons"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Deprecated_fcommand.Anons">Anons</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre><div class="info"><div class="info">anonymous args specification</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre><div class="info"><div class="info">anonymous args specification</div></div>
 <pre><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_fcommand.Anons&amp;type=t">t</a> -&gt; 'b <a href="?package=core_extended&amp;module=Deprecated_fcommand.Anons&amp;type=t">t</a></code></pre></div></div>
 <pre><span class="VAL%:"><span class="keyword">val</span> %:</span> : <code class="type">string -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a> -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_fcommand.Anons&amp;type=t">Anons.t</a></code></pre>
 <pre><span class="VALmany"><span class="keyword">val</span> many</span> : <code class="type">string -&gt; 'a <a href="?package=core_extended&amp;module=Deprecated_fcommand&amp;type=parse">parse</a> -&gt; 'a list <a href="?package=core_extended&amp;module=Deprecated_fcommand.Anons&amp;type=t">Anons.t</a></code></pre>

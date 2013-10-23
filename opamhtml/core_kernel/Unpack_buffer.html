@@ -12,7 +12,7 @@
       unpack&quot; that can be supplied to a future call to <code class="code">unpack_one</code> to continue unpacking.</p><p>      - <code class="code">`Invalid_data</code> -- unpacking encountered an invalidly packed value.</p><p>      A naive <code class="code">unpack_one</code> that only succeeds on a fully packed value could lead to
       quadratic behavior if a packed value's bytes are input using a linear number of
       calls to <code class="code">feed</code>.</p></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('value, 'partial_unpack) </code>t</span> = <code class="type">?partial_unpack:'partial_unpack -&gt;
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('value, 'partial_unpack) </code>t</span> =  <code class="type">?partial_unpack:'partial_unpack -&gt;
 ?pos:int -&gt;
 ?len:int -&gt;
 <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt;
@@ -25,12 +25,12 @@
       data as a 64-bit int, and then writing the data itself.  This encoding makes it
       trivial to know if enough data is available in the buffer, so there is no need to
       represent partially unpacked values, and hence <code class="code">'partial_unpack = unit</code>.</div></div>
-<pre><span class="TYPEpartial_sexp"><span class="keyword">type</span> partial_sexp</span> </pre><div class="info"><div class="info">Beware that when unpacking sexps, one cannot tell if one is at the end of an atom
+<pre><span class="TYPEpartial_sexp"><span class="keyword">type</span> partial_sexp</span> =  </pre><div class="info"><div class="info">Beware that when unpacking sexps, one cannot tell if one is at the end of an atom
       until one hits punctuation.  So, one should always feed a space (&quot; &quot;) to a sexp
       unpack buffer after feeding a batch of complete sexps, to ensure that the final sexp
       is unpacked.</div></div>
 <pre><span class="VALsexp"><span class="keyword">val</span> sexp</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Std_internal.Sexp&amp;type=t">Std_internal.Sexp.t</a>, <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=partial_sexp">partial_sexp</a>) <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=t">t</a></code></pre></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('value, 'partial_unpack) </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('value, 'partial_unpack) </code>t</span> =  </pre>
 <pre><span class="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; unit</code></pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?partial_unpack:'partial_unpack -&gt;
 ('value, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=t">Unpack_one.t</a> -&gt; ('value, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a></code></pre>

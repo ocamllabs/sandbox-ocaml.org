@@ -6,7 +6,7 @@ string -&gt; 'a <a href="?package=react&amp;module=React&amp;type=event">React.e
 <pre><span class="VALs"><span class="keyword">val</span> s</span> : <code class="type">(<a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; 'a -&gt; unit) -&gt;
 string -&gt; 'a <a href="?package=react&amp;module=React&amp;type=signal">React.signal</a> -&gt; 'a <a href="?package=react&amp;module=React&amp;type=signal">React.signal</a></code></pre></div></div>
 <div class="ocaml_module" name="V2"><pre><span class="keyword">module</span> <a href="?package=react&amp;module=Breakout.V2">V2</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALv"><span class="keyword">val</span> v</span> : <code class="type">float -&gt; float -&gt; <a href="?package=react&amp;module=Breakout.V2&amp;type=t">t</a></code></pre>
 <pre><span class="VALo"><span class="keyword">val</span> o</span> : <code class="type"><a href="?package=react&amp;module=Breakout.V2&amp;type=t">t</a></code></pre>
 <pre><span class="VALex"><span class="keyword">val</span> ex</span> : <code class="type"><a href="?package=react&amp;module=Breakout.V2&amp;type=t">t</a></code></pre>
@@ -21,7 +21,7 @@ string -&gt; 'a <a href="?package=react&amp;module=React&amp;type=signal">React.
 <pre><span class="VALto_ints"><span class="keyword">val</span> to_ints</span> : <code class="type"><a href="?package=react&amp;module=Breakout.V2&amp;type=t">t</a> -&gt; int * int</code></pre>
 <pre><span class="VALprint"><span class="keyword">val</span> print</span> : <code class="type"><a href="?package=ocaml&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=react&amp;module=Breakout.V2&amp;type=t">t</a> -&gt; unit</code></pre></div></div>
 <div class="ocaml_module" name="Rect"><pre><span class="keyword">module</span> <a href="?package=react&amp;module=Breakout.Rect">Rect</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="?package=react&amp;module=Breakout.V2&amp;type=t">V2.t</a> -&gt; <a href="?package=react&amp;module=Breakout.V2&amp;type=t">V2.t</a> -&gt; <a href="?package=react&amp;module=Breakout.Rect&amp;type=t">t</a></code></pre>
 <pre><span class="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=react&amp;module=Breakout.Rect&amp;type=t">t</a></code></pre>
 <pre><span class="VALo"><span class="keyword">val</span> o</span> : <code class="type"><a href="?package=react&amp;module=Breakout.Rect&amp;type=t">t</a> -&gt; <a href="?package=react&amp;module=Breakout.V2&amp;type=t">V2.t</a></code></pre>
@@ -45,7 +45,7 @@ string -&gt; 'a <a href="?package=react&amp;module=React&amp;type=signal">React.
 <pre><span class="VALkey"><span class="keyword">val</span> key</span> : <code class="type">char <a href="?package=react&amp;module=React&amp;type=event">React.event</a></code></pre>
 <pre><span class="VALgather"><span class="keyword">val</span> gather</span> : <code class="type">unit -&gt; unit</code></pre></div></div>
 <div class="ocaml_module" name="Game"><pre><span class="keyword">module</span> <a href="?package=react&amp;module=Breakout.Game">Game</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="?package=react&amp;module=Breakout.Rect&amp;type=t">Rect.t</a> -&gt; float <a href="?package=react&amp;module=React&amp;type=event">React.event</a> -&gt; [ `Left | `Right ] <a href="?package=react&amp;module=React&amp;type=event">React.event</a> -&gt; <a href="?package=react&amp;module=Breakout.Game&amp;type=t">t</a></code></pre>
 <pre><span class="VALwalls"><span class="keyword">val</span> walls</span> : <code class="type"><a href="?package=react&amp;module=Breakout.Game&amp;type=t">t</a> -&gt; <a href="?package=react&amp;module=Breakout.Rect&amp;type=t">Rect.t</a></code></pre>
 <pre><span class="VALball"><span class="keyword">val</span> ball</span> : <code class="type"><a href="?package=react&amp;module=Breakout.Game&amp;type=t">t</a> -&gt; <a href="?package=react&amp;module=Breakout.Rect&amp;type=t">Rect.t</a> <a href="?package=react&amp;module=React&amp;type=signal">React.signal</a></code></pre>

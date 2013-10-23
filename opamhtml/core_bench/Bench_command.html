@@ -1,7 +1,7 @@
 <div class="ocaml_toplevel_module">
 <div class="ocaml_module" name="Ascii_table" path="?package=textutils&amp;module=Ascii_table"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench_command.Ascii_table">Ascii_table</a> : <code class="type"><code class="code"><a href="?package=textutils&amp;module=Ascii_table">Textutils.Ascii_table</a></code></code></pre></div>
 <div class="ocaml_module" name="Variable" path="?package=core_bench&amp;module=Test_metrics.Variable"><pre><span class="keyword">module</span> <a href="?package=core_bench&amp;module=Bench_command.Variable">Variable</a> : <code class="type"><code class="code"><a href="?package=core_bench&amp;module=Test_metrics.Variable">Test_metrics.Variable</a></code></code></pre></div>
-<pre><span class="TYPEcallback_bench"><span class="keyword">type</span> callback_bench</span> = <code class="type">?limit_width_to:int -&gt;
+<pre><span class="TYPEcallback_bench"><span class="keyword">type</span> callback_bench</span> =  <code class="type">?limit_width_to:int -&gt;
 ?columns:[ `Allocated
          | `Confidence
          | `Cycles
@@ -23,7 +23,7 @@
 ?sampling_type:[ `Geometric of float | `Linear of int ] -&gt;
 ?stabilize_gc_between_runs:bool -&gt;
 ?fork_each_benchmark:bool -&gt; <a href="?package=core_bench&amp;module=Test&amp;type=t">Test.t</a> list -&gt; unit</code></pre>
-<pre><span class="TYPEcallback_analyze"><span class="keyword">type</span> callback_analyze</span> = <code class="type">?limit_width_to:int -&gt;
+<pre><span class="TYPEcallback_analyze"><span class="keyword">type</span> callback_analyze</span> =  <code class="type">?limit_width_to:int -&gt;
 ?columns:[ `Allocated
          | `Confidence
          | `Cycles

@@ -2,7 +2,7 @@
     be safer than just using <code class="code">Unix.system</code> because it handles errors more
     strictly.</p></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Process handling </h6></div></div>
-<pre><span class="TYPEwith_process_flags"><span class="keyword">type</span> <code class="type">'a </code>with_process_flags</span> = <code class="type">?use_extra_path:bool -&gt;
+<pre><span class="TYPEwith_process_flags"><span class="keyword">type</span> <code class="type">'a </code>with_process_flags</span> =  <code class="type">?use_extra_path:bool -&gt;
 ?timeout:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> option -&gt;
 ?working_dir:string -&gt;
 ?setuid:int -&gt;
@@ -16,7 +16,7 @@
      do any IO for this period of time</li><li><code class="code">working_dir</code> : run the command in this directory</li><li><code class="code">verbose</code> : prints the output of the command</li><li><code class="code">echo</code> : print out the command before running it</li><li><code class="code">input</code> : a string to pipe through the program's standard in</li><li><code class="code">export</code> : a list of variable to export in the environement of the
    dispatched programm
 </li></ul></div></div>
-<pre><span class="TYPEwith_run_flags"><span class="keyword">type</span> <code class="type">'a </code>with_run_flags</span> = <code class="type">?expect:int list -&gt; 'a <a href="?package=core_extended&amp;module=Shell&amp;type=with_process_flags">with_process_flags</a></code></pre><div class="info"><div class="info">This is the list of flags for normal process dispatch. It is an extension of
+<pre><span class="TYPEwith_run_flags"><span class="keyword">type</span> <code class="type">'a </code>with_run_flags</span> =  <code class="type">?expect:int list -&gt; 'a <a href="?package=core_extended&amp;module=Shell&amp;type=with_process_flags">with_process_flags</a></code></pre><div class="info"><div class="info">This is the list of flags for normal process dispatch. It is an extension of
    <code class="code">with_process_flags</code>.<p>   - <code class="code">expect</code> : an int list of valid return codes. default value is <code class="code">[0]</code>, if
    the return code of the dispatched is not in this list we will blowup with
    <code class="code">Process.Failure</code></p></div></div>
@@ -28,7 +28,7 @@
     </p><pre class="code"><code>
     let patch = run_full ~expect:[0;1] &quot;diff&quot; [&quot;-u&quot;;&quot;--&quot;;file1;file2]
     </code></pre></div></div>
-<pre><span class="TYPEcmd"><span class="keyword">type</span> <code class="type">'a </code>cmd</span> = <code class="type">string -&gt; string list -&gt; 'a</code></pre>
+<pre><span class="TYPEcmd"><span class="keyword">type</span> <code class="type">'a </code>cmd</span> =  <code class="type">string -&gt; string list -&gt; 'a</code></pre>
 <pre><span class="VALrun"><span class="keyword">val</span> run</span> : <code class="type">unit <a href="?package=core_extended&amp;module=Shell&amp;type=cmd">cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a></code></pre><div class="info"><div class="info">Runs a command and discards its output.</div></div>
 <pre><span class="VALrun_lines"><span class="keyword">val</span> run_lines</span> : <code class="type">?eol:char -&gt; string list <a href="?package=core_extended&amp;module=Shell&amp;type=cmd">cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a></code></pre><div class="info"><div class="info">Runs a command and returns its output line separated. Note: most commands
     print a newline at the end of their output so the shell prompt appears on
@@ -54,7 +54,7 @@ f:('a -&gt; string -&gt; 'a * [ `Continue | `Stop ]) -&gt; 'a <a href="?package=
 </code></pre><p>    In general it is recommended to avoid using those too much and to prefer the
     run* family of function instead because it avoids pitfall like escaping
     issues and is much more straightforward to think about.</p></div></div>
-<pre><span class="TYPEsh_cmd"><span class="keyword">type</span> <code class="type">('a, 'ret) </code>sh_cmd</span> = <code class="type">('a, unit, string, 'ret) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre>
+<pre><span class="TYPEsh_cmd"><span class="keyword">type</span> <code class="type">('a, 'ret) </code>sh_cmd</span> =  <code class="type">('a, unit, string, 'ret) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre>
 <pre><span class="VALsh"><span class="keyword">val</span> sh</span> : <code class="type">('a, unit) <a href="?package=core_extended&amp;module=Shell&amp;type=sh_cmd">sh_cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a></code></pre>
 <pre><span class="VALsh_lines"><span class="keyword">val</span> sh_lines</span> : <code class="type">('a, string list) <a href="?package=core_extended&amp;module=Shell&amp;type=sh_cmd">sh_cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a></code></pre>
 <pre><span class="VALsh_full"><span class="keyword">val</span> sh_full</span> : <code class="type">('a, string) <a href="?package=core_extended&amp;module=Shell&amp;type=sh_cmd">sh_cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a></code></pre>
@@ -62,7 +62,7 @@ f:('a -&gt; string -&gt; 'a * [ `Continue | `Stop ]) -&gt; 'a <a href="?package=
 <pre><span class="VALsh_one_exn"><span class="keyword">val</span> sh_one_exn</span> : <code class="type">('a, string) <a href="?package=core_extended&amp;module=Shell&amp;type=sh_cmd">sh_cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a></code></pre>
 <pre><span class="VALnoninteractive_ssh_options"><span class="keyword">val</span> noninteractive_ssh_options</span> : <code class="type">string list</code></pre>
 <pre><span class="VALnoninteractive_no_hostkey_checking_options"><span class="keyword">val</span> noninteractive_no_hostkey_checking_options</span> : <code class="type">string list</code></pre>
-<pre><span class="TYPEwith_ssh_flags"><span class="keyword">type</span> <code class="type">'a </code>with_ssh_flags</span> = <code class="type">?ssh_options:string list -&gt; ?user:string -&gt; host:string -&gt; 'a</code></pre>
+<pre><span class="TYPEwith_ssh_flags"><span class="keyword">type</span> <code class="type">'a </code>with_ssh_flags</span> =  <code class="type">?ssh_options:string list -&gt; ?user:string -&gt; host:string -&gt; 'a</code></pre>
 <pre><span class="VALssh"><span class="keyword">val</span> ssh</span> : <code class="type">('a, unit) <a href="?package=core_extended&amp;module=Shell&amp;type=sh_cmd">sh_cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_ssh_flags">with_ssh_flags</a></code></pre>
 <pre><span class="VALssh_lines"><span class="keyword">val</span> ssh_lines</span> : <code class="type">('a, string list) <a href="?package=core_extended&amp;module=Shell&amp;type=sh_cmd">sh_cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_ssh_flags">with_ssh_flags</a></code></pre>
 <pre><span class="VALssh_full"><span class="keyword">val</span> ssh_full</span> : <code class="type">('a, string) <a href="?package=core_extended&amp;module=Shell&amp;type=sh_cmd">sh_cmd</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_run_flags">with_run_flags</a> <a href="?package=core_extended&amp;module=Shell&amp;type=with_ssh_flags">with_ssh_flags</a></code></pre>
@@ -73,7 +73,7 @@ f:('a -&gt; string -&gt; 'a * [ `Continue | `Stop ]) -&gt; 'a <a href="?package=
     if Shell.test &quot;diff&quot; [&quot;-q&quot;;&quot;--&quot;;file1;file2] then
        Printf.printf &quot;Files %S and %S are the same\n%!&quot; file1 file2;
 </code></pre></div></div>
-<pre><span class="TYPEwith_test_flags"><span class="keyword">type</span> <code class="type">'a </code>with_test_flags</span> = <code class="type">?true_v:int list -&gt; ?false_v:int list -&gt; 'a <a href="?package=core_extended&amp;module=Shell&amp;type=with_process_flags">with_process_flags</a></code></pre><div class="info"><div class="info">This is the list of flags for dispatching processes in test mode. This is
+<pre><span class="TYPEwith_test_flags"><span class="keyword">type</span> <code class="type">'a </code>with_test_flags</span> =  <code class="type">?true_v:int list -&gt; ?false_v:int list -&gt; 'a <a href="?package=core_extended&amp;module=Shell&amp;type=with_process_flags">with_process_flags</a></code></pre><div class="info"><div class="info">This is the list of flags for dispatching processes in test mode. This is
     used to test the return code of the dispatched program. The return value of
     these functions will be :<ul><li><code class="code">true</code> if the exit code is in <code class="code">true_v</code>.</li><li><code class="code">false</code> if the exit code is in <code class="code">false_v</code> and not in <code class="code">true_v</code>.</li><li>Raises <code class="code">Process.Failure</code> otherwise</li></ul>    The default values are:<ul><li><code class="code">true_v</code>: default value <code class="code">[0]</code></li><li><code class="code">false_v</code>: default_value <code class="code">[1]</code>
 </li></ul></div></div>
@@ -84,12 +84,12 @@ f:('a -&gt; string -&gt; 'a * [ `Continue | `Stop ]) -&gt; 'a <a href="?package=
     The default values contains only directory which should be in PATH and is
     only useful in environments where the PATH variable has been blown away.</div></div>
 <div class="ocaml_module" name="Process"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Shell.Process">Process</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Process dispatching</div></div><div class="ocaml_content">
-<pre><span class="TYPEstatus"><span class="keyword">type</span> status</span> = <code class="type">[ `Exited of int
+<pre><span class="TYPEstatus"><span class="keyword">type</span> status</span> =  <code class="type">[ `Exited of int
 | `Signaled of <a href="?package=core&amp;module=Std.Signal&amp;type=t">Core.Std.Signal.t</a>
 | `Timeout of <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> ]</code></pre><div class="info"><div class="info">The termination status of a process.
       This is an extension of <code class="code">Unix.Process_status.t</code> to allow timeouts.</div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
-<pre><code><span class="TYPEresult"><span class="keyword">type</span> result</span> = {</code></pre><table class="typetable">
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
+<pre><code><span class="TYPEresult"><span class="keyword">type</span> result</span> =  {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTresult.command">command</span> : <code class="type"><a href="?package=core_extended&amp;module=Shell.Process&amp;type=t">t</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTresult.status">status</span> : <code class="type"><a href="?package=core_extended&amp;module=Shell.Process&amp;type=status">status</a></code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTresult.stdout">stdout</span> : <code class="type">string</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTresult.stderr">stderr</span> : <code class="type">string</code>;</code></td></tr><tr><td>}</td></tr></table>
 <pre><span class="EXCEPTIONFailed"><span class="keyword">exception</span> Failed</span> <span class="keyword">of</span> <code class="type"><a href="?package=core_extended&amp;module=Shell.Process&amp;type=result">result</a></code></pre>
 <pre><span class="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core_extended&amp;module=Shell.Process&amp;type=t">t</a> -&gt; string</code></pre>
@@ -103,7 +103,7 @@ f:('a -&gt; string -&gt; 'a * [ `Continue | `Stop ]) -&gt; 'a <a href="?package=
 ?quote_args:bool -&gt; ?user:string -&gt; host:string -&gt; string list -&gt; <a href="?package=core_extended&amp;module=Shell.Process&amp;type=t">t</a></code></pre>
 <pre><span class="VALremote"><span class="keyword">val</span> remote</span> : <code class="type">?ssh_options:string list -&gt;
 ?quote_args:bool -&gt; ?user:string -&gt; host:string -&gt; <a href="?package=core_extended&amp;module=Shell.Process&amp;type=t">t</a> -&gt; <a href="?package=core_extended&amp;module=Shell.Process&amp;type=t">t</a></code></pre>
-<pre><span class="TYPEreader"><span class="keyword">type</span> <code class="type">'a </code>reader</span> </pre>
+<pre><span class="TYPEreader"><span class="keyword">type</span> <code class="type">'a </code>reader</span> =  </pre>
 <pre><span class="VALcontent"><span class="keyword">val</span> content</span> : <code class="type">string <a href="?package=core_extended&amp;module=Shell.Process&amp;type=reader">reader</a></code></pre>
 <pre><span class="VALcontent_and_stderr"><span class="keyword">val</span> content_and_stderr</span> : <code class="type">(string * string) <a href="?package=core_extended&amp;module=Shell.Process&amp;type=reader">reader</a></code></pre>
 <pre><span class="VALdiscard"><span class="keyword">val</span> discard</span> : <code class="type">unit <a href="?package=core_extended&amp;module=Shell.Process&amp;type=reader">reader</a></code></pre>

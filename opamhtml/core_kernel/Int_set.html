@@ -2,7 +2,7 @@
     such as adding and membership are O(n) where n is the number of contigous ranges in
     the set. For data that is mostly serial, n should remain very small.<p>    Note that when n gets very large, in addition to poor performance, this behavior may
     throw exceptions since some of the code is not tail-recursive.</p></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a></code></pre>
 <pre><span class="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; string</code></pre>
 <pre><span class="VALadd_range"><span class="keyword">val</span> add_range</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; int -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">add_range t i j</code> add all the numbers between <code class="code">i</code> and <code class="code">j</code> (inclusive) to the set. Note

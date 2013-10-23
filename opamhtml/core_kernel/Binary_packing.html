@@ -1,7 +1,7 @@
 <div class="ocaml_toplevel_module"><div class="info">Packs and unpacks various types of integers into and from strings.<p>   Functions ending in _int should not be used on 32 bit programs because native ocaml
    ints will not be big enough.</p><p>   <code class="code">pos</code> arguments refer to the location in the buf string.</p><p>   We support big and little endian ints.  Note that for an 8 bit (1 byte) integer, there
    is no difference because endian-ness only changes the order of bytes, not bits.</p></div>
-<pre><span class="TYPEendian"><span class="keyword">type</span> endian</span> = <code class="type">[ `Big_endian | `Little_endian ]</code></pre>
+<pre><span class="TYPEendian"><span class="keyword">type</span> endian</span> =  <code class="type">[ `Big_endian | `Little_endian ]</code></pre>
 <pre><span class="VALunpack_signed_8"><span class="keyword">val</span> unpack_signed_8</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
 <pre><span class="VALpack_signed_8"><span class="keyword">val</span> pack_signed_8</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
 <pre><span class="VALunpack_unsigned_8"><span class="keyword">val</span> unpack_unsigned_8</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>

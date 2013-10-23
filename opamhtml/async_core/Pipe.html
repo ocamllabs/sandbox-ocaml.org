@@ -9,18 +9,18 @@
     handed to the reader.</p><p>    One can use <code class="code">downstream_flushed</code> to get notified by a pipe when all prior writes have
     been consumed by a reader.</p><p>    There are distinct <code class="code">Reader</code> and <code class="code">Writer</code> modules and types, but all of the operations
     on readers and writers are available directly from the <code class="code">Pipe</code> module.</p></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'phantom) </code>t</span> </pre>
-<pre><span class="TYPEpipe"><span class="keyword">type</span> <code class="type">('a, 'phantom) </code>pipe</span> = <code class="type">('a, 'phantom) <a href="?package=async_core&amp;module=Pipe&amp;type=t">t</a></code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'phantom) </code>t</span> =  </pre>
+<pre><span class="TYPEpipe"><span class="keyword">type</span> <code class="type">('a, 'phantom) </code>pipe</span> =  <code class="type">('a, 'phantom) <a href="?package=async_core&amp;module=Pipe&amp;type=t">t</a></code></pre>
 <div class="info"><div class="info"><h1 id="1_TITLE">Reader and Writer modules</h1></div></div>
 <div class="info"><div class="info">These provide reader- and writer-specific types for the base pipe type.</div></div>
 <div class="ocaml_module" name="Writer"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Pipe.Writer">Writer</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEphantom"><span class="keyword">type</span> phantom</span> </pre>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">('a, <a href="?package=async_core&amp;module=Pipe.Writer&amp;type=phantom">phantom</a>) <a href="?package=async_core&amp;module=Pipe&amp;type=pipe">pipe</a></code></pre>
+<pre><span class="TYPEphantom"><span class="keyword">type</span> phantom</span> =  </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  <code class="type">('a, <a href="?package=async_core&amp;module=Pipe.Writer&amp;type=phantom">phantom</a>) <a href="?package=async_core&amp;module=Pipe&amp;type=pipe">pipe</a></code></pre>
 <pre><span class="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type">'a <a href="?package=async_core&amp;module=Pipe.Writer&amp;type=t">t</a> -&gt; unit</code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Pipe.Writer&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <div class="ocaml_module" name="Reader"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Pipe.Reader">Reader</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEphantom"><span class="keyword">type</span> phantom</span> </pre>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">('a, <a href="?package=async_core&amp;module=Pipe.Reader&amp;type=phantom">phantom</a>) <a href="?package=async_core&amp;module=Pipe&amp;type=pipe">pipe</a></code></pre>
+<pre><span class="TYPEphantom"><span class="keyword">type</span> phantom</span> =  </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  <code class="type">('a, <a href="?package=async_core&amp;module=Pipe.Reader&amp;type=phantom">phantom</a>) <a href="?package=async_core&amp;module=Pipe&amp;type=pipe">pipe</a></code></pre>
 <pre><span class="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type">'a <a href="?package=async_core&amp;module=Pipe.Reader&amp;type=t">t</a> -&gt; unit</code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Pipe.Reader&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <div class="info"><div class="info"><h1 id="1_TITLE">Creation</h1></div></div>
@@ -42,7 +42,7 @@
     is called.</div></div>
 <div class="info"><div class="info"><h1 id="1_TITLE">Flushing</h1></div></div>
 <div class="ocaml_module" name="Flushed_result"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Pipe.Flushed_result">Flushed_result</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Ok | `Reader_closed ]</code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type">[ `Ok | `Reader_closed ]</code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_core&amp;module=Pipe.Flushed_result&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <pre><span class="VALupstream_flushed"><span class="keyword">val</span> upstream_flushed</span> : <code class="type">('a, 'b) <a href="?package=async_core&amp;module=Pipe&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Pipe.Flushed_result&amp;type=t">Flushed_result.t</a> <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a></code></pre><div class="info"><div class="info">Deferreds returned by <code class="code">upstream_flushed</code> and <code class="code">downstream_flushed</code> become determined
     when all values written prior to the call have been consumed, or if the reader end of
@@ -64,7 +64,7 @@
     flush functions using <code class="code">Consumer</code>, see below.</p></div></div>
 <pre><span class="VALdownstream_flushed"><span class="keyword">val</span> downstream_flushed</span> : <code class="type">('a, 'b) <a href="?package=async_core&amp;module=Pipe&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Pipe.Flushed_result&amp;type=t">Flushed_result.t</a> <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a></code></pre>
 <div class="ocaml_module" name="Consumer"><pre><span class="keyword">module</span> <a href="?package=async_core&amp;module=Pipe.Consumer">Consumer</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">A <code class="code">Consumer</code> is used to augment our notion of flushing (<code class="code">Pipe.upstream_flushed</code> and
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">A <code class="code">Consumer</code> is used to augment our notion of flushing (<code class="code">Pipe.upstream_flushed</code> and
       <code class="code">Pipe.downstream_flushed</code>) to include the time spent processing an element once it
       has been removed from the pipe.  It can be thought of as sitting at the end of a
       pipe, or between two pipes, and it provides more detailed feedback on the time an
@@ -217,7 +217,7 @@ num_values:int -&gt;
     which handles an element at a time in a non-deferred way.  In the batch version, <code class="code">f</code>
     deals with a queue of elements from the pipe at a time, and can block, which will
     cause pushback on writers due to elements not being consumed. </p></li></ul></div></div>
-<pre><span class="TYPEfold"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'accum) </code>fold</span> = <code class="type">?consumer:<a href="?package=async_core&amp;module=Pipe.Consumer&amp;type=t">Consumer.t</a> -&gt;
+<pre><span class="TYPEfold"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'accum) </code>fold</span> =  <code class="type">?consumer:<a href="?package=async_core&amp;module=Pipe.Consumer&amp;type=t">Consumer.t</a> -&gt;
 'a <a href="?package=async_core&amp;module=Pipe.Reader&amp;type=t">Reader.t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'b -&gt; 'c) -&gt; 'accum <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a></code></pre><div class="info"><div class="info"><code class="code">fold' reader ~init ~f</code> reads a batch of elements from <code class="code">reader</code>, supplies them to <code class="code">f</code>,
     waits for <code class="code">f</code> to finish, and then repeats.  <code class="code">fold'</code> finishes when the call to <code class="code">f</code> on
     the final batch of elements from <code class="code">reader</code> finishes.<p>    <code class="code">fold reader ~init ~f</code> folds over the elements of <code class="code">reader</code>, consuming them as they
@@ -226,7 +226,7 @@ num_values:int -&gt;
 <pre><span class="VALfold'"><span class="keyword">val</span> fold'</span> : <code class="type">('a, 'a <a href="?package=core&amp;module=Std.Queue&amp;type=t">Core.Std.Queue.t</a>, 'accum <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a>, 'accum) <a href="?package=async_core&amp;module=Pipe&amp;type=fold">fold</a></code></pre>
 <pre><span class="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a, 'a, 'accum <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a>, 'accum) <a href="?package=async_core&amp;module=Pipe&amp;type=fold">fold</a></code></pre>
 <pre><span class="VALfold_without_pushback"><span class="keyword">val</span> fold_without_pushback</span> : <code class="type">('a, 'a, 'accum, 'accum) <a href="?package=async_core&amp;module=Pipe&amp;type=fold">fold</a></code></pre>
-<pre><span class="TYPEiter"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>iter</span> = <code class="type">?consumer:<a href="?package=async_core&amp;module=Pipe.Consumer&amp;type=t">Consumer.t</a> -&gt;
+<pre><span class="TYPEiter"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>iter</span> =  <code class="type">?consumer:<a href="?package=async_core&amp;module=Pipe.Consumer&amp;type=t">Consumer.t</a> -&gt;
 ?continue_on_error:bool -&gt; 'a <a href="?package=async_core&amp;module=Pipe.Reader&amp;type=t">Reader.t</a> -&gt; f:('b -&gt; 'c) -&gt; unit <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a></code></pre><div class="info"><div class="info"><code class="code">iter' reader ~f</code> repeatedly applies <code class="code">f</code> to batches of elements of <code class="code">reader</code>, waiting
     for each call to <code class="code">f</code> to finish before continuing.  The deferred returned by <code class="code">iter'</code>
     becomes determined when the call to <code class="code">f</code> on the final batch of elements finishes.<p>    <code class="code">iter</code> is a specialization of <code class="code">iter'</code> that applies the supplied <code class="code">f</code> to each element in

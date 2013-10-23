@@ -11,7 +11,7 @@
    sub-document occupies.</p><p>   A document of type <code class="code">t</code> can be very small entity like a single word.
    Functions combine small documents to larger ones which then can be pretty
    printed.</p><div class="authors"><b>Author(s): </b><span class="author">Christian Lindig</span><span class="author">Till Varoquaux</span></div><div class="see"><b>See also</b> <ul>  <li> <a href="http://legacy.cs.uu.nl/daan/download/pprint/pprint.html">PPrint.</a></li></ul></div></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=core_extended&amp;module=Pp&amp;type=t">t</a></code></pre><div class="info"><div class="info">The empty document is pretty printed to the empty string. Typically <code class="code">empty</code>
 is used in one branch of an <code class="code">if</code> statement.</div></div>
 <pre><span class="VAL$"><span class="keyword">val</span> $</span> : <code class="type"><a href="?package=core_extended&amp;module=Pp&amp;type=t">t</a> -&gt; <a href="?package=core_extended&amp;module=Pp&amp;type=t">t</a> -&gt; <a href="?package=core_extended&amp;module=Pp&amp;type=t">t</a></code></pre><div class="info"><div class="info">The infix operator <code class="code">x $ y</code> concatenates two documents <code class="code">x</code> and <code class="code">y</code> into a

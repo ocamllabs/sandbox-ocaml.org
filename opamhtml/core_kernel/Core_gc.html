@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info">Memory management control and statistics; finalised values.</div>
 <div class="ocaml_module" name="Stat"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_gc.Stat">Stat</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> =  {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.minor_words">minor_words</span> : <code class="type">float</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">Number of words allocated in the minor heap since
        the program was started.  This number is accurate in
        byte-code programs, but only an approximation in programs
@@ -239,13 +239,13 @@ stack_size:('acc__ -&gt; (<a href="?package=core_kernel&amp;module=Core_gc.Stat&
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Stat&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Stat&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Stat&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre></div></div>
-<pre><span class="TYPEstat"><span class="keyword">type</span> stat</span> = <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Stat&amp;type=t">Stat.t</a></code></pre>
+<pre><span class="TYPEstat"><span class="keyword">type</span> stat</span> =  <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Stat&amp;type=t">Stat.t</a></code></pre>
 <div class="info"><div class="info">The memory management counters are returned in a <code class="code">stat</code> record.<p>   The total amount of memory allocated by the program since it was started
    is (in words) <code class="code">minor_words + major_words - promoted_words</code>.  Multiply by
    the word size (4 on a 32-bit machine, 8 on a 64-bit machine) to get
    the number of bytes.</p></div></div>
 <div class="ocaml_module" name="Control"><pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_gc.Control">Control</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> =  {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.minor_heap_size">minor_heap_size</span> : <code class="type">int</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">The size (in words) of the minor heap.  Changing
        this parameter will trigger a minor collection.  Default: 1M.</div></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.major_heap_increment">major_heap_increment</span> : <code class="type">int</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">The minimum number of words to add to the
        major heap when increasing it.  Default: 1M.</div></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span class="TYPEELTt.space_overhead">space_overhead</span> : <code class="type">int</code>;</code></td><td class="typefieldcomment" align="left"><div class="info">The major GC speed is computed from this parameter.
@@ -389,7 +389,7 @@ allocation_policy:('acc__ -&gt; (<a href="?package=core_kernel&amp;module=Core_g
 <pre><span class="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Control&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
 <pre><span class="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Control&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
 <pre><span class="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Control&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre></div></div>
-<pre><span class="TYPEcontrol"><span class="keyword">type</span> control</span> = <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Control&amp;type=t">Control.t</a></code></pre>
+<pre><span class="TYPEcontrol"><span class="keyword">type</span> control</span> =  <code class="type"><a href="?package=core_kernel&amp;module=Core_gc.Control&amp;type=t">Control.t</a></code></pre>
 <div class="info"><div class="info">The GC parameters are given as a <code class="code">control</code> record.
     Note that these parameters can also be initialised
     by setting the OCAMLRUNPARAM environment variable.
@@ -427,7 +427,7 @@ allocation_policy:('acc__ -&gt; (<a href="?package=core_kernel&amp;module=Core_g
 <pre><span class="VALallocated_bytes"><span class="keyword">val</span> allocated_bytes</span> : <code class="type">unit -&gt; float</code></pre><div class="info"><div class="info">Return the total number of bytes allocated since the program was
    started.  It is returned as a <code class="code">float</code> to avoid overflow problems
    with <code class="code">int</code> on 32-bit machines.</div></div>
-<pre><span class="TYPEalarm"><span class="keyword">type</span> alarm</span> </pre><div class="info"><div class="info">An alarm is a piece of data that calls a user function at the end of
+<pre><span class="TYPEalarm"><span class="keyword">type</span> alarm</span> =  </pre><div class="info"><div class="info">An alarm is a piece of data that calls a user function at the end of
    each major GC cycle.  The following functions are provided to create
    and delete alarms.</div></div>
 <pre><span class="VALcreate_alarm"><span class="keyword">val</span> create_alarm</span> : <code class="type">(unit -&gt; unit) -&gt; <a href="?package=core_kernel&amp;module=Core_gc&amp;type=alarm">alarm</a></code></pre><div class="info"><div class="info"><code class="code">create_alarm f</code> will arrange for <code class="code">f</code> to be called at the end of each

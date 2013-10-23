@@ -2,7 +2,7 @@
    provides accumulative concatenation of strings in quasi-linear time (instead of
    quadratic time when strings are concatenated pairwise).</p><p>   This implementation uses Bigstrings instead of strings.  This removes the 16MB limit on
    buffer size, and improves I/O-performance when reading/writing from/to channels.</p></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Bigbuffer&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">create n</code> returns a fresh buffer, initially empty.
    The <code class="code">n</code> parameter is the initial size of the internal string
    that holds the buffer contents. That string is automatically

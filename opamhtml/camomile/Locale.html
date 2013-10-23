@@ -3,7 +3,7 @@
    &quot;&lt;LANG&gt;_&lt;COUNTRY&gt;_&lt;MODIFIER&gt;...&quot; where &lt;LANG&gt; is 
    a 2-letter ISO 639 language code, &lt;COUNTRY&gt; is a 2-letter ISO 3166
    country code.  Some field may not present.</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">string</code></pre><div class="info"><div class="info">Type of locales.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type">string</code></pre><div class="info"><div class="info">Type of locales.</div></div>
 <pre><span class="VALread"><span class="keyword">val</span> read</span> : <code class="type">string -&gt; string -&gt; (<a href="?package=ocaml&amp;module=Pervasives&amp;type=in_channel">Pervasives.in_channel</a> -&gt; 'a) -&gt; string -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">read root suffix reader locale</code>
    reads locale information using <code class="code">reader</code>.  
    Locale data is supposed to reside in <code class="code">root</code> directory with 

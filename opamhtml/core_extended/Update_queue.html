@@ -12,7 +12,7 @@
     )</code></pre><p>    At the end of this, <code class="code">!x</code> would be 1.</p><p>    Another feature is that the initial value does not have to be specified at creation.
     If it is not, enqueued updates will be kept around until an initial value is specified
     with <code class="code">init</code>.</p></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('perm, 'state) </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('perm, 'state) </code>t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?init:'state -&gt; unit -&gt; ('a, 'state) <a href="?package=core_extended&amp;module=Update_queue&amp;type=t">t</a></code></pre>
 <pre><span class="VALinit"><span class="keyword">val</span> init</span> : <code class="type">(<a href="?package=core&amp;module=Std&amp;type=read_write">Core.Std.read_write</a>, 'state) <a href="?package=core_extended&amp;module=Update_queue&amp;type=t">t</a> -&gt; 'state -&gt; unit</code></pre>
 <pre><span class="VALenqueue"><span class="keyword">val</span> enqueue</span> : <code class="type">(<a href="?package=core&amp;module=Std&amp;type=read_write">Core.Std.read_write</a>, 'state) <a href="?package=core_extended&amp;module=Update_queue&amp;type=t">t</a> -&gt; ('state -&gt; 'state) -&gt; unit</code></pre>

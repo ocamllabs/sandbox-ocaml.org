@@ -2,9 +2,9 @@
 <div class="info"><div class="info">NOTE: these functions are not supposed to be called by the casual
     user.  They are required by automatically generated code, or if a
     developer really needs to get down and dirty for performance reasons.<p>    USE WITH CAUTION!</p></div></div>
-<pre><span class="TYPEsptr"><span class="keyword">type</span> sptr</span> </pre><div class="info"><div class="info">Type of start pointers</div></div>
-<pre><span class="TYPEeptr"><span class="keyword">type</span> eptr</span> </pre><div class="info"><div class="info">Type of end pointers</div></div>
-<pre><span class="TYPEsptr_ptr"><span class="keyword">type</span> sptr_ptr</span> </pre><div class="info"><div class="info">Type of pointers to start pointers</div></div>
+<pre><span class="TYPEsptr"><span class="keyword">type</span> sptr</span> =  </pre><div class="info"><div class="info">Type of start pointers</div></div>
+<pre><span class="TYPEeptr"><span class="keyword">type</span> eptr</span> =  </pre><div class="info"><div class="info">Type of end pointers</div></div>
+<pre><span class="TYPEsptr_ptr"><span class="keyword">type</span> sptr_ptr</span> =  </pre><div class="info"><div class="info">Type of pointers to start pointers</div></div>
 <pre><span class="VALget_sptr"><span class="keyword">val</span> get_sptr</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> -&gt; pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Common.pos</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">sptr</a></code></pre><div class="info"><div class="info"><code class="code">get_sptr buf ~pos</code> <b>Returns</b> a start pointer given buffer <code class="code">buf</code>
     and start position <code class="code">pos</code>.</div></div>
 <pre><span class="VALget_eptr"><span class="keyword">val</span> get_eptr</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> -&gt; pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Common.pos</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">eptr</a></code></pre><div class="info"><div class="info"><code class="code">get_eptr buf ~pos</code> <b>Returns</b> an end pointer given buffer <code class="code">buf</code>

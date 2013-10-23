@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info">A handler is a continuation that captures the current async execution context.  It can
     be scheduled for future invocation by installing it in a deferred.</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('a -&gt; unit) -&gt; 'a <a href="?package=async_core&amp;module=Handler&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">create k</code> creates a handler by coupling the continuation <code class="code">k</code> together with the
     evaluation context that is current at the time <code class="code">create</code> is called.  Whenever this
     handler is later invoked, it will happen in this saved evaluation context.</div></div>

@@ -10,15 +10,15 @@
    in {...} notations.  Any is used to denote the set of all characters
    in {...} notations.</li></ul></div>
 <div class="ocaml_modtype" name="Interface"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UReStr:Interface">Interface</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEregexp"><span class="keyword">type</span> regexp</span> = <code class="type"><a href="?package=camomile&amp;module=URe&amp;type=regexp">URe.regexp</a></code></pre>
+<pre><span class="TYPEregexp"><span class="keyword">type</span> regexp</span> =  <code class="type"><a href="?package=camomile&amp;module=URe&amp;type=regexp">URe.regexp</a></code></pre>
 <div class="info"><div class="info">Theses functions are similar to Str.</div></div>
 <pre><span class="VALregexp"><span class="keyword">val</span> regexp</span> : <code class="type">string -&gt; <a href="?package=camomile&amp;module=UReStr:Interface&amp;type=regexp">regexp</a></code></pre>
 <pre><span class="VALquote"><span class="keyword">val</span> quote</span> : <code class="type">string -&gt; string</code></pre>
 <pre><span class="VALregexp_string"><span class="keyword">val</span> regexp_string</span> : <code class="type">string -&gt; <a href="?package=camomile&amp;module=UReStr:Interface&amp;type=regexp">regexp</a></code></pre>
 <div class="ocaml_modtype" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UReStr:Interface:Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEtext"><span class="keyword">type</span> text</span> </pre>
-<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> </pre>
-<pre><span class="TYPEcompiled_regexp"><span class="keyword">type</span> compiled_regexp</span> </pre>
+<pre><span class="TYPEtext"><span class="keyword">type</span> text</span> =  </pre>
+<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> =  </pre>
+<pre><span class="TYPEcompiled_regexp"><span class="keyword">type</span> compiled_regexp</span> =  </pre>
 <div class="ocaml_module" name="SubText" path="?package=camomile&amp;module=SubText:Type"><pre><span class="keyword">module</span> <a href="?package=camomile&amp;module=UReStr:Interface:Type.SubText">SubText</a> : <code class="type"><code class="code"><a href="?package=camomile&amp;module=SubText:Type">SubText.Type</a></code> with type ur_index = <a href="?package=camomile&amp;module=UReStr:Interface:Type&amp;type=index">index</a> and type ur_text = <a href="?package=camomile&amp;module=UReStr:Interface:Type&amp;type=text">text</a></code></pre></div>
 <pre><span class="VALcompile"><span class="keyword">val</span> compile</span> : <code class="type"><a href="?package=camomile&amp;module=UReStr:Interface&amp;type=regexp">regexp</a> -&gt; <a href="?package=camomile&amp;module=UReStr:Interface:Type&amp;type=compiled_regexp">compiled_regexp</a></code></pre><div class="info"><div class="info">Compile regular expressions.</div></div>
 <pre><span class="VALregexp_match"><span class="keyword">val</span> regexp_match</span> : <code class="type">?sem:<a href="?package=camomile&amp;module=URe&amp;type=match_semantics">URe.match_semantics</a> -&gt;

@@ -1,7 +1,7 @@
 <div class="ocaml_toplevel_module"><div class="ocaml_modtype" name="Key"><pre><span class="keyword">module type</span> <a href="?package=core_extended&amp;module=Trie:Key">Key</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <div class="ocaml_module" name="Part"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Trie:Key.Part">Part</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="?package=core_extended&amp;module=Trie:Key.Part&amp;type=t">t</a> -&gt; int</code></pre>
 <pre><span class="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_extended&amp;module=Trie:Key.Part&amp;type=t">t</a> -&gt; <a href="?package=core_extended&amp;module=Trie:Key.Part&amp;type=t">t</a> -&gt; int</code></pre>
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_extended&amp;module=Trie:Key.Part&amp;type=t">t</a></code></pre>
@@ -9,11 +9,11 @@
 <pre><span class="VALiter"><span class="keyword">val</span> iter</span> : <code class="type"><a href="?package=core_extended&amp;module=Trie:Key&amp;type=t">t</a> -&gt; f:(<a href="?package=core_extended&amp;module=Trie:Key.Part&amp;type=t">Part.t</a> -&gt; unit) -&gt; unit</code></pre></div></div>
 <div class="ocaml_modtype" name="S"><pre><span class="keyword">module type</span> <a href="?package=core_extended&amp;module=Trie:S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_module" name="Key"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Trie:S.Key">Key</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre></div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre></div></div>
 <div class="ocaml_module" name="Part"><pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Trie:S.Part">Part</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <div class="ocaml_include" path="?package=core&amp;module=Std:Hashable" items="[&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std:Hashable">Core.Std.Hashable</a></code> with type t := <a href="?package=core_extended&amp;module=Trie:S.Part&amp;type=t">t</a></code></pre></div></div></div>
-<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
+<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> =  </code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTt.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type">(bool * <a href="?package=core_extended&amp;module=Trie:S&amp;type=t">t</a>) <a href="?package=core_extended&amp;module=Trie:S.Part.Table&amp;type=t">Part.Table.t</a></code></code></td></tr></table>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="?package=core_extended&amp;module=Trie:S&amp;type=t">t</a></code></pre>
 <pre><span class="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type"><a href="?package=core_extended&amp;module=Trie:S&amp;type=t">t</a> -&gt; <a href="?package=core_extended&amp;module=Trie:S.Key&amp;type=t">Key.t</a> -&gt; bool</code></pre>

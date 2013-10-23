@@ -2,8 +2,8 @@
 <div class="info"><div class="info">A sequence is an object holding a list of elements which support
     the following operations:<p>    - adding an element to the left or the right in time and space O(1)</p><ul><li>taking an element from the left or the right in time and space O(1)</li><li>removing a previously added element from a sequence in time and space O(1)</li><li>removing an element while the sequence is being transversed.
 </li></ul></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre><div class="info"><div class="info">Type of a sequence holding values of type <code class="code">'a</code></div></div>
-<pre><span class="TYPEnode"><span class="keyword">type</span> <code class="type">'a </code>node</span> </pre><div class="info"><div class="info">Type of a node holding one value of type <code class="code">'a</code> in a sequence</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre><div class="info"><div class="info">Type of a sequence holding values of type <code class="code">'a</code></div></div>
+<pre><span class="TYPEnode"><span class="keyword">type</span> <code class="type">'a </code>node</span> =  </pre><div class="info"><div class="info">Type of a node holding one value of type <code class="code">'a</code> in a sequence</div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">Operation on nodes</h6></div></div>
 <pre><span class="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="?package=lwt&amp;module=Lwt_sequence&amp;type=node">node</a> -&gt; 'a</code></pre><div class="info"><div class="info">Returns the contents of a node</div></div>
 <pre><span class="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a <a href="?package=lwt&amp;module=Lwt_sequence&amp;type=node">node</a> -&gt; 'a -&gt; unit</code></pre><div class="info"><div class="info">Change the contents of a node</div></div>

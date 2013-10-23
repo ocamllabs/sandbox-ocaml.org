@@ -1,10 +1,10 @@
 <div class="ocaml_toplevel_module">
 <div class="ocaml_modtype" name="Basic"><pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad:Basic">Basic</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre>
 <pre><span class="VALbind"><span class="keyword">val</span> bind</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad:Basic&amp;type=t">t</a> -&gt; ('a -&gt; 'b <a href="?package=core_kernel&amp;module=Monad:Basic&amp;type=t">t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Monad:Basic&amp;type=t">t</a></code></pre>
 <pre><span class="VALreturn"><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Monad:Basic&amp;type=t">t</a></code></pre></div></div>
 <div class="ocaml_modtype" name="Infix"><pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad:Infix">Infix</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre>
 <pre><span class="VAL(&gt;&gt;=)"><span class="keyword">val</span> (&gt;&gt;=)</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad:Infix&amp;type=t">t</a> -&gt; ('a -&gt; 'b <a href="?package=core_kernel&amp;module=Monad:Infix&amp;type=t">t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Monad:Infix&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">t &gt;&gt;= f</code> returns a computation that sequences the computations represented by two
       monad elements.  The resulting computation first does <code class="code">t</code> to yield a value <code class="code">v</code>, and
       then runs the computation returned by <code class="code">f v</code>.</div></div>
@@ -25,12 +25,12 @@
    The second parameter get unified across all the computation. This is used
    to encode monads working on a multi parameter data structure like
    (<code class="code">('a,'b result)</code>).</div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t</span> =  </pre>
 <pre><span class="VALbind"><span class="keyword">val</span> bind</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad:Basic2&amp;type=t">t</a> -&gt; ('a -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad:Basic2&amp;type=t">t</a>) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad:Basic2&amp;type=t">t</a></code></pre>
 <pre><span class="VALreturn"><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Monad:Basic2&amp;type=t">t</a></code></pre></div></div>
 <div class="ocaml_modtype" name="Infix2"><pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad:Infix2">Infix2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">Same as Infix, except the monad type has two arguments. The second is always just
     passed through.</div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t</span> =  </pre>
 <pre><span class="VAL(&gt;&gt;=)"><span class="keyword">val</span> (&gt;&gt;=)</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad:Infix2&amp;type=t">t</a> -&gt; ('a -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad:Infix2&amp;type=t">t</a>) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad:Infix2&amp;type=t">t</a></code></pre>
 <pre><span class="VAL(&gt;&gt;|)"><span class="keyword">val</span> (&gt;&gt;|)</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad:Infix2&amp;type=t">t</a> -&gt; ('a -&gt; 'b) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad:Infix2&amp;type=t">t</a></code></pre></div></div>
 <div class="ocaml_modtype" name="S2"><pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad:S2">S2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">The same as S except the monad type has two arguments. The second is always just

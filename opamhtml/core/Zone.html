@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info">Time-zone handling.</div>
 <div class="info"><div class="info"><h1 id="1_TITLE">User-friendly interface</h1></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">The type of a time-zone.<p>    bin_io and sexp representations of Zone.t are the name of the zone, and not the full
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">The type of a time-zone.<p>    bin_io and sexp representations of Zone.t are the name of the zone, and not the full
     data that is read from disk when Zone.find is called.  The full Zone.t is
     reconstructed on the receiving/reading side by reloading the zone file from disk.  Any
     zone name that is accepted by <code class="code">find</code> is acceptable in the bin_io and sexp
@@ -45,7 +45,7 @@
 <pre><span class="EXCEPTIONInvalid_file_format"><span class="keyword">exception</span> Invalid_file_format</span> <span class="keyword">of</span> <code class="type">string</code></pre>
 <div class="ocaml_module" name="Stable"><pre><span class="keyword">module</span> <a href="?package=core&amp;module=Zone.Stable">Stable</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_module" name="V1"><pre><span class="keyword">module</span> <a href="?package=core&amp;module=Zone.Stable.V1">V1</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core&amp;module=Zone.Stable.V1&amp;type=t">t</a> = <a href="?package=core&amp;module=Zone&amp;type=t">t</a></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core&amp;module=Zone.Stable.V1&amp;type=t">t</a></code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core&amp;module=Zone.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
 <pre><span class="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core&amp;module=Zone.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Zone.Stable.V1&amp;type=t">t</a> -&gt; int</code></pre>

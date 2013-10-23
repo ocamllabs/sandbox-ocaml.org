@@ -3,7 +3,7 @@
      ignores future operations.  This can prevent pointlessly filling up a writer's
      buffer with data that will never go anywhere.
 </li></ul></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?append:bool -&gt; string -&gt; <a href="?package=async_extra&amp;module=File_writer&amp;type=t">t</a> <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre><div class="info"><div class="info"><code class="code">create file</code> opens <code class="code">file</code>, creating it if it doesn't exist.</div></div>
 <pre><span class="VALwrite"><span class="keyword">val</span> write</span> : <code class="type"><a href="?package=async_extra&amp;module=File_writer&amp;type=t">t</a> -&gt; string -&gt; unit</code></pre><div class="info"><div class="info"><code class="code">write t s</code> writes <code class="code">s</code> to the file.</div></div>
 <pre><span class="VALwrite_substring"><span class="keyword">val</span> write_substring</span> : <code class="type"><a href="?package=async_extra&amp;module=File_writer&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Substring&amp;type=t">Core.Std.Substring.t</a> -&gt; unit</code></pre>

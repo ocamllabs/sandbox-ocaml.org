@@ -28,7 +28,7 @@
         lwt () = Lwt_switch.turn_off switch in
         raise_lwt exn
     </code></pre></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">Type of switches.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">Type of switches.</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="?package=lwt&amp;module=Lwt_switch&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">create ()</code> creates a new switch.</div></div>
 <pre><span class="VALis_on"><span class="keyword">val</span> is_on</span> : <code class="type"><a href="?package=lwt&amp;module=Lwt_switch&amp;type=t">t</a> -&gt; bool</code></pre><div class="info"><div class="info"><code class="code">is_on switch</code> returns <code class="code">true</code> if the switch is currently on, and
       <code class="code">false</code> otherwise.</div></div>

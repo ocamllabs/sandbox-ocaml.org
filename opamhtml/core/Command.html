@@ -1,7 +1,7 @@
 <div class="ocaml_toplevel_module"><div class="info">purely functional command line parsing</div>
 <div class="ocaml_module" name="Spec"><pre><span class="keyword">module</span> <a href="?package=core&amp;module=Command.Spec">Spec</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">composable command-line specifications</div></div><div class="ocaml_content">
 <div class="info"><div class="info"><h1 id="1_TITLE">command parameters</h1></div></div>
-<pre><span class="TYPEparam"><span class="keyword">type</span> <code class="type">'a </code>param</span> </pre><div class="info"><div class="info">specification of an individual parameter to the command's main function</div></div>
+<pre><span class="TYPEparam"><span class="keyword">type</span> <code class="type">'a </code>param</span> =  </pre><div class="info"><div class="info">specification of an individual parameter to the command's main function</div></div>
 <pre><span class="VALconst"><span class="keyword">val</span> const</span> : <code class="type">'a -&gt; 'a <a href="?package=core&amp;module=Command.Spec&amp;type=param">param</a></code></pre><div class="info"><div class="info">a hard-coded parameter</div></div>
 <pre><span class="VALmap"><span class="keyword">val</span> map</span> : <code class="type">'a <a href="?package=core&amp;module=Command.Spec&amp;type=param">param</a> -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="?package=core&amp;module=Command.Spec&amp;type=param">param</a></code></pre><div class="info"><div class="info">parameter transformation</div></div>
 <div class="info"><div class="info"><h2 id="2_TITLE">various internal values</h2></div></div>
@@ -9,7 +9,7 @@
 <pre><span class="VALpath"><span class="keyword">val</span> path</span> : <code class="type">string list <a href="?package=core&amp;module=Command.Spec&amp;type=param">param</a></code></pre><div class="info"><div class="info">the subcommand path of the command</div></div>
 <pre><span class="VALargs"><span class="keyword">val</span> args</span> : <code class="type">string list <a href="?package=core&amp;module=Command.Spec&amp;type=param">param</a></code></pre><div class="info"><div class="info">the arguments passed to the command</div></div>
 <div class="info"><div class="info"><h1 id="1_TITLE">command specifications</h1></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('main_in, 'main_out) </code>t</span> </pre><div class="info"><div class="info">composable command-line specifications</div><div class="info">Ultimately one forms a base command by combining a spec of type <code class="code">('main, unit) t</code>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">('main_in, 'main_out) </code>t</span> =  </pre><div class="info"><div class="info">composable command-line specifications</div><div class="info">Ultimately one forms a base command by combining a spec of type <code class="code">('main, unit) t</code>
       with a main function of type <code class="code">'main</code>; see the <code class="code">basic</code> function below.  Combinators
       in this library incrementally build up the type of main according to what
       command-line parameters it expects, so the resulting type of <code class="code">main</code> is something
@@ -81,7 +81,7 @@
              </span></li></ul></div></div>
 <div class="info"><div class="info"><h1 id="1_TITLE">argument types</h1></div></div>
 <div class="ocaml_module" name="Arg_type"><pre><span class="keyword">module</span> <a href="?package=core&amp;module=Command.Spec.Arg_type">Arg_type</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre><div class="info"><div class="info">the type of a command line argument</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre><div class="info"><div class="info">the type of a command line argument</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?complete:(<a href="?package=core_kernel&amp;module=Std.Univ_map&amp;type=t">Core_kernel.Std.Univ_map.t</a> -&gt; part:string -&gt; string list) -&gt;
 ?key:'a <a href="?package=core_kernel&amp;module=Std.Univ_map.Multi.Key&amp;type=t">Core_kernel.Std.Univ_map.Multi.Key.t</a> -&gt; (string -&gt; 'a) -&gt; 'a <a href="?package=core&amp;module=Command.Spec.Arg_type&amp;type=t">t</a></code></pre><div class="info"><div class="info">an argument type includes information about how to parse values of that type from
         the command line, and (optionally) how to auto-complete partial arguments of that
@@ -102,7 +102,7 @@
 <pre><span class="VALtime_span"><span class="keyword">val</span> time_span</span> : <code class="type"><a href="?package=core&amp;module=Span&amp;type=t">Span.t</a> <a href="?package=core&amp;module=Command.Spec.Arg_type&amp;type=t">Arg_type.t</a></code></pre>
 <pre><span class="VALfile"><span class="keyword">val</span> file</span> : <code class="type">string <a href="?package=core&amp;module=Command.Spec.Arg_type&amp;type=t">Arg_type.t</a></code></pre>
 <div class="info"><div class="info"><h1 id="1_TITLE">flag specifications</h1></div></div>
-<pre><span class="TYPEflag"><span class="keyword">type</span> <code class="type">'a </code>flag</span> </pre><div class="info"><div class="info">a flag specification</div></div>
+<pre><span class="TYPEflag"><span class="keyword">type</span> <code class="type">'a </code>flag</span> =  </pre><div class="info"><div class="info">a flag specification</div></div>
 <pre><span class="VALflag"><span class="keyword">val</span> flag</span> : <code class="type">?aliases:string list -&gt; string -&gt; 'a <a href="?package=core&amp;module=Command.Spec&amp;type=flag">flag</a> -&gt; doc:string -&gt; 'a <a href="?package=core&amp;module=Command.Spec&amp;type=param">param</a></code></pre><div class="info"><div class="info"><code class="code">flag name spec ~doc</code> specifies a command that, among other things, takes a flag
       named <code class="code">name</code> on its command line.  <code class="code">doc</code> indicates the meaning of the flag.<p>      NOTE: the <code class="code">doc</code> for a flag which takes an argument should be of the form <code class="code">arg_name ^
       &quot; &quot; ^ description</code> where <code class="code">arg_name</code> describes the argument and <code class="code">description</code>
@@ -131,7 +131,7 @@
       <code class="code">flags_of_args_exn flags</code>, they are evaluated in the order that the <code class="code">Arg.t</code> values
       appear in <code class="code">flags</code>.</p></div></div>
 <div class="info"><div class="info"><h1 id="1_TITLE">anonymous argument specifications</h1></div></div>
-<pre><span class="TYPEanons"><span class="keyword">type</span> <code class="type">'a </code>anons</span> </pre><div class="info"><div class="info">a specification of some number of anonymous arguments</div></div>
+<pre><span class="TYPEanons"><span class="keyword">type</span> <code class="type">'a </code>anons</span> =  </pre><div class="info"><div class="info">a specification of some number of anonymous arguments</div></div>
 <pre><span class="VALanon"><span class="keyword">val</span> anon</span> : <code class="type">'a <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; 'a <a href="?package=core&amp;module=Command.Spec&amp;type=param">param</a></code></pre><div class="info"><div class="info"><code class="code">anon spec</code> specifies a command that, among other things, takes
       the anonymous arguments specified by <code class="code">spec</code>.</div></div>
 <pre><span class="VALmap_anons"><span class="keyword">val</span> map_anons</span> : <code class="type">'a <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a></code></pre><div class="info"><div class="info"><code class="code">map_anons anons ~f</code> transforms the parsed result of <code class="code">anons</code> by applying <code class="code">f</code></div></div>
@@ -160,7 +160,7 @@
 <pre><span class="VALt2"><span class="keyword">val</span> t2</span> : <code class="type">'a <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; 'b <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; ('a * 'b) <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a></code></pre>
 <pre><span class="VALt3"><span class="keyword">val</span> t3</span> : <code class="type">'a <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; 'b <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; 'c <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; ('a * 'b * 'c) <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a></code></pre>
 <pre><span class="VALt4"><span class="keyword">val</span> t4</span> : <code class="type">'a <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; 'b <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; 'c <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; 'd <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a> -&gt; ('a * 'b * 'c * 'd) <a href="?package=core&amp;module=Command.Spec&amp;type=anons">anons</a></code></pre></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">commands which can be combined into a hierarchy of subcommands</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">commands which can be combined into a hierarchy of subcommands</div></div>
 <pre><span class="VALbasic"><span class="keyword">val</span> basic</span> : <code class="type">summary:string -&gt;
 ?readme:(unit -&gt; string) -&gt; ('main, unit -&gt; unit) <a href="?package=core&amp;module=Command.Spec&amp;type=t">Spec.t</a> -&gt; 'main -&gt; <a href="?package=core&amp;module=Command&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">basic ~summary ?readme spec main</code> is a basic command that executes a function <code class="code">main</code>
     which is passed parameters parsed from the command line according to <code class="code">spec</code>. <code class="code">summary</code>

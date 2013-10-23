@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info">Thread-safe queue module, using locks.</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; 'a <a href="?package=core&amp;module=Squeue&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">create maxsize</code> returns a synchronized queue bounded to have no more than
     <code class="code">maxsize</code> elements.</div></div>
 <pre><span class="VALpush"><span class="keyword">val</span> push</span> : <code class="type">'a <a href="?package=core&amp;module=Squeue&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre><div class="info"><div class="info">Blocks until there's room on the queue, then pushes.</div></div>

@@ -1,7 +1,7 @@
 <div class="ocaml_toplevel_module"><div class="info">Unicode collation algorithm</div>
 <div class="info"><div class="info">String comparison by collation as described in UTR #10</div></div>
-<pre><span class="TYPEvariable_option"><span class="keyword">type</span> variable_option</span> = <code class="type">[ `Blanked | `Non_ignorable | `Shift_Trimmed | `Shifted ]</code></pre><div class="info"><div class="info">How variables are handled</div></div>
-<pre><span class="TYPEprecision"><span class="keyword">type</span> precision</span> = <code class="type">[ `Primary | `Quaternary | `Secondary | `Tertiary ]</code></pre><div class="info"><div class="info">Strength of comparison.  For European languages, each strength
+<pre><span class="TYPEvariable_option"><span class="keyword">type</span> variable_option</span> =  <code class="type">[ `Blanked | `Non_ignorable | `Shift_Trimmed | `Shifted ]</code></pre><div class="info"><div class="info">How variables are handled</div></div>
+<pre><span class="TYPEprecision"><span class="keyword">type</span> precision</span> =  <code class="type">[ `Primary | `Quaternary | `Secondary | `Tertiary ]</code></pre><div class="info"><div class="info">Strength of comparison.  For European languages, each strength
     roughly means as
     `Primary : Ignore accents and case
     `Secondary : Ignore case but accents are counted in.
@@ -9,8 +9,8 @@
     For the case of `Shifted, `Shift_Trimmed, there is the fourth strength.
     `Quaternary : Variables such as - (hyphen) are counted in.</div></div>
 <div class="ocaml_modtype" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UCol:Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEtext"><span class="keyword">type</span> text</span> </pre>
-<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> </pre>
+<pre><span class="TYPEtext"><span class="keyword">type</span> text</span> =  </pre>
+<pre><span class="TYPEindex"><span class="keyword">type</span> index</span> =  </pre>
 <pre><span class="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">?locale:string -&gt;
 ?prec:<a href="?package=camomile&amp;module=UCol&amp;type=precision">precision</a> -&gt; ?variable:<a href="?package=camomile&amp;module=UCol&amp;type=variable_option">variable_option</a> -&gt; <a href="?package=camomile&amp;module=UCol:Type&amp;type=text">text</a> -&gt; <a href="?package=camomile&amp;module=UCol:Type&amp;type=text">text</a> -&gt; int</code></pre><div class="info"><div class="info">For locale, see  <a href="#Locale">Locale</a>.
 	      If <code class="code">locale</code> is omitted, the standard UCA order is used.

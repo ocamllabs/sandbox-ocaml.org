@@ -3,7 +3,7 @@
     result of organic design (i.e. older versions of this interface did the same thing).</p><p>    A (limited) <code class="code">Blocking</code> module is supplied to accomodate the portion of a program that
     runs outside of Async.</p></div>
 <div class="ocaml_module" name="Level"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Log.Level">Level</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Debug | `Error | `Info ]</code></pre><div class="info"><div class="info">Describes both the level of a log and the level of a message sent to a log.  There
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  <code class="type">[ `Debug | `Error | `Info ]</code></pre><div class="info"><div class="info">Describes both the level of a log and the level of a message sent to a log.  There
       is an ordering to levels (`Debug &lt; `Info &lt; `Error), and a log set to a level will
       never display messages at a lower log level.</div></div>
 <div class="ocaml_include" path="?package=core&amp;module=Std:Stringable" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std:Stringable">Core.Std.Stringable</a></code> with type t := <a href="?package=async_extra&amp;module=Log.Level&amp;type=t">t</a></code></pre></div>
@@ -11,7 +11,7 @@
 <pre><span class="VAL__t_of_sexp__"><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=async_extra&amp;module=Log.Level&amp;type=t">t</a></code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Level&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <div class="ocaml_module" name="Message"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Log.Message">Message</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALtime"><span class="keyword">val</span> time</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Message&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Time&amp;type=t">Core.Std.Time.t</a></code></pre>
 <pre><span class="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Message&amp;type=t">t</a> -&gt; string</code></pre>
 <pre><span class="VALlevel"><span class="keyword">val</span> level</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Message&amp;type=t">t</a> -&gt; <a href="?package=async_extra&amp;module=Log.Level&amp;type=t">Level.t</a> option</code></pre>
@@ -28,7 +28,7 @@
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=async_extra&amp;module=Log.Message&amp;type=t">t</a></code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Message&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <div class="ocaml_module" name="Rotation"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Log.Rotation">Rotation</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+<pre><code><span class="TYPEt"><span class="keyword">type</span> t</span> =  {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.messages">messages</span> : <code class="type">int option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.size">size</span> : <code class="type"><a href="?package=core&amp;module=Std.Byte_units&amp;type=t">Core.Std.Byte_units.t</a> option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.time">time</span> : <code class="type">(<a href="?package=core&amp;module=Std.Time.Ofday&amp;type=t">Core.Std.Time.Ofday.t</a> * <a href="?package=core&amp;module=Std.Time.Zone&amp;type=t">Core.Std.Time.Zone.t</a>) option</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.keep">keep</span> : <code class="type">[ `All | `At_least of int | `Newer_than of <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> ]</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTt.naming_scheme">naming_scheme</span> : <code class="type">[ `Numbered | `Timestamped ]</code>;</code></td></tr><tr><td>}</td></tr></table><div class="info"><div class="info">description of boundaries for file rotation.<p>      If all fields are <code class="code">None</code> the file will never be rotated.  Any field set to <code class="code">Some</code>
       will cause rotation to happen when that boundary is crossed.  Multiple boundaries
       may be set.  Log rotation always causses incrementing rotation conditions
@@ -44,9 +44,9 @@
 <pre><span class="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=async_extra&amp;module=Log.Rotation&amp;type=t">t</a></code></pre>
 <pre><span class="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Rotation&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre></div></div>
 <div class="ocaml_module" name="Output"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Log.Output">Output</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEmachine_readable_format"><span class="keyword">type</span> machine_readable_format</span> = <code class="type">[ `Bin_prot | `Sexp ]</code></pre>
-<pre><span class="TYPEformat"><span class="keyword">type</span> format</span> = <code class="type">[ `Bin_prot | `Sexp | `Text ]</code></pre>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEmachine_readable_format"><span class="keyword">type</span> machine_readable_format</span> =  <code class="type">[ `Bin_prot | `Sexp ]</code></pre>
+<pre><span class="TYPEformat"><span class="keyword">type</span> format</span> =  <code class="type">[ `Bin_prot | `Sexp | `Text ]</code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(<a href="?package=async_extra&amp;module=Log.Message&amp;type=t">Message.t</a> <a href="?package=core&amp;module=Std.Queue&amp;type=t">Core.Std.Queue.t</a> -&gt; unit <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) -&gt; <a href="?package=async_extra&amp;module=Log.Output&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">create f</code> returns a t, given a function that actually performs the final output
       work.  It is the responsibility of the write function to contain all state, and to
       clean up after itself when it is garbage collected (which may require a finalizer).<p>      The &quot;stock&quot; output modules support a sexp and bin_prot output format, and other
@@ -65,7 +65,7 @@
       functions after the scheduler has started will raise an exception.  They otherwise
       behave similarly to the logging functions in the async world.</div></div>
 <div class="ocaml_module" name="Output"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Log.Blocking.Output">Output</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALstdout"><span class="keyword">val</span> stdout</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Blocking.Output&amp;type=t">t</a></code></pre>
 <pre><span class="VALstderr"><span class="keyword">val</span> stderr</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Blocking.Output&amp;type=t">t</a></code></pre>
 <div class="info"><div class="info">See  <a href="#Async_extended.Syslog">Async_extended.Syslog</a> for syslog output.</div></div>
@@ -81,7 +81,7 @@
 ('a, unit, string, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">error</code> printf like logging at the `Info log level</div></div>
 <pre><span class="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">?tags:(string * string) list -&gt;
 ('a, unit, string, unit) <a href="?package=ocaml&amp;module=Pervasives&amp;type=format4">Pervasives.format4</a> -&gt; 'a</code></pre><div class="info"><div class="info"><code class="code">error</code> printf like logging at the `Info log level</div></div></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <div class="ocaml_modtype" name="Global_intf"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Log:Global_intf">Global_intf</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info">An interface for singleton logs</div></div><div class="ocaml_content">
 <pre><span class="VALlog"><span class="keyword">val</span> log</span> : <code class="type"><a href="?package=async_extra&amp;module=Log&amp;type=t">t</a> <a href="?package=core&amp;module=Std.Lazy&amp;type=t">Core.Std.Lazy.t</a></code></pre>
 <pre><span class="VALset_level"><span class="keyword">val</span> set_level</span> : <code class="type"><a href="?package=async_extra&amp;module=Log.Level&amp;type=t">Level.t</a> -&gt; unit</code></pre>

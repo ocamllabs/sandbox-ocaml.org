@@ -44,7 +44,7 @@
         `--&gt;-- Q3 --&gt; R3 --&gt;-'      Q3 --&gt;-'         `--&gt;-- R3
   </span></p></div></div>
 <div class="ocaml_module" name="Menu"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Menu">Menu</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">a directory of supported rpc names and versions.</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">a directory of supported rpc names and versions.</div></div>
 <pre><span class="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'s <a href="?package=async_extra&amp;module=Rpc.Implementation&amp;type=t">Rpc.Implementation.t</a> list -&gt; 's <a href="?package=async_extra&amp;module=Rpc.Implementation&amp;type=t">Rpc.Implementation.t</a> list</code></pre><div class="info"><div class="info"><code class="code">add impls</code> extends a list of rpc implementations with an additional
       rpc implementation for providing a <code class="code">Menu.t</code> when one is requested
       via <code class="code">Menu.request</code>.</div></div>
@@ -52,15 +52,15 @@
 <pre><span class="VALsupported_rpcs"><span class="keyword">val</span> supported_rpcs</span> : <code class="type"><a href="?package=async_extra&amp;module=Versioned_rpc.Menu&amp;type=t">t</a> -&gt; <a href="?package=async_extra&amp;module=Rpc.Implementation.Description&amp;type=t">Rpc.Implementation.Description.t</a> list</code></pre><div class="info"><div class="info">find what rpcs are supported</div></div>
 <pre><span class="VALsupported_versions"><span class="keyword">val</span> supported_versions</span> : <code class="type"><a href="?package=async_extra&amp;module=Versioned_rpc.Menu&amp;type=t">t</a> -&gt; rpc_name:string -&gt; <a href="?package=core&amp;module=Std.Int.Set&amp;type=t">Core.Std.Int.Set.t</a></code></pre><div class="info"><div class="info">find what versions of a particular rpc are supported</div></div></div></div>
 <div class="ocaml_module" name="Connection_with_menu"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Connection_with_menu">Connection_with_menu</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">an rpc connection paired with the menu of rpcs one may call on it</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">an rpc connection paired with the menu of rpcs one may call on it</div></div>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="?package=async_extra&amp;module=Rpc.Connection&amp;type=t">Rpc.Connection.t</a> -&gt; <a href="?package=async_extra&amp;module=Versioned_rpc.Connection_with_menu&amp;type=t">t</a> <a href="?package=async_extra&amp;module=Import.Deferred.Or_error&amp;type=t">Import.Deferred.Or_error.t</a></code></pre>
 <pre><span class="VALconnection"><span class="keyword">val</span> connection</span> : <code class="type"><a href="?package=async_extra&amp;module=Versioned_rpc.Connection_with_menu&amp;type=t">t</a> -&gt; <a href="?package=async_extra&amp;module=Rpc.Connection&amp;type=t">Rpc.Connection.t</a></code></pre>
 <pre><span class="VALmenu"><span class="keyword">val</span> menu</span> : <code class="type"><a href="?package=async_extra&amp;module=Versioned_rpc.Connection_with_menu&amp;type=t">t</a> -&gt; <a href="?package=async_extra&amp;module=Versioned_rpc.Menu&amp;type=t">Menu.t</a></code></pre></div></div>
 <div class="ocaml_module" name="Caller_converts"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts">Caller_converts</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_module" name="Rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Rpc">Rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_modtype" name="S"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Rpc:S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> </pre>
-<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> </pre>
+<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> =  </pre>
+<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> =  </pre>
 <pre><span class="VALdeprecated_dispatch_multi"><span class="keyword">val</span> deprecated_dispatch_multi</span> : <code class="type">version:int -&gt;
 <a href="?package=async_extra&amp;module=Rpc.Connection&amp;type=t">Rpc.Connection.t</a> -&gt; <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Rpc:S&amp;type=query">query</a> -&gt; <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Rpc:S&amp;type=response">response</a> <a href="?package=core&amp;module=Std.Or_error&amp;type=t">Core.Std.Or_error.t</a> <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre>
 <pre><span class="VALdispatch_multi"><span class="keyword">val</span> dispatch_multi</span> : <code class="type"><a href="?package=async_extra&amp;module=Versioned_rpc.Connection_with_menu&amp;type=t">Connection_with_menu.t</a> -&gt;
@@ -83,9 +83,9 @@
 <div class="ocaml_include" path="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Rpc:S" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Rpc:S">S</a></code> with type response := Model.response and type <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Rpc:S&amp;type=query">query</a> := Model.query</code></pre></div></div></div></div></div>
 <div class="ocaml_module" name="Pipe_rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Pipe_rpc">Pipe_rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_modtype" name="S"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Caller_converts.Pipe_rpc:S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> </pre>
-<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> </pre>
-<pre><span class="TYPEerror"><span class="keyword">type</span> error</span> </pre>
+<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> =  </pre>
+<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> =  </pre>
+<pre><span class="TYPEerror"><span class="keyword">type</span> error</span> =  </pre>
 <div class="info"><div class="info">multi-version dispatch<p>          The return type varies slightly from <code class="code">Rpc.Pipe_rpc.dispatch</code> to make it clear
           that conversion of each individual element in the returned pipe may fail.</p></div></div>
 <pre><span class="VALdeprecated_dispatch_multi"><span class="keyword">val</span> deprecated_dispatch_multi</span> : <code class="type">version:int -&gt;
@@ -119,8 +119,8 @@
 <div class="ocaml_module" name="Callee_converts"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts">Callee_converts</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_module" name="Rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Rpc">Rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_modtype" name="S"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Rpc:S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> </pre>
-<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> </pre>
+<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> =  </pre>
+<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> =  </pre>
 <pre><span class="VALimplement_multi"><span class="keyword">val</span> implement_multi</span> : <code class="type">?log_not_previously_seen_version:(name:string -&gt; int -&gt; unit) -&gt;
 ('state -&gt; <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Rpc:S&amp;type=query">query</a> -&gt; <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Rpc:S&amp;type=response">response</a> <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) -&gt;
 'state <a href="?package=async_extra&amp;module=Rpc.Implementation&amp;type=t">Rpc.Implementation.t</a> list</code></pre><div class="info"><div class="info">implement multiple versions at once</div></div>
@@ -143,9 +143,9 @@
 <div class="ocaml_include" path="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Rpc:S" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Rpc:S">S</a></code> with type response := Model.response and type <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Rpc:S&amp;type=query">query</a> := Model.query</code></pre></div></div></div></div></div>
 <div class="ocaml_module" name="Pipe_rpc"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Pipe_rpc">Pipe_rpc</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_modtype" name="S"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Pipe_rpc:S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> </pre>
-<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> </pre>
-<pre><span class="TYPEerror"><span class="keyword">type</span> error</span> </pre>
+<pre><span class="TYPEquery"><span class="keyword">type</span> query</span> =  </pre>
+<pre><span class="TYPEresponse"><span class="keyword">type</span> response</span> =  </pre>
+<pre><span class="TYPEerror"><span class="keyword">type</span> error</span> =  </pre>
 <pre><span class="VALimplement_multi"><span class="keyword">val</span> implement_multi</span> : <code class="type">?log_not_previously_seen_version:(name:string -&gt; int -&gt; unit) -&gt;
 ('state -&gt;
  <a href="?package=async_extra&amp;module=Versioned_rpc.Callee_converts.Pipe_rpc:S&amp;type=query">query</a> -&gt;
@@ -187,10 +187,10 @@
       </code></pre></div></div>
 <div class="ocaml_module" name="Plain"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Both_convert.Plain">Plain</a> : <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="ocaml_modtype" name="S"><pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Versioned_rpc.Both_convert.Plain:S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
-<pre><span class="TYPEcaller_query"><span class="keyword">type</span> caller_query</span> </pre>
-<pre><span class="TYPEcaller_response"><span class="keyword">type</span> caller_response</span> </pre>
-<pre><span class="TYPEcallee_query"><span class="keyword">type</span> callee_query</span> </pre>
-<pre><span class="TYPEcallee_response"><span class="keyword">type</span> callee_response</span> </pre>
+<pre><span class="TYPEcaller_query"><span class="keyword">type</span> caller_query</span> =  </pre>
+<pre><span class="TYPEcaller_response"><span class="keyword">type</span> caller_response</span> =  </pre>
+<pre><span class="TYPEcallee_query"><span class="keyword">type</span> callee_query</span> =  </pre>
+<pre><span class="TYPEcallee_response"><span class="keyword">type</span> callee_response</span> =  </pre>
 <pre><span class="VALdispatch_multi"><span class="keyword">val</span> dispatch_multi</span> : <code class="type"><a href="?package=async_extra&amp;module=Versioned_rpc.Connection_with_menu&amp;type=t">Connection_with_menu.t</a> -&gt;
 <a href="?package=async_extra&amp;module=Versioned_rpc.Both_convert.Plain:S&amp;type=caller_query">caller_query</a> -&gt; <a href="?package=async_extra&amp;module=Versioned_rpc.Both_convert.Plain:S&amp;type=caller_response">caller_response</a> <a href="?package=core&amp;module=Std.Or_error&amp;type=t">Core.Std.Or_error.t</a> <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre><div class="info"><div class="info">multi-version dispatch</div></div>
 <pre><span class="VALimplement_multi"><span class="keyword">val</span> implement_multi</span> : <code class="type">?log_not_previously_seen_version:(name:string -&gt; int -&gt; unit) -&gt;

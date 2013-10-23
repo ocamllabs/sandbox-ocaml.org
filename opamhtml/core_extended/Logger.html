@@ -1,8 +1,8 @@
 <div class="ocaml_toplevel_module"><div class="info">Another logging library.</div>
-<pre><span class="TYPEmessage"><span class="keyword">type</span> message</span> = <code class="type">[ `Debug | `Error | `Fatal | `Info | `Warn ] * string</code></pre>
-<pre><span class="TYPEsize"><span class="keyword">type</span> size</span> = <code class="type">[ `Kb of int64 | `Mb of int64 | `Unlimited ]</code></pre>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'messagetype </code>t</span> </pre>
-<pre><span class="TYPEdefault_t"><span class="keyword">type</span> default_t</span> = <code class="type"><a href="?package=core_extended&amp;module=Logger&amp;type=message">message</a> <a href="?package=core_extended&amp;module=Logger&amp;type=t">t</a></code></pre>
+<pre><span class="TYPEmessage"><span class="keyword">type</span> message</span> =  <code class="type">[ `Debug | `Error | `Fatal | `Info | `Warn ] * string</code></pre>
+<pre><span class="TYPEsize"><span class="keyword">type</span> size</span> =  <code class="type">[ `Kb of int64 | `Mb of int64 | `Unlimited ]</code></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'messagetype </code>t</span> =  </pre>
+<pre><span class="TYPEdefault_t"><span class="keyword">type</span> default_t</span> =  <code class="type"><a href="?package=core_extended&amp;module=Logger&amp;type=message">message</a> <a href="?package=core_extended&amp;module=Logger&amp;type=t">t</a></code></pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?max_size:<a href="?package=core_extended&amp;module=Logger&amp;type=size">size</a> -&gt;
 ?mode:<a href="?package=core&amp;module=Std.Unix&amp;type=file_perm">Core.Std.Unix.file_perm</a> -&gt;
 ?max_archives:[ `Max of int | `Unlimited ] -&gt;

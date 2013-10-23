@@ -10,7 +10,7 @@ than developers (<code class="code">Failure s</code> is just printed as <code cl
     sexpable or binable.  The <code class="code">Exn_string.t</code> type is more descriptive than just converting
     to a string and is guaranteed to have come from an exn (unless someone abuses the
     <code class="code">t_of_sexp</code> function or something).</div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">string</code><span class="keyword">private</span></pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> = <span class="keyword">private</span> <code class="type">string</code></pre>
 <div class="ocaml_include" path="?package=core&amp;module=Std:Sexpable" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std:Sexpable">Core.Std.Sexpable</a></code> with type t := <a href="?package=core_extended&amp;module=Extended_exn.Exn_string&amp;type=t">t</a></code></pre></div>
 <div class="ocaml_include" path="?package=core&amp;module=Std:Stringable" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std:Stringable">Core.Std.Stringable</a></code> with type t := <a href="?package=core_extended&amp;module=Extended_exn.Exn_string&amp;type=t">t</a></code></pre></div>
 <div class="ocaml_include" path="?package=core&amp;module=Std:Binable" items="[]"><pre><span class="keyword">include</span> <code class="type"><code class="code"><a href="?package=core&amp;module=Std:Binable">Core.Std.Binable</a></code> with type t := <a href="?package=core_extended&amp;module=Extended_exn.Exn_string&amp;type=t">t</a></code></pre></div>

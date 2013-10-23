@@ -17,7 +17,7 @@
     whenever the sequencer has no jobs to run.</p><p>    The implementation does not automatically release state; one must call <code class="code">set_state t
     ~key None</code>.</p></div>
 <div class="ocaml_module" name="Make"><pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Sequencer_table.Make">Make</a> : <code class="type"><div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="code"><a href="?package=core&amp;module=Std:Hashable">Core.Std.Hashable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></code></pre><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre>
 <pre><span class="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a></code></pre>
 <pre><span class="VALenqueue"><span class="keyword">val</span> enqueue</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a> -&gt;
 key:Key.t -&gt; ('a option -&gt; 'b <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) -&gt; 'b <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre><div class="info"><div class="info"><code class="code">enqueue t ~key f</code> enqueues <code class="code">f</code> for <code class="code">key</code>.  <code class="code">f</code> will be called with the state of

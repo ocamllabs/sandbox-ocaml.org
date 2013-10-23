@@ -6,7 +6,7 @@
 <div class="ocaml_modtype" name="S"><pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Flags_intf:S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><div class="info"><code class="code">module type S</code> is the interface for a set of flags.  Values of <code class="code">type t</code> are set of
     flags, and the various functions operate on sets of flags.  There is a finite universe
     of flags (in particular 63 flags, one for each bit).<p>    <code class="code">sexp_of_t</code> uses the flag names supplied to <code class="code">Flags.Make</code></p></div></div><div class="ocaml_content">
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre>
 <pre><span class="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Flags_intf:S&amp;type=t">t</a></code></pre>
 <pre><span class="VALto_int_exn"><span class="keyword">val</span> to_int_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf:S&amp;type=t">t</a> -&gt; int</code></pre>
 <pre><span class="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf:S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf:S&amp;type=t">t</a> -&gt; bool</code></pre>

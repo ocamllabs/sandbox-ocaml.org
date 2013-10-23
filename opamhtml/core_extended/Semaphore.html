@@ -1,5 +1,5 @@
 <div class="ocaml_toplevel_module"><div class="info">Semaphores<div class="authors"><b>Author(s): </b><span class="author">Markus Mottl &lt;mmottl@janestreet.com&gt;</span></div></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre><div class="info"><div class="info">Type of semaphores</div></div>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  </pre><div class="info"><div class="info">Type of semaphores</div></div>
 <pre><span class="VALinit"><span class="keyword">val</span> init</span> : <code class="type">'a option -&gt; 'a <a href="?package=core_extended&amp;module=Semaphore&amp;type=t">t</a></code></pre><div class="info"><div class="info"><code class="code">init v</code> initializes a semaphore with an optional value <code class="code">v</code>.  If it is
     <code class="code">Some x</code>, then  <a href="#Semaphore.wait">Semaphore.wait</a> will return immediately with <code class="code">x</code>,
     otherwise it will block until  <a href="#Semaphore.signal">Semaphore.signal</a> is called.</div></div>

@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info"><code class="code">Option</code> wraps the output <code class="code">x</code> of successful functions in <code class="code">Some x</code>.  Failed
     functions return <code class="code">None</code>.</div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">'a option</code></pre><div class="info"><div class="info">Options are preferred over exceptions.  For example, use
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> =  <code class="type">'a option</code></pre><div class="info"><div class="info">Options are preferred over exceptions.  For example, use
     <pre class="code"><code>
     let data = [(2, &quot;two&quot;); (5, &quot;five&quot;); (8, &quot;eight&quot;)];;
     let f x = match List.Assoc.find_opt x data with

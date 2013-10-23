@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info">Process management</div>
 <div class="info"><div class="info">This modules allow you to spawn processes and communicate with them.</div></div>
-<pre><span class="TYPEcommand"><span class="keyword">type</span> command</span> = <code class="type">string * string array</code></pre><div class="info"><div class="info">A command. The first field is the name of the executable and
+<pre><span class="TYPEcommand"><span class="keyword">type</span> command</span> =  <code class="type">string * string array</code></pre><div class="info"><div class="info">A command. The first field is the name of the executable and
         the second is the list of arguments. For example:<p>        </p><pre class="code"><code>
           (&quot;ls&quot;, [|&quot;ls&quot;; &quot;-l&quot;|])
         </code></pre>.<p>        Notes:</p><p>        - if the name is the empty string, then the first argument
@@ -21,7 +21,7 @@
     sent a <code class="code">Unix.sigkill</code> signal and channels will be closed.</div></div>
 <div class="info"><div class="info"><h6 id="6_TITLE">High-level functions</h6></div></div>
 <div class="info"><div class="info"><div class="h8">Redirections</div></div></div>
-<pre><span class="TYPEredirection"><span class="keyword">type</span> redirection</span> = <code class="type">[ `Close
+<pre><span class="TYPEredirection"><span class="keyword">type</span> redirection</span> =  <code class="type">[ `Close
 | `Dev_null
 | `FD_copy of <a href="?package=ocaml&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a>
 | `FD_move of <a href="?package=ocaml&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a>
@@ -74,7 +74,7 @@
 ?env:string array -&gt;
 ?stderr:<a href="?package=lwt&amp;module=Lwt_process&amp;type=redirection">redirection</a> -&gt; <a href="?package=lwt&amp;module=Lwt_process&amp;type=command">command</a> -&gt; string <a href="?package=lwt&amp;module=Lwt_stream&amp;type=t">Lwt_stream.t</a> -&gt; string <a href="?package=lwt&amp;module=Lwt_stream&amp;type=t">Lwt_stream.t</a></code></pre>
 <div class="info"><div class="info"><h6 id="6_TITLE">Spawning processes</h6></div></div>
-<pre><code><span class="TYPEstate"><span class="keyword">type</span> state</span> = </code></pre><table class="typetable">
+<pre><code><span class="TYPEstate"><span class="keyword">type</span> state</span> =  </code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTstate.Running"><span class="constructor">Running</span></span></code></td><td class="typefieldcomment" align="left"><div class="info">The process is still running</div></td></tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span class="TYPEELTstate.Exited"><span class="constructor">Exited</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=ocaml&amp;module=Unix&amp;type=process_status">Unix.process_status</a></code></code></td><td class="typefieldcomment" align="left"><div class="info">The process has exited</div></td></tr></table><div class="info"><div class="info">State of a sub-process</div></div>
 <div class="ocaml_class" name="process_none"><pre><span class="TYPEprocess_none"><span class="keyword">class</span> <a href="?package=lwt&amp;module=Lwt_process&amp;class=process_none">process_none</a></span> : <code class="type"><a href="?package=lwt&amp;module=Lwt_process&amp;type=command">command</a> -&gt; <a href="?package=lwt&amp;module=Lwt_process&amp;type=redirection">redirection</a> option -&gt; <a href="?package=lwt&amp;module=Lwt_process&amp;type=redirection">redirection</a> option -&gt; <a href="?package=lwt&amp;module=Lwt_process&amp;type=redirection">redirection</a> option -&gt; string array option -&gt; float option -&gt; </code><code class="code">object</code> .. <code class="code">end</code></pre><div class="ocaml_content"><pre><span class="METHODpid"><span class="keyword">method</span> pid</span> : <code class="code">int</code></pre>
 <div class="info"><div class="info">Pid of the sub-process</div></div>

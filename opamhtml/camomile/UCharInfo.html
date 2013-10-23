@@ -1,7 +1,7 @@
 <div class="ocaml_toplevel_module"><div class="info">Unicode character informations</div>
 <div class="ocaml_modtype" name="Type"><pre><span class="keyword">module type</span> <a href="?package=camomile&amp;module=UCharInfo:Type">Type</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="ocaml_content">
 <div class="info"><div class="info">Character Information</div></div>
-<pre><span class="TYPEgeneral_category_type"><span class="keyword">type</span> general_category_type</span> = <code class="type">[ `Cc
+<pre><span class="TYPEgeneral_category_type"><span class="keyword">type</span> general_category_type</span> =  <code class="type">[ `Cc
 | `Cf
 | `Cn
 | `Co
@@ -34,7 +34,7 @@
    Each variant specifies<ul><li><code class="code">`Lu</code> : Letter, Uppercase </li><li><code class="code">`Ll</code> : Letter, Lowercase </li><li><code class="code">`Lt</code> : Letter, Titlecase </li><li><code class="code">`Mn</code> : Mark, Non-Spacing </li><li><code class="code">`Mc</code> : Mark, Spacing Combining </li><li><code class="code">`Me</code> : Mark, Enclosing </li><li><code class="code">`Nd</code> : Number, Decimal Digit </li><li><code class="code">`Nl</code> : Number, Letter </li><li><code class="code">`No</code> : Number, Other </li><li><code class="code">`Zs</code> : Separator, Space </li><li><code class="code">`Zl</code> : Separator, Line </li><li><code class="code">`Zp</code> : Separator, Paragraph </li><li><code class="code">`Cc</code> : Other, Control </li><li><code class="code">`Cf</code> : Other, Format </li><li><code class="code">`Cs</code> : Other, Surrogate </li><li><code class="code">`Co</code> : Other, Private Use </li><li><code class="code">`Cn</code> : Other, Not Assigned </li><li><code class="code">`Lm</code> : Letter, Modifier </li><li><code class="code">`Lo</code> : Letter, Other </li><li><code class="code">`Pc</code> : Punctuation, Connector </li><li><code class="code">`Pd</code> : Punctuation, Dash </li><li><code class="code">`Ps</code> : Punctuation, Open </li><li><code class="code">`Pe</code> : Punctuation, Close </li><li><code class="code">`Pi</code> : Punctuation, Initial</li><li><code class="code">`Pf</code> : Punctuation, Final</li><li><code class="code">`Po</code> : Punctuation, Other </li><li><code class="code">`Sm</code> : Symbol, Math </li><li><code class="code">`Sc</code> : Symbol, Currency </li><li><code class="code">`Sk</code> : Symbol, Modifier </li><li><code class="code">`So</code> : Symbol, Other  </li></ul></div></div>
 <pre><span class="VALgeneral_category"><span class="keyword">val</span> general_category</span> : <code class="type"><a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=general_category_type">general_category_type</a></code></pre>
 <pre><span class="VALload_general_category_map"><span class="keyword">val</span> load_general_category_map</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=general_category_type">general_category_type</a> <a href="?package=camomile&amp;module=UMap&amp;type=t">UMap.t</a></code></pre>
-<pre><span class="TYPEcharacter_property_type"><span class="keyword">type</span> character_property_type</span> = <code class="type">[ `Alphabetic
+<pre><span class="TYPEcharacter_property_type"><span class="keyword">type</span> character_property_type</span> =  <code class="type">[ `Alphabetic
 | `Ascii_Hex_Digit
 | `Bidi_Control
 | `Default_Ignorable_Code_Point
@@ -78,7 +78,7 @@
 <pre><span class="VALload_property_set_by_name"><span class="keyword">val</span> load_property_set_by_name</span> : <code class="type">string -&gt; <a href="?package=camomile&amp;module=USet&amp;type=t">USet.t</a></code></pre><div class="info"><div class="info">Load the set of characters of the given name of the character type.
    The name can be obtained by removing ` from its name of 
    the polymorphic variant tag.</div></div>
-<pre><span class="TYPEscript_type"><span class="keyword">type</span> script_type</span> = <code class="type">[ `Arabic
+<pre><span class="TYPEscript_type"><span class="keyword">type</span> script_type</span> =  <code class="type">[ `Arabic
 | `Armenian
 | `Bengali
 | `Bopomofo
@@ -125,7 +125,7 @@
 | `Yi ]</code></pre><div class="info"><div class="info">Type for script type</div></div>
 <pre><span class="VALscript"><span class="keyword">val</span> script</span> : <code class="type"><a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=script_type">script_type</a></code></pre>
 <pre><span class="VALload_script_map"><span class="keyword">val</span> load_script_map</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=script_type">script_type</a> <a href="?package=camomile&amp;module=UMap&amp;type=t">UMap.t</a></code></pre>
-<pre><span class="TYPEversion_type"><span class="keyword">type</span> version_type</span> = <code class="type">[ `Nc | `v1_0 | `v1_1 | `v2_0 | `v2_1 | `v3_0 | `v3_1 | `v3_2 ]</code></pre><div class="info"><div class="info">age</div></div>
+<pre><span class="TYPEversion_type"><span class="keyword">type</span> version_type</span> =  <code class="type">[ `Nc | `v1_0 | `v1_1 | `v2_0 | `v2_1 | `v3_0 | `v3_1 | `v3_2 ]</code></pre><div class="info"><div class="info">age</div></div>
 <pre><span class="VALage"><span class="keyword">val</span> age</span> : <code class="type"><a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=version_type">version_type</a></code></pre><div class="info"><div class="info"><code class="code">age c</code> unicode version in wich <code class="code">c</code> was introduced</div><div class="info"><code class="code">older v1 v2</code> is <code class="code">true</code> if <code class="code">v1</code> is older ( or the same version )
     than <code class="code">v2</code>. Everithing is older than <code class="code">`Nc</code></div></div>
 <pre><span class="VALolder"><span class="keyword">val</span> older</span> : <code class="type"><a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=version_type">version_type</a> -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=version_type">version_type</a> -&gt; bool</code></pre>
@@ -133,13 +133,13 @@
 <pre><span class="VALload_to_lower1_tbl"><span class="keyword">val</span> load_to_lower1_tbl</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> <a href="?package=camomile&amp;module=UCharTbl&amp;type=t">UCharTbl.t</a></code></pre>
 <pre><span class="VALload_to_upper1_tbl"><span class="keyword">val</span> load_to_upper1_tbl</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> <a href="?package=camomile&amp;module=UCharTbl&amp;type=t">UCharTbl.t</a></code></pre>
 <pre><span class="VALload_to_title1_tbl"><span class="keyword">val</span> load_to_title1_tbl</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> <a href="?package=camomile&amp;module=UCharTbl&amp;type=t">UCharTbl.t</a></code></pre>
-<pre><span class="TYPEcasemap_condition"><span class="keyword">type</span> casemap_condition</span> = <code class="type">[ `AfterSoftDotted
+<pre><span class="TYPEcasemap_condition"><span class="keyword">type</span> casemap_condition</span> =  <code class="type">[ `AfterSoftDotted
 | `BeforeDot
 | `FinalSigma
 | `Locale of string
 | `MoreAbove
 | `Not of <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=casemap_condition">casemap_condition</a> ]</code></pre>
-<pre><code><span class="TYPEspecial_casing_property"><span class="keyword">type</span> special_casing_property</span> = {</code></pre><table class="typetable">
+<pre><code><span class="TYPEspecial_casing_property"><span class="keyword">type</span> special_casing_property</span> =  {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTspecial_casing_property.lower">lower</span> : <code class="type"><a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTspecial_casing_property.title">title</span> : <code class="type"><a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTspecial_casing_property.upper">upper</span> : <code class="type"><a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> list</code>;</code></td></tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="TYPEELTspecial_casing_property.condition">condition</span> : <code class="type"><a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=casemap_condition">casemap_condition</a> list</code>;</code></td></tr><tr><td>}</td></tr></table>
 <pre><span class="VALload_conditional_casing_tbl"><span class="keyword">val</span> load_conditional_casing_tbl</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=special_casing_property">special_casing_property</a> list <a href="?package=camomile&amp;module=UCharTbl&amp;type=t">UCharTbl.t</a></code></pre>
 <pre><span class="VALload_casefolding_tbl"><span class="keyword">val</span> load_casefolding_tbl</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> list <a href="?package=camomile&amp;module=UCharTbl&amp;type=t">UCharTbl.t</a></code></pre>
@@ -147,7 +147,7 @@
    A combined class is an integer of 0 -- 255, showing how this character
    interacts to other combined characters.</div></div>
 <div class="info"><div class="info">Decomposition</div></div>
-<pre><span class="TYPEdecomposition_type"><span class="keyword">type</span> decomposition_type</span> = <code class="type">[ `Canon
+<pre><span class="TYPEdecomposition_type"><span class="keyword">type</span> decomposition_type</span> =  <code class="type">[ `Canon
 | `Circle
 | `Compat
 | `Final
@@ -164,7 +164,7 @@
 | `Super
 | `Vertical
 | `Wide ]</code></pre><div class="info"><div class="info">Types of decomposition.</div></div>
-<pre><span class="TYPEdecomposition_info"><span class="keyword">type</span> decomposition_info</span> = <code class="type">[ `Canonform
+<pre><span class="TYPEdecomposition_info"><span class="keyword">type</span> decomposition_info</span> =  <code class="type">[ `Canonform
 | `Composite of <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=decomposition_type">decomposition_type</a> * <a href="?package=camomile&amp;module=UChar&amp;type=t">UChar.t</a> list
 | `HangulSyllable ]</code></pre>
 <pre><span class="VALload_decomposition_tbl"><span class="keyword">val</span> load_decomposition_tbl</span> : <code class="type">unit -&gt; <a href="?package=camomile&amp;module=UCharInfo:Type&amp;type=decomposition_info">decomposition_info</a> <a href="?package=camomile&amp;module=UCharTbl&amp;type=t">UCharTbl.t</a></code></pre>

@@ -1,6 +1,6 @@
 <div class="ocaml_toplevel_module"><div class="info">Dealing with stack backtraces.<p>    The <code class="code">Backtrace</code> module deals with two different kinds of backtraces:</p><p>    1. snapshots of the stack obtained on demand (<code class="code">Backtrace.get</code>)
     2. the stack frames unwound when an exception is raised (<code class="code">Backtrace.Exn</code>)</p></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> t</span> </pre><div class="info"><div class="info">A <code class="code">Backtrace.t</code> is a snapshot of the stack obtained by calling <code class="code">Backtrace.get</code>.  It is
+<pre><span class="TYPEt"><span class="keyword">type</span> t</span> =  </pre><div class="info"><div class="info">A <code class="code">Backtrace.t</code> is a snapshot of the stack obtained by calling <code class="code">Backtrace.get</code>.  It is
     represented as a string with newlines separating the frames.  <code class="code">sexp_of_t</code> splits the
     string at newlines and removes some of the cruft, leaving a human-friendly list of
     frames, but <code class="code">to_string</code> does not.</div></div>

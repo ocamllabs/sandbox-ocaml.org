@@ -14,7 +14,7 @@
       (alloc (), alloc ())
     </code></pre><p>    both stage and unstage functions are available in Common.</p><p>    (Note that in many cases, including perhaps the one above, it's preferable to create a
     custom type rather than use Staged.)</p></div>
-<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">+'a </code>t</span> </pre>
+<pre><span class="TYPEt"><span class="keyword">type</span> <code class="type">+'a </code>t</span> =  </pre>
 <pre><span class="VALstage"><span class="keyword">val</span> stage</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Staged&amp;type=t">t</a></code></pre>
 <pre><span class="VALunstage"><span class="keyword">val</span> unstage</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Staged&amp;type=t">t</a> -&gt; 'a</code></pre>
 </div>
