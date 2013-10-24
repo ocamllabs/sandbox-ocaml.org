@@ -38,33 +38,7 @@
             <section class="span4 condensed">
                 <h4>Recent email threads</h4>
             <ul class="news-feed">
-                <li>
-                    <article>
-                        <h1><a href="#">Expanding the Float Array tag</a></h1>
-                        <p>16 September 2013</p>
-                        <a href="https://sympa.inria.fr/sympa/arc/caml-list/">
-                            <img src="/static/img/news.png" alt="News">
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h1><a href="https://sympa.inria.fr/sympa/arc/caml-list/">[ANN] Ocamlnet-3.7.3</a></h1>
-                        <p>30 August 2013</p>
-                        <a href="#">
-                            <img src="/static/img/news.png" alt="News">
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h1><a href="#">How to explain static typing to other people?</a></h1>
-                        <p>28 August 2013</p>
-                        <a href="https://sympa.inria.fr/sympa/arc/caml-list/">
-                            <img src="/static/img/news.png" alt="News">
-                        </a>
-                    </article>
-                </li>
+((! input last_ml_topics_tpl.mpp !))
             </ul>
             <footer>
                 <p><a href="https://sympa.inria.fr/sympa/arc/caml-list/">See archives</a></p>
