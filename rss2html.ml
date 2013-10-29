@@ -121,7 +121,7 @@ let new_id =
   let id = ref 0 in
   fun () -> incr id; sprintf "post%i" !id
 
-(* [toggle html1 html2] return some piece oh html with buttons to pass
+(* [toggle html1 html2] return some piece of html with buttons to pass
    from [html1] to [html2] and vice versa. *)
 let toggle ?(anchor="") html1 html2 =
   let button id1 id2 text =
@@ -202,13 +202,13 @@ let posts () =
   let ch = stdin_to_channel() in
   let items = Rss.sort_items_by_date ch.Rss.ch_items in
   let posts = List.map parse_item items in
-  [Element("ul", [], List.concat(List.map html_of_post posts))]
+  [Element("div", [], List.concat(List.map html_of_post posts))]
 
 let _ =
   if Array.length Sys.argv > 1 then
     print_endline(string_of_html(news()))
   else
-    print_endline(string_of_html(posts()))
+    print_endline(string_of_html(toggle_script@posts()))
 
 
 (* include Nethtml *)
