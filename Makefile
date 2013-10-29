@@ -97,5 +97,5 @@ front_code_snippet_tpl.html:front_code_snippet_tpl.md
 html-pages/community/planet.html:rss2html
 
 rss2html:rss2html.ml
-	ocamlfind ocamlopt -package unix,equeue,bigarray,xmlm,netstring,netclient,rss bigarray.cmxa unix.cmxa str.cmxa netsys_oothr.cmxa netsys.cmxa netstring.cmxa equeue.cmxa netclient.cmxa xmlm.cmxa rss.cmxa rss2html.ml -o rss2html || (echo '#!/bin/bash' > rss2html && chmod a+x rss2html)
+	ocamlfind ocamlopt -package bigarray,unix,str,netsys,xmlm,netclient,rss bigarray.cmxa unix.cmxa str.cmxa netsys_oothr.cmxa netsys.cmxa netstring.cmxa netclient.cmxa xmlm.cmxa rss.cmxa rss2html.ml -o rss2html
 
