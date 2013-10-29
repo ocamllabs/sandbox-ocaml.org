@@ -203,15 +203,6 @@ let posts () =
   let items = Rss.sort_items_by_date ch.Rss.ch_items in
   let posts = List.map parse_item items in
   [Element("div", [], List.concat(List.map html_of_post posts))]
-
-let _ =
-  if Array.length Sys.argv > 1 then
-    print_endline(string_of_html(news()))
-  else
-    print_endline(string_of_html(toggle_script@posts()))
-
-
-(* include Nethtml *)
 (* ************************************************** *)
 
 
@@ -229,9 +220,8 @@ module OPML = struct
   (* Use Xmlm for the parsing, mostly because it is already needed by
      the [Rss] module => no additional dep. *)
 
-  let contributors_of_url url =
-    let fh = (* Xmlm.make_input (`String(0, Http.get url))  in *)
-      assert false in
+  let contributors () =
+    let fh = Xmlm.make_input (`Channel(stdin)) in
     let contrib = ref [] in
     try
       while true do
@@ -245,12 +235,36 @@ module OPML = struct
       done;
       assert false
     with Xmlm.Error(_, `Unexpected_eoi) ->
-      !contrib
-
-  let of_urls _context urls =
-    let cs = List.concat (List.map (fun u -> contributors_of_url u) urls) in
-    let cs = List.sort (fun c1 c2 -> String.compare c1.name c2.name) cs in
-    let contrib_html c =
-      Element("li", [], [Element("a", ["href", c.url], [Data c.name])]) in
-    [Element("ul", [], List.map contrib_html cs)]
+      let cs =
+        List.sort (fun c1 c2 -> String.compare c1.name c2.name) !contrib
+      in
+      let contrib_html c =
+        Element("li", [], [Element("a", ["href", c.url], [Data c.name])])
+      in
+      [Element("ul", [], List.map contrib_html cs)]
 end
+
+
+let _ =
+  if Array.length Sys.argv = 1 then
+    print_endline(string_of_html(toggle_script@posts()))
+  else
+    let open Arg in
+    parse
+      (align[
+        "-summary",
+        Unit(fun () -> print_endline(string_of_html(news()))),
+        " RSS feed to feed summary (in HTML)";
+
+        "-subscribers", 
+        Unit(fun () -> print_endline(string_of_html(OPML.contributors()))),
+        " OPML feed to list of subscribers (in HTML)";
+
+        "-tohtml", 
+        Unit(fun () -> print_endline(string_of_html(toggle_script@posts()))),
+        " RSS feed to HTML";
+      ] )
+      (fun s -> Printf.eprintf "don't know what to do with %s" s; exit 1)
+      ("Giving no option is equivalent to -tohtml")
+    
+
