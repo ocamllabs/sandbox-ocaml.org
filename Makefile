@@ -16,9 +16,6 @@ html-pages/%.html:md-pages/%.md Makefile main_tpl.mpp core_tpl.mpp navbar_tpl.mp
 	else \
 	${MPP} -set "filename=$<" -set "page=$@.tmp" < main_tpl.mpp > "$@" ; \
 	fi
-#	temporary hack for tryocaml to work:
-#	sed -e 's|<pre><code |<pre |g' -e 's|</code></pre>|</pre>|g' "$@" > "$@.tmp"
-#	mv "$@.tmp" "$@"
 	rm -f "$@.tmp"
 
 html-pages/img:skin/img
@@ -97,3 +94,8 @@ html-pages/index.html:front_code_snippet_tpl.html front_news_tpl.mpp
 html-pages/community/index.html:front_news_tpl.mpp last_ml_topics_tpl.mpp
 front_code_snippet_tpl.html:front_code_snippet_tpl.md
 	omd -r ocaml=./ocamltohtml -r tryocaml=./ocamlapplet.bash $< > $@
+html-pages/community/planet.html:rss2html
+
+rss2html:rss2html.ml
+	ocamlfind ocamlopt -package unix,equeue,bigarray,xmlm,netstring,netclient,rss bigarray.cmxa unix.cmxa str.cmxa netsys_oothr.cmxa netsys.cmxa netstring.cmxa equeue.cmxa netclient.cmxa xmlm.cmxa rss.cmxa rss2html.ml -o rss2html || (echo '#!/bin/bash' > rss2html && chmod a+x rss2html)
+
