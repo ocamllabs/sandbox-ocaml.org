@@ -1,4 +1,6 @@
-(** This a fork of https://github.com/ocaml/ocaml.org/blob/7ba052e8f750de872dbd993fa70f8744414b3d44/src/app/render_rss.ml *)
+(** This file is based on a fork of https://github.com/ocaml/ocaml.org/blob/7ba052e8f750de872dbd993fa70f8744414b3d44/src/app/render_rss.ml
+    Important note: This file needs to be cleaned or to be replaced.
+*)
 
 (** Render an RSS feed to HTML. *)
 
