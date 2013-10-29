@@ -6,6 +6,8 @@ HOWTO](http://www.ocamlcore.org/planet/).
 
 <br />
 
+((! cmd curl http://planet.ocaml.org/rss20.xml | ./rss2html !))
+
 *Subscriptions*
 
 [<img src='../img/rss20.png' alt='' />](http://planet.ocaml.org/rss20.xml)
