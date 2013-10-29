@@ -101,7 +101,7 @@ let rec string_of_html html =
 and string_of_el = function
   | Element(tagname, attributes, content) ->
     Printf.sprintf
-      "<%s%s>%s</%s>\n"
+      "<%s%s>%s</%s>"
       tagname
       (String.concat ""
          (List.map (fun (a,v) -> Printf.sprintf " %s=%S" a v) attributes))
