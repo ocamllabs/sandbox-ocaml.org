@@ -1,4 +1,4 @@
-<!-- ((! set title Programmation Fonctionnelle !)) -->
+<!-- ((! set title Programmation Fonctionnelle !)) ((! set learn !)) -->
 
 # Programmation fonctionnelle
 ## Qu'est-ce que la programmation fonctionnelle ?

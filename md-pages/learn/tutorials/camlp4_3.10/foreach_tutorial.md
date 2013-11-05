@@ -1,4 +1,4 @@
-<!-- ((! set title Camlp4 3.10 Foreach Tutorial !)) -->
+<!-- ((! set title Camlp4 3.10 Foreach Tutorial !)) ((! set learn !)) -->
 
 *Table of contents*
 

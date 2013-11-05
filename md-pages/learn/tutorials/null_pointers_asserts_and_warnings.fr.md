@@ -1,4 +1,4 @@
-<!-- ((! set title Pointeurs nuls, asserts et warnings !)) -->
+<!-- ((! set title Pointeurs nuls, asserts et warnings !)) ((! set learn !)) -->
 
 # Pointeurs nuls, asserts et warnings
 ## Pointeurs nuls

@@ -1,4 +1,4 @@
-<!-- ((! set title Types de données et filtrage de motif !)) -->
+<!-- ((! set title Types de données et filtrage de motif !)) ((! set learn !)) -->
 
 # Types de données et filtrage de motif
 ## Listes chaînées

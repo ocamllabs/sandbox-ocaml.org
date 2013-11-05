@@ -1,4 +1,4 @@
-<!-- ((! set title Official OCaml Mailing Lists !)) -->
+<!-- ((! set title Official OCaml Mailing Lists !)) ((! set community !)) -->
 
 ###  The official OCaml mailing list: caml-list AT inria.fr
 The OCaml mailing list is intended for all users of the OCaml

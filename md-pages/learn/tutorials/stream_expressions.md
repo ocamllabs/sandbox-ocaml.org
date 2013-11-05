@@ -1,4 +1,4 @@
-<!-- ((! set title Streams Expressions !)) -->
+<!-- ((! set title Streams Expressions !)) ((! set learn !)) -->
 
 # Stream Expressions
 

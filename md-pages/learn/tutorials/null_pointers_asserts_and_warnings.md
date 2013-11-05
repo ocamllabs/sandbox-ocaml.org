@@ -1,4 +1,4 @@
-<!-- ((! set title Null Pointers, Asserts and Warnings !)) -->
+<!-- ((! set title Null Pointers, Asserts and Warnings !)) ((! set learn !)) -->
 
 *Table of contents*
 

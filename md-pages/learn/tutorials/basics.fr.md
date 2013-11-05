@@ -1,4 +1,4 @@
-<!-- ((! set title Notions de base  !)) -->
+<!-- ((! set title Notions de base  !)) ((! set learn !)) -->
 
 # Notions de base
 ## Commentaires

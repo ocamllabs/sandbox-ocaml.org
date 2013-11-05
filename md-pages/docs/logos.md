@@ -1,4 +1,4 @@
-<!-- ((! set title OCaml Logos !)) -->
+<!-- ((! set title OCaml Logos !)) ((! set documentation !)) -->
 
 # OCaml logos
 Web sites related to the OCaml language or that use it are encouraged to

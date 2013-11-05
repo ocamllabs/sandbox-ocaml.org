@@ -1,4 +1,4 @@
-<!-- ((! set title Pointers in OCaml !)) -->
+<!-- ((! set title Pointers in OCaml !)) ((! set learn !)) -->
 
 *Table of contents*
 

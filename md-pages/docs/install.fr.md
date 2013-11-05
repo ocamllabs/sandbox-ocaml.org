@@ -1,4 +1,4 @@
-<!-- ((! set title Installer OCaml !)) -->
+<!-- ((! set title Installer OCaml !)) ((! set documentation !)) -->
 
 # Installer OCaml
 

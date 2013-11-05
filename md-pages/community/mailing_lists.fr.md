@@ -1,4 +1,4 @@
-<!-- ((! set title Liste de diffusion OCaml !)) -->
+<!-- ((! set title Liste de diffusion OCaml !)) ((! set community !)) -->
 
 ###  La liste de diffusion OCaml : caml-list AT inria.fr
 La liste de diffusion OCaml s'adresse à tous les utilisateurs des

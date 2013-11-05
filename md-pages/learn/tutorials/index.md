@@ -1,4 +1,4 @@
-<!-- ((! set title OCaml Tutorials !)) -->
+<!-- ((! set title OCaml Tutorials !)) ((! set learn !)) -->
 
 # OCaml tutorials
 

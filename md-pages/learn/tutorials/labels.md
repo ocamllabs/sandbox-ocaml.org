@@ -1,4 +1,4 @@
-<!-- ((! set title Labels !)) -->
+<!-- ((! set title Labels !)) ((! set learn !)) -->
 
 # Labels
 

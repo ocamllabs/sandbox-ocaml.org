@@ -1,4 +1,4 @@
-<!-- ((! set title Cheat Sheets !)) -->
+<!-- ((! set title Cheat Sheets !)) ((! set documentation !)) -->
 
 # Cheat Sheets
 [OCamlPro](http://www.ocamlpro.com/) has published cheat sheets (one or

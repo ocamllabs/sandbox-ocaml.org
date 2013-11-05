@@ -1,4 +1,4 @@
-<!-- ((! set title Le basi  !)) -->
+<!-- ((! set title Le basi  !)) ((! set learn !)) -->
 
 # Le basi
 ## Commenti

@@ -1,4 +1,4 @@
-<!-- ((! set title Install OCaml !)) -->
+<!-- ((! set title Install OCaml !)) ((! set documentation !)) -->
 
 # Install OCaml
 The most recent version is [OCaml 4.00.1](releases/), released on

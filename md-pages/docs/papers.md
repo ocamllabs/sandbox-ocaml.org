@@ -1,4 +1,4 @@
-<!-- ((! set title Papers !)) -->
+<!-- ((! set title Papers !)) ((! set documentation !)) -->
 
 # A few papers on OCaml
 *Table of contents*

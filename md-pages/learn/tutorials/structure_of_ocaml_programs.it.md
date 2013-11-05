@@ -1,4 +1,4 @@
-<!-- ((! set title La struttura dei programmi OCaml !)) -->
+<!-- ((! set title La struttura dei programmi OCaml !)) ((! set learn !)) -->
 
 ## La struttura dei programmi OCaml
 Ci prenderemo ora del tempo per dare uno sguardo ad alto livello a

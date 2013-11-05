@@ -1,4 +1,4 @@
-<!-- ((! set title Debug !)) -->
+<!-- ((! set title Debug !)) ((! set learn !)) -->
 
 *Table of contents*
 

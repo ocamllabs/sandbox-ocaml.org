@@ -1,4 +1,4 @@
-<!-- ((! set title Une histoire d'OCaml !)) -->
+<!-- ((! set title Une histoire d'OCaml !)) ((! set learn !)) -->
 
 # Une histoire d'OCaml
 « Caml » était à l'origine un acronyme pour *Categorical Abstract

@@ -1,4 +1,4 @@
-<!-- ((! set title The Basics  !)) -->
+<!-- ((! set title The Basics  !)) ((! set learn !)) -->
 
 
 # The Basics

@@ -1,4 +1,4 @@
-<!-- ((! set title 99 problems  !)) -->
+<!-- ((! set title 99 problems  !)) ((! set learn !)) -->
 
 **Your Help is Needed**   
 Many of the solutions below have been written by [Victor

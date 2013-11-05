@@ -1,4 +1,4 @@
-<!-- ((! set title Quelques succès !)) -->
+<!-- ((! set title Quelques succès !)) ((! set learn !)) -->
 
 # Quelques succès
 *Contenu*

@@ -1,4 +1,4 @@
-<!-- ((! set title Community !)) -->
+<!-- ((! set title Community !)) ((! set community !)) -->
 
 <div class="container">
     <h1>Community</h1>

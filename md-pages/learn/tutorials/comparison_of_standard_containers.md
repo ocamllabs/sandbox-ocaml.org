@@ -1,4 +1,4 @@
-<!-- ((! set title Comparison of Standard Containers !)) -->
+<!-- ((! set title Comparison of Standard Containers !)) ((! set learn !)) -->
 
 *Table of contents*
 

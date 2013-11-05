@@ -1,4 +1,4 @@
-<!-- ((! set title Recevoir de l'aide et contribuer !)) -->
+<!-- ((! set title Recevoir de l'aide et contribuer !)) ((! set community !)) -->
 
 # Recevoir de l'aide et contribuer
 Le développement d'OCaml est dirigé par

@@ -1,4 +1,4 @@
-<!-- ((! set title Learn !)) -->
+<!-- ((! set title Learn !)) ((! set learn !)) -->
 
 <div class="container">
     <h1>Learn</h1>

@@ -1,4 +1,4 @@
-<!-- ((! set title Compiling OCaml projects !)) -->
+<!-- ((! set title Compiling OCaml projects !)) ((! set learn !)) -->
 
 # Compiling OCaml projects
 

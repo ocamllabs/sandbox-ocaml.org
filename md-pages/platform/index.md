@@ -1,4 +1,4 @@
-<!-- ((! set title OCaml Platform !)) -->
+<!-- ((! set title OCaml Platform !)) ((! set platform !)) -->
 
 <div class="container">
     <h1>Platform</h1>

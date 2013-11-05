@@ -1,4 +1,4 @@
-<!-- ((! set title Compiling with GNU make !)) -->
+<!-- ((! set title Compiling with GNU make !)) ((! set learn !)) -->
 
 # Compiling with GNU make
 

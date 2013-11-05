@@ -1,4 +1,4 @@
-<!-- ((! set title Books !)) -->
+<!-- ((! set title Books !)) ((! set learn !)) -->
 
 # Books
 ## Books in English

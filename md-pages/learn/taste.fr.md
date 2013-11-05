@@ -1,4 +1,4 @@
-<!-- ((! set title Une centaine de lignes d'OCaml !)) -->
+<!-- ((! set title Une centaine de lignes d'OCaml !)) ((! set learn !)) -->
 
 # Une centaine de lignes d'OCaml
 *Sur cette page*

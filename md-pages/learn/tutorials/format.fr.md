@@ -1,4 +1,4 @@
-<!-- ((! set title Format !)) -->
+<!-- ((! set title Format !)) ((! set learn !)) -->
 
 *Table des matières*
 

@@ -1,4 +1,4 @@
-<!-- ((! set title Camlp4 3.10   !)) -->
+<!-- ((! set title Camlp4 3.10   !)) ((! set learn !)) -->
 
 # Camlp4 3.10: quick non extensible example
 quick_non_extensible_example.ml

@@ -1,4 +1,4 @@
-<!-- ((! set title Modules !)) -->
+<!-- ((! set title Modules !)) ((! set learn !)) -->
 
 # Modules
 ## Basic usage

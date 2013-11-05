@@ -1,4 +1,4 @@
-<!-- ((! set title Common error messages !)) -->
+<!-- ((! set title Common error messages !)) ((! set learn !)) -->
 
 # Common error messages
 This page gives a list of quick explanations for some error or warning

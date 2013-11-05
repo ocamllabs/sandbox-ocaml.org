@@ -1,4 +1,4 @@
-<!-- ((! set title Camlp5 !)) -->
+<!-- ((! set title Camlp5 !)) ((! set learn !)) -->
 
 # Camlp5
 

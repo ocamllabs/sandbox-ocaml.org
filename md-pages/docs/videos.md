@@ -1,4 +1,4 @@
-<!-- ((! set title Videos !)) -->
+<!-- ((! set title Videos !)) ((! set documentation !)) -->
 
 The [OCamlorg YouTube account](http://www.youtube.com/user/ocamlorg)
 gathers several videos about OCaml, including videos of [all OUD

@@ -1,4 +1,4 @@
-<!-- ((! set title Standard Library Examples !)) -->
+<!-- ((! set title Standard Library Examples !)) ((! set learn !)) -->
 
 # Standard Library Examples
 

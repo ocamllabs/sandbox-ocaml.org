@@ -1,4 +1,4 @@
-<!-- ((! set title FAQ !)) -->
+<!-- ((! set title FAQ !)) ((! set learn !)) -->
 
 # FAQ
 See also [Stack Overflow](http://stackoverflow.com/tags/ocaml/info),

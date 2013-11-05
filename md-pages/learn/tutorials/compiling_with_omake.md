@@ -1,4 +1,4 @@
-<!-- ((! set title Compiling with OMake !)) -->
+<!-- ((! set title Compiling with OMake !)) ((! set learn !)) -->
 
 # Compiling with OMake
 

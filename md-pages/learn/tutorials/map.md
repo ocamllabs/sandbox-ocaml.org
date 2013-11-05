@@ -1,4 +1,4 @@
-<!-- ((! set title Map !)) -->
+<!-- ((! set title Map !)) ((! set learn !)) -->
 
 # Map
 ## Module Map

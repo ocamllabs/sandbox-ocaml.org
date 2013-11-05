@@ -1,4 +1,4 @@
-<!-- ((! set title Acknowledgements  !)) -->
+<!-- ((! set title Acknowledgements  !)) ((! set learn !)) -->
 
 # Acknowledgements
 Here are some of the people who have helped write these tutorials.

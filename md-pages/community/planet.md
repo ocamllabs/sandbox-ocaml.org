@@ -1,4 +1,4 @@
-<!-- ((! set title OCaml Planet !)) -->
+<!-- ((! set title OCaml Planet !)) ((! set community !)) -->
 
 # OCaml Planet
 The OCaml Planet aggregates various blogs from the OCaml community. It

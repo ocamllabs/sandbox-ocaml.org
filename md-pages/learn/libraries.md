@@ -1,4 +1,4 @@
-<!-- ((! set title Libraries !)) -->
+<!-- ((! set title Libraries !)) ((! set learn !)) -->
 
 # Libraries
 * OcamlPro's [official OPAM repository](http://opam.ocamlpro.com/pkg/)

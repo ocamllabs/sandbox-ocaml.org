@@ -1,4 +1,4 @@
-<!-- ((! set title OCaml Programming Guidelines !)) -->
+<!-- ((! set title OCaml Programming Guidelines !)) ((! set learn !)) -->
 
 *Table of contents*
 

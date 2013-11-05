@@ -1,4 +1,4 @@
-<!-- ((! set title Hash Tables !)) -->
+<!-- ((! set title Hash Tables !)) ((! set learn !)) -->
 
 # Hashtbl
 ## Module Hashtbl

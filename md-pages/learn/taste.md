@@ -1,4 +1,4 @@
-<!-- ((! set title A Hundred Lines of OCaml !)) -->
+<!-- ((! set title A Hundred Lines of OCaml !)) ((! set learn !)) -->
 # A Hundred Lines of OCaml
 *Table of contents*
 

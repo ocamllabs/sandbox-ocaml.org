@@ -1,4 +1,4 @@
-<!-- ((! set title A History of OCaml !)) -->
+<!-- ((! set title A History of OCaml !)) ((! set learn !)) -->
 
 # A History of OCaml
 “Caml” was originally an acronym for *Categorical Abstract Machine

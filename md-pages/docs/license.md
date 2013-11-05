@@ -1,4 +1,4 @@
-<!-- {{! set title License !}} -*-html-*- -->
+<!-- ((! set title License !)) ((! set documentation !)) -*-html-*- -->
 
 # OCaml's License
 

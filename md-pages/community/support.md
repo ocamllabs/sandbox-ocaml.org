@@ -1,4 +1,4 @@
-<!-- ((! set title Commercial Support !)) -->
+<!-- ((! set title Commercial Support !)) ((! set community !)) -->
 
 # Commercial Support
 ## Getting Support
