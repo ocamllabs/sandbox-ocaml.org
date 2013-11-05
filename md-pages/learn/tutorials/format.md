@@ -1,3 +1,5 @@
+<!-- ((! set title Format !)) -->
+
 *Table of contents*
 
 # Using the Format module

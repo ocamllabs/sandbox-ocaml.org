@@ -1,3 +1,5 @@
+<!-- ((! set title OCaml Logos !)) -->
+
 # OCaml logos
 Web sites related to the OCaml language or that use it are encouraged to
 incorporate an OCaml logo somewhere in their page to indicate their

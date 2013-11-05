@@ -1,4 +1,7 @@
+<!-- ((! set title Compiling OCaml projects !)) -->
+
 # Compiling OCaml projects
+
 This tutorial describes the base compilation commands provided with
 OCaml. It is useful to learn these commands to understand OCaml's
 compilation model. However, eventually you will want to use a build tool

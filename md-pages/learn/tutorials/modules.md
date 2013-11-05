@@ -1,4 +1,4 @@
-Modules
+<!-- ((! set title Modules !)) -->
 
 # Modules
 ## Basic usage

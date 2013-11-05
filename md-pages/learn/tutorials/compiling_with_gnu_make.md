@@ -1,4 +1,7 @@
+<!-- ((! set title Compiling with GNU make !)) -->
+
 # Compiling with GNU make
+
 ## Using GNU make with OCamlMakefile
 [OCamlMakefile](http://omake.metaprl.org/index.html "OCamlMakefile") is
 a generic Makefile that greatly facilitates the process of compiling

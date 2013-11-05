@@ -1,4 +1,7 @@
+<!-- ((! set title Objects !)) -->
+
 # Objects
+
 ## Objects and classes
 OCaml is an object-oriented, imperative, functional programming language
 :-) It mixes all these paradigms and lets you use the most appropriate

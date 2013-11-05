@@ -1,4 +1,7 @@
+<!-- ((! set title Compiling with OMake !)) -->
+
 # Compiling with OMake
+
 Here is the summary on how to compile an OCaml program with
 [OMake](http://omake.metaprl.org/ "OMake"). It produces a native code
 executable or a bytecode executable if ocamlopt is not available, using

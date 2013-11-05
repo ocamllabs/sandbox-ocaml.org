@@ -1,3 +1,5 @@
+<!-- ((! set title Acknowledgements  !)) -->
+
 # Acknowledgements
 Here are some of the people who have helped write these tutorials.
 (Please add your name in alphabetical order if you contributed.)

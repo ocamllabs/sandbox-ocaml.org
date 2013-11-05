@@ -1,3 +1,5 @@
+<!-- ((! set title OCaml Planet !)) -->
+
 # OCaml Planet
 The OCaml Planet aggregates various blogs from the OCaml community. It
 is kindly provided by [OCamlCore](http://www.ocamlcore.com/). If you

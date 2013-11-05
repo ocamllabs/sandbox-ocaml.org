@@ -1,3 +1,5 @@
+<!-- ((! set title OCaml Programming Guidelines !)) -->
+
 *Table of contents*
 
 # OCaml Programming Guidelines

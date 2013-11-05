@@ -1,3 +1,5 @@
+<!-- ((! set title Format !)) -->
+
 *Table des matières*
 
 # Utiliser le module Format

@@ -1,4 +1,7 @@
+<!-- ((! set title Standard Library Examples !)) -->
+
 # Standard Library Examples
+
 ## Standard Library Examples
 * [Hashtbl](hashtbl.html "Hashtbl")
 * [Set](set.html "Set")

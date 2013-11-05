@@ -1,4 +1,7 @@
+<!-- ((! set title Streams Expressions !)) -->
+
 # Stream Expressions
+
 ## Stream Expressions
 Streams are very powerful and concise once the necessary tools (stream
 builders, combinators, and other utilities) are in place. However, the

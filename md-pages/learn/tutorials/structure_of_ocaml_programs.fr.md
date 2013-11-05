@@ -1,3 +1,5 @@
+<!-- ((! set title Structure des programmes OCaml !)) -->
+
 # Structure des programmes OCaml
 Maintenant nous allons passer un peu de temps à observer la structure
 d'ensemble de quelque vrais programmes en OCaml. Je veux vous parler des

@@ -1,4 +1,4 @@
-Hashtbl
+<!-- ((! set title Hash Tables !)) -->
 
 # Hashtbl
 ## Module Hashtbl

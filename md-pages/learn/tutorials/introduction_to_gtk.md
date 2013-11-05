@@ -1,4 +1,7 @@
+<!-- ((! set title Introduction to Gtk !)) -->
+
 # Introduction to Gtk
+
 ## Lablgtk and writing Gtk applications
 [Gtk+](http://www.gtk.org/ "http://www.gtk.org/") is a toolkit for
 writing graphical applications, and

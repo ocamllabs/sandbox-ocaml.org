@@ -1,3 +1,5 @@
+<!-- ((! set title Debug !)) -->
+
 *Table of contents*
 
 # Debugging

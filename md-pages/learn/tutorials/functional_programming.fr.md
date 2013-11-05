@@ -1,3 +1,5 @@
+<!-- ((! set title Programmation Fonctionnelle !)) -->
+
 # Programmation fonctionnelle
 ## Qu'est-ce que la programmation fonctionnelle ?
 Nous sommes arrivé relativement loin dans ce tutorial et nous n'avons

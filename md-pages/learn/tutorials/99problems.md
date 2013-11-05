@@ -1,5 +1,7 @@
-**Your Help is Needed**<br />
- Many of the solutions below have been written by [Victor
+<!-- ((! set title 99 problems  !)) -->
+
+**Your Help is Needed**   
+Many of the solutions below have been written by [Victor
 Nicollet](https://github.com/VictorNicollet/99-Problems-OCaml). Please
 contribute more solutions or improve the existing ones.
 
@@ -24,38 +26,36 @@ last element of a list.
 Solution
 
 ```tryocaml
-  let rec last = function
-    | [] -> None
-    | [x] -> Some x
-    | _ :: t -> last t
-
-  last [ "a" ; "b" ; "c" ; "d" ] = Some "d";;
-  last [] = None;;
+let rec last = function
+  | [] -> None
+  | [x] -> Some x
+  | _ :: t -> last t
+ last [ "a" ; "b" ; "c" ; "d" ] = Some "d";;
+last [] = None;;
 ```
 Find the last but one (last and penultimate) elements of a list.
 
 Solution
 
 ```tryocaml
-  let rec last_two = function
-    | [] | [_] -> None
-    | [x;y] -> Some (x,y)
-    | _::t -> last_two t
-
-  last_two [ "a" ; "b" ; "c" ; "d" ] = Some ("c", "d") ;;
-  last_two [ "a" ] = None;;
+let rec last_two = function
+  | [] | [_] -> None
+  | [x;y] -> Some (x,y)
+  | _::t -> last_two t
+ last_two [ "a" ; "b" ; "c" ; "d" ] = Some ("c", "d") ;;
+last_two [ "a" ] = None;;
 ```
 Find the `k`'th element of a list.
 
 Solution
 
 ```tryocaml
-  let rec at k = function
-    | [] -> None
-    | h :: t -> if k = 1 then Some h else at (k-1) t
-
+let rec at k = function
+  | [] -> None
+  | h :: t -> if k = 1 then Some h else at (k-1) t
   at 3 [ "a" ; "b"; "c"; "d"; "e" ] = Some "c" ;;
-  at 3 [ "a" ] = None ;;
+
+at 3 [ "a" ] = None ;;
 ```
 Find the number of elements of a list.
 
@@ -66,16 +66,16 @@ solution.
 Solution
 
 ```tryocaml
-  (* This function is tail-recursive: it uses a constant amount of
-     stack memory regardless of list size. *)
-  let length list =
-    let rec aux n = function
-      | [] -> n
-      | _::t -> aux (n+1) t
-    in aux 0 list
+(* This function is tail-recursive: it uses a constant amount of
+   stack memory regardless of list size. *)
+let length list =
+  let rec aux n = function
+    | [] -> n
+    | _::t -> aux (n+1) t
+  in aux 0 list
 
-  length [ "a" ; "b" ; "c"] = 3;;
-  length [] = 0;;
+ length [ "a" ; "b" ; "c"] = 3;;
+length [] = 0;;
 ```
 Reverse a list.
 
@@ -85,14 +85,15 @@ it.
 Solution
 
 ```tryocaml
-  let rev list =
-    let rec aux acc = function
-      | [] -> acc
-      | h::t -> aux (h::acc) t in
-    aux [] list
+let rev list =
+  let rec aux acc = function
+    | [] -> acc
+    | h::t -> aux (h::acc) t in
+  aux [] list
 
-  rev ["a" ; "b" ; "c"] = ["c" ; "b" ; "a"]
+rev ["a" ; "b" ; "c"] = ["c" ; "b" ; "a"]
 ```
+
 Find out whether a list is a palindrome.
 
 HINT: a palindrome is its own reverse.
@@ -100,70 +101,71 @@ HINT: a palindrome is its own reverse.
 Solution
 
 ```tryocaml
-  let is_palindrome list =
-    list = List.rev list
-  (* One can use either the rev function from the previous problem, or the
-     built-in List.rev *)
+let is_palindrome list =
+  list = List.rev list
+(* One can use either the rev function from the previous problem, or the
+   built-in List.rev *)
+ is_palindrome [ "x" ; "a" ; "m" ; "a" ; "x" ];;
 
-  is_palindrome [ "x" ; "a" ; "m" ; "a" ; "x" ];;
-  not (is_palindrome [ "a" ; "b" ]);;
+not (is_palindrome [ "a" ; "b" ]);;
 ```
 Flatten a nested list structure.
 
 ```tryocaml
-  (* There is no nested list type in OCaml, so we need to define one
-     first. A node of a nested list is either an element, or a list of
-     nodes. *)
-  type 'a node =
-    | One of 'a
-    | Many of 'a node list
+(* There is no nested list type in OCaml, so we need to define one
+   first. A node of a nested list is either an element, or a list of
+   nodes. *)
+type 'a node =
+  | One of 'a
+  | Many of 'a node list
 ```
+
 Solution
 
 ```tryocaml
-  (* This function traverses the list, prepending any encountered elements
-    to an accumulator, which flattens the list in inverse order. It can
-    then be reversed to obtain the actual flattened list. *)
+(* This function traverses the list, prepending any encountered elements
+  to an accumulator, which flattens the list in inverse order. It can
+  then be reversed to obtain the actual flattened list. *)
 
-  let flatten list =
-    let rec aux acc = function
-      | [] -> acc
-      | One x :: t -> aux (x :: acc) t
-      | Many l :: t -> aux (aux acc l) t in
-    List.rev (aux [] list)
+let flatten list =
+  let rec aux acc = function
+    | [] -> acc
+    | One x :: t -> aux (x :: acc) t
+    | Many l :: t -> aux (aux acc l) t in
+  List.rev (aux [] list)
 
-  flatten [ One "a" ; Many [ One "b" ; Many [ One "c" ; One "d" ] ; One "e" ] ]
-  = [ "a" ; "b" ; "c" ; "d" ; "e" ]
+flatten [ One "a" ; Many [ One "b" ; Many [ One "c" ; One "d" ] ; One "e" ] ]
+= [ "a" ; "b" ; "c" ; "d" ; "e" ]
 ```
 Eliminate consecutive duplicates of list elements.
 
 Solution
 
 ```tryocaml
-  let rec compress = function
-    | a :: (b :: _ as t) -> if a = b then compress t else a :: compress t
-    | smaller -> smaller
+let rec compress = function
+  | a :: (b :: _ as t) -> if a = b then compress t else a :: compress t
+  | smaller -> smaller
 
-  compress ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
-  = ["a";"b";"c";"a";"d";"e"];;
+compress ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
+= ["a";"b";"c";"a";"d";"e"];;
 ```
 Pack consecutive duplicates of list elements into sublists.
 
 Solution
 
 ```tryocaml
-  let pack list =
-    let rec aux current acc = function
-      | [] -> []    (* Can only be reached if original list is empty *)
-      | [x] -> (x :: current) :: acc
-      | a :: (b :: _ as t) ->
-         if a = b then aux (a :: current) acc t
-         else aux [] ((a :: current) :: acc) t  in
-    List.rev (aux [] [] list)
+let pack list =
+  let rec aux current acc = function
+    | [] -> []    (* Can only be reached if original list is empty *)
+    | [x] -> (x :: current) :: acc
+    | a :: (b :: _ as t) ->
+       if a = b then aux (a :: current) acc t
+       else aux [] ((a :: current) :: acc) t  in
+  List.rev (aux [] [] list)
 
-  pack ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"d";"e";"e";"e";"e"]
-  = [["a";"a";"a";"a"]; ["b"]; ["c";"c"]; ["a";"a"]; ["d";"d"];
-     ["e";"e";"e";"e"]]
+pack ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"d";"e";"e";"e";"e"]
+= [["a";"a";"a";"a"]; ["b"]; ["c";"c"]; ["a";"a"]; ["d";"d"];
+   ["e";"e";"e";"e"]]
 ```
 [Run-length encoding](http://en.wikipedia.org/wiki/Run-length_encoding)
 of a list.
@@ -171,16 +173,16 @@ of a list.
 Solution
 
 ```tryocaml
-  let encode list =
-    let rec aux count acc = function
-      | [] -> [] (* Can only be reached if original list is empty *)
-      | [x] -> (count+1, x) :: acc
-      | a :: (b :: _ as t) -> if a = b then aux (count + 1) acc t
-                              else aux 0 ((count+1,a) :: acc) t   in
-    List.rev (aux 0 [] list)
+let encode list =
+  let rec aux count acc = function
+    | [] -> [] (* Can only be reached if original list is empty *)
+    | [x] -> (count+1, x) :: acc
+    | a :: (b :: _ as t) -> if a = b then aux (count + 1) acc t
+                            else aux 0 ((count+1,a) :: acc) t   in
+  List.rev (aux 0 [] list)
 
-  encode ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
-  = [4,"a" ; 1,"b" ; 2,"c" ; 2,"a" ; 1,"d" ; 4,"e"]
+encode ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
+= [4,"a" ; 1,"b" ; 2,"c" ; 2,"a" ; 1,"d" ; 4,"e"]
 ```
 Modified run-length encoding.
 
@@ -192,31 +194,32 @@ Since OCaml lists are homogeneous, one needs to define a type to hold
 both single elements and sub-lists.
 
 ```tryocaml
-  type 'a rle =
-    | One of 'a
-    | Many of (int * 'a)
+type 'a rle =
+  | One of 'a
+  | Many of (int * 'a)
 ```
 Solution
 
 ```tryocaml
-  let pack list =
-    let rec aux current acc = function
-      | [] -> [] (* Can only be reached if original list is empty *)
-      | [x] -> (x :: current) :: acc
-      | a :: (b :: _ as t) -> if a = b then aux (a :: current) acc t
-                              else aux [] ((a :: current) :: acc) t  in
-    List.rev (aux [] [] list)
-  let encode list =
-    let rec aux = function
-      | [] -> []
-      | [] :: t -> aux t
-      | [x] :: t -> One x :: aux t
-      | (x :: l) :: t -> Many (1 + List.length l , x) :: aux t  in
-    aux (pack list)
+let pack list =
+  let rec aux current acc = function
+    | [] -> [] (* Can only be reached if original list is empty *)
+    | [x] -> (x :: current) :: acc
+    | a :: (b :: _ as t) -> if a = b then aux (a :: current) acc t
+                            else aux [] ((a :: current) :: acc) t  in
+  List.rev (aux [] [] list)
+let encode list =
+  let rec aux = function
+    | [] -> []
+    | [] :: t -> aux t
+    | [x] :: t -> One x :: aux t
+    | (x :: l) :: t -> Many (1 + List.length l , x) :: aux t  in
+  aux (pack list)
 
-  encode ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
-  = [Many (4,"a"); One "b"; Many (2,"c"); Many (2,"a"); One "d"; Many (4,"e")]
+encode ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
+= [Many (4,"a"); One "b"; Many (2,"c"); Many (2,"a"); One "d"; Many (4,"e")]
 ```
+
 Decode a run-length encoded list.
 
 Given a run-length code list generated as specified in the previous
@@ -225,17 +228,16 @@ problem, construct its uncompressed version.
 Solution
 
 ```tryocaml
-  let decode list =
-    let rec many acc n x =
-      if n = 0 then acc else many (x :: acc) (n-1) x in
-    let rec aux acc = function
-      | [] -> acc
-      | One x :: t -> aux (x :: acc) t
-      | Many (n,x) :: t -> aux (many acc n x) t  in
-    aux [] (List.rev list)
-
-  decode [Many (4,"a"); One "b"; Many (2,"c"); Many (2,"a"); One "d"; Many (4,"e")]
-  = ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
+let decode list =
+  let rec many acc n x =
+    if n = 0 then acc else many (x :: acc) (n-1) x in
+  let rec aux acc = function
+    | [] -> acc
+    | One x :: t -> aux (x :: acc) t
+    | Many (n,x) :: t -> aux (many acc n x) t  in
+  aux [] (List.rev list)
+ decode [Many (4,"a"); One "b"; Many (2,"c"); Many (2,"a"); One "d"; Many (4,"e")]
+= ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"]
 ```
 Run-length encoding of a list (direct solution).
 
@@ -249,59 +251,60 @@ replacing the singleton lists (1 X) by X.
 Solution
 
 ```tryocaml
-  let encode list =
-    let rle count x = if count = 0 then One x else Many (count + 1, x) in
-    let rec aux count acc = function
-      | [] -> [] (* Can only be reached if original list is empty *)
-      | [x] -> rle count x :: acc
-      | a :: (b :: _ as t) -> if a = b then aux (count + 1) acc t
-                              else aux 0 (rle count a :: acc) t   in
-    List.rev (aux 0 [] list)
+let encode list =
+  let rle count x = if count = 0 then One x else Many (count + 1, x) in
+  let rec aux count acc = function
+    | [] -> [] (* Can only be reached if original list is empty *)
+    | [x] -> rle count x :: acc
+    | a :: (b :: _ as t) -> if a = b then aux (count + 1) acc t
+                            else aux 0 (rle count a :: acc) t   in
+  List.rev (aux 0 [] list)
+;;
 
-  encode ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"] =
-  [Many (4,"a"); One "b"; Many (2,"c"); Many (2,"a"); One "d"; Many (4,"e")]
+encode ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"] =
+[Many (4,"a"); One "b"; Many (2,"c"); Many (2,"a"); One "d"; Many (4,"e")];;
 ```
 Duplicate the elements of a list.
 
 Solution
 
 ```tryocaml
-  let rec duplicate = function
-    | [] -> []
-    | h :: t -> h :: h :: duplicate t
+let rec duplicate = function
+  | [] -> []
+  | h :: t -> h :: h :: duplicate t;;
 
-  duplicate ["a";"b";"c";"c";"d"] = ["a";"a";"b";"b";"c";"c";"c";"c";"d";"d"]
+duplicate ["a";"b";"c";"c";"d"] = ["a";"a";"b";"b";"c";"c";"c";"c";"d";"d"];;
 ```
 Replicate the elements of a list a given number of times.
 
 Solution
 
 ```tryocaml
-  let replicate list n =
-    let rec prepend n acc x =
-      if n = 0 then acc else prepend (n-1) (x :: acc) x in
-    let rec aux acc = function
-      | [] -> acc
-      | h :: t -> aux (prepend n acc h) t  in
-    (* This could also be written as:
-       List.fold_left (prepend n) [] (List.rev list) *)
-    aux [] (List.rev list)
+let replicate list n =
+  let rec prepend n acc x =
+    if n = 0 then acc else prepend (n-1) (x :: acc) x in
+  let rec aux acc = function
+    | [] -> acc
+    | h :: t -> aux (prepend n acc h) t  in
+  (* This could also be written as:
+     List.fold_left (prepend n) [] (List.rev list) *)
+  aux [] (List.rev list);;
 
-  replicate ["a";"b";"c"] 3 = ["a";"a";"a";"b";"b";"b";"c";"c";"c"]
+replicate ["a";"b";"c"] 3 = ["a";"a";"a";"b";"b";"b";"c";"c";"c"];;
 ```
 Drop every N'th element from a list.
 
 Solution
 
 ```tryocaml
-  let drop list n =
-    let rec aux i = function
-      | [] -> []
-      | h :: t -> if i = n then aux 1 t else h :: aux (i+1) t  in
-    aux 1 list
+let drop list n =
+  let rec aux i = function
+    | [] -> []
+    | h :: t -> if i = n then aux 1 t else h :: aux (i+1) t  in
+  aux 1 list;;
 
-  drop ["a";"b";"c";"d";"e";"f";"g";"h";"i";"j"] 3
-  = ["a";"b";"d";"e";"g";"h";"j"]
+drop ["a";"b";"c";"d";"e";"f";"g";"h";"i";"j"] 3
+= ["a";"b";"d";"e";"g";"h";"j"];;
 ```
 Split a list into two parts; the length of the first part is given.
 
@@ -311,16 +314,16 @@ first part is the list and the second part is empty.
 Solution
 
 ```tryocaml
-  let split list n =
-    let rec aux i acc = function
-      | [] -> List.rev acc, []
-      | h :: t as l -> if i = 0 then List.rev acc, l
-                       else aux (i-1) (h :: acc) t  in
-    aux n [] list
+let split list n =
+  let rec aux i acc = function
+    | [] -> List.rev acc, []
+    | h :: t as l -> if i = 0 then List.rev acc, l
+                     else aux (i-1) (h :: acc) t  in
+  aux n [] list
 
-  split ["a";"b";"c";"d";"e";"f";"g";"h";"i";"j"] 3
-  = (["a";"b";"c"], ["d";"e";"f";"g";"h";"i";"j"]);;
-  split ["a";"b";"c";"d"] 5 = (["a"; "b"; "c"; "d"], [])
+split ["a";"b";"c";"d";"e";"f";"g";"h";"i";"j"] 3
+= (["a";"b";"c"], ["d";"e";"f";"g";"h";"i";"j"]);;
+split ["a";"b";"c";"d"] 5 = (["a"; "b"; "c"; "d"], [])
 ```
 Extract a slice from a list.
 
@@ -332,42 +335,42 @@ way the `List` module numbers elements).
 Solution
 
 ```tryocaml
-  let slice list i k =
-    let rec take n = function
-      | [] -> []
-      | h :: t -> if n = 0 then [] else h :: take (n-1) t
-    in
-    let rec drop n = function
-      | [] -> []
-      | h :: t as l -> if n = 0 then l else drop (n-1) t
-    in
-    take (k - i + 1) (drop i list)
+let slice list i k =
+  let rec take n = function
+    | [] -> []
+    | h :: t -> if n = 0 then [] else h :: take (n-1) t
+  in
+  let rec drop n = function
+    | [] -> []
+    | h :: t as l -> if n = 0 then l else drop (n-1) t
+  in
+  take (k - i + 1) (drop i list);;
 
-  slice ["a";"b";"c";"d";"e";"f";"g";"h";"i";"j"] 2 6 = ["c";"d";"e";"f";"g"]
+slice ["a";"b";"c";"d";"e";"f";"g";"h";"i";"j"] 2 6 = ["c";"d";"e";"f";"g"];;
 ```
 Rotate a list N places to the left.
 
 Solution
 
 ```tryocaml
-  let split list n =
-    let rec aux i acc = function
-      | [] -> List.rev acc, []
-      | h :: t as l -> if i = 0 then List.rev acc, l
-                       else aux (i-1) (h :: acc) t    in
-    aux n [] list
+let split list n =
+  let rec aux i acc = function
+    | [] -> List.rev acc, []
+    | h :: t as l -> if i = 0 then List.rev acc, l
+                     else aux (i-1) (h :: acc) t    in
+  aux n [] list
 
-  let rotate list n =
-    let len = List.length list in
-    (* Compute a rotation value between 0 and len-1 *)
-    let n = if len = 0 then 0 else (n mod len + len) mod len in
-    if n = 0 then list
-    else let a, b = split list n in b @ a
+let rotate list n =
+  let len = List.length list in
+  (* Compute a rotation value between 0 and len-1 *)
+  let n = if len = 0 then 0 else (n mod len + len) mod len in
+  if n = 0 then list
+  else let a, b = split list n in b @ a;;
 
-  rotate ["a"; "b"; "c"; "d"; "e"; "f"; "g"; "h"] 3
-  = ["d"; "e"; "f"; "g"; "h"; "a"; "b"; "c"];;
-  rotate ["a"; "b"; "c"; "d"; "e"; "f"; "g"; "h"] (-2)
-  = ["g"; "h"; "a"; "b"; "c"; "d"; "e"; "f"]
+rotate ["a"; "b"; "c"; "d"; "e"; "f"; "g"; "h"] 3
+= ["d"; "e"; "f"; "g"; "h"; "a"; "b"; "c"];;
+rotate ["a"; "b"; "c"; "d"; "e"; "f"; "g"; "h"] (-2)
+= ["g"; "h"; "a"; "b"; "c"; "d"; "e"; "f"];;
 ```
 Remove the K'th element from a list.
 
@@ -376,11 +379,11 @@ The first element of the list is numbered 0, the second 1,...
 Solution
 
 ```tryocaml
-  let rec remove_at n = function
-    | [] -> []
-    | h :: t -> if n = 0 then t else h :: remove_at (n-1) t
+let rec remove_at n = function
+  | [] -> []
+  | h :: t -> if n = 0 then t else h :: remove_at (n-1) t;;
 
-  remove_at 1 ["a";"b";"c";"d"] = ["a"; "c"; "d"]
+remove_at 1 ["a";"b";"c";"d"] = ["a"; "c"; "d"];;
 ```
 Insert an element at a given position into a list.
 
@@ -389,11 +392,11 @@ Start counting list elements with 0.
 Solution
 
 ```tryocaml
-  let rec insert_at x n = function
-    | [] -> []
-    | h :: t as l -> if n = 0 then x :: l else h :: insert_at x (n-1) t
+let rec insert_at x n = function
+  | [] -> []
+  | h :: t as l -> if n = 0 then x :: l else h :: insert_at x (n-1) t;;
 
-  insert_at "alfa" 1 ["a";"b";"c";"d"] = ["a";"alfa";"b";"c";"d"]
+insert_at "alfa" 1 ["a";"b";"c";"d"] = ["a";"alfa";"b";"c";"d"];;
 ```
 Create a list containing all integers within a given range.
 
@@ -403,13 +406,13 @@ order.
 Solution
 
 ```tryocaml
-  let range a b =
-    let rec aux a b =
-      if a > b then [] else a :: aux (a+1) b  in
-    if a > b then List.rev (aux b a) else aux a b
+let range a b =
+  let rec aux a b =
+    if a > b then [] else a :: aux (a+1) b  in
+  if a > b then List.rev (aux b a) else aux a b;;
 
-  range 4 9 = [4;5;6;7;8;9];;
-  range 9 4 = [9;8;7;6;5;4]
+range 4 9 = [4;5;6;7;8;9];;
+range 9 4 = [9;8;7;6;5;4];;
 ```
 Extract a given number of randomly selected elements from a list.
 
@@ -420,23 +423,23 @@ reproducibility.
 Solution
 
 ```tryocaml
-  let rec rand_select list n =
-    let rec extract acc n = function
-      | [] -> raise Not_found
-      | h :: t -> if n = 0 then (h, acc @ t) else extract (h::acc) (n-1) t
-    in
-    let extract_rand list len =
-      extract [] (Random.int len) list
-    in
-    let rec aux n acc list len =
-      if n = 0 then acc else
-        let picked, rest = extract_rand list len in
-        aux (n-1) (picked :: acc) rest (len-1)
-    in
-    let len = List.length list in
-    aux (min n len) [] list len
+let rec rand_select list n =
+  let rec extract acc n = function
+    | [] -> raise Not_found
+    | h :: t -> if n = 0 then (h, acc @ t) else extract (h::acc) (n-1) t
+  in
+  let extract_rand list len =
+    extract [] (Random.int len) list
+  in
+  let rec aux n acc list len =
+    if n = 0 then acc else
+      let picked, rest = extract_rand list len in
+      aux (n-1) (picked :: acc) rest (len-1)
+  in
+  let len = List.length list in
+  aux (min n len) [] list len;;
 
-  rand_select ["a";"b";"c";"d";"e";"f";"g";"h"] 3
+rand_select ["a";"b";"c";"d";"e";"f";"g";"h"] 3;;
 ```
 Lotto: Draw N different random numbers from the set 1..M.
 
@@ -445,32 +448,32 @@ The selected numbers shall be returned in a list.
 Solution
 
 ```tryocaml
-  (* [range] and [rand_select] defined in problems above *)
-  let lotto_select n m = rand_select (range 1 m) n
+(* [range] and [rand_select] defined in problems above *)
+let lotto_select n m = rand_select (range 1 m) n;;
 
-  lotto_select 6 49
+lotto_select 6 49;;
 ```
 Generate a random permutation of the elements of a list.
 
 Solution
 
 ```tryocaml
-  let rec permutation list =
-    let rec extract acc n = function
-      | [] -> raise Not_found
-      | h :: t -> if n = 0 then (h, acc @ t) else extract (h::acc) (n-1) t
-    in
-    let extract_rand list len =
-      extract [] (Random.int len) list
-    in
-    let rec aux acc list len =
-      if len = 0 then acc else
-        let picked, rest = extract_rand list len in
-        aux (picked :: acc) rest (len-1)
-    in
-    aux [] list (List.length list)
+let rec permutation list =
+  let rec extract acc n = function
+    | [] -> raise Not_found
+    | h :: t -> if n = 0 then (h, acc @ t) else extract (h::acc) (n-1) t
+  in
+  let extract_rand list len =
+    extract [] (Random.int len) list
+  in
+  let rec aux acc list len =
+    if len = 0 then acc else
+      let picked, rest = extract_rand list len in
+      aux (picked :: acc) rest (len-1)
+  in
+  aux [] list (List.length list);;
 
-  permutation ["a"; "b"; "c"; "d"; "e"; "f"]
+permutation ["a"; "b"; "c"; "d"; "e"; "f"];;
 ```
 Generate the combinations of K distinct objects chosen from the N
 elements of a list
@@ -484,19 +487,19 @@ possibilities in a list.
 Solution
 
 ```tryocaml
-  let extract k list =
-    let rec aux k acc emit = function
-      | [] -> acc
-      | h :: t ->
-        if k = 1 then aux k (emit [h] acc) emit t else
-          let new_emit x = emit (h :: x) in
-          aux k (aux (k-1) acc new_emit t) emit t
-    in
-    let emit x acc = x :: acc in
-    aux k [] emit list
+let extract k list =
+  let rec aux k acc emit = function
+    | [] -> acc
+    | h :: t ->
+      if k = 1 then aux k (emit [h] acc) emit t else
+        let new_emit x = emit (h :: x) in
+        aux k (aux (k-1) acc new_emit t) emit t
+  in
+  let emit x acc = x :: acc in
+  aux k [] emit list;;
 
-  extract 2 ["a";"b";"c";"d"]
-  = [["c";"d"]; ["b";"d"]; ["b";"c"]; ["a";"d"]; ["a";"c"]; ["a";"b"]]
+extract 2 ["a";"b";"c";"d"]
+= [["c";"d"]; ["b";"d"]; ["b";"c"]; ["a";"d"]; ["a";"c"]; ["a";"b"]];;
 ```
 Group the elements of a set into disjoint subsets.
 

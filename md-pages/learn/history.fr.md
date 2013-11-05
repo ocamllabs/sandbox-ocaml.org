@@ -1,3 +1,5 @@
+<!-- ((! set title Une histoire d'OCaml !)) -->
+
 # Une histoire d'OCaml
 « Caml » était à l'origine un acronyme pour *Categorical Abstract
 Machine Language*. C'était un jeu de mots sur CAM, la Machine Abstraite

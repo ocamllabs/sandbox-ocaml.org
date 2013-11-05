@@ -1,3 +1,5 @@
+<!-- ((! set title Quelques succès !)) -->
+
 # Quelques succès
 *Contenu*
 

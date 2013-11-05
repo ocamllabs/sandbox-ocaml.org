@@ -1,3 +1,5 @@
+<!-- ((! set title Pointeurs nuls, asserts et warnings !)) -->
+
 # Pointeurs nuls, asserts et warnings
 ## Pointeurs nuls
 Supposons que votre site web dispose d'un sondage, demandant à vos

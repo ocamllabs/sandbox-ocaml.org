@@ -1,4 +1,7 @@
+<!-- ((! set title Installer OCaml !)) -->
+
 # Installer OCaml
+
 **Licence**<br />
  Le système OCaml est un logiciel libre: le compilateur est distribué
 sous les termes de la *Q Public License*, et sa librairie sous ceux de

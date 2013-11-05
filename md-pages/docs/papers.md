@@ -1,3 +1,5 @@
+<!-- ((! set title Papers !)) -->
+
 # A few papers on OCaml
 *Table of contents*
 

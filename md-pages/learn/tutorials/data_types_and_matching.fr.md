@@ -1,3 +1,5 @@
+<!-- ((! set title Types de données et filtrage de motif !)) -->
+
 # Types de données et filtrage de motif
 ## Listes chaînées
 Comme en Perl, la notion de liste est directement supportée dans le

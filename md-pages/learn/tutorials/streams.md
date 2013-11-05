@@ -1,4 +1,5 @@
-# Streams
+<!-- ((! set title Streams !)) -->
+
 ## Streams
 Suppose you need to process each line of a text file. One way to do this
 is to read the file in as a single large string and use something like

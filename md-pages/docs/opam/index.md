@@ -1,4 +1,3 @@
-
 # This page has moved 
 
 instead of  <http://ocaml-redesign.github.io/docs/opam/>

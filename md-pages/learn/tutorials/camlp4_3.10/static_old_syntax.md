@@ -1,3 +1,5 @@
+<!-- ((! set title Camlp4 3.10  !)) -->
+
 # Camlp4 3.10: static old syntax
 static_old_syntax.ml:
 

@@ -1,3 +1,4 @@
+<!-- ((! set title Docs !)) -->
 
 <div class="container">
     <h1>Documentation</h1>

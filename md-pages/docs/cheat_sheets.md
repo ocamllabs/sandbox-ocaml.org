@@ -1,3 +1,5 @@
+<!-- ((! set title Cheat Sheets !)) -->
+
 # Cheat Sheets
 [OCamlPro](http://www.ocamlpro.com/) has published cheat sheets (one or
 two-pages summaries) on OCaml:

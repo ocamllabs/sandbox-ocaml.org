@@ -1,3 +1,5 @@
+<!-- ((! set title Caml Light's License !)) -->
+
 # Caml Light's License
 In the following, “the Library” refers to all files marked “Copyright
 Inria” in the following directories and their sub-directories of the

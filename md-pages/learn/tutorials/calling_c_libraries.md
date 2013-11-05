@@ -1,3 +1,5 @@
+<!-- ((! set title Calling C libraries  !)) -->
+
 # Calling C libraries
 ## Note from Rich
 Chapters 12 and 13 really need to be rewritten from scratch.

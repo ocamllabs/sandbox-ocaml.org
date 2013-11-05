@@ -1,4 +1,7 @@
+<!-- ((! set title Garbage Collection !)) -->
+
 # Garbage Collection
+
 ## Garbage collection, reference counting, explicit allocation
 As with all modern languages, OCaml provides a garbage collector so that
 you don't need to explicitly allocate and free memory as in C/C++.

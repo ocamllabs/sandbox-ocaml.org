@@ -1,3 +1,5 @@
+<!-- ((! set title Une centaine de lignes d'OCaml !)) -->
+
 # Une centaine de lignes d'OCaml
 *Sur cette page*
 

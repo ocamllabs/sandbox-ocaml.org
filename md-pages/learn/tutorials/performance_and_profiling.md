@@ -1,4 +1,7 @@
+<!-- ((! set title Performance and Profiling !)) -->
+
 # Performance and Profiling
+
 ## ObQuote...
 *"One serious obstacle to the adoption of good programming languages is
 the notion that everything has to be sacrificed for speed. In computer

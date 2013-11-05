@@ -1,3 +1,5 @@
+<!-- ((! set title Camlp4 3.10   !)) -->
+
 # Camlp4 3.10: static functor example
 static_functor_example.ml
 
