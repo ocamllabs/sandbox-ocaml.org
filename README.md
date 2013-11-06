@@ -1,3 +1,12 @@
+# This repo is now deprecated.
+
+The contents were moved to  https://github.com/ocaml/ocaml.org/tree/redesign
+and they will eventually be in https://github.com/ocaml/ocaml.org/tree/master
+
+http://ocaml-redesign.github.io is not built from this repo anymore.
+
+------------
+
 sandbox for the next <http://ocaml.org> with the new (2013) design
 
 - `md-pages` is the directory where "MPP" Markdown files are.
